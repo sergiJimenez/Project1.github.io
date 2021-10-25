@@ -14,11 +14,6 @@ include "php_library/pokedex.php";
 
 <body>
 
-    me gustan los trenes
-
-    a mi tambien me gustan "los trenes"
-
-    a mi no me gustan los trenes
 
 </body>
 
