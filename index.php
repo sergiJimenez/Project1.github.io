@@ -13,6 +13,8 @@ include "php_library/pokedex.php";
 </head>
 
 <body>
+
+me gustan los trenes
    
 </body>
 
