@@ -20,6 +20,8 @@ include "php_library/pokedex.php";
 
     a mi no me gustan los trenes
 
+    aún voy borracho, feliz jueves!
+
 </body>
 
 </html>
