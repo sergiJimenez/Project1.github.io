@@ -15,6 +15,8 @@ include "php_library/pokedex.php";
 <body>
 
 
+    aún voy borracho, feliz jueves!
+
 </body>
 
 </html>
