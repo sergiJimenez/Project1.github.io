@@ -1,0 +1,23 @@
+$bgHeader: white;
+$bgHtml: grey;
+
+
+html{
+    background-color: $bgHtml;
+}
+
+.header{
+    background-color: $bgHeader;
+    border: 1px;
+    height: 30p;
+}
+
+.titulo{
+    float: right;
+    width: 50%;
+}
+
+.logo{
+    float: left;
+    height: 100%;
+}
