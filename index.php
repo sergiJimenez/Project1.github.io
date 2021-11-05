@@ -15,17 +15,12 @@
 </head>
 <body>
 
-    <!--HEADER-->
-    <header class="header">
-        <span class="logo">
-            <img src="./media/1554769860267-2-removebg-preview.png" class="imgLogo">
-        </span>
-        <span class="titulo">
-            <h2 class="titulo">Centre d'Estudis Politecncis</h2>
-        </span>
-    </header>
+<?php
+  include __DIR__. '/partials/header.php';
+?>
 
     <!--CAROUSEL-->
+  <div class="alinearWeb">
     <div class="padding-carousel">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -33,7 +28,7 @@
                 <img src="https://wowslider.com/sliders/demo-80/data1/images/sheet546475_1920.jpg" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="./media/Diseño sin título-2.png" class="d-block w-100" alt="...">
+                <img src="./media/Entrada cep.png" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
                 <img src="https://wowslider.com/sliders/demo-80/data1/images/plumage176723_1920.jpg" class="d-block w-100" alt="...">
@@ -51,8 +46,24 @@
     </div>
    
     <!--EQUIPO CREATIVO-->
-    <h3>Equipo creativo</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam autem delectus ad suscipit maxime sit ipsam numquam vel molestiae quibusdam? Reprehenderit unde optio inventore explicabo porro sint error modi autem!</p>
+    <div class="equipo">
+      <div class="izquierda"></div>
+      <div class="centro">
+        <h3>Coneix l'equip</h3>
+          <br>
+        <p>
+          Nosaltres som persones molt diferents amb una ambicio en comú, aprendre a programar. Som tots de diferents llocs de Barcelona.
+        </p>
+      </div>
+      <div class="derecha"></div>
+    </div>
+  </div>
+
+  <!--FOOTER-->
+<?php
+  include __DIR__. '/partials/footer.php';
+?>
+
     <!-- JavaScript Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
