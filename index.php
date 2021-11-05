@@ -15,6 +15,11 @@
 </head>
 <body>
 
+<?php
+  $pepe = __DIR__. 'Project1.github.io/partials/header.php';
+  print_r($pepe);
+  include __DIR__. 'Project1.github.io/partials/header.php';
+?>
     <!--HEADER-->
     <header class="header" id="inicio">
         <span class="logo">
