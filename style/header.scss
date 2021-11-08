@@ -1,60 +1,16 @@
-$bgHeader: white;
-$bgHtml: grey;
 
-
-.header{
-    background-color: $bgHeader;
-    border: 1px;
-    display: inline-block; 
-    width: 100%;
+html, body{
+    height: 100%;
+    font-size: 1rem;
 }
 
-.logo{
-    float: left;
-    width: 30%;
-    padding: 10px;
-    height: 60px;
-}
+#intro-example {
+    height: 400px;
+  }
 
+  @media (min-width: 992px) {
+    #intro-example {
+      height: 600px;
+    }
+  }
 
-.imgLogo{
-    height: 39px;
-    margin-top: 10px;
-    margin-left: 30px;
-}
-
-.padding-carousel{
-    padding: 10px;
-    display: block relative;
-    box-sizing: border-box;
-    height: 300px;
-}
-
-
-
-.marginNavBar{
-    margin-right: 20px;
-    padding: 10px;
-}
-
-.banderas{
-    width: 20px;
-}
-
-.verBandera{
-    display: none;
-}
-
-.alinearWeb{
-    align-items: center;
-flex-direction: column;
-}
-
-.equipo{
-    margin-top: 300px;
-    text-align: center;
-    background-color: #cfcfd1;
-    padding: 20px;
-    border-radius: 10px;
-    
-}

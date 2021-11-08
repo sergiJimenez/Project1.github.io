@@ -15,8 +15,9 @@
 </head>
 <body>
 
+
 <?php
-  include __DIR__. '/partials/header.php';
+  include __DIR__. '/partials/navbar.php';
 ?>
 
     <!--CAROUSEL-->
@@ -28,7 +29,7 @@
                 <img src="https://wowslider.com/sliders/demo-80/data1/images/sheet546475_1920.jpg" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="./media/Entrada cep.png" class="d-block w-100" alt="...">
+                <img src="./media/Entrada_cep.png" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
                 <img src="https://wowslider.com/sliders/demo-80/data1/images/plumage176723_1920.jpg" class="d-block w-100" alt="...">
