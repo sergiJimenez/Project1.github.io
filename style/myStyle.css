@@ -1,0 +1,23 @@
+html, body {
+  height: 100%;
+  font-size: 1rem;
+}
+
+#intro-example {
+  height: 400px;
+}
+
+@media (min-width: 992px) {
+  #intro-example {
+    height: 600px;
+  }
+}
+
+.equipo {
+  margin-left: 5px;
+}
+
+.spacing {
+  height: 30px;
+}
+/*# sourceMappingURL=myStyle.css.map */
