@@ -12,4 +12,35 @@ html, body {
     height: 600px;
   }
 }
+
+.marginNavBar {
+  margin-right: 20px;
+  padding: 10px;
+}
+
+.banderas {
+  width: 20px;
+}
+
+.verBandera {
+  display: none;
+}
+
+.alinearWeb {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.equipo {
+  margin-top: 300px;
+  text-align: center;
+  background-color: #cfcfd1;
+  padding: 20px;
+  border-radius: 10px;
+}
 /*# sourceMappingURL=header.css.map */
