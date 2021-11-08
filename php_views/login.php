@@ -1,3 +1,14 @@
+<?php
+require("db.php");
+$error = "";
+session_start();
+if (isset($_POST["submit"])) {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $sql = "SELECT * FROM admin_user WHERE username='$username' AND password='$password'";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,17 +33,17 @@
                         <div class="row">
                             <label for="username" class="col-sm-4 col-form-label">Usuario</label>
                             <div class="col-sm">
-                                <input type="username" id="username" class="form-control" placeholder="E-mail" required="required" autofocus>
+                                <input type="username" name="username" class="form-control" placeholder="E-mail" required="required" autofocus>
                             </div>
                         </div>
                         <div class="row pt-2">
                             <label for="inputPassword" class="col-sm-4 col-form-label">Contraseña</label>
                             <div class="col-sm">
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="required">
+                                <input type="password" name="password" class="form-control" placeholder="Contraseña" required="required">
                             </div>
                         </div>
                         <div class="row mt-4 justify-content-center">
-                            <input type="submit" class="btn btn-outline-success" href="#" value="Entrar">
+                            <input type="submit" id="submit" class="btn btn-outline-success" href="#" value="Entrar">
                         </div>
                     </form>
                 </div>
