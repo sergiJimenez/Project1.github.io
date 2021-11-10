@@ -1,11 +1,20 @@
 <?php
-require("db.php");
+//require("db.php");
 $error = "";
 session_start();
 if (isset($_POST["submit"])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
     $sql = "SELECT * FROM admin_user WHERE username='$username' AND password='$password'";
+    $res = mysqli_query($con, $sql);
+    $count = mysqli_num_rows($res);
+    if ($count > 0) {
+        $row = mysqli_fetch_assoc($res);
+        print_r($row);
+        die();
+    } else {
+        $error = "Unvalid credentials. Please, enter the correct login details.";
+    }
 }
 ?>
 
@@ -44,6 +53,7 @@ if (isset($_POST["submit"])) {
                         </div>
                         <div class="row mt-4 justify-content-center">
                             <input type="submit" id="submit" class="btn btn-outline-success" href="#" value="Entrar">
+                            <?php echo $error ?>
                         </div>
                     </form>
                 </div>
