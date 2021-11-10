@@ -57,6 +57,9 @@ if (!isset($_SESSION["IS_LOGIN"])) {
                 </a>
             </li>
         </ul>
+        <div id="content-wrapper">
+
+        </div>
         <!-- SIDEBAR -->
     </div>
 </body>

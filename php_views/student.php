@@ -46,4 +46,4 @@ if (isset($_SESSION["ROLE"]) && $_SESSION["ROLE"] != "1") {
         </div>
     </div>
 </div>
-<?php include("footer.php") ?>
+<!-- <//?php include("footer.php") ?> -->

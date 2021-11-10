@@ -16,4 +16,4 @@ if (isset($_SESSION["ROLE"]) && $_SESSION["ROLE"] != "1") {
   <hr>
   <p>This is a great starting point</p>
 </div>
-<?php include("php_views/footer.php") ?>
+<!-- <//?php include("php_views/footer.php") ?> -->
