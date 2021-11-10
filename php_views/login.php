@@ -1,5 +1,5 @@
 <?php
-//require("db.php");
+//require("database.php");
 $error = "";
 session_start();
 if (isset($_POST["submit"])) {
@@ -10,8 +10,16 @@ if (isset($_POST["submit"])) {
     $count = mysqli_num_rows($res);
     if ($count > 0) {
         $row = mysqli_fetch_assoc($res);
-        print_r($row);
-        die();
+        $_SESSION["ROLE"] = $row->role;
+        $_SESSION["IS_LOGIN"] = "yes";
+        if ($row["role"] == 1) {
+            header("location:index.php");
+            die();
+        }
+        if ($row["role"] == 2) {
+            header("location:news.php");
+            die();
+        }
     } else {
         $error = "Unvalid credentials. Please, enter the correct login details.";
     }

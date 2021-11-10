@@ -1,5 +1,5 @@
 <?php
-include("header.php");
+include("php_views/header.php");
 if (isset($_SESSION["ROLE"]) && $_SESSION["ROLE"] != "1") {
   header("location:news.php");
   die();
@@ -16,4 +16,4 @@ if (isset($_SESSION["ROLE"]) && $_SESSION["ROLE"] != "1") {
   <hr>
   <p>This is a great starting point</p>
 </div>
-<?php include("footer.php") ?>
+<?php include("php_views/footer.php") ?>

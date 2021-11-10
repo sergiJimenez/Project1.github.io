@@ -22,8 +22,28 @@ if (isset($_SESSION["ROLE"]) && $_SESSION["ROLE"] != "1") {
                             <th>City</th>
                         </tr>
                     </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>City</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <th>Sergi</th>
+                            <th>sperezj2021@cepnet.net</th>
+                            <th>L'Hospitalet De Llobregat</th>
+                        </tr>
+                        <tr>
+                            <th>Columbus</th>
+                            <th>igres080211@hotmail.com</th>
+                            <th>Ohio</th>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
+<?php include("footer.php") ?>
