@@ -1,5 +1,5 @@
 <!--FOOTER-->
-<footer class="text-center text-white fixed-bottom" style="background-color: #f1f1f1;">
+<footer class="text-center text-white footer-bg" >
   <div class="container pt-4">
     <!-- Social media -->
     <section class="mb-4">
@@ -9,22 +9,22 @@
         href="https://es-es.facebook.com/politecnics/"
         role="button"
         data-mdb-ripple-color="dark"
-        ><i class="fab fa-twitter-f"></i
+        ><i class="fab fa-facebook"></i
       ></a>
 
       <!-- Twitter -->
       <a
         class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#https://twitter.com/CE_Politecnics"
+        href="https://twitter.com/CE_Politecnics"
         role="button"
         data-mdb-ripple-color="dark"
-        ><i class="fab fa-twitter-f"></i
+        ><i class="fab fa-twitter"></i
       ></a>
 
       <!-- Instagram -->
       <a
         class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#https://www.instagram.com/ce_politecnics/?hl=es"
+        href="https://www.instagram.com/ce_politecnics/?hl=es"
         role="button"
         data-mdb-ripple-color="dark"
         ><i class="fab fa-instagram"></i
@@ -33,7 +33,7 @@
       <!-- Linkedin -->
       <a
         class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#https://www.linkedin.com/school/politecnics/"
+        href="https://www.linkedin.com/school/politecnics/"
         role="button"
         data-mdb-ripple-color="dark"
         ><i class="fab fa-linkedin"></i
