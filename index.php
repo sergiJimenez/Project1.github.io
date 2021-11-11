@@ -51,10 +51,12 @@
       <br>
       <br>
       <!--Ciclos-->
-      <div class="row row-cols-2 mx-auto" style="width: max-width;">
+      <div class="row mx-auto " style="width: auto; margin: auto auto">
 
+      <div class="col-2"></div>
+      
       <!--Marketing i comerç-->
-        <div class="col-lg-2 col-sm-4 card text-black mb-3 border-0" style="max-width: 18rem;">
+        <div class="card text-black mb-3 border-0" style="max-width: 18rem;">
           <div class="card-header border-0" style="background-color: white;">
             <img src="https://lh6.googleusercontent.com/TLj8l3V-Dow8X_uk6Ryu_25o-jJ5Uego09eCdfVV6ja1DmqG4ZtRTd1Y-RtUa7feYZWYSjpD9ZqeF-hghl14Di-kSXiWofPSZvFAfGU6TXYtPc3wbpdgr1OJoqGW2GXF5g=w1280" alt="Comerç i màrqueting" width="100%">
           </div>
@@ -78,7 +80,7 @@
         <!--Marketing i comerç-->
 
         <!--Administració i gestio-->
-        <div class="col-lg-2 col-sm-4 card text-black mb-3 border-0" style="max-width: 18rem;">
+        <div class="card text-black mb-3 border-0" style="max-width: 18rem;">
           <div class="card-header border-0" style="background-color: white;">
             <img src="https://lh5.googleusercontent.com/XixyuFKl5PzDQ9Sjt-vpu9eAEh75WziigzpnFKlKATefBDz87xu_SPWYfSTLzdim8rTW8kRY9b6momF-JPYzhyaZhHUWCMWryAwvReoKPOWqy7Q7V7arqCZ9u9qicFxknA=w1280" alt="Administració i gestio" width="100%">
           </div>
@@ -99,7 +101,7 @@
         <!--Administració i gestio-->
 
         <!--Hosteleria i Turisme-->
-        <div class="col-lg-2 col-sm-4 card text-black mb-3 border-0" style="max-width: 18rem;">
+        <div class="card text-black mb-3 border-0" style="max-width: 18rem;">
           <div class="card-header border-0" style="background-color: white;">
             <img src="https://lh5.googleusercontent.com/DLgubrh27SIguXaLvHA-frO6U7_9vonFFnsADxKuZzoTAnPXFQj_rg2jDoRT6FVJR1iUiGnxe5DI7DR7p5weVFQwU8u8z5PCFPQ3MN4RRYEnx4x8YVKATOoji9d5-atexg=w1280" alt="Hosteleria i Turisme" width="100%">
           </div>
@@ -114,7 +116,7 @@
         <!--Hosteleria i Turisme-->
 
         <!--Informàtica i Comunicacions-->
-        <div class="col-lg-2 col-sm-4 card text-black mb-3 border-0" style="max-width: 18rem;">
+        <div class="card text-black mb-3 border-0" style="max-width: 18rem;">
           <div class="card-header border-0" style="background-color: white;">
             <img src="https://lh5.googleusercontent.com/Oboo4Dl0BNBt6lh2kgVgsS88bSrR5Pkdxq6nXQRKFu28qn2eAVal_mO1Fxf9NE2M0548HNjIU8yaZtTm1T0RZmCsxKU28H-F6Jh1zLBbSzsQYlS8a-1crwirG7jrSVZi4w=w1280" alt="Informàtica i Comunicacions" width="100%">
           </div>
@@ -136,7 +138,12 @@
         <div class="col-2"></div>
         <!--Espacio derecha-->
       </div>
-      <p>s</p>
+
+
+    
+
+
+
       <!--EQUIPO CREATIVO-->
       <div class="row equipo">
         <div class="col-2"> </div>
