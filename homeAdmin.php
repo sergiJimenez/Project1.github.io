@@ -22,7 +22,7 @@
     <main>
       <div class="container-fluid">
         <h1 class="mt-4">
-          Welcome to the admin page.
+          Welcome to the admin page
         </h1>
         <div class="card mb-4">
           <div class="card-body">

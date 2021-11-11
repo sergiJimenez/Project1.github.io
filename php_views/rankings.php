@@ -23,7 +23,7 @@
                     Rankings
                 </h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../homeAdmin.php">Home</a></li>
                     <li class="breadcrumb-item active">Rankings</li>
                 </ol>
                 <div class="card mb-4">
