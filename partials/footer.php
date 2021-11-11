@@ -9,9 +9,14 @@
         href="https://es-es.facebook.com/politecnics/"
         role="button"
         data-mdb-ripple-color="dark"
+<<<<<<< HEAD
         >
         <img src="../media/logo_facebook.png" alt="Facebook">
         </a>
+=======
+        ><i class="fab fa-twitter-f"></i
+      ></a>
+>>>>>>> 2bd2581d19c0676f755181eec834bff2bed4f85b
 
       <!-- Twitter -->
       <a

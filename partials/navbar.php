@@ -25,6 +25,5 @@
             </li>
           </ul>
           </div>
-          <p>hola</p>
         </div>
     </nav> 
