@@ -31,4 +31,9 @@ html, body {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.img-ciclos {
+  display: block;
+  width: 50%;
+}
 /*# sourceMappingURL=myStyle.css.map */

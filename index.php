@@ -21,80 +21,97 @@
   <?php
   include __DIR__ . '/partials/navbar.php';
   ?>
-
-  <!--CAROUSEL-->
-  <div class="alinearWeb">
-    <div class="padding-carousel">
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./media/cep_portal.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="./media/Entrada_cep.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="./media/cep_carousel.png" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-
-    <br>
-    <br>
-
-    <div class="row">
-      <div class="col-2"> </div>
-
-      <div class="col-8">
-        <div class="row">
-          <div class="col-2"></div>
-          <div class="col-2"></div>
-          <div class="col-2"></div>
-          <div class="col-2"></div>
-        </div>
-      </div>
-
-      <div class="col-2"></div>
-    </div>
-<p>s</p>
-    <!--EQUIPO CREATIVO-->
-    <div class="row equipo">
-      <div class="col-2"> </div>
-
-      <div class="col-8 padding-equipo">
-        <div class="row">
-          <div class="text-black">
-            <div class="izquierda"></div>
-            <div>
-              <h3><b>It's my Turn.</b> La fira dels talents profesionals</h3>
-              <br>
-              <p>
-                <b>Presentació</b>  <br>
-                La formació professional capacita per a l'exercici qualificat de diverses professions i proporciona la formació necessària per adquirir les competències professionals i el coneixement propis de cada sector. <br><br>
-                Al Politècnics tractem de proporcionar un entorn que permeti el creixement personal i professional, proporcionant un espai segur on descobrir i practicar les competències que ens han de permetre gaudir d’una llarga i exitosa trajectòria dins de la família professional que s'ha escollit desenvolupar. <br><br>
-                Aquest viatge personal com a integrant d'equips d’aprenentatge desemboca en la fira IT’S MY TURN, que posa en contacte a empreses, entitats i professionals, i on tots i cadascun del nostre alumnat disposen de l’oportunitat de presentar-se, mostrar i demostrar les competències professionals i coneixements adquirits durant la seva estada al Politècnics. <br><br>
-                Seguim.
-              </p>
+  <div class="display-flex">
+    <!--CAROUSEL-->
+    <div class="alinearWeb">
+      <div class="padding-carousel">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./media/cep_portal.png" class="d-block w-100" alt="...">
             </div>
-            <div class="derecha"></div>
+            <div class="carousel-item">
+              <img src="./media/Entrada_cep.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./media/cep_carousel.png" class="d-block w-100" alt="...">
+            </div>
           </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
 
-      <div class="col-2"></div>
+      <br>
+      <br>
+
+      <div class="row row-cols-2">
+        <div class="col-2"></div>
+
+        <div class="card text-black mb-3 border-0" style="max-width: 18rem;">
+          <div class="card-header border-0" style="background-color: white;">
+            <img src="https://lh6.googleusercontent.com/TLj8l3V-Dow8X_uk6Ryu_25o-jJ5Uego09eCdfVV6ja1DmqG4ZtRTd1Y-RtUa7feYZWYSjpD9ZqeF-hghl14Di-kSXiWofPSZvFAfGU6TXYtPc3wbpdgr1OJoqGW2GXF5g=w1280" alt="" width="100%">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><b>Comerç i màrqueting</b></h5>
+              <br>
+            <p class="card-text"><b>ACTIVITATS COMERCIALS</b></p>
+            <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-acom2a-21?authuser=0">ACOM2 [Perfils]</a> </p>
+            
+            <p class="card-text"><b>MÀRQUETING I PUBLICITAT</b></p>
+            <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-marp2a-21?authuser=0">MARP 2A [Perfils]</a> </p>
+            <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-marp2b-21?authuser=0">MARP 2B [Perfils]</a> </p>
+            <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-marp2s-21?authuser=0">MARP 2S [Perfils]</a> </p>
+            <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-marp2t-21?authuser=0">MARP 2T [Perfils]</a> </p>
+
+            <p class="card-text"><b>COMERÇ INTERNACIONAL</b></p>
+            <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-cint2t-21?authuser=0">CINT2 [Perfils]</a> </p>
+
+          </div>
+        </div>
+
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+
+        <div class="col-2"></div>
+      </div>
+      <p>s</p>
+      <!--EQUIPO CREATIVO-->
+      <div class="row equipo">
+        <div class="col-2"> </div>
+
+        <div class="col-8 padding-equipo">
+          <div class="row">
+            <div class="text-black">
+              <div class="izquierda"></div>
+              <div>
+                <h3><b>It's my Turn.</b> La fira dels talents profesionals</h3>
+                <br>
+                <p>
+                  <b>Presentació</b> <br>
+                  La formació professional capacita per a l'exercici qualificat de diverses professions i proporciona la formació necessària per adquirir les competències professionals i el coneixement propis de cada sector. <br><br>
+                  Al Politècnics tractem de proporcionar un entorn que permeti el creixement personal i professional, proporcionant un espai segur on descobrir i practicar les competències que ens han de permetre gaudir d’una llarga i exitosa trajectòria dins de la família professional que s'ha escollit desenvolupar. <br><br>
+                  Aquest viatge personal com a integrant d'equips d’aprenentatge desemboca en la fira IT’S MY TURN, que posa en contacte a empreses, entitats i professionals, i on tots i cadascun del nostre alumnat disposen de l’oportunitat de presentar-se, mostrar i demostrar les competències professionals i coneixements adquirits durant la seva estada al Politècnics. <br><br>
+                  Seguim.
+                </p>
+              </div>
+              <div class="derecha"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-2"></div>
+      </div>
+
     </div>
-
   </div>
-
   <!--FOOTER-->
   <?php
   include __DIR__ . '/partials/footer.php';
