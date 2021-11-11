@@ -87,3 +87,4 @@ if (!isset($_SESSION["IS_LOGIN"])) {
                 </div>
             </nav>
         </div>
+        <!-- NO CERRAR NADA, DEJAR EL FINAL ASÍ -->
