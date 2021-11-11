@@ -6,11 +6,12 @@
       <!-- Facebook -->
       <a
         class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
+        href="https://es-es.facebook.com/politecnics/"
         role="button"
         data-mdb-ripple-color="dark"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
+        >
+        <img src="../media/logo_facebook.png" alt="Facebook">
+        </a>
 
       <!-- Twitter -->
       <a
@@ -18,7 +19,7 @@
         href="#https://twitter.com/CE_Politecnics"
         role="button"
         data-mdb-ripple-color="dark"
-        ><i class="fab fa-twitter"></i
+        ><i class="fab fa-twitter-f"></i
       ></a>
 
       <!-- Instagram -->
