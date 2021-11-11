@@ -50,20 +50,20 @@
 
       <br>
       <br>
+      <!--Ciclos-->
+      <div class="row row-cols-2 mx-auto" style="width: max-width;">
 
-      <div class="row row-cols-2">
-        <div class="col-2"></div>
-
-        <div class="card text-black mb-3 border-0" style="max-width: 18rem;">
+      <!--Marketing i comerç-->
+        <div class="col-lg-2 col-sm-4 card text-black mb-3 border-0" style="max-width: 18rem;">
           <div class="card-header border-0" style="background-color: white;">
-            <img src="https://lh6.googleusercontent.com/TLj8l3V-Dow8X_uk6Ryu_25o-jJ5Uego09eCdfVV6ja1DmqG4ZtRTd1Y-RtUa7feYZWYSjpD9ZqeF-hghl14Di-kSXiWofPSZvFAfGU6TXYtPc3wbpdgr1OJoqGW2GXF5g=w1280" alt="" width="100%">
+            <img src="https://lh6.googleusercontent.com/TLj8l3V-Dow8X_uk6Ryu_25o-jJ5Uego09eCdfVV6ja1DmqG4ZtRTd1Y-RtUa7feYZWYSjpD9ZqeF-hghl14Di-kSXiWofPSZvFAfGU6TXYtPc3wbpdgr1OJoqGW2GXF5g=w1280" alt="Comerç i màrqueting" width="100%">
           </div>
           <div class="card-body">
             <h5 class="card-title"><b>Comerç i màrqueting</b></h5>
-              <br>
+            <br>
             <p class="card-text"><b>ACTIVITATS COMERCIALS</b></p>
             <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-acom2a-21?authuser=0">ACOM2 [Perfils]</a> </p>
-            
+
             <p class="card-text"><b>MÀRQUETING I PUBLICITAT</b></p>
             <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-marp2a-21?authuser=0">MARP 2A [Perfils]</a> </p>
             <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-marp2b-21?authuser=0">MARP 2B [Perfils]</a> </p>
@@ -75,12 +75,66 @@
 
           </div>
         </div>
+        <!--Marketing i comerç-->
+
+        <!--Administració i gestio-->
+        <div class="col-lg-2 col-sm-4 card text-black mb-3 border-0" style="max-width: 18rem;">
+          <div class="card-header border-0" style="background-color: white;">
+            <img src="https://lh5.googleusercontent.com/XixyuFKl5PzDQ9Sjt-vpu9eAEh75WziigzpnFKlKATefBDz87xu_SPWYfSTLzdim8rTW8kRY9b6momF-JPYzhyaZhHUWCMWryAwvReoKPOWqy7Q7V7arqCZ9u9qicFxknA=w1280" alt="Administració i gestio" width="100%">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><b>Administració i gestio</b></h5>
+            <br>
+            <p class="card-text"><b>GESTIÓ ADMINISTRATIVA</b></p>
+            <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-gad2a-21?authuser=0">GAD2A [Perfils]</a> </p>
+
+            <p class="card-text"><b>ASSISTÈNCIA A LA DIRECCIÓ</b></p>
+            <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-adir2a-21?authuser=0">ADIR2A [Perfils]</a> </p>
+
+            <p class="card-text"><b>ADMINISTRACIÓ I FINANCES</b></p>
+            <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-afi2a-21?authuser=0">AFI2A [Perfils]</a> </p>
+
+          </div>
+        </div>
+        <!--Administració i gestio-->
+
+        <!--Hosteleria i Turisme-->
+        <div class="col-lg-2 col-sm-4 card text-black mb-3 border-0" style="max-width: 18rem;">
+          <div class="card-header border-0" style="background-color: white;">
+            <img src="https://lh5.googleusercontent.com/DLgubrh27SIguXaLvHA-frO6U7_9vonFFnsADxKuZzoTAnPXFQj_rg2jDoRT6FVJR1iUiGnxe5DI7DR7p5weVFQwU8u8z5PCFPQ3MN4RRYEnx4x8YVKATOoji9d5-atexg=w1280" alt="Hosteleria i Turisme" width="100%">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><b>Hosteleria i Turisme</b></h5>
+            <br>
+            <p class="card-text"><b>AGÈNCIES DE VIATGE I GESTIÓ D'ESDEVENIMENTS</b></p>
+            <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-avie2a-21?authuser=0">AVIE2A [Perfils]</a> </p>
+
+          </div>
+        </div>
+        <!--Hosteleria i Turisme-->
+
+        <!--Informàtica i Comunicacions-->
+        <div class="col-lg-2 col-sm-4 card text-black mb-3 border-0" style="max-width: 18rem;">
+          <div class="card-header border-0" style="background-color: white;">
+            <img src="https://lh5.googleusercontent.com/Oboo4Dl0BNBt6lh2kgVgsS88bSrR5Pkdxq6nXQRKFu28qn2eAVal_mO1Fxf9NE2M0548HNjIU8yaZtTm1T0RZmCsxKU28H-F6Jh1zLBbSzsQYlS8a-1crwirG7jrSVZi4w=w1280" alt="Informàtica i Comunicacions" width="100%">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><b>Informàtica i Comunicacions</b></h5>
+            <br>
+            <p class="card-text"><b>DESENVOLUPAMENT D'APLICACIONS MULTIPLATAFORMA</b></p>
+            <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-dam2ab-21?authuser=0">DAM2AB [Perfils]</a> </p>
+
+            <p class="card-text"><b>DESENVOLUPAMENT D'APLICACIONS WEB</b></p>
+            <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-daw2a-21?authuser=0">DAW2A [Perfils]</a> </p>
+            <p class="card-text"> <a href="https://sites.google.com/cepnet.net/imt-politecnics/imt21/qui-som-21/qui-som-daw2b-21?authuser=0">DAW2B [Perfils]</a> </p>
+
+
+          </div>
+        </div>
+        <!--Informàtica i Comunicacions-->
 
         <div class="col-2"></div>
-        <div class="col-2"></div>
-        <div class="col-2"></div>
-
-        <div class="col-2"></div>
+        <!--Espacio derecha-->
       </div>
       <p>s</p>
       <!--EQUIPO CREATIVO-->
@@ -107,7 +161,6 @@
           </div>
         </div>
 
-        <div class="col-2"></div>
       </div>
 
     </div>
