@@ -1,5 +1,5 @@
 <!--FOOTER-->
-<footer class="text-center text-white" style="background-color: #f1f1f1;">
+<footer class="text-center text-white fixed-bottom" style="background-color: #f1f1f1;">
   <div class="container pt-4">
     <!-- Social media -->
     <section class="mb-4">
