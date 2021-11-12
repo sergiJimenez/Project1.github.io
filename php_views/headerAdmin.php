@@ -32,7 +32,7 @@ if (!isset($_SESSION["IS_LOGIN"])) {
             <div class="input-group">
                 <input class="form-control" type="text" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2" />
                 <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">
+                    <button class="btn btn-dark" type="button">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
@@ -45,7 +45,7 @@ if (!isset($_SESSION["IS_LOGIN"])) {
                     <i class="fas fa-user fa-fw"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="/Project1.github.io/php_views/logout.php">
+                    <a class="dropdown-item" href="/Project1.github.io/php_views/logoutAdmin.php">
                         Logout
                     </a>
                 </div>
@@ -65,7 +65,7 @@ if (!isset($_SESSION["IS_LOGIN"])) {
                             </div>
                             Home
                         </a>
-                        <a class="nav-link" href="/Project1.github.io/php_views/rankings.php">
+                        <a class="nav-link" href="/Project1.github.io/php_views/rankingsAdmin.php">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-trophy"></i>
                             </div>
@@ -73,7 +73,7 @@ if (!isset($_SESSION["IS_LOGIN"])) {
                         </a>
                         <?php //} 
                         ?>
-                        <a class="nav-link" href="/Project1.github.io/php_views/userInfo.php">
+                        <a class="nav-link" href="/Project1.github.io/php_views/userInfoAdmin.php">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-user"></i>
                             </div>
@@ -87,4 +87,6 @@ if (!isset($_SESSION["IS_LOGIN"])) {
                 </div>
             </nav>
         </div>
-        <!-- NO CERRAR NADA, DEJAR EL FINAL ASÍ -->
+</body>
+
+</html>

@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <?php include "php_views/header.php"; ?>
+  <?php include "php_views/headerAdmin.php"; ?>
   <div id="layoutSidenav_content">
     <main>
       <div class="container-fluid">
@@ -35,7 +35,7 @@
       </div>
     </main>
   </div>
-  <?php require "php_views/footer.php"; ?>
+  <?php require "php_views/footerAdmin.php"; ?>
 </body>
 
 </html>

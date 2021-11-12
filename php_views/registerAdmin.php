@@ -50,7 +50,7 @@
                                             </div><br><br>
                                         </div>
                                         <div class="form-group mt-4 mb-0">
-                                            <a class="btn btn-dark btn-block" href="check.php">
+                                            <a class="btn btn-dark btn-block" href="../homeAdmin.php">
                                                 Create Account
                                             </a><!-- BOTON EN EL CENTRO -->
                                         </div>
@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="card-footer text-center">
                                     <div class="small">
-                                        <a href="login.php">
+                                        <a href="loginAdmin.php">
                                             Have an account? Go to login.
                                         </a>
                                     </div>
