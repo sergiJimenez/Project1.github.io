@@ -14,7 +14,7 @@
           <a class="nav-link text-secondary" href="/Project1.github.io/homeAdmin.php">Admin</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-secondary" href="#">Jocs</a>
+          <a class="nav-link text-secondary" href="/Project1.github.io/indexAboutUs.php">About Us</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-secondary" href="#">Link</a>

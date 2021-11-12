@@ -21,7 +21,7 @@
             <div class="col">
                 <div class="card">
                     <div class="front">
-                        <img src="media/foto Borja.jpeg" alt="">
+                        <img src="/media/borja.jpeg" alt="">
                     </div>
                     <div class="back">
                         <div class="back-content middle">
@@ -35,7 +35,7 @@
             <div class="col">
                 <div class="card">
                     <div class="front">
-                        <img src="media/foto Sergi.jpeg" alt="">
+                        <img src="/media/sergi.jpeg" alt="">
                     </div>
                     <div class="back">
                         <div class="back-content middle">
@@ -49,7 +49,7 @@
             <div class="col">
                 <div class="card">
                     <div class="front">
-                        <img src="media/foto Raul.jpeg" alt="">
+                        <img src="/media/raul.jpeg" alt="">
                     </div>
                     <div class="back">
                         <div class="back-content middle">
@@ -63,7 +63,7 @@
             <div class="col">
                 <div class="card">
                     <div class="front">
-                        <img src="media/foto Aitor.png" alt="">
+                        <img src="/media/aitor.png" alt="">
                     </div>
                     <div class="back">
                         <div class="back-content middle">
