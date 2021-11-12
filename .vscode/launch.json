@@ -1,5 +1,19 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080/Project1.github.io/index.php",
+=======
+>>>>>>> f7721b62c31422671298a4c4e4addd0cb066430b
     "version": "0.2.0",
     "configurations": [
         {
@@ -12,6 +26,7 @@
             //"url": "http://localhost:8080/Project1.github.io/php_views/register.php",
             //"url": "http://localhost:8080/Project1.github.io/php_views/rankings.php",
             //"url": "http://localhost:8080/Project1.github.io/php_views/userInfo.php",
+<<<<<<< HEAD
 =======
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -24,6 +39,9 @@
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:8080/Project1.github.io/index.php",
 >>>>>>> master
+=======
+>>>>>>> admin
+>>>>>>> f7721b62c31422671298a4c4e4addd0cb066430b
             "webRoot": "${workspaceFolder}"
         }
     ]
