@@ -1,4 +1,3 @@
-<!--navbar-->
 <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand text-secondary align-self-center" href="/Project1.github.io/index.php">
