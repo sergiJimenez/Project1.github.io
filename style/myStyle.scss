@@ -1,0 +1,40 @@
+
+html, body{
+    height: 100%;
+    font-size: 1rem;
+    background-color: #FFFFFF;
+}
+
+#intro-example {
+    height: 400px;
+  }
+
+  @media (min-width: 992px) {
+    #intro-example {
+      height: 600px;
+    }
+  }
+
+  .equipo{
+    border-radius: 5px;
+    background-color: #F2F2F2;
+
+  }
+
+  .spacing {
+    height: 30px;
+  }
+
+  .footer-bg{
+    background-color: #9E9E9E;
+  }
+
+  .padding-equipo{
+    padding-top: 10px;
+    padding-bottom: 10px;;
+  }
+
+  .img-ciclos{
+    display: block;
+    width: 50%;
+  }
