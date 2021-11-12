@@ -15,14 +15,14 @@
 </head>
 
 <body>
-    <?php include "partials/navbar.php" ?>
-    <h1 class="titulo">TeamWork</h1>
+    <?php include "partials/navbar.php" ?><br><br>
+    <h1 class="titulo">Team</h1><br><br>
     <div class="container">
         <div class="row row-cols-1 row-cols-md-4 g-5 mt-4">
             <div class="col">
                 <div class="card">
                     <div class="front">
-                        <img src="media/borja.jpeg" alt="">
+                        <img src="media/AboutUsPics/borja.jpeg" alt="">
                     </div>
                     <div class="back">
                         <div class="back-content middle">
@@ -35,7 +35,7 @@
             <div class="col">
                 <div class="card">
                     <div class="front">
-                        <img src="media/sergi.jpeg" alt="">
+                        <img src="media/AboutUsPics/sergi.jpeg" alt="">
                     </div>
                     <div class="back">
                         <div class="back-content middle">
@@ -48,7 +48,7 @@
             <div class="col">
                 <div class="card">
                     <div class="front">
-                        <img src="media/raul.jpeg" alt="">
+                        <img src="media/AboutUsPics/raul.jpeg" alt="">
                     </div>
                     <div class="back">
                         <div class="back-content middle">
@@ -61,7 +61,7 @@
             <div class="col">
                 <div class="card">
                     <div class="front">
-                        <img src="media/aitor.png" alt="">
+                        <img src="media/AboutUsPics/aitor.png" alt="">
                     </div>
                     <div class="back">
                         <div class="back-content middle">

@@ -2,7 +2,7 @@
 <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand text-secondary align-self-center" href="/Project1.github.io/index.php">
-      <img src="./media/logo_cep_simple.png" alt="Inicio" width="25" height="25" class="d-inline-block align-text-top">
+      <img src="/Project1.github.io/media/LandingPage/Logos/logo_cep_simple.png" alt="Inicio" width="25" height="25" class="d-inline-block align-text-top">
       Politecnics Barcelona
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">

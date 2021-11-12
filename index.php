@@ -27,17 +27,17 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="./media/arcade.jpg" class="d-block w-100" alt="Carousel portal cep">
+              <img src="./media/LandingPage/Carrousel/arcade.jpg" class="d-block w-100" alt="Carousel portal cep">
               <div class="carousel-caption justify-content-start">
                 <p class="fs-1 text-black">Tenim una serie de jocs que potser t'agraden, vols provar?</p> <br>
                 <button type="button" class="btn btn-lg btn-dark" href="">Juga ara!</button>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="./media/Entrada_cep.png" class="d-block w-100" alt="Carousel entrada cep">
+              <img src="./media/LandingPage/Carrousel/Entrada_cep.png" class="d-block w-100" alt="Carousel entrada cep">
             </div>
             <div class="carousel-item">
-              <img src="./media/cep_carousel.png" class="d-block w-100" alt="Carousel cep">
+              <img src="./media/LandingPage/Carrousel/cep_carousel.png" class="d-block w-100" alt="Carousel cep">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -56,7 +56,7 @@
         <!--Marketing i comerç-->
         <div class="card text-black mb-3 border-0" style="max-width: 18rem;">
           <div class="card-header border-0" style="background-color: white;">
-            <img src="media/persona1-removebg-preview.png" alt="Comerç i màrqueting" width="100%">
+            <img src="media/LandingPage/Degree/persona1-removebg-preview.png" alt="Comerç i màrqueting" width="100%">
           </div>
           <div class="card-body">
             <h3 class="card-title"><b>Comerç i màrqueting</b></h3>
@@ -76,7 +76,7 @@
         <!--Administració i gestio-->
         <div class="card text-black mb-3 border-0" style="max-width: 18rem;">
           <div class="card-header border-0" style="background-color: white;">
-            <img src="media/persona2-removebg-preview.png" alt="Administració i gestio" width="100%">
+            <img src="media/LandingPage/Degree/persona2-removebg-preview.png" alt="Administració i gestio" width="100%">
           </div>
           <div class="card-body">
             <h3 class="card-title"><b>Administració i gestio</b></h3>
@@ -93,7 +93,7 @@
         <!--Hosteleria i Turisme-->
         <div class="card text-black mb-3 border-0" style="max-width: 18rem;">
           <div class="card-header border-0" style="background-color: white;">
-            <img src="media/persona3-removebg-preview.png" alt="Hosteleria i Turisme" width="100%">
+            <img src="media/LandingPage/Degree/persona3-removebg-preview.png" alt="Hosteleria i Turisme" width="100%">
           </div>
           <div class="card-body">
             <h3 class="card-title"><b>Hosteleria i Turisme</b></h3>
@@ -106,7 +106,7 @@
         <!--Informàtica i Comunicacions-->
         <div class="card text-black mb-3 border-0" style="max-width: 18rem;">
           <div class="card-header border-0" style="background-color: white;">
-            <img src="media/persona4-removebg-preview.png" alt="Informàtica i Comunicacions" width="100%">
+            <img src="media/LandingPage/Degree/persona4-removebg-preview.png" alt="Informàtica i Comunicacions" width="100%">
           </div>
           <div class="card-body">
             <h3 class="card-title"><b>Informàtica i Comunicacions</b></h3>
