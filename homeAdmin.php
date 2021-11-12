@@ -17,12 +17,12 @@
 </head>
 
 <body>
-  <?php include "php_views/header.php"; ?>
+  <?php include "php_views/headerAdmin.php"; ?>
   <div id="layoutSidenav_content">
     <main>
       <div class="container-fluid">
         <h1 class="mt-4">
-          Welcome to the admin page.
+          Welcome to the admin page
         </h1>
         <div class="card mb-4">
           <div class="card-body">
@@ -35,7 +35,7 @@
       </div>
     </main>
   </div>
-  <?php require "php_views/footer.php"; ?>
+  <?php require "php_views/footerAdmin.php"; ?>
 </body>
 
 </html>

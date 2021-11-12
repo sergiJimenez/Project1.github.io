@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <?php include "header.php"; ?>
+    <?php include "headerAdmin.php"; ?>
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid">
@@ -23,7 +23,7 @@
                     Rankings
                 </h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../homeAdmin.php">Home</a></li>
                     <li class="breadcrumb-item active">Rankings</li>
                 </ol>
                 <div class="card mb-4">
@@ -42,7 +42,6 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Email</th>
                                         <th>Points Game 1</th>
                                         <th>Points Game 2</th>
                                         <th>Points Game 3</th>
@@ -53,7 +52,6 @@
                                 <tbody>
                                     <tr>
                                         <td>Sergi</td>
-                                        <td>sperezj2021@cepnet.net</td>
                                         <th>57176</th>
                                         <th>75044</th>
                                         <th>79279</th>
@@ -64,7 +62,6 @@
                                 <tbody>
                                     <tr>
                                         <td>Aitor</td>
-                                        <td>acarro2021@cepnet.net</td>
                                         <th>57176</th>
                                         <th>75044</th>
                                         <th>79279</th>
@@ -75,7 +72,6 @@
                                 <tbody>
                                     <tr>
                                         <td>Raül</td>
-                                        <td>rlendines2021@cepnet.net</td>
                                         <th>57176</th>
                                         <th>75044</th>
                                         <th>79279</th>
@@ -86,7 +82,6 @@
                                 <tbody>
                                     <tr>
                                         <td>Borja</td>
-                                        <td>borjita2021@cepnet.net</td>
                                         <th>57176</th>
                                         <th>75044</th>
                                         <th>79279</th>
@@ -104,7 +99,7 @@
             </div>
         </main>
     </div>
-    <?php require "footer.php"; ?>
+    <?php require "footerAdmin.php"; ?>
 </body>
 
 </html>

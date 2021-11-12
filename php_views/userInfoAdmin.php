@@ -15,15 +15,15 @@
 </head>
 
 <body>
-    <?php include "header.php"; ?>
+    <?php include "headerAdmin.php"; ?>
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid">
                 <h1 class="mt-4">
-                    Users Information
+                    User's Information
                 </h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../homeAdmin.php">Home</a></li>
                     <li class="breadcrumb-item active">Personal Information</li>
                 </ol>
                 <div class="card mb-4">
@@ -43,35 +43,35 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th>Password</th>
+                                        <th>Interested Carreer</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>Sergi</td>
                                         <td>sperezj2021@cepnet.net</td>
-                                        <td>xoxoMoreno666</td>
+                                        <td>Comercio Y Marqueting</td>
                                     </tr>
                                 </tbody>
                                 <tbody>
                                     <tr>
                                         <td>Aitor</td>
                                         <td>acarro2021@cepnet.net</td>
-                                        <td>xoxoMoreno667</td>
+                                        <td>Hosteleria y Turismo</td>
                                     </tr>
                                 </tbody>
                                 <tbody>
                                     <tr>
                                         <td>Raül</td>
                                         <td>rlendines2021@cepnet.net</td>
-                                        <td>xoxoMoreno668</td>
+                                        <td>Informatica Y Telecomunicaciones</td>
                                     </tr>
                                 </tbody>
                                 <tbody>
                                     <tr>
                                         <td>Borja</td>
                                         <td>borjita2021@cepnet.net</td>
-                                        <td>loQueTuQuierasPapi</td>
+                                        <td>Informatica Y Telecomunicaciones</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -84,7 +84,7 @@
             </div>
         </main>
     </div>
-    <?php require "footer.php"; ?>
+    <?php require "footerAdmin.php"; ?>
 </body>
 
 </html>

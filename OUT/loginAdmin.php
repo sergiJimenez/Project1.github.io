@@ -91,7 +91,7 @@ if (isset($_POST["submit"])) {
                                 </div>
                                 <div class="card-footer text-center">
                                     <div class="small">
-                                        <a href="register.php">
+                                        <a href="registerAdmin.php">
                                             Need an account? Sign up!
                                         </a>
                                     </div>
