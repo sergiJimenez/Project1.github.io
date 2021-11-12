@@ -20,7 +20,7 @@
           <a class="nav-link text-secondary" href="#">Link</a>
         </li> -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-secondary" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Idiomes
           </a>
           <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">

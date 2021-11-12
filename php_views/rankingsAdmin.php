@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <?php include "headerAdmin.php"; ?>
+    <?php include "../php_partials/navbarAdmin.php"; ?>
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid">
@@ -34,7 +34,7 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table mr-1"></i>
-                        Personal Details
+                        Rankings Details
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -99,7 +99,6 @@
             </div>
         </main>
     </div>
-    <?php require "footerAdmin.php"; ?>
 </body>
 
 </html>

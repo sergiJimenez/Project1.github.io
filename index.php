@@ -5,23 +5,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--Header css-->
+  <title>Centre d'Estudis Politecncis</title>
+  <!-- CSS -->
   <link rel="stylesheet" href="style/myStyle.css">
-  <!-- Bootstrap css -->
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+  <!-- BOOTSTRAP -->
   <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
-  <!-- JavaScript Bundle with Popper -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
   <script src="bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
   <!--JS fontawesome-->
   <script src="https://kit.fontawesome.com/1ac3ed1571.js" crossorigin="anonymous"></script>
-  <title>Home - Centre d'Estudis Politecncis</title>
+
 </head>
 
 <body>
-  <?php
-  include __DIR__ . '/partials/navbar.php';
-  ?>
+  <?php include("php_partials/navbar.php"); ?>
   <div class="display-flex">
     <!--CAROUSEL-->
     <div class="alinearWeb">
@@ -148,11 +144,8 @@
       </div>
     </div>
   </div>
-
   <!--FOOTER-->
-  <?php
-  include __DIR__ . '/partials/footer.php';
-  ?>
+  <?php include("php_partials/footer.php"); ?>
   <!--FOOTER-->
 </body>
 

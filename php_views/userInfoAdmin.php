@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <?php include "headerAdmin.php"; ?>
+    <?php include "../php_partials/navbarAdmin.php"; ?>
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid">
@@ -24,7 +24,7 @@
                 </h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a href="../homeAdmin.php">Home</a></li>
-                    <li class="breadcrumb-item active">Personal Information</li>
+                    <li class="breadcrumb-item active">User's Information</li>
                 </ol>
                 <div class="card mb-4">
                     <div class="card-body">
@@ -34,7 +34,7 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table mr-1"></i>
-                        Personal Details
+                        User's Details
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -84,7 +84,6 @@
             </div>
         </main>
     </div>
-    <?php require "footerAdmin.php"; ?>
 </body>
 
 </html>

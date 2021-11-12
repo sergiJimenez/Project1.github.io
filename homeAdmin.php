@@ -12,12 +12,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Index</title>
-  <link href="style/styles.css" rel="stylesheet" />
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
+  <script src="bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+  <!--JS fontawesome-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <?php include "php_views/headerAdmin.php"; ?>
+  <?php include("php_partials/navbarAdmin.php"); ?>
   <div id="layoutSidenav_content">
     <main>
       <div class="container-fluid">
@@ -35,7 +38,6 @@
       </div>
     </main>
   </div>
-  <?php require "php_views/footerAdmin.php"; ?>
 </body>
 
 </html>
