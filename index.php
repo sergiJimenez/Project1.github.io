@@ -55,9 +55,8 @@
       <br>
       <br>
       <!--Ciclos-->
-      <div class="row mx-auto " style="width: auto; margin: auto auto">
+      <div class="row mx-auto justify-content-center " style="width: auto; margin: auto auto">
 
-        <div class="col-2"></div>
 
         <!--Marketing i comerç-->
         <div class="card text-black mb-3 border-0" style="max-width: 18rem;">
@@ -139,7 +138,6 @@
         </div>
         <!--Informàtica i Comunicacions-->
 
-        <div class="col-2"></div>
         <!--Espacio derecha-->
       </div>
 
