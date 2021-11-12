@@ -1,5 +1,3 @@
-const { platform } = require("process");
-
 document.addEventListener("DOMContentLoaded", () => {
     const grid = document.querySelector(".grid");
     const gurmann = document.createElement("div");
@@ -20,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     class Platform {
         constructor(newPlatBottom) {
             this.bottom = newPlatBottom;
-            this.left = Math.random() * 500;
+            this.left = Math.random() * 315;
             this.visual = document.createElement("div");
 
             const visual = this.visual;
@@ -30,20 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
             grid.appendChild(visual);
         }
     }
-    
-    
+
     function createPlatforms() {
-        for (let i = 0 ; i < platformCount ; i++) {
+        for (let i = 0; i < platformCount; i++) {
             let platGap = 600 / platformCount;
-            let newPlatBottom = 200 + i * platGap;
+            let newPlatBottom = 100 + i * platGap;
             let newPlatform = new Platform(newPlatBottom);
             platforms.push(newPlatform);
             console.log(platforms);
         }
     }
-    
+
     function movePlatforms() {
-        if (gurmannBottomSpace > 1) {
+        if (gurmannBottomSpace > 200) {
             platforms.forEach(platform => {
                 platform.bottom -= 4;
                 let visual = platform.visual;
@@ -56,9 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!GameOver) {
             createGurmann();
             createPlatforms();
-            movePlatforms();
+            setInterval(movePlatforms, 30);
         }
     }
     //attach to button:
     start()
-})
+});
