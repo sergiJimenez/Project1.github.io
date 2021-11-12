@@ -15,58 +15,56 @@
 </head>
 
 <body>
-    <div class="bg-dark">
-        <h1 class="titulo">TeamWork</h1>
-        <div class="container">
-            <div class="row row-cols-1 row-cols-md-4 g-5 mt-4">
-                <div class="col">
-                    <div class="card">
-                        <div class="front">
-                            <img src="media/borja.jpeg" alt="">
-                        </div>
-                        <div class="back">
-                            <div class="back-content middle">
-                                <h2>Borja García</h2>
-                            </div>
+    <h1 class="titulo">TeamWork</h1>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-4 g-5 mt-4">
+            <div class="col">
+                <div class="card">
+                    <div class="front">
+                        <img src="media/borja.jpeg" alt="">
+                    </div>
+                    <div class="back">
+                        <div class="back-content middle">
+                            <h2>Borja García</h2>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col">
-                    <div class="card">
-                        <div class="front">
-                            <img src="media/sergi.jpeg" alt="">
-                        </div>
-                        <div class="back">
-                            <div class="back-content middle">
-                                <h2>Sergi Perez</h2>
-                            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="front">
+                        <img src="media/sergi.jpeg" alt="">
+                    </div>
+                    <div class="back">
+                        <div class="back-content middle">
+                            <h2>Sergi Perez</h2>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col">
-                    <div class="card">
-                        <div class="front">
-                            <img src="media/raul.jpeg" alt="">
-                        </div>
-                        <div class="back">
-                            <div class="back-content middle">
-                                <h2>Raul Lendines</h2>
-                            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="front">
+                        <img src="media/raul.jpeg" alt="">
+                    </div>
+                    <div class="back">
+                        <div class="back-content middle">
+                            <h2>Raul Lendines</h2>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col">
-                    <div class="card">
-                        <div class="front">
-                            <img src="media/aitor.png" alt="">
-                        </div>
-                        <div class="back">
-                            <div class="back-content middle">
-                                <h2>Aitor Carro</h2>
-                            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="front">
+                        <img src="media/aitor.png" alt="">
+                    </div>
+                    <div class="back">
+                        <div class="back-content middle">
+                            <h2>Aitor Carro</h2>
                         </div>
                     </div>
                 </div>
