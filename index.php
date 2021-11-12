@@ -31,7 +31,7 @@
               <img src="./media/arcade.jpg" class="d-block w-100" alt="Carousel portal cep">
               <div class="carousel-caption justify-content-start">
                 <p class="fs-1 text-black">Tenim una serie de jocs que potser t'agraden, vols provar?</p> <br>
-               <button type="button" class="btn btn-lg btn-dark" href="">Juga ara!</button>
+                <button type="button" class="btn btn-lg btn-dark" href="">Juga ara!</button>
               </div>
             </div>
             <div class="carousel-item">
@@ -61,7 +61,7 @@
         <!--Marketing i comerç-->
         <div class="card text-black mb-3 border-0" style="max-width: 18rem;">
           <div class="card-header border-0" style="background-color: white;">
-            <img src="/media/persona1.jpg" alt="Comerç i màrqueting" width="100%">
+            <img src="media/persona1-removebg-preview.png" alt="Comerç i màrqueting" width="100%">
           </div>
           <div class="card-body">
             <h5 class="card-title"><b>Comerç i màrqueting</b></h5>
@@ -85,7 +85,7 @@
         <!--Administració i gestio-->
         <div class="card text-black mb-3 border-0" style="max-width: 18rem;">
           <div class="card-header border-0" style="background-color: white;">
-            <img src="/media/persona2.jpg" alt="Administració i gestio" width="100%">
+            <img src="media/persona2-removebg-preview.png" alt="Administració i gestio" width="100%">
           </div>
           <div class="card-body">
             <h5 class="card-title"><b>Administració i gestio</b></h5>
@@ -106,7 +106,7 @@
         <!--Hosteleria i Turisme-->
         <div class="card text-black mb-3 border-0" style="max-width: 18rem;">
           <div class="card-header border-0" style="background-color: white;">
-            <img src="/media/persona3.jpg" alt="Hosteleria i Turisme" width="100%">
+            <img src="media/persona3-removebg-preview.png" alt="Hosteleria i Turisme" width="100%">
           </div>
           <div class="card-body">
             <h5 class="card-title"><b>Hosteleria i Turisme</b></h5>
@@ -121,7 +121,7 @@
         <!--Informàtica i Comunicacions-->
         <div class="card text-black mb-3 border-0" style="max-width: 18rem;">
           <div class="card-header border-0" style="background-color: white;">
-            <img src="/media/persona4-removebg-preview.png.jpg" alt="Informàtica i Comunicacions" width="100%">
+            <img src="media/persona4-removebg-preview.png" alt="Informàtica i Comunicacions" width="100%">
           </div>
           <div class="card-body">
             <h5 class="card-title"><b>Informàtica i Comunicacions</b></h5>
