@@ -120,22 +120,28 @@
         <!--Espacio derecha-->
       </div><br><br>
       <!--EQUIPO CREATIVO-->
-      <div class="row equipo">
+      <div class="container-fluid equipo">
         <div class="col-2"></div>
         <div class="col-8 padding-equipo">
           <div class="row">
             <div class="text-black">
               <div class="izquierda"></div>
               <div><br>
-                <h3><b>It's my Turn.</b> La fira dels talents profesionals</h3>
-                <br>
-                <p>
-                  <b>Presentació</b> <br>
-                  La formació professional capacita per a l'exercici qualificat de diverses professions i proporciona la formació necessària per adquirir les competències professionals i el coneixement propis de cada sector. <br><br>
-                  Al Politècnics tractem de proporcionar un entorn que permeti el creixement personal i professional, proporcionant un espai segur on descobrir i practicar les competències que ens han de permetre gaudir d’una llarga i exitosa trajectòria dins de la família professional que s'ha escollit desenvolupar. <br><br>
-                  Aquest viatge personal com a integrant d'equips d’aprenentatge desemboca en la fira IT’S MY TURN, que posa en contacte a empreses, entitats i professionals, i on tots i cadascun del nostre alumnat disposen de l’oportunitat de presentar-se, mostrar i demostrar les competències professionals i coneixements adquirits durant la seva estada al Politècnics. <br><br>
-                  Seguim.
-                </p>
+                <div class="conatiner-fluid p-4">
+                  <div class="row">
+                    <div class="offset-md-3">
+                      <h3><b>It's my Turn.</b> La fira dels talents profesionals</h3>
+                      <br>
+                      <p>
+                        <b>Presentació</b> <br>
+                        La formació professional capacita per a l'exercici qualificat de diverses professions i proporciona la formació necessària per adquirir les competències professionals i el coneixement propis de cada sector. <br><br>
+                        Al Politècnics tractem de proporcionar un entorn que permeti el creixement personal i professional, proporcionant un espai segur on descobrir i practicar les competències que ens han de permetre gaudir d’una llarga i exitosa trajectòria dins de la família professional que s'ha escollit desenvolupar. <br><br>
+                        Aquest viatge personal com a integrant d'equips d’aprenentatge desemboca en la fira IT’S MY TURN, que posa en contacte a empreses, entitats i professionals, i on tots i cadascun del nostre alumnat disposen de l’oportunitat de presentar-se, mostrar i demostrar les competències professionals i coneixements adquirits durant la seva estada al Politècnics. <br><br>
+                        Seguim.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="derecha"></div>
             </div>

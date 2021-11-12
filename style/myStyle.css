@@ -22,17 +22,17 @@ body {
   background-color: #f2f2f2;
 }
 
+.padding-equipo {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .spacing {
   height: 30px;
 }
 
 .footer-bg {
   background-color: #f2f2f2;
-}
-
-.padding-equipo {
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .img-ciclos {
