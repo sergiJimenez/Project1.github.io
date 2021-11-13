@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const grid = document.querySelector(".grid");
     const gurmann = document.createElement("div");
     let gurmannLeftSpace = 50;
-    let gurmannBottomSpace = 10;
-    let GameOver = false;
+    let gurmannBottomSpace = 250;
+    let isGameOver = false;
     let platformCount = 5;
     let platforms = [];
 
@@ -45,15 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 platform.bottom -= 4;
                 let visual = platform.visual;
                 visual.style.bottom = platform.bottom + "px";
-            })
+            });
         }
     }
 
     function start() {
-        if (!GameOver) {
+        if (!isGameOver) {
             createGurmann();
             createPlatforms();
-            setInterval(movePlatforms, 30);
+            setInterval(movePlatforms,30);
         }
     }
     //attach to button:
