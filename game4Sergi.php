@@ -11,8 +11,9 @@
 </head>
 
 <body>
-    <div class="grid">
-
+    <div class="background">
+        <div class="grid">
+        </div>
     </div>
 </body>
 

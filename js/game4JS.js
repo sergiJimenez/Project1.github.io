@@ -2,14 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
   const gurmann = document.createElement("div");
   let isGameOver = false;
-  let speed = 3; //TO SETUP
   let platformCount = 5;
   let platforms = [];
   let score = 0;
   let gurmannLeftSpace = 50;
   let startPoint = 150;
   let gurmannBottomSpace = startPoint;
-  const gravity = 0.9; //TO SETUP
+  //const gravity = 0.9; //TO SETUP
   let upTimerId;
   let downTimerId;
   let isJumping = true;

@@ -1,8 +1,13 @@
+.background{
+  width: 1920px;
+  height: 1080px;
+  background-image: "../media/BCKGRND.png";
+  position: absolute;
+}
+
 .grid {
   width: 928px;
   height: 1080px;
-  background-color: yellow;
-  /*background-image: LINK;*/
   position: relative;
   font-size: 100px;
   text-align: center;
@@ -11,10 +16,34 @@
 .gurmann {
   width: 60px;
   height: 85px;
-  background-color: red;
-  /*background-image: LINK;*/
+  position: absolute;
+  /*
+  &fall{
+    width: 138px;
+    height: 150px;
+    background-image: "../media/Character Phtshp Export/Fall/Fall w_ sRGB.gif";
+  }
+  &jump{
+    width: 103px;
+    height: 151px;
+    background-image: "../media/Character Phtshp Export/Jump/Jump wout_ sRGB.gif";
+  }
+  */
+}
+/*
+.gurmannFall{
+  width: 138px;
+  height: 150px;
+  background-image: "../media/Character Phtshp Export/Fall/Fall w_ sRGB.gif";
   position: absolute;
 }
+.gurmannJump{
+  width: 103px;
+  height: 151px;
+  background-image: "../media/Character Phtshp Export/Jump/Jump wout_ sRGB.gif";
+  position: absolute;
+}
+*/
 
 .platform {
   width: 85px;
@@ -23,3 +52,58 @@
   /*background-image: LINK;*/
   position: absolute;
 }
+/*
+.platformGood{
+  width: 196px
+  height: 72px;
+  background-image: "../media/Platforms/Good One.png";
+  position: absolute;
+}
+.platformBroken{
+  width: 196px
+  height: 72px;
+  background-image: "../media/Platforms/Broken One.png";
+  position: absolute;
+}
+.platformSpike{
+  width: 196px
+  height: 125px;
+  background-image: "../media/Platforms/Spikes One.png";
+  position: absolute;
+}
+*/
+/*
+.coin{
+  width: 64px;
+  height: 64px;
+  background-image: "../media/Animated Items/Coin.gif";
+}
+*/
+/*
+.redGem{
+  width: 64px;
+  height: 64px;
+  background-image: "../media/Animated Items/Red Gem.gif";
+}
+*/
+/*
+.blueGem{
+  width: 64px;
+  height: 64px;
+  background-image: "../media/Animated Items/Blue Gem.gif";
+}
+*/
+/*
+.GreenGem{
+  width: 64px;
+  height: 64px;
+  background-image: "../media/Animated Items/Green Gem.gif";
+}
+*/
+/*
+.sonicRing{
+  width: 64px;
+  height: 64px;
+  background-image: "../media/Animated Items/Sonic Ring.gif";
+}
+*/
