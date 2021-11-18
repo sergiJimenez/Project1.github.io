@@ -2,13 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
   const gurmann = document.createElement("div");
   let isGameOver = false;
-  let platformCount = 5;
+  let platformCount = 4; //How many platforms we have when we start a new game
   let platforms = [];
   let score = 0;
   let gurmannLeftSpace = 50;
   let startPoint = 150;
   let gurmannBottomSpace = startPoint;
-  //const gravity = 0.9; //TO SETUP
   let upTimerId;
   let downTimerId;
   let isJumping = true;
@@ -24,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //Platforms
   class Platform {
     constructor(newPlatBottom) {
-      this.left = Math.random() * 315;
+      this.left = Math.random() * 732; //To know which number is it we have to make this operation (gridWidth - platformWidth). Why? Because we want to create the number of platforms inside of our grid
       this.bottom = newPlatBottom;
       this.visual = document.createElement("div");
 
@@ -38,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createPlatforms() {
     for (let i = 0; i < platformCount; i++) {
-      let platGap = 600 / platformCount;
-      let newPlatBottom = 100 + i * platGap;
+      let platGap = 1000 / platformCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
+      let newPlatBottom = 250 + i * platGap; //Where it start a new platfoerm
       let newPlatform = new Platform(newPlatBottom);
       platforms.push(newPlatform);
       console.log(platforms); //Only to check in the console if it's doing well
@@ -104,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
           isJumping = true;
         }
       });
-    }, 20);
+    }, 10);
   }
 
   function jump() {
@@ -117,11 +116,11 @@ document.addEventListener("DOMContentLoaded", () => {
       gurmann.style.bottom = gurmannBottomSpace + "px";
       console.log("2", gurmannBottomSpace); //Only to check in the console if it's doing well
       console.log("s", startPoint); //Only to check in the console if it's doing well
-      if (gurmannBottomSpace > (startPoint + 200)) {
+      if (gurmannBottomSpace > (startPoint + 400)) {
         fall();
         isJumping = false;
       }
-    }, 30);
+    }, 15);
   }
 
   function moveLeft() {
@@ -147,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isGoingRight = true;
     rightTimerId = setInterval(function () {
       //POSIBLE HAD TO CHANGE THE gurmannLeftSpace TO FIT .PNG
-      if (gurmannLeftSpace <= 860) {
+      if (gurmannLeftSpace <= 780) {
         console.log("RIGHT!"); //Only to check in the console if it's doing well
         gurmannLeftSpace += 5;
         gurmann.style.left = gurmannLeftSpace + "px";
