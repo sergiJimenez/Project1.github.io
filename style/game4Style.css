@@ -1,21 +1,26 @@
 .background{
   width: 1920px;
   height: 1080px;
-  background-image: "../media/BCKGRND.png";
-  position: absolute;
+  background-image: url(../media/BCKGRND.png);
+  position: fixed;
 }
 
 .grid {
+  /*SIZE OF GRID*/
   width: 928px;
   height: 1080px;
-  position: relative;
+  margin-left: 488px;
+  background-image: none;
+  position: fixed;
+  /*SCORE NUMBERS*/
   font-size: 100px;
   text-align: center;
 }
 
 .gurmann {
-  width: 60px;
-  height: 85px;
+  width: 138px;
+  height: 150px;
+  /* background-image: url(../media/Character_Phtshp_Export/Fall/Fall_wout_sRGB.gif); */
   position: absolute;
   /*
   &fall{

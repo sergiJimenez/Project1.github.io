@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isGoingRight = true;
     rightTimerId = setInterval(function () {
       //POSIBLE HAD TO CHANGE THE gurmannLeftSpace TO FIT .PNG
-      if (gurmannLeftSpace <= 340) {
+      if (gurmannLeftSpace <= 860) {
         console.log("RIGHT!"); //Only to check in the console if it's doing well
         gurmannLeftSpace += 5;
         gurmann.style.left = gurmannLeftSpace + "px";
