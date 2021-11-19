@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
   const gurmann = document.createElement("div");
-  let isGameOver = false;
+  let isGameOver = false; //GameOver variable
   let platformCount = 4; //How many platforms we have when we start a new game
   let platforms = [];
-  let score = 0;
+  let score = 0; //Initial score
   let gurmannLeftSpace = 50;
   let startPoint = 150;
   let gurmannBottomSpace = startPoint;
@@ -83,8 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
     downTimerId = setInterval(function () {
       gurmannBottomSpace -= 5; //The speed of our character when it's falling
       gurmann.style.bottom = gurmannBottomSpace + "px";
-      gurmann.style.backgroundImage = "url('../media/Character_Phtshp_Export/Fall/Fall_wout_sRGB.gif')";
-      gurmann.style.width = "138px";
+      gurmann.style.backgroundImage = "url('../media/flipyFlipilyFlop/Character/Gif/Fall.gif')";
+      gurmann.style.width = "133px";
       gurmann.style.height = "150px";
       if (gurmannBottomSpace <= 0) { //When Gurmann arrives to 0pxBottom there'll die
         GameOver();
@@ -93,12 +93,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (
           (gurmannBottomSpace >= platform.bottom) &&
           (gurmannBottomSpace <= (platform.bottom + 72)) && //The pixel of the height collission
-          ((gurmannLeftSpace + 60) >= platform.left) && //
+          ((gurmannLeftSpace + 60) >= platform.left) && //The pixel of the left space collission
           (gurmannLeftSpace <= (platform.left + 196)) && //The pixel of the width collission
           !isJumping
         ) {
           startPoint = gurmannBottomSpace;
-          gurmann.style.backgroundImage = "url('../media/Character_Phtshp_Export/Jump/Jump_wout_sRGB.gif')";
+          gurmann.style.backgroundImage = "url('../media/flipyFlipilyFlop/Character/Gif/Jump.gif')";
           gurmann.style.width = "103px";
           gurmann.style.height = "151px";
           jump();
@@ -132,7 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
         gurmannLeftSpace -= 10; //The speed of the left movement
         gurmann.style.left = gurmannLeftSpace + "px";
         isGoingLeft = false;
-        console.log(gurmannLeftSpace);
       } else if (gurmannLeftSpace <= 0) { //When Gurmann collide to the pixel 0 in the grid he'll stop
         moveStraight();
       } else moveRight();
