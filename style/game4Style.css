@@ -18,46 +18,13 @@
 }
 
 .gurmann {
-  width: 138px;
-  height: 150px;
-  background-color: red;
-  /* background-image: url(../media/Character_Phtshp_Export/Fall/Fall_wout_sRGB.gif); */
-  position: absolute;
-  /*
-  &fall{
-    width: 138px;
-    height: 150px;
-    background-image: "../media/Character Phtshp Export/Fall/Fall w_ sRGB.gif";
-  }
-  &jump{
-    width: 103px;
-    height: 151px;
-    background-image: "../media/Character Phtshp Export/Jump/Jump wout_ sRGB.gif";
-  }
-  */
-}
-/*
-.gurmannFall{
-  width: 138px;
-  height: 150px;
-  background-image: "../media/Character Phtshp Export/Fall/Fall w_ sRGB.gif";
   position: absolute;
 }
-.gurmannJump{
-  width: 103px;
-  height: 151px;
-  background-image: "../media/Character Phtshp Export/Jump/Jump wout_ sRGB.gif";
-  position: absolute;
-}
-*/
 
 .platform {
-  /* width: 85px;
-  height: 15px; */
   width: 196px;
   height: 72px;
-  background-color: green;
-  /*background-image: LINK;*/
+  background-image: url(../media/Platforms/Good_One.png);
   position: absolute;
 }
 /*

@@ -38,17 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
   function createPlatforms() {
     for (let i = 0; i < platformCount; i++) {
       let platGap = 1000 / platformCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
-      let newPlatBottom = 250 + i * platGap; //Where it start a new platfoerm
+      let newPlatBottom = 250 + i * platGap; //It'll increase where the new platform bottom distance will be create
       let newPlatform = new Platform(newPlatBottom);
       platforms.push(newPlatform);
-      console.log(platforms); //Only to check in the console if it's doing well
     }
   }
 
   function movePlatforms() {
     if (gurmannBottomSpace > 200) {
       platforms.forEach(platform => {
-        platform.bottom -= 4;
+        platform.bottom -= 5;
         let visual = platform.visual;
         visual.style.bottom = platform.bottom + "px";
 
@@ -56,9 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
           let firstPlatform = platforms[0].visual;
           firstPlatform.classList.remove("platform");
           platforms.shift();
-          console.log(platforms); //Only to check in the console if it's doing well
           score++;
-          let newPlatform = new Platform(600);
+          let newPlatform = new Platform(1080); //Where the new platform will be appear. We know that because our height is 1080px
           platforms.push(newPlatform);
         }
       });
@@ -83,44 +81,44 @@ document.addEventListener("DOMContentLoaded", () => {
     isJumping = false;
     clearInterval(upTimerId);
     downTimerId = setInterval(function () {
-      gurmannBottomSpace -= 5;
+      gurmannBottomSpace -= 5; //The speed of our character when it's falling
       gurmann.style.bottom = gurmannBottomSpace + "px";
-      if (gurmannBottomSpace <= 0) {
+      gurmann.style.backgroundImage = "url('../media/Character_Phtshp_Export/Fall/Fall_wout_sRGB.gif')";
+      gurmann.style.width = "138px";
+      gurmann.style.height = "150px";
+      if (gurmannBottomSpace <= 0) { //When Gurmann arrives to 0pxBottom there'll die
         GameOver();
       }
       platforms.forEach(platform => {
         if (
           (gurmannBottomSpace >= platform.bottom) &&
-          (gurmannBottomSpace <= (platform.bottom + 15)) &&
-          ((gurmannLeftSpace + 60) >= platform.left) &&
-          (gurmannLeftSpace <= (platform.left + 85)) &&
+          (gurmannBottomSpace <= (platform.bottom + 72)) && //The pixel of the height collission
+          ((gurmannLeftSpace + 60) >= platform.left) && //
+          (gurmannLeftSpace <= (platform.left + 196)) && //The pixel of the width collission
           !isJumping
         ) {
-          console.log("Landed"); //Only to check in the console if it's doing well
           startPoint = gurmannBottomSpace;
+          gurmann.style.backgroundImage = "url('../media/Character_Phtshp_Export/Jump/Jump_wout_sRGB.gif')";
+          gurmann.style.width = "103px";
+          gurmann.style.height = "151px";
           jump();
-          console.log("start", startPoint); //Only to check in the console if it's doing well
           isJumping = true;
         }
       });
-    }, 10);
+    }, 10); //Miliseconds
   }
 
   function jump() {
     clearInterval(downTimerId);
     isJumping = true;
     upTimerId = setInterval(function () {
-      console.log(startPoint); //Only to check in the console if it's doing well
-      console.log("1", gurmannBottomSpace); //Only to check in the console if it's doing well
-      gurmannBottomSpace += 20;
+      gurmannBottomSpace += 20; //The speed of our character when it's falling
       gurmann.style.bottom = gurmannBottomSpace + "px";
-      console.log("2", gurmannBottomSpace); //Only to check in the console if it's doing well
-      console.log("s", startPoint); //Only to check in the console if it's doing well
       if (gurmannBottomSpace > (startPoint + 400)) {
         fall();
         isJumping = false;
       }
-    }, 15);
+    }, 20); //Miliseconds
   }
 
   function moveLeft() {
@@ -130,12 +128,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     isGoingLeft = true;
     leftTimerId = setInterval(function () {
-      if (gurmannLeftSpace >= 0) {
-        console.log("LEFT!"); //Only to check in the console if it's doing well
-        gurmannLeftSpace -= 5;
+      if (gurmannLeftSpace >= 0) { //To avoid throught the screen to the other side
+        gurmannLeftSpace -= 10; //The speed of the left movement
         gurmann.style.left = gurmannLeftSpace + "px";
+        isGoingLeft = false;
+        console.log(gurmannLeftSpace);
+      } else if (gurmannLeftSpace <= 0) { //When Gurmann collide to the pixel 0 in the grid he'll stop
+        moveStraight();
       } else moveRight();
-    }, 20);
+    }, 20); //Miliseconds
   }
 
   function moveRight() {
@@ -147,14 +148,15 @@ document.addEventListener("DOMContentLoaded", () => {
     rightTimerId = setInterval(function () {
       //POSIBLE HAD TO CHANGE THE gurmannLeftSpace TO FIT .PNG
       if (gurmannLeftSpace <= 780) {
-        console.log("RIGHT!"); //Only to check in the console if it's doing well
-        gurmannLeftSpace += 5;
+        gurmannLeftSpace += 10; //The speed of the left movement
         gurmann.style.left = gurmannLeftSpace + "px";
+      } else if (gurmannLeftSpace <= 928) { //When Gurmann collide to the pixel 928 in the grid he'll stop
+        moveStraight();
       } else moveLeft();
-    }, 20);
+    }, 20); //Miliseconds
   }
 
-  function moveStraight() {
+  function moveStraight(){
     isGoingLeft = false;
     isGoingRight = false;
     clearInterval(leftTimerId);
@@ -162,6 +164,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function control(e) {
+    if (e.repeat){
+      return;
+    }
     gurmann.style.bottom = gurmannBottomSpace + "px";
     if (e.key === "ArrowLeft") {
       moveLeft();
@@ -169,6 +174,17 @@ document.addEventListener("DOMContentLoaded", () => {
       moveRight();
     } else if (e.key === "ArrowUp") {
       moveStraight();
+    }
+  }
+
+  function stopControl(e) {
+    gurmann.style.bottom = gurmannBottomSpace + "px";
+    if (e.key === "ArrowLeft") {
+      isGoingLeft = false;
+      clearInterval(leftTimerId);
+    } else if (e.key === "ArrowRight") {
+      clearInterval(rightTimerId);
+      isGoingRight = false;
     }
   }
   //Gurmann, the character and his functions
@@ -180,9 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //Game Functions
   function GameOver() {
     isGameOver = true;
-    console.log("Game Over!"); //Only to check in the console if it's doing well
     while (grid.firstChild) {
-      console.log("Again!"); //Only to check in the console if it's doing well
       grid.removeChild(grid.firstChild);
     }
     grid.innerHTML = score;
@@ -198,7 +212,8 @@ document.addEventListener("DOMContentLoaded", () => {
       createGurmann();
       setInterval(movePlatforms, 30);
       jump(startPoint);
-      document.addEventListener("keyup", control);
+      document.addEventListener("keydown", control);
+      document.addEventListener("keyup", stopControl);
     }
   }
   start();
