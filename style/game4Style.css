@@ -41,13 +41,13 @@
   position: absolute;
 }
 */
-/*
-.coin{
+.coin {
   width: 64px;
   height: 64px;
-  background-image: "../media/Animated Items/Coin.gif";
+  background-image: url(../media/Animated_Items/Coin.gif);
+  position: absolute;
 }
-*/
+/*
 /*
 .redGem{
   width: 64px;

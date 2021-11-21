@@ -1,10 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+  //Variables
   const grid = document.querySelector(".grid");
   const gurmann = document.createElement("div");
   let isGameOver = false; //GameOver variable
   let platformCount = 4; //How many platforms we have when we start a new game
   let platforms = [];
+  let coinsCount = Math.random() * 4; //Defines a random number of coins, between 0 and 4, that'll appear
+  let coins = [];
   let score = 0; //Initial score
+  const scoreCoin = 10;
+  let increase = 0;
   let gurmannLeftSpace = 50;
   let startPoint = 150;
   let gurmannBottomSpace = startPoint;
@@ -15,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let isGoingRight = false;
   let leftTimerId;
   let rightTimerId;
+  //Variables
   //AIR
   //AIR
   //AIR
@@ -47,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function movePlatforms() {
     if (gurmannBottomSpace > 200) {
       platforms.forEach(platform => {
-        platform.bottom -= 5;
+        platform.bottom -= 5; //Speed of the platforms are falling
         let visual = platform.visual;
         visual.style.bottom = platform.bottom + "px";
 
@@ -55,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
           let firstPlatform = platforms[0].visual;
           firstPlatform.classList.remove("platform");
           platforms.shift();
-          score++;
           let newPlatform = new Platform(1080); //Where the new platform will be appear. We know that because our height is 1080px
           platforms.push(newPlatform);
         }
@@ -68,6 +73,61 @@ document.addEventListener("DOMContentLoaded", () => {
   //AIR
   //AIR
   //AIR
+  //Items
+  class Coin {
+    constructor(newCoinBottom){
+      this.left = Math.random() * 732; //To know which number is it we have to make this operation (gridWidth - platformWidth). Why? Because we want to create the number of platforms inside of our grid
+      this.bottom = newCoinBottom;
+      this.visual = document.createElement("div");
+
+      const visual = this.visual;
+      visual.classList.add("coin");
+      visual.style.left = this.left + "px";
+      visual.style.bottom = this.bottom + "px";
+      grid.appendChild(visual);
+    }
+  }
+
+  function createCoin(){
+    for (let i = 0; i < coinsCount; i++) {
+      let coinGap = 1000 / coinsCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
+      let newCoinBottom = 250 + i * coinGap; //It'll increase where the new platform bottom distance will be create
+      let newItem = new Coin(newCoinBottom);
+      coins.push(newItem);
+    }
+  }
+
+  function moveCoin(){
+    if (gurmannBottomSpace > 200){
+      coins.forEach(coin => {
+        coin.bottom -= 8; //Speed of the coins are falling
+        let visual = coin.visual;
+        visual.style.bottom = coin.bottom + "px";
+
+        if(coin.bottom < 10){
+          let firstCoin = coins[0].visual;
+          firstCoin.classList.remove("coin");
+          coins.shift();
+          let newCoin = new Coin (1080);
+          coins.push(newCoin);
+        }
+      });
+    }
+  }
+
+  function coinTakeIt(){
+    if (Coin.gurmann = 0){
+      let dissapearCoin = coins[0].visual;
+      dissapearCoin.classList.remove("coin")
+      increase = 2 * scoreCoin; //WRONGWRONGWRONGWRONGWRONGWRONGWRONGWRONGWRONGWRONGWRONG
+    }
+  }
+  //AIR
+  //AIR
+  //AIR
+  //AIR
+  //AIR
+  //Items
   //Gurmann, the character and his functions
   function createGurmann() {
     grid.appendChild(gurmann);
@@ -111,6 +171,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function jump() {
     clearInterval(downTimerId);
     isJumping = true;
+    score++;
+    console.log("MAKING POINT WHEN GURMANN'S JUMP");
     upTimerId = setInterval(function () {
       gurmannBottomSpace += 20; //The speed of our character when it's falling
       gurmann.style.bottom = gurmannBottomSpace + "px";
@@ -120,6 +182,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, 20); //Miliseconds
   }
+
+  /*function takeItems(){
+
+  }*/
 
   function moveLeft() {
     if (isGoingRight) {
@@ -198,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
     while (grid.firstChild) {
       grid.removeChild(grid.firstChild);
     }
-    grid.innerHTML = score;
+    grid.innerHTML = score + increase; //Score when you are jumping on a platform + Score coin
     clearInterval(upTimerId);
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
@@ -208,8 +274,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function start() {
     if (!isGameOver) {
       createPlatforms();
+      createCoin();
       createGurmann();
       setInterval(movePlatforms, 30);
+      setInterval(moveCoin, 30);
+      coinTakeIt();
       jump(startPoint);
       document.addEventListener("keydown", control);
       document.addEventListener("keyup", stopControl);
