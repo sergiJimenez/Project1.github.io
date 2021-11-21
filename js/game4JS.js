@@ -3,13 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
   const gurmann = document.createElement("div");
   let isGameOver = false; //GameOver variable
+  let finalMessage = "FINISH";
   let platformCount = 4; //How many platforms we have when we start a new game
   let platforms = [];
   let coinsCount = Math.random() * 4; //Defines a random number of coins, between 0 and 4, that'll appear
   let coins = [];
   let score = 0; //Initial score
-  const scoreCoin = 10;
-  let increase = 0;
+  /*const scoreCoin = 10;
+  let increase = 0;*/
   let gurmannLeftSpace = 50;
   let startPoint = 150;
   let gurmannBottomSpace = startPoint;
@@ -116,12 +117,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function coinTakeIt(){
-    if (Coin.gurmann = 0){
-      let dissapearCoin = coins[0].visual;
-      dissapearCoin.classList.remove("coin")
-      increase = 2 * scoreCoin; //WRONGWRONGWRONGWRONGWRONGWRONGWRONGWRONGWRONGWRONGWRONG
+      coins.forEach(Coin => {
+        if (
+          (gurmannBottomSpace >= Coin.bottom) &&
+          (gurmannBottomSpace <= (Coin.bottom + 64)) && //The pixel of the height collission
+          ((gurmannLeftSpace + 64) >= Coin.left) && //The pixel of the left space collission
+          (gurmannLeftSpace <= (Coin.left + 64)) //The pixel of the width collission
+        ) {
+          console.log("Collission");
+          scoreCoin++;
+        }
+      });
     }
-  }
   //AIR
   //AIR
   //AIR
@@ -171,8 +178,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function jump() {
     clearInterval(downTimerId);
     isJumping = true;
-    score++;
-    console.log("MAKING POINT WHEN GURMANN'S JUMP");
+    score++; //When Gurmann jumps it will increase the score by one
+    console.log("MAKING A JUMP POINT WHEN GURMANN'S JUMP");
+    if (score == 50){
+      EndGame();
+    }
     upTimerId = setInterval(function () {
       gurmannBottomSpace += 20; //The speed of our character when it's falling
       gurmann.style.bottom = gurmannBottomSpace + "px";
@@ -182,10 +192,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, 20); //Miliseconds
   }
-
-  /*function takeItems(){
-
-  }*/
 
   function moveLeft() {
     if (isGoingRight) {
@@ -264,11 +270,24 @@ document.addEventListener("DOMContentLoaded", () => {
     while (grid.firstChild) {
       grid.removeChild(grid.firstChild);
     }
-    grid.innerHTML = score + increase; //Score when you are jumping on a platform + Score coin
+    grid.innerHTML = score; //Score when you are jumping on a platform + Score coin
     clearInterval(upTimerId);
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
     clearInterval(rightTimerId);
+  }
+
+  function EndGame() {
+    isGameOver = true;
+    while (grid.firstChild) {
+      grid.removeChild(grid.firstChild);
+    }
+    grid.innerHTML = finalMessage + "<br>" + score; //CAMBIAR POR UNA PAGINA DONDE SE MUESTRE EL RESULTADO
+    clearInterval(upTimerId);
+    clearInterval(downTimerId);
+    clearInterval(leftTimerId);
+    clearInterval(rightTimerId);
+    console.log("UNTIL HERE");
   }
 
   function start() {
@@ -278,7 +297,6 @@ document.addEventListener("DOMContentLoaded", () => {
       createGurmann();
       setInterval(movePlatforms, 30);
       setInterval(moveCoin, 30);
-      coinTakeIt();
       jump(startPoint);
       document.addEventListener("keydown", control);
       document.addEventListener("keyup", stopControl);
