@@ -27,17 +27,18 @@
   background-image: url(../media/Platforms/Good_One.png);
   position: absolute;
 }
-/*
+
 .platformBroken{
-  width: 196px
+  width: 196px;
   height: 72px;
-  background-image: "../media/Platforms/Broken One.png";
+  background-image: url(../media/Platforms/Broken_One.png);
   position: absolute;
 }
+/*
 .platformSpike{
-  width: 196px
+  width: 196px;
   height: 125px;
-  background-image: "../media/Platforms/Spikes One.png";
+  background-image: url(../media/Platforms/Spikes_One.png);
   position: absolute;
 }
 */
