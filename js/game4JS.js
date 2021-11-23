@@ -4,10 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const gurmann = document.createElement("div");
   let isGameOver = false; //GameOver variable
   let finalMessage = "FINISH"; //Test message to try the ENDGAME option
-  let platformCount = 2; //How many platforms we have when we start a new game
-  //let platformBrokenCount = 2; //How many platforms we have when we start a new game
+  let platformCount = 4; //How many platforms we have when we start a new game
   let platforms = []; //Platform Array
-  //let brokenPlatforms = []; //Broken Platform Array
   let coinsCount = Math.random() * 4; //Defines a random number of coins, between 0 and 4, that'll appear
   let coins = []; //Coins Array
   let score = 0; //Initial score
@@ -44,20 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  /*class PlatformBroken { //Platform Broken
-    constructor(newPlatBrokenBottom) {
-      this.left = Math.random() * 732; //To know which number is it we have to make this operation (gridWidth - platformWidth). Why? Because we want to create the number of platforms inside of our grid
-      this.bottom = newPlatBrokenBottom;
-      this.visual = document.createElement("div");
-
-      const visual = this.visual;
-      visual.classList.add("platformBroken");
-      visual.style.left = this.left + "px";
-      visual.style.bottom = this.bottom + "px";
-      grid.appendChild(visual);
-    }
-  }*/
-
   function createPlatforms() { //Good One
     for (let i = 0; i < platformCount; i++) {
       let platGap = 1000 / platformCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
@@ -66,15 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
       platforms.push(newPlatform);
     }
   }
-
-  /*function createBrokenPlatforms() { //Platform Broken
-    for (let i = 0; i < platformBrokenCount; i++) {
-      let platBrokenGap = 1000 / platformBrokenCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
-      let newPlatBrokenBottom = 250 + i * platBrokenGap; //It'll increase where the new platform bottom distance will be create
-      let newBrokenPlatform = new PlatformBroken(newPlatBrokenBottom);
-      brokenPlatforms.push(newBrokenPlatform);
-    }
-  }*/
 
   function movePlatforms() { //Good One Movement
     if (gurmannBottomSpace > 200) {
@@ -93,24 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
-
-  /*function moveBrokenPlatforms() { //Platform Broken Movement
-    if (gurmannBottomSpace > 200) {
-      platforms.forEach(platform => {
-        platform.bottom -= 5; //Speed of the platforms are falling
-        let visual = platform.visual;
-        visual.style.bottom = platform.bottom + "px";
-
-        if (platform.bottom < 10) {
-          let firstBrokenPlatform = brokenPlatforms[0].visual;
-          firstBrokenPlatform.classList.remove("platformBroken");
-          brokenPlatforms.shift();
-          let newBrokenPlatform = new PlatformBroken(1080); //Where the new platform will be appear. We know that because our height is 1080px
-          brokenPlatforms.push(newBrokenPlatform);
-        }
-      });
-    }
-  }*/
   //Platforms
   //AIR
   //AIR
@@ -160,15 +117,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function coinTakeIt(){
+    console.log("HA ENTRADO");
       coins.forEach(Coin => {
         if (
           (gurmannBottomSpace >= Coin.bottom) &&
           (gurmannBottomSpace <= (Coin.bottom + 64)) && //The pixel of the height collission
-          ((gurmannLeftSpace + 64) >= Coin.left) && //The pixel of the left space collission
+          ((gurmannLeftSpace) >= Coin.left) && //The pixel of the left space collission
           (gurmannLeftSpace <= (Coin.left + 64)) //The pixel of the width collission
         ) {
           console.log("Collission");
-          scoreCoin++;
+          //scoreCoin++;
+          let coinToRemove = coins[0].visual;
+          coinToRemove.classList.remove("coin");
+          coins.shift();
         }
       });
     }
@@ -215,21 +176,6 @@ document.addEventListener("DOMContentLoaded", () => {
           isJumping = true;
         }
       });
-      /*platforms.forEach(platform => {
-        if (
-          (gurmannBottomSpace >= platform.bottom) &&
-          (gurmannBottomSpace <= (platform.bottom + 72)) && //The pixel of the height collission
-          ((gurmannLeftSpace + 60) >= platform.left) && //The pixel of the left space collission
-          (gurmannLeftSpace <= (platform.left + 196)) && //The pixel of the width collission
-          !isJumping
-        ) {
-          let firstBrokenPlatform = brokenPlatforms[0].visual;
-          firstBrokenPlatform.classList.remove("platformBroken");
-          brokenPlatforms.shift();
-          let newBrokenPlatform = new PlatformBroken(1080); //Where the new platform will be appear. We know that because our height is 1080px
-          brokenPlatforms.push(newBrokenPlatform);
-        }
-      });*/
     }, 10); //Miliseconds
   }
 
@@ -351,11 +297,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function start() {
     if (!isGameOver) {
       createPlatforms();
-      //createBrokenPlatforms();
       createCoin();
       createGurmann();
+      setInterval(coinTakeIt);
       setInterval(movePlatforms, 30);
-      //setInterval(moveBrokenPlatforms, 30);
       setInterval(moveCoin, 30);
       jump(startPoint);
       document.addEventListener("keydown", control);

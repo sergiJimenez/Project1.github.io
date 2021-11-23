@@ -28,27 +28,12 @@
   position: absolute;
 }
 
-.platformBroken{
-  width: 196px;
-  height: 72px;
-  background-image: url(../media/Platforms/Broken_One.png);
-  position: absolute;
-}
-/*
-.platformSpike{
-  width: 196px;
-  height: 125px;
-  background-image: url(../media/Platforms/Spikes_One.png);
-  position: absolute;
-}
-*/
 .coin {
   width: 64px;
   height: 64px;
   background-image: url(../media/Animated_Items/Coin.gif);
   position: absolute;
 }
-/*
 /*
 .redGem{
   width: 64px;
