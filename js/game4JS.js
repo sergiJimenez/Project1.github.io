@@ -129,7 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
           //scoreCoin++;
           let coinToRemove = coins[0].visual;
           coinToRemove.classList.remove("coin");
-          coins.shift();
         }
       });
     }
