@@ -1,0 +1,8 @@
+.body {
+    height: 1080px;
+    width: 1920px;
+}
+.BCKGRND {
+    background-image: url(../media/Title.png);
+    position: fixed;
+}
