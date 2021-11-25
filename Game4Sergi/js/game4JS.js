@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
     downTimerId = setInterval(function () {
       gurmannBottomSpace -= 5; //The speed of our character when it's falling
       gurmann.style.bottom = gurmannBottomSpace + "px";
-      gurmann.style.backgroundImage = "url('../media/flipyFlipilyFlop/Character/Gif/Fall.gif')";
+      gurmann.style.backgroundImage = "url('/Game4Sergi/media/flipyFlipilyFlop/Character/Gif/Fall.gif')";
       gurmann.style.width = "133px";
       gurmann.style.height = "150px";
       if (gurmannBottomSpace <= 0) { //When Gurmann arrives to 0pxBottom there'll die
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
           !isJumping
         ) {
           startPoint = gurmannBottomSpace;
-          gurmann.style.backgroundImage = "url('../media/flipyFlipilyFlop/Character/Gif/Jump.gif')";
+          gurmann.style.backgroundImage = "url('/Game4Sergi/media/flipyFlipilyFlop/Character/Gif/Jump.gif')";
           gurmann.style.width = "103px";
           gurmann.style.height = "151px";
           jump();
