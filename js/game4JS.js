@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let finalMessage = "FINISH"; //Test message to try the ENDGAME option
   let platformCount = 4; //How many platforms we have when we start a new game
   let platforms = []; //Platform Array
-  let coinsCount = Math.random() * 4; //Defines a random number of coins, between 0 and 4, that'll appear
+  let coinsCount = 4; //Defines a random number of coins, between 0 and 4, that'll appear
   let coins = []; //Coins Array
   let score = 0; //Initial score
   //const scoreCoin = 10;
@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let upTimerId;
   let downTimerId;
   let isJumping = true;
+  //let isFalling = true;
   let isGoingLeft = false;
   let isGoingRight = false;
   let leftTimerId;
@@ -121,14 +122,16 @@ document.addEventListener("DOMContentLoaded", () => {
       coins.forEach(Coin => {
         if (
           (gurmannBottomSpace >= Coin.bottom) &&
-          (gurmannBottomSpace <= (Coin.bottom + 64)) && //The pixel of the height collission
-          ((gurmannLeftSpace) >= Coin.left) && //The pixel of the left space collission
-          (gurmannLeftSpace <= (Coin.left + 64)) //The pixel of the width collission
+          (gurmannBottomSpace <= Coin.bottom && gurmannBottomSpace >= Coin.bottom + 64) &&
+          (gurmannBottomSpace <= (Coin.bottom + 64)) &&
+          ((gurmannLeftSpace) >= Coin.left) &&
+          (gurmannLeftSpace <= (Coin.left + 64))
         ) {
           console.log("Collission");
           //scoreCoin++;
           let coinToRemove = coins[0].visual;
           coinToRemove.classList.remove("coin");
+          coins.shift();
         }
       });
     }
@@ -296,15 +299,22 @@ document.addEventListener("DOMContentLoaded", () => {
   function start() {
     if (!isGameOver) {
       createPlatforms();
-      createCoin();
+      setInterval(createCoin, 5000);
       createGurmann();
-      setInterval(coinTakeIt);
-      setInterval(movePlatforms, 30);
-      setInterval(moveCoin, 30);
+      //setInterval(coinTakeIt, 10);
+      //setInterval(movePlatforms, 30);
+      //setInterval(moveCoin, 30);
+      setInterval(check, 30);
       jump(startPoint);
       document.addEventListener("keydown", control);
       document.addEventListener("keyup", stopControl);
     }
+  }
+
+  function check(){
+    moveCoin();
+    coinTakeIt();
+    movePlatforms();
   }
   start();
 });
