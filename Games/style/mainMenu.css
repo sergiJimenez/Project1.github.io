@@ -1,0 +1,63 @@
+body {
+    height: 1080px;
+    width: 1920px;
+    background-image: url("../media/Main_Menu.png");
+    position: fixed;
+    background-repeat: no-repeat;
+}
+.Games {
+    display: block;
+    width: 144px;
+    height: 34px;
+    top: 406px;
+    left: 880px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+}
+.Rankings {
+    display: block;
+    width: 171px;
+    height: 49px;
+    top: 485px;
+    left: 866px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+}
+.Options { /*HAVE TO CHANGE THE OPTIONS POSITION IN PHOTOSHOP*/
+    display: block;
+    width: 170px;
+    height: 49px;
+    top: 577px;
+    left: 867px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+}
+.Exit {
+    display: block;
+    width: 90px;
+    height: 36px;
+    top: 888px;
+    left: 907px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+}
