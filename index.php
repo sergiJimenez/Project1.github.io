@@ -28,7 +28,7 @@
               <img src="./media/LandingPage/Carrousel/arcade.jpg" class="d-block w-100" alt="Carousel portal cep">
               <div class="carousel-caption justify-content-start">
                 <p class="fs-1 text-black">Tenim una serie de jocs que potser t'agraden, vols provar?</p> <br>
-                <button type="button" class="btn btn-lg btn-dark" href="">Juga ara!</button>
+                <a type="button" class="btn btn-lg btn-dark" href="./menuGames/menus/gameIntro.html">Juga ara!</a>
               </div>
             </div>
             <div class="carousel-item">
