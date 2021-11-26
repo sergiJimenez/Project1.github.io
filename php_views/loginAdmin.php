@@ -37,9 +37,6 @@ if (isset($_POST["submit"])) {
     <!-- BOOTSTRAP LINKS -->
     <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/bootstrap.min.css">
     <script src="../bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
-    <!-- BOOTSTRAP LINKS -->
-    <link href="style/styles.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="bg-dark">
@@ -52,7 +49,7 @@ if (isset($_POST["submit"])) {
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
                                     <h3 class="text-center font-weight-light my-4">
-                                        Login
+                                        Admin Login
                                     </h3>
                                 </div>
                                 <div class="card-body">
@@ -69,33 +66,34 @@ if (isset($_POST["submit"])) {
                                             </label>
                                             <input name="password" class="form-control" id="inputPassword" type="password" placeholder="Enter password" /><br>
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <div class="custom-control custom-checkbox">
                                                 <input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
                                                 <label class="custom-control-label" for="rememberPasswordCheck">
                                                     Remember password
                                                 </label>
                                             </div>
-                                        </div>
-                                        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                                        </div> -->
+                                        <!-- <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                             <a class="small" href="password.html">
                                                 Forgot Password?
-                                            </a> <!-- JUNTAR REMEMBER PASSWORD CON FORGOT PASSWORD -->
-                                        </div><br>
-                                        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                            <input class="btn btn-dark" type="submit" name="submit" value="Enter">
+                                        </div> -->
+                                        <div class="form-group text-center justify-content-between mt-4 mb-0">
+                                            <a class="btn btn-dark" type="submit" name="submit" value="Enter" href="/Project1.github.io/homeAdmin.php">
+                                                Enter
+                                            </a>
                                         </div>
                                         <center><?php //echo $error 
                                                 ?></center>
                                     </form>
                                 </div>
-                                <div class="card-footer text-center">
+                                <!-- <div class="card-footer text-center">
                                     <div class="small">
                                         <a href="registerAdmin.php">
                                             Need an account? Sign up!
                                         </a>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -104,5 +102,4 @@ if (isset($_POST["submit"])) {
         </div>
     </div>
 </body>
-
 </html>

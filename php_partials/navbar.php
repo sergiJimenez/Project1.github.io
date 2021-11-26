@@ -10,7 +10,7 @@
     <div class="justify-content-end nav collapse navbar-collapse">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link text-secondary" href="/Project1.github.io/homeAdmin.php">Admin</a>
+          <a class="nav-link text-secondary" href="/Project1.github.io/php_views/loginAdmin.php">Admin</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-secondary" href="/Project1.github.io/indexAboutUs.php">About Us</a>
