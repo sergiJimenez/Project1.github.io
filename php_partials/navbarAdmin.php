@@ -30,9 +30,6 @@
     </div>
     <div class="justify-content-end nav collapse navbar-collapse">
       <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link text-light align-self-center" href="/Project1.github.io/indexAboutUs.php">About Us</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light align-self-center" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Idiomes
