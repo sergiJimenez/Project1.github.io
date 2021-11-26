@@ -1,0 +1,63 @@
+body {
+    height: 1080px;
+    width: 1920px;
+    background-image: url("../media/Options.png");
+    position: fixed;
+    background-repeat: no-repeat;
+}
+.Music {
+    display: block;
+    width: 129px;
+    height: 36px;
+    top: 405px;
+    left: 888px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+}
+.SFX {
+    display: block;
+    width: 76px;
+    height: 33px;
+    top: 488px;
+    left: 914px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+}
+.Control {
+    display: block;
+    width: 173px;
+    height: 33px;
+    top: 574px;
+    left: 866px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+}
+.Back {
+    display: block;
+    width: 90px;
+    height: 36px;
+    top: 888px;
+    left: 907px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+}
