@@ -5,7 +5,7 @@ session_start();
 if (isset($_POST["submit"])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
-    $sql = "SELECT * FROM admin_user WHERE username='$username' AND password='$password'";
+    $sql = "SELECT * FROM usuarios WHERE Mail_Usuario='$username' AND Contrasenya_Usuario='$password'";
     $res = mysqli_query($con, $sql);
     $count = mysqli_num_rows($res);
     if ($count > 0) {

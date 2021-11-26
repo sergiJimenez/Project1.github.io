@@ -15,13 +15,13 @@
           </a>
           <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
             <li>
-              <a class="dropdown-item text-light align-self-center" href="/Project1.github.io/php_views/rankingsAdmin.php">
-                Rankings
+              <a class="dropdown-item text-light align-self-center" href="/Project1.github.io/php_views/userInfoAdmin.php">
+                User's Information
               </a>
             </li>
             <li>
-              <a class="dropdown-item text-light align-self-center" href="/Project1.github.io/php_views/userInfoAdmin.php">
-                User's Information
+              <a class="dropdown-item text-light align-self-center" href="/Project1.github.io/php_views/rankingsAdmin.php">
+                Rankings
               </a>
             </li>
           </ul>

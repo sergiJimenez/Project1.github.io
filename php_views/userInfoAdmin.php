@@ -43,6 +43,7 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Email</th>
+                                        <th>Password</th>
                                         <th>Interested Carreer</th>
                                     </tr>
                                 </thead>
@@ -50,6 +51,7 @@
                                     <tr>
                                         <td>Sergi</td>
                                         <td>sperezj2021@cepnet.net</td>
+                                        <td>abcd1234</td>
                                         <td>Comercio Y Marqueting</td>
                                     </tr>
                                 </tbody>
@@ -57,6 +59,7 @@
                                     <tr>
                                         <td>Aitor</td>
                                         <td>acarro2021@cepnet.net</td>
+                                        <td>holaHola123</td>
                                         <td>Hosteleria y Turismo</td>
                                     </tr>
                                 </tbody>
@@ -64,6 +67,7 @@
                                     <tr>
                                         <td>Raül</td>
                                         <td>rlendines2021@cepnet.net</td>
+                                        <td>uuuulebaguette</td>
                                         <td>Informatica Y Telecomunicaciones</td>
                                     </tr>
                                 </tbody>
@@ -71,6 +75,7 @@
                                     <tr>
                                         <td>Borja</td>
                                         <td>borjita2021@cepnet.net</td>
+                                        <td>peroSiLePonenLaCansion</td>
                                         <td>Informatica Y Telecomunicaciones</td>
                                     </tr>
                                 </tbody>
