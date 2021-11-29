@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let finalMessage = "FINISH"; //Test message to try the ENDGAME option
   let platformCount = 4; //How many platforms we have when we start a new game
   let platforms = []; //Platform Array
-  let coinsCount = 4; //Defines a random number of coins, between 0 and 4, that'll appear
+  let coinsCount = 3; //Defines a random number of coins, between 0 and 4, that'll appear
   let coins = []; //Coins Array
   let score = 0; //Initial score
   //const scoreCoin = 10;
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function createPlatforms() { //Good One
+  function createPlatforms() {
     for (let i = 0; i < platformCount; i++) {
       let platGap = 1000 / platformCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
       let newPlatBottom = 250 + i * platGap; //It'll increase where the new platform bottom distance will be create
@@ -52,14 +52,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function movePlatforms() { //Good One Movement
+  function movePlatforms() {
     if (gurmannBottomSpace > 200) {
       platforms.forEach(platform => {
         platform.bottom -= 5; //Speed of the platforms are falling
         let visual = platform.visual;
         visual.style.bottom = platform.bottom + "px";
 
-        if (platform.bottom < 10) {
+        if (platform.bottom < 0) {
           let firstPlatform = platforms[0].visual;
           firstPlatform.classList.remove("platform");
           platforms.shift();
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let visual = coin.visual;
         visual.style.bottom = coin.bottom + "px";
 
-        if(coin.bottom < 10){
+        if(coin.bottom < 0){
           let firstCoin = coins[0].visual;
           firstCoin.classList.remove("coin");
           coins.shift();
@@ -117,15 +117,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function coinTakeIt(){
-    console.log("HA ENTRADO");
+  /*function coinTakeIt(){
       coins.forEach(Coin => {
         if (
-          (gurmannBottomSpace >= Coin.bottom) &&
-          (gurmannBottomSpace <= Coin.bottom && gurmannBottomSpace >= Coin.bottom + 64) &&
-          (gurmannBottomSpace <= (Coin.bottom + 64)) &&
-          ((gurmannLeftSpace) >= Coin.left) &&
-          (gurmannLeftSpace <= (Coin.left + 64))
+          //Conditional_Down_Left_Gurmann & Bottom_Coin
+          (gurmannLeftSpace >= Coin.left) &&
+          (gurmannLeftSpace <= Coin.bottom && gurmannLeftSpace >= (Coin.bottom + 64)) &&
+          (gurmannLeftSpace <= (Coin.bottom + 64)) ||
+          //Conditional_Down_Left_Gurmann & Middle_Coin
+          (gurmannLeftSpace >= Coin.left && gurmannLeftSpace <= (Coin.left + 64)) &&
+          (gurmannLeftSpace >= Coin.left && gurmannLeftSpace <= (Coin.bottom + 64) && gurmannLeftSpace <= (Coin.left + 64)) ||
+          //Conditional_Down_Left_Gurmann & Top_Coin
+          (gurmannLeftSpace >= (Coin.left + 64)) &&
+          (gurmannLeftSpace <= (Coin.left + 64) && gurmannLeftSpace >= Coin.bottom && gurmannLeftSpace <= (Coin.bottom + 64)) &&
+          (gurmannLeftSpace <= (Coin.left + 64) && gurmannLeftSpace >= (Coin.bottom + 64))
         ) {
           console.log("Collission");
           //scoreCoin++;
@@ -134,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
           coins.shift();
         }
       });
-    }
+    }*/
   //AIR
   //AIR
   //AIR
@@ -299,22 +304,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function start() {
     if (!isGameOver) {
       createPlatforms();
-      setInterval(createCoin, 5000);
+      createCoin();
       createGurmann();
       //setInterval(coinTakeIt, 10);
-      //setInterval(movePlatforms, 30);
-      //setInterval(moveCoin, 30);
-      setInterval(check, 30);
+      setInterval(movePlatforms, 30);
+      setInterval(moveCoin, 25);
       jump(startPoint);
       document.addEventListener("keydown", control);
       document.addEventListener("keyup", stopControl);
     }
-  }
-
-  function check(){
-    moveCoin();
-    coinTakeIt();
-    movePlatforms();
   }
   start();
 });
