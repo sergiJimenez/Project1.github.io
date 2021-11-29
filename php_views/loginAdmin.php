@@ -66,18 +66,6 @@ if (isset($_POST["submit"])) {
                                             </label>
                                             <input name="password" class="form-control" id="inputPassword" type="password" placeholder="Enter password" /><br>
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
-                                                <label class="custom-control-label" for="rememberPasswordCheck">
-                                                    Remember password
-                                                </label>
-                                            </div>
-                                        </div> -->
-                                        <!-- <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                            <a class="small" href="password.html">
-                                                Forgot Password?
-                                        </div> -->
                                         <div class="form-group text-center justify-content-between mt-4 mb-0">
                                             <a class="btn btn-dark" type="submit" name="submit" value="Enter" href="/Project1.github.io/homeAdmin.php">
                                                 Enter
@@ -87,13 +75,6 @@ if (isset($_POST["submit"])) {
                                                 ?></center>
                                     </form>
                                 </div>
-                                <!-- <div class="card-footer text-center">
-                                    <div class="small">
-                                        <a href="registerAdmin.php">
-                                            Need an account? Sign up!
-                                        </a>
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
                     </div>
