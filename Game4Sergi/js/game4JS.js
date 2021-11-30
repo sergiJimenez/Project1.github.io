@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let upTimerId;
   let downTimerId;
   let isJumping = true;
-  //let isFalling = true;
   let isGoingLeft = false;
   let isGoingRight = false;
   let leftTimerId;
@@ -110,36 +109,38 @@ document.addEventListener("DOMContentLoaded", () => {
           let firstCoin = coins[0].visual;
           firstCoin.classList.remove("coin");
           coins.shift();
-          let newCoin = new Coin (1080);
+          let newCoin = new Coin(1080);
           coins.push(newCoin);
         }
       });
     }
   }
 
-  /*function coinTakeIt(){
+  function coinTakeIt(){
       coins.forEach(Coin => {
         if (
           //Conditional_Down_Left_Gurmann & Bottom_Coin
           (gurmannLeftSpace >= Coin.left) &&
-          (gurmannLeftSpace <= Coin.bottom && gurmannLeftSpace >= (Coin.bottom + 64)) &&
+          (gurmannLeftSpace >= Coin.bottom && gurmannLeftSpace <= (Coin.bottom + 64)) &&
           (gurmannLeftSpace <= (Coin.bottom + 64)) ||
           //Conditional_Down_Left_Gurmann & Middle_Coin
           (gurmannLeftSpace >= Coin.left && gurmannLeftSpace <= (Coin.left + 64)) &&
           (gurmannLeftSpace >= Coin.left && gurmannLeftSpace <= (Coin.bottom + 64) && gurmannLeftSpace <= (Coin.left + 64)) ||
           //Conditional_Down_Left_Gurmann & Top_Coin
-          (gurmannLeftSpace >= (Coin.left + 64)) &&
+          (gurmannLeftSpace <= (Coin.left + 64)) &&
           (gurmannLeftSpace <= (Coin.left + 64) && gurmannLeftSpace >= Coin.bottom && gurmannLeftSpace <= (Coin.bottom + 64)) &&
-          (gurmannLeftSpace <= (Coin.left + 64) && gurmannLeftSpace >= (Coin.bottom + 64))
+          (gurmannLeftSpace <= (Coin.left + 64) && gurmannLeftSpace <= (Coin.bottom + 64))
         ) {
           console.log("Collission");
           //scoreCoin++;
           let coinToRemove = coins[0].visual;
           coinToRemove.classList.remove("coin");
           coins.shift();
+          let newCoin = new Coin(1080);
+          coins.push(newCoin);
         }
       });
-    }*/
+    }
   //AIR
   //AIR
   //AIR
@@ -306,7 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
       createPlatforms();
       createCoin();
       createGurmann();
-      //setInterval(coinTakeIt, 10);
+      setInterval(coinTakeIt, 10);
       setInterval(movePlatforms, 30);
       setInterval(moveCoin, 25);
       jump(startPoint);
