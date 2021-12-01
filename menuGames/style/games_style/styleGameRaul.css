@@ -27,7 +27,7 @@ body {
 
 .background{
   margin: auto;
-  background-image: url(../../games/gameRaul/images/backgroundGameRaul.png);
+  background-image: url(../../../media/Games/imagesGameRaul/backgroundGameRaul.png);
   background-size: cover;
   background-repeat: no-repeat;
   height: 700px;
@@ -58,7 +58,7 @@ img{
 }
 
 .card-face {
-  background-image: url("../../games/gameRaul/images/cardShowGameRaul.png");
+  background-image: url(../../../media/Games/imagesGameRaul/cardShowGameRaul.png);
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -72,7 +72,7 @@ img{
 }
 
 .card-face--front {
-  background-image: url("../../games/gameRaul/images/cardHideGameRaul.png");
+  background-image: url(../../../media/Games/imagesGameRaul/cardHideGameRaul.png);
   background-size: contain;
   display: flex;
   align-items: center;
