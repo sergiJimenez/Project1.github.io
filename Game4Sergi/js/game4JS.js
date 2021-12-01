@@ -119,17 +119,21 @@ document.addEventListener("DOMContentLoaded", () => {
   function coinTakeIt(){
       coins.forEach(coin => {
         if (
-          //Conditional_Left_Gurmann
+          //Conditional_Left_Down_Gurmann
           (gurmannLeftSpace >= coin.left) &&
           (gurmannLeftSpace <= (coin.left + 64)) &&
           (gurmannBottomSpace >= coin.bottom) &&
           (gurmannBottomSpace <= (coin.bottom + 64)) ||
-          //Conditional_Right_Gurmann
+          //Conditional_Right_Down_Gurmann
           ((gurmannLeftSpace + 64) >= coin.left) &&
           ((gurmannLeftSpace + 64) <= (coin.left + 64)) &&
           ((gurmannBottomSpace + 64) >= coin.bottom) &&
-          ((gurmannBottomSpace + 64) <= (coin.bottom + 64))
+          ((gurmannBottomSpace + 64) <= (coin.bottom + 64)) ||
           //Conditional_Left_Up_Gurmann
+          ((gurmannLeftSpace) >= coin.left) &&
+          ((gurmannLeftSpace) <= (coin.left + 64)) &&
+          ((gurmannBottomSpace) >= coin.bottom) &&
+          ((gurmannBottomSpace) <= (coin.bottom + 64))
           //Conditional_Right_Up_Gurmann
         ){
           console.log("Collission");
@@ -137,8 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
           let coinToRemove = coins[0].visual;
           coinToRemove.classList.remove("coin");
           coins.shift();
-          let newCoin2 = new Coin(1080);
-          coins.push(newCoin2);
+          let newCoin = new Coin(1080);
+          coins.push(newCoin);
         }
       });
     }
