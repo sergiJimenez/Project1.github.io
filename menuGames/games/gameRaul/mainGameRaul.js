@@ -19,6 +19,8 @@ const iconosDam = [
     { name: 'java', icon: 'fa-java' },
 ]
 
+const gameFinished = false;
+
 document.addEventListener('DOMContentLoaded', () => {
 
     //Array de los modulos existentes
@@ -272,7 +274,7 @@ function cronometro() {
     let parpadeoContador;
     let salir;
     let min = 0;        //Declaracion de los minutos
-    let sec = 60;       //Declaracion de los segundos
+    let sec = 60 ;       //Declaracion de los segundos
     let ejectuarCronometro = setInterval(timer, 1000);      //Iniciar timer cada 1000ms
 
     function timer() { // creo una cuenta atras, cuando llega a 0 el jugador pierde 
@@ -299,6 +301,9 @@ function cronometro() {
             }
         } else if ((min == 0 && sec == 0) || resultado == 6) {
             if (parpadeoContador == true) {
+
+                gameFinished == true;   //Juego finalizado
+
                 //Recorro 12 veces la funcion de borrar cartas
                 for (let i = 0; i < 12; i++) {
                     removeCards();
@@ -329,5 +334,17 @@ function removeCards() {
         card = document.getElementById("card");
 
         document.getElementById('memory-game').removeChild(card);
+        
+       // salir();
     }
 }
+
+
+/* function salir() {
+    let botonExit = document.createElement('a');
+    let botonExitText = document.createTextNode(theCounter);
+    botonExit.setAttribute('href', "../../menus/gamesMenu.html");
+    botonExit.appendChild(botonExitText);
+
+    document.getElementById('memory-game').appendChild(botonExit);
+} */
