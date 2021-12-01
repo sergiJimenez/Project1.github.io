@@ -2,12 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
   //Variables
   const grid = document.querySelector(".grid");
   const gurmann = document.createElement("div");
+  const scoreVisual = document.createElement("scoreVisual");
   let isGameOver = false; //GameOver variable
   let finalMessage = "FINISH"; //Test message to try the ENDGAME option
   let platformCount = 4; //How many platforms we have when we start a new game
   let platforms = []; //Platform Array
   let coinsCount = 3; //Defines a random number of coins, between 0 and 4, that'll appear
   let coins = []; //Coins Array
+  //let redGemCount = 1;
+  //let redGems = [];
   let score = 0; //Initial score
   //const scoreCoin = 10;
   //let increase = 0;
@@ -28,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //AIR
   //AIR
   //Platforms
-  class Platform { //Good One
+  class Platform {
     constructor(newPlatBottom) {
       this.left = Math.random() * 732; //To know which number is it we have to make this operation (gridWidth - platformWidth). Why? Because we want to create the number of platforms inside of our grid
       this.bottom = newPlatBottom;
@@ -74,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //AIR
   //AIR
   //AIR
-  //Items
+  //Coin
   class Coin {
     constructor(newCoinBottom){
       this.left = Math.random() * 732; //To know which number is it we have to make this operation (gridWidth - platformWidth). Why? Because we want to create the number of platforms inside of our grid
@@ -125,18 +128,21 @@ document.addEventListener("DOMContentLoaded", () => {
           (gurmannBottomSpace >= coin.bottom) &&
           (gurmannBottomSpace <= (coin.bottom + 64)) ||
           //Conditional_Right_Down_Gurmann
-          ((gurmannLeftSpace + 64) >= coin.left) &&
-          ((gurmannLeftSpace + 64) <= (coin.left + 64)) &&
-          ((gurmannBottomSpace + 64) >= coin.bottom) &&
-          ((gurmannBottomSpace + 64) <= (coin.bottom + 64)) ||
+          (gurmannLeftSpace >= coin.left) &&
+          ((gurmannLeftSpace + 133) <= (coin.left + 64)) &&
+          (gurmannBottomSpace >= coin.bottom) &&
+          (gurmannBottomSpace + 133 <= (coin.bottom + 64)) ||
           //Conditional_Left_Up_Gurmann
-          ((gurmannLeftSpace) >= coin.left) &&
-          ((gurmannLeftSpace) <= (coin.left + 64)) &&
-          ((gurmannBottomSpace) >= coin.bottom) &&
-          ((gurmannBottomSpace) <= (coin.bottom + 64))
+          ((gurmannLeftSpace + 150) >= coin.left) &&
+          (gurmannLeftSpace <= (coin.left + 64)) &&
+          ((gurmannBottomSpace + 150) >= coin.bottom) &&
+          (gurmannBottomSpace <= (coin.bottom + 64)) ||
           //Conditional_Right_Up_Gurmann
+          ((gurmannLeftSpace + 150) >= coin.left) &&
+          ((gurmannLeftSpace + 133) <= (coin.left + 64)) &&
+          ((gurmannBottomSpace + 150) >= coin.bottom) &&
+          ((gurmannBottomSpace + 133) <= (coin.bottom + 64))
         ){
-          console.log("Collission");
           //scoreCoin++;
           let coinToRemove = coins[0].visual;
           coinToRemove.classList.remove("coin");
@@ -145,13 +151,95 @@ document.addEventListener("DOMContentLoaded", () => {
           coins.push(newCoin);
         }
       });
+  }
+  //Coin
+  //AIR
+  //AIR
+  //AIR
+  //AIR
+  //AIR
+  //Red Gem
+  class RedGem {
+    constructor(newRedGemBottom){
+      this.left = Math.random() * 732; //To know which number is it we have to make this operation (gridWidth - platformWidth). Why? Because we want to create the number of platforms inside of our grid
+      this.bottom = newRedGemBottom;
+      this.visual = document.createElement("div");
+
+      const visual = this.visual;
+      visual.classList.add("redGem");
+      visual.style.left = this.left + "px";
+      visual.style.bottom = this.bottom + "px";
+      grid.appendChild(visual);
     }
+  }
+
+  function createRedGem(){
+    for (let i = 0; i < redGemCount; i++) {
+      let redGemGap = 1000 / redGemCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
+      let newRedGemBottom = 250 + i * redGemGap; //It'll increase where the new platform bottom distance will be create
+      let newItem = new Coin(newRedGemBottom);
+      redGems.push(newItem);
+    }
+  }
+
+  function moveRedGem(){
+    if (gurmannBottomSpace > 200){
+      redGems.forEach(redGem => {
+        redGem.bottom -= 8; //Speed of the coins are falling
+        let visual = redGem.visual;
+        visual.style.bottom = redGem.bottom + "px";
+
+        if(redGem.bottom < 0){
+          let firstRedGem = redGems[0].visual;
+          firstRedGem.classList.remove("redGem");
+          redGems.shift();
+          let newRedGem = new RedGem(1080);
+          redGems.push(newRedGem);
+        }
+      });
+    }
+  }
+
+  function redGemTakeIt(){
+      redGems.forEach(redGem => {
+        if (
+          //Conditional_Left_Down_Gurmann
+          (gurmannLeftSpace >= redGem.left) &&
+          (gurmannLeftSpace <= (redGem.left + 64)) &&
+          (gurmannBottomSpace >= redGem.bottom) &&
+          (gurmannBottomSpace <= (redGem.bottom + 64)) ||
+          //Conditional_Right_Down_Gurmann
+          (gurmannLeftSpace >= redGem.left) &&
+          ((gurmannLeftSpace + 133) <= (redGem.left + 64)) &&
+          (gurmannBottomSpace >= redGem.bottom) &&
+          (gurmannBottomSpace + 133 <= (redGem.bottom + 64)) ||
+          //Conditional_Left_Up_Gurmann
+          ((gurmannLeftSpace + 150) >= redGem.left) &&
+          (gurmannLeftSpace <= (redGem.left + 64)) &&
+          ((gurmannBottomSpace + 150) >= redGem.bottom) &&
+          (gurmannBottomSpace <= (redGem.bottom + 64)) ||
+          //Conditional_Right_Up_Gurmann
+          ((gurmannLeftSpace + 150) >= redGem.left) &&
+          ((gurmannLeftSpace + 133) <= (redGem.left + 64)) &&
+          ((gurmannBottomSpace + 150) >= redGem.bottom) &&
+          ((gurmannBottomSpace + 133) <= (redGem.bottom + 64))
+        ){
+          //scoreCoin++;
+          let redGemToRemove = redGems[0].visual;
+          redGemToRemove.classList.remove("redGem");
+          redGems.shift();
+          let newRedGem = new RedGem(1080);
+          redGems.push(newRedGem);
+        }
+      });
+  }
+  //Red Gem
   //AIR
   //AIR
   //AIR
   //AIR
   //AIR
-  //Items
+
   //Gurmann, the character and his functions
   function createGurmann() {
     grid.appendChild(gurmann);
@@ -287,7 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
     while (grid.firstChild) {
       grid.removeChild(grid.firstChild);
     }
-    grid.innerHTML = score; //Score when you are jumping on a platform + Score coin
+    scoreVisual.innerHTML = score; //Score when you are jumping on a platform + Score coin
     clearInterval(upTimerId);
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
@@ -299,7 +387,7 @@ document.addEventListener("DOMContentLoaded", () => {
     while (grid.firstChild) {
       grid.removeChild(grid.firstChild);
     }
-    grid.innerHTML = finalMessage + "<br>" + score; //CAMBIAR POR UNA PAGINA DONDE SE MUESTRE EL RESULTADO
+    scoreVisual.innerHTML = finalMessage + "<br>" + score; //CAMBIAR POR UNA PAGINA DONDE SE MUESTRE EL RESULTADO
     clearInterval(upTimerId);
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
@@ -314,6 +402,9 @@ document.addEventListener("DOMContentLoaded", () => {
       setInterval(movePlatforms, 30);
       setInterval(moveCoin, 25);
       setInterval(coinTakeIt, 10);
+      //createRedGem();
+      //setInterval(moveRedGem, 25);
+      //setInterval(redGemTakeIt, 10);
       createGurmann();
       jump(startPoint);
       document.addEventListener("keydown", control);

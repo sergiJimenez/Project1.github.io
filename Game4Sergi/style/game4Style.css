@@ -6,16 +6,22 @@
 }
 
 .grid {
-  /*SIZE OF GRID*/
   width: 928px;
   height: 1080px;
   margin-left: 488px;
   background-image: none;
   position: fixed;
-  /*SCORE NUMBERS*/
+}
+
+.scoreVisual{
+  width: 500px;
+  height: 500px;
+  margin-left: 488px;
   font-size: 100px;
   text-align: center;
-}
+  background-color: white;
+  position: fixed;
+} 
 
 .gurmann {
   position: absolute;
@@ -34,13 +40,14 @@
   background-image: url(../media/Animated_Items/Coin.gif);
   position: absolute;
 }
-/*
+
 .redGem{
   width: 64px;
   height: 64px;
-  background-image: "../media/Animated Items/Red Gem.gif";
+  background-image: url(../media/Animated_Items/Red_Gem.gif);
+  position: absolute;
 }
-*/
+
 /*
 .blueGem{
   width: 64px;
