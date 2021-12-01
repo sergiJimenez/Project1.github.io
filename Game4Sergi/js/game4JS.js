@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
           (gurmannLeftSpace <= (Coin.left + 64)) &&
           (gurmannLeftSpace <= (Coin.left + 64) && gurmannLeftSpace >= Coin.bottom && gurmannLeftSpace <= (Coin.bottom + 64)) &&
           (gurmannLeftSpace <= (Coin.left + 64) && gurmannLeftSpace <= (Coin.bottom + 64))
-        ) {
+        ){
           console.log("Collission");
           //scoreCoin++;
           let coinToRemove = coins[0].visual;
@@ -306,10 +306,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!isGameOver) {
       createPlatforms();
       createCoin();
-      createGurmann();
-      setInterval(coinTakeIt, 10);
       setInterval(movePlatforms, 30);
       setInterval(moveCoin, 25);
+      createGurmann();
+      setInterval(coinTakeIt, 10);
       jump(startPoint);
       document.addEventListener("keydown", control);
       document.addEventListener("keyup", stopControl);
