@@ -117,27 +117,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function coinTakeIt(){
-      coins.forEach(Coin => {
+      coins.forEach(coin => {
         if (
-          //Conditional_Down_Left_Gurmann & Bottom_Coin
-          (gurmannLeftSpace >= Coin.left) &&
-          (gurmannLeftSpace >= Coin.bottom && gurmannLeftSpace <= (Coin.bottom + 64)) &&
-          (gurmannLeftSpace <= (Coin.bottom + 64)) ||
-          //Conditional_Down_Left_Gurmann & Middle_Coin
-          (gurmannLeftSpace >= Coin.left && gurmannLeftSpace <= (Coin.left + 64)) &&
-          (gurmannLeftSpace >= Coin.left && gurmannLeftSpace <= (Coin.bottom + 64) && gurmannLeftSpace <= (Coin.left + 64)) ||
-          //Conditional_Down_Left_Gurmann & Top_Coin
-          (gurmannLeftSpace <= (Coin.left + 64)) &&
-          (gurmannLeftSpace <= (Coin.left + 64) && gurmannLeftSpace >= Coin.bottom && gurmannLeftSpace <= (Coin.bottom + 64)) &&
-          (gurmannLeftSpace <= (Coin.left + 64) && gurmannLeftSpace <= (Coin.bottom + 64))
+          //Conditional_Left_Gurmann
+          (gurmannLeftSpace >= coin.left) &&
+          (gurmannLeftSpace <= (coin.left + 64)) &&
+          (gurmannBottomSpace >= coin.bottom) &&
+          (gurmannBottomSpace <= (coin.bottom + 64)) ||
+          //Conditional_Right_Gurmann
+          ((gurmannLeftSpace + 64) >= coin.left) &&
+          ((gurmannLeftSpace + 64) <= (coin.left + 64)) &&
+          ((gurmannBottomSpace + 64) >= coin.bottom) &&
+          ((gurmannBottomSpace + 64) <= (coin.bottom + 64))
+          //Conditional_Left_Up_Gurmann
+          //Conditional_Right_Up_Gurmann
         ){
           console.log("Collission");
           //scoreCoin++;
           let coinToRemove = coins[0].visual;
           coinToRemove.classList.remove("coin");
           coins.shift();
-          let newCoin = new Coin(1080);
-          coins.push(newCoin);
+          let newCoin2 = new Coin(1080);
+          coins.push(newCoin2);
         }
       });
     }
@@ -308,8 +309,8 @@ document.addEventListener("DOMContentLoaded", () => {
       createCoin();
       setInterval(movePlatforms, 30);
       setInterval(moveCoin, 25);
-      createGurmann();
       setInterval(coinTakeIt, 10);
+      createGurmann();
       jump(startPoint);
       document.addEventListener("keydown", control);
       document.addEventListener("keyup", stopControl);
