@@ -110,25 +110,28 @@ img {
 .centrar {
   text-align: center;
   color: white;
-  font-size: 100px;
+  display: flex;
+  flex-direction: column;
   margin-top: 42%;
+  margin-left: 36%;
 }
 
 .boton {
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 1.3em 3em;
-  font-size: 12px;
+  font-size: 15px;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
   font-weight: 500;
   color: #000;
   background-color: #fff;
   border: none;
-  border-radius: 45px;
+  border-radius: 5px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
   cursor: pointer;
   outline: none;
+  text-decoration: none;
 }
 
 .boton:hover {
@@ -142,6 +145,7 @@ img {
   transform: translateY(-1px);
 }
 
+
 #modulos {
   display: flex;
   flex-direction: column;
@@ -153,8 +157,14 @@ img {
 }
 
 .resultado2 {
+  position: absolute;
+  margin-left: 40%;
+  margin-top: 20%;
   font-size: 50px;
-  display: block;
   color: white;
   text-align: center;
+}
+
+.titulo{
+  margin-bottom: 20px;
 }
