@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,14 +27,14 @@
               <img src="./media/LandingPage/Carrousel/arcade.jpg" class="d-block w-100" alt="Carousel portal cep">
               <div class="carousel-caption justify-content-start">
                 <p class="textGame">Tenim una serie de jocs que potser t'agraden, vols provar?</p> <br>
-                <a type="button" class="btn btn-lg btn-dark" href="./menuGames/menus/gameIntro.html">Juga ara!</a>
+                <a type="button" class="btn btn-lg btn-dark" href="./form/formIndex.html">Juga ara!</a>
               </div>
             </div>
             <div class="carousel-item">
               <img src="./media/LandingPage/Carrousel/Entrada_cep.png" class="d-block w-100" alt="Carousel entrada cep">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100 image-carousel" alt="Carousel cep">
+              <img src="./media/LandingPage/Carrousel/cep_carousel.png" class="d-block w-100" alt="Carousel cep">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

@@ -3,6 +3,7 @@ body {
     width: 1920px;
     background-image: url("../media/Main_Menu.png");
     position: fixed;
+    background-size: contain;
     background-repeat: no-repeat;
 }
 .Games {

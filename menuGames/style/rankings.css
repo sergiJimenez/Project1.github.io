@@ -3,6 +3,7 @@ body {
     width: 1920px;
     background-image: url("../media/Rankings.png");
     position: fixed;
+    background-size: contain;
     background-repeat: no-repeat;
 }
 .Back {
