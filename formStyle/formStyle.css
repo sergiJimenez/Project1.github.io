@@ -1,7 +1,7 @@
 body {
   text-align: center;
   font-family: verdana;
-  background-image: url(/media/fondo_formulario.jpg);
+  background-image: url(/formMedia/fondo_formulario.jpg);
 }
 
 #enviar{
@@ -14,7 +14,7 @@ body {
   margin-top: 200px;
   padding: 3em;
   transition: 0.25s;
-  background-image: url(/media/fondo_cep.png);
+  background-image: url(/formMedia/fondo_cep.png);
   background-position:bottom;
   background-repeat: no-repeat;
 }
