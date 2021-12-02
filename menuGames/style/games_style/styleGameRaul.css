@@ -10,13 +10,13 @@ body {
   display: flex;
 }
 
-.texto{
+.texto {
   color: white;
   margin: auto;
   text-align: center;
 }
 
-.memory-game{
+.memory-game {
   margin: auto;
   height: 700px;
   width: 698px;
@@ -25,7 +25,7 @@ body {
   z-index: 1;
 }
 
-.background{
+.background {
   margin: auto;
   background-image: url(../../../media/Games/imagesGameRaul/backgroundGameRaul.png);
   background-size: cover;
@@ -36,11 +36,11 @@ body {
 
 .card {
   width: 22%;
-  height: 33,33%;
+  height: 33, 33%;
   padding: 10px;
 }
 
-img{
+img {
   width: 100px;
 }
 
@@ -92,7 +92,7 @@ img{
   color: white;
 }
 
-.resultado{
+.resultado {
   position: absolute;
   color: white;
   font-size: 50px;
@@ -100,25 +100,61 @@ img{
   z-index: 3;
 }
 
-.resultado2{
-  position: absolute;
-  text-align: center;
-  color: white;
-  font-size: 100px;
-  top: 200px;
-  z-index: 3;
-}
-
-.timer{
+.timer {
   position: absolute;
   color: white;
   font-size: 50px;
   z-index: 2;
 }
 
-.centrar{
+.centrar {
   text-align: center;
   color: white;
   font-size: 100px;
   margin-top: 42%;
+}
+
+.boton {
+  margin-top: 20px;
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.boton:hover {
+  background-color: purple;
+  box-shadow: 0px 15px 20px rgba(159, 46, 229, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.boton:active {
+  transform: translateY(-1px);
+}
+
+#modulos {
+  display: flex;
+  flex-direction: column;
+  margin: 100px;
+}
+
+.etiquetaModulo {
+  font-size: larger;
+}
+
+.resultado2 {
+  font-size: 50px;
+  display: block;
+  color: white;
+  text-align: center;
 }

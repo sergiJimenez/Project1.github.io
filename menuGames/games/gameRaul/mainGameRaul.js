@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var etiqueta = document.createElement('label');
     etiqueta.setAttribute = ("for", "modulo");
     etiqueta.appendChild(document.createTextNode("Escoge un modulo: "));
+    etiqueta.className = "etiquetaModulo";
 
     //Formulario
     var formulario = document.createElement('form');
@@ -65,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //Titulo
     var titulo = document.createElement("h1");
     titulo.appendChild(document.createTextNode("Bienvenido"));
+    titulo.className = "titulo";
 
     //Div para centrar los objetos
     var divCentrar = document.createElement('div');
@@ -190,8 +192,8 @@ function flipCards() {
     }
 }
 
-//ARRAY PARA LAS CARTAS RESUELTAS
-let cartasResueltas = [];
+//LAS CARTAS RESUELTAS
+const cartasResueltas = document.querySelectorAll(".resuelto");
 
 //Funcion voltear
 function flip() {
@@ -200,7 +202,7 @@ function flip() {
     //INTENTO DE QUITAR LA FUNCIONALIDAD DE GIRAR A LAS CARTAS RESULETAS
     for (let carta of cartasResueltas) {
         console.log(cartasResueltas);
-        carta.removeEventListener("click", flip); //?????????????' ERROR
+        carta.removeEventListener("click", flip); 
     }
 
     if (!cartaVolteada) {
@@ -230,16 +232,15 @@ function checkMatch() {
 
     //console.log(primeraCarta.dataset.number, segundaCarta.dataset.number)
     if (primeraCarta.dataset.name === segundaCarta.dataset.name && primeraCarta.dataset.number !== segundaCarta.dataset.number) {
-
         resultado++;
         res = "Resultado: " + resultado;
         let div_resultado = document.getElementById("resultado");
         div_resultado.innerHTML = res;
         div_resultado.dataset.resultado = resultado;
         //console.log(div_resultado.dataset.resultado);
-
-        cartasResueltas.push(primeraCarta.dataset.number);
-        cartasResueltas.push(segundaCarta.dataset.number);
+    
+        primeraCarta.classList.add('resuelto');
+        segundaCarta.classList.add('resuelto');
 
         const cards = document.querySelectorAll(".card-flip");
 
@@ -266,7 +267,6 @@ function voltearCarta() {
             carta.addEventListener('click', flip);
         }
     }, 1500);
-
 }
 
 //Funcion para iniciar el crono
@@ -280,7 +280,7 @@ function cronometro() {
     function timer() { // creo una cuenta atras, cuando llega a 0 el jugador pierde 
         let resultado = parseInt(document.getElementById("resultado").dataset.resultado);
 
-        if ((min != 0 || sec != 0) && resultado != 6) {
+        if ((min != 0 || sec != 0) && resultado != 1) { //CAMBIAR EL 6 POR EL 1
             sec = sec - 1;
             if (sec == -1) {
                 sec = 59;
@@ -299,7 +299,7 @@ function cronometro() {
             } else {
                 document.getElementById('timer').innerHTML = min + ':' + sec;
             }
-        } else if ((min == 0 && sec == 0) || resultado == 6) {
+        } else if ((min == 0 && sec == 0) || resultado == 1) { //CAMBIAR EL 6 POR EL 1
             if (parpadeoContador == true) {
 
                 gameFinished == true;   //Juego finalizado
@@ -319,6 +319,9 @@ function cronometro() {
                 resultado.className.remove = "resultado";
                 //Añado la segunda clase de resultado para la pantalla final
                 resultado.className = "resultado2";
+                let ganado =  document.createElement('div');
+
+                div_content.className = 'card-content';
                 //Lo meto dentro del div memory-game
                 document.getElementById("memory-game").appendChild(resultado);
             } else {
