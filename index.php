@@ -12,6 +12,8 @@
   <script src="bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
   <!--JS fontawesome-->
   <script src="https://kit.fontawesome.com/1ac3ed1571.js" crossorigin="anonymous"></script>
+  <!-- FunctionalJS -->
+  <script src="functionalJS/fullscreen.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -27,7 +29,7 @@
               <img src="./media/LandingPage/Carrousel/arcade.jpg" class="d-block w-100" alt="Carousel portal cep">
               <div class="carousel-caption justify-content-start">
                 <p class="textGame">Tenim una serie de jocs que potser t'agraden, vols provar?</p> <br>
-                <a type="button" class="btn btn-lg btn-dark" href="./form/formIndex.html">Juga ara!</a>
+                <a type="button" class="btn btn-lg btn-dark" href="./form/formIndex.html" onclick="openFullscreen()">Juga ara!</a>
               </div>
             </div>
             <div class="carousel-item">
