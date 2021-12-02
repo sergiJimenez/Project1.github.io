@@ -35,7 +35,7 @@
               <img src="./media/LandingPage/Carrousel/Entrada_cep.png" class="d-block w-100" alt="Carousel entrada cep">
             </div>
             <div class="carousel-item">
-              <img src="./media/LandingPage/Carrousel/cep_carousel.png" class="d-block w-100" alt="Carousel cep">
+              <img class="d-block w-100 image-carousel" alt="Carousel cep">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

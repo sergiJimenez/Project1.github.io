@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+.texto {
+  color: white;
+  margin: auto;
+  text-align: center;
+}
+
+.memory-game {
+  margin: auto;
+  height: 700px;
+  width: 698px;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.background {
+  margin: auto;
+  background-image: url(../../../media/Games/imagesGameRaul/backgroundGameRaul.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 700px;
+  width: 850px;
+}
+
+.card {
+  width: 22%;
+  height: 33, 33%;
+  padding: 10px;
+}
+
+img {
+  width: 100px;
+}
+
+.card-flip {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card-flip.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  background-image: url(../../../media/Games/imagesGameRaul/cardShowGameRaul.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow-y: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card-face--front {
+  background-image: url(../../../media/Games/imagesGameRaul/cardHideGameRaul.png);
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-face--back {
+  background-color: var(--light);
+  transform: rotateY(180deg);
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-top: 42%;
+  color: white;
+}
+
+.resultado {
+  position: absolute;
+  color: white;
+  font-size: 50px;
+  top: 50px;
+  z-index: 3;
+}
+
+.timer {
+  position: absolute;
+  color: white;
+  font-size: 50px;
+  z-index: 2;
+}
+
+.centrar {
+  text-align: center;
+  color: white;
+  font-size: 100px;
+  margin-top: 42%;
+}
+
+.boton {
+  margin-top: 20px;
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.boton:hover {
+  background-color: purple;
+  box-shadow: 0px 15px 20px rgba(159, 46, 229, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.boton:active {
+  transform: translateY(-1px);
+}
+
+#modulos {
+  display: flex;
+  flex-direction: column;
+  margin: 100px;
+}
+
+.etiquetaModulo {
+  font-size: larger;
+}
+
+.resultado2 {
+  font-size: 50px;
+  display: block;
+  color: white;
+  text-align: center;
+}
