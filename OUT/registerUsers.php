@@ -8,7 +8,7 @@
     <title>Register</title>
     <!-- BOOTSTRAP LINKS -->
     <link rel="stylesheet" href="/Project1.github.io/bootstrap-5.1.3-dist/css/bootstrap.min.css">
-    <script src="/Project1.github.io//bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+    <script src="/Project1.github.io/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 </head>
 
