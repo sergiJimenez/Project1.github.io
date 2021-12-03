@@ -15,4 +15,9 @@ if (isset($_SESSION["correcto"])) {
     unset($_SESSION["correcto"]);
 }
 
+function mostrarJuegos(){
+    if($game1 = true){
+        
+    }
+}
 ?>
