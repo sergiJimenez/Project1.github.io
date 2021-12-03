@@ -57,7 +57,7 @@ function menu() {
 
     //Titulo
     var titulo = document.createElement("h1");
-    titulo.appendChild(document.createTextNode("Bienvenido"));
+    titulo.appendChild(document.createTextNode("JUEGO EN PRUEBAS"));
     titulo.className = "titulo";
 
     //Div para centrar los objetos
