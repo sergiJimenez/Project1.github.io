@@ -127,7 +127,7 @@ function voltearCarta() {
 // Tiempo
 function timedCount() {
     time = setTimeout(timedCount, 1000);
-    if (seconds > 0 && resultado != 1) {
+    if (seconds > 0 && resultado != 6) {
         seconds -= 1;
     } else if ((seconds == 0 && minute > 0)) {
         minute -= 1;
@@ -139,7 +139,7 @@ function timedCount() {
     document.getElementById("timer").innerHTML =
         "TEMPS: " + formattedMinute + ":" + formattedSeconds;
 
-    if ((minute == 0 && seconds == 0) || resultado == 1) {
+    if ((minute == 0 && seconds == 0) || resultado == 6) {
         gameOver();
     }
 }

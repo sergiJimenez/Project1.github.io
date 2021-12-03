@@ -3,47 +3,7 @@
 /* Funciones de creacion de html del juego */
 /////////////////////////////////////////////
 
-
-//Carta
-function card() {
-    var icono = document.createElement('i');
-    icono.id = "carta";
-    icono.className = "carta";
-
-    let div_content = document.createElement('div');
-    div_content.className = 'card-content';
-
-    div_content.appendChild(icono);
-
-    let div_cardback = document.createElement('div');
-    div_cardback.className = 'card-face card-face--back';
-
-    div_cardback.appendChild(div_content);
-
-
-    let div_cardface = document.createElement('div');
-    div_cardface.className = 'card-face card-face--front';
-
-
-    let div_flip = document.createElement('div');
-    div_flip.className = "card-flip";
-    div_flip.id = "card-flip";
-    div_flip.dataset.name;
-
-    div_flip.appendChild(div_cardface);
-    div_flip.appendChild(div_cardback);
-
-    let div_card = document.createElement('div');
-    div_card.className = "card";
-    div_card.id = "card";
-
-    div_card.appendChild(div_flip);
-
-    document.getElementById('memory-game').appendChild(div_card);
-}
-
 // Menu
-
 function menu() {
     //Array de los modulos existentes
     var modulos = ["Daw", "Dam"];
@@ -105,6 +65,46 @@ function menu() {
     document.getElementById('memory-game').appendChild(divCentrar);
 }
 
+//Carta
+function card() {
+    var icono = document.createElement('i');
+    icono.id = "carta";
+    icono.className = "carta";
+
+    let div_content = document.createElement('div');
+    div_content.className = 'card-content';
+
+    div_content.appendChild(icono);
+
+    let div_cardback = document.createElement('div');
+    div_cardback.className = 'card-face card-face--back';
+
+    div_cardback.appendChild(div_content);
+
+
+    let div_cardface = document.createElement('div');
+    div_cardface.className = 'card-face card-face--front';
+
+
+    let div_flip = document.createElement('div');
+    div_flip.className = "card-flip";
+    div_flip.id = "card-flip";
+    div_flip.dataset.name;
+
+    div_flip.appendChild(div_cardface);
+    div_flip.appendChild(div_cardback);
+
+    let div_card = document.createElement('div');
+    div_card.className = "card";
+    div_card.id = "card";
+
+    div_card.appendChild(div_flip);
+
+    document.getElementById('memory-game').appendChild(div_card);
+}
+
+
+
 // Pantalla final del juego
 function pantallaFinal() {
     puntuacion = seconds * parseInt(document.getElementById("resultado").dataset.resultado);
@@ -120,7 +120,7 @@ function pantallaFinal() {
     //Boton
     var exitBtn = document.createElement("a");
     exitBtn.classList = "boton exitBtn";
-    exitBtn.href = '../../menus/gamesMenu.html';
+    exitBtn.href = '../../../menus/gamesMenu.html';
     exitBtn.innerText = 'Exit';
 
     formulario.appendChild(exitBtn);
@@ -128,7 +128,7 @@ function pantallaFinal() {
     //Puntuacion
     var titulo = document.createElement("h1");
     titulo.appendChild(document.createTextNode("Has conseguido una puntuacion de " + puntuacion));
-    titulo.className = "titulo";
+    titulo.className = "txtFinal";
 
     resultado.remove();
 
