@@ -19,6 +19,8 @@ const iconosDam = [
     { name: 'java', icon: 'fa-java' },
 ]
 
+const tablero = document.querySelector("#tablero");
+
 //LAS CARTAS RESUELTAS
 const cartasResueltas = document.querySelectorAll(".resuelto");
 
@@ -29,7 +31,7 @@ let resultado = 0;
 let puntuacion = 0;
 
 let minute = 0;        //Declaracion de los minutos
-let seconds = 1;       //Declaracion de los segundos
+let seconds = 20;       //Declaracion de los segundos
 let secondsInicial = seconds;
 let time;
 let tiempoFinal;
@@ -38,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     menu();
 });
 
-//Juego
-function juego() {
+//Juego modo facil
+function juegoFacil() {
     divCentrar = document.getElementById("centrar");
 
     document.getElementById('memory-game').removeChild(divCentrar);
@@ -55,6 +57,22 @@ function juego() {
     timedCount();
 }
 
+//Juego modo dificil
+function juegoDificil() {
+    divCentrar = document.getElementById("centrar");
+
+    document.getElementById('memory-game').removeChild(divCentrar);
+
+    for (let i = 0; i < 12; i++) {
+        cartasDificil();
+    }
+
+    mostrarEventos();
+
+    mezclar(iconosDaw);     //Cuando tenga dos sets habra un if
+
+    timedCount();
+}
 
 
 // 
