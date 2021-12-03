@@ -33,17 +33,27 @@ function menu() {
     formulario.id = "modulos";
 
     //Boton
-    var submitBtn = document.createElement("input");
-    submitBtn.type = "button";
-    submitBtn.className = "boton";
-    submitBtn.name = "submit";
-    submitBtn.value = "Continuar";
-    submitBtn.id = "submit";
-    submitBtn.setAttribute("onclick", "juego()");
+    var btnFacil = document.createElement("input");
+    btnFacil.type = "button";
+    btnFacil.className = "boton";
+    btnFacil.name = "submit";
+    btnFacil.value = "Facil";
+    btnFacil.id = "submit";
+    btnFacil.setAttribute("onclick", "juego()");
+
+    //Boton
+    var btnDificil = document.createElement("input");
+    btnDificil.type = "button";
+    btnDificil.className = "boton";
+    btnDificil.name = "submit";
+    btnDificil.value = "Dificil";
+    btnDificil.id = "submit";
+    btnDificil.setAttribute("onclick", "juego()");
 
     formulario.appendChild(etiqueta);
     formulario.appendChild(selectList);
-    formulario.appendChild(submitBtn);
+    formulario.appendChild(btnFacil);
+    formulario.appendChild(btnDificil);
 
     //Titulo
     var titulo = document.createElement("h1");
@@ -119,7 +129,7 @@ function pantallaFinal() {
 
     //Boton
     var exitBtn = document.createElement("a");
-    exitBtn.classList = "boton exitBtn";
+    exitBtn.classList = "exitBtn";
     exitBtn.href = '../../../menus/gamesMenu.html';
     exitBtn.innerText = 'Exit';
 
@@ -134,8 +144,8 @@ function pantallaFinal() {
 
     //Div para centrar los objetos
     var divCentrar = document.createElement('div');
-    divCentrar.className = "centrar";
-    divCentrar.id = "centrar"
+    divCentrar.className = "final";
+    divCentrar.id = "final"
 
     //Juntar todo a el div para centrarlo todo
     divCentrar.appendChild(titulo);
