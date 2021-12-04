@@ -32,7 +32,7 @@ function menu() {
     var formulario = document.createElement('form');
     formulario.id = "modulos";
 
-    //Boton
+    //Boton facil
     var btnFacil = document.createElement("input");
     btnFacil.type = "button";
     btnFacil.className = "boton";
@@ -41,7 +41,7 @@ function menu() {
     btnFacil.id = "submit";
     btnFacil.setAttribute("onclick", "juegoFacil()");
 
-    //Boton
+    //Boton dificil
     var btnDificil = document.createElement("input");
     btnDificil.type = "button";
     btnDificil.className = "boton";
@@ -50,10 +50,21 @@ function menu() {
     btnDificil.id = "submit";
     btnDificil.setAttribute("onclick", "juegoDificil()");
 
+    //Boton instrucciones
+    var btnInstrucciones = document.createElement("input");
+    btnInstrucciones.type = "button";
+    btnInstrucciones.className = "boton";
+    btnInstrucciones.name = "submit";
+    btnInstrucciones.value = "Instrucciones";
+    btnInstrucciones.id = "submit";
+    btnInstrucciones.setAttribute("onclick", "instrucciones()");
+
     formulario.appendChild(etiqueta);
     formulario.appendChild(selectList);
     formulario.appendChild(btnFacil);
     formulario.appendChild(btnDificil);
+    formulario.appendChild(btnInstrucciones);
+
 
     //Titulo
     var titulo = document.createElement("h1");
@@ -74,6 +85,36 @@ function menu() {
     //Juntar el div al html
     document.getElementById('memory-game').appendChild(divCentrar);
 }
+
+//Instrucciones
+function instrucciones() {
+
+    let removeCentrar = document.getElementById("centrar");
+    document.getElementById('memory-game').removeChild(removeCentrar);
+
+     //Titulo instucciones
+     var tituloIns = document.createElement("h1");
+     tituloIns.appendChild(document.createTextNode("Instrucciones de juego"));
+     tituloIns.className = "tituloIns";
+
+     var textIns = document.createElement("p");
+     textIns.appendChild(document.createTextNode("En este juego deberas juntar 6 parejas de cartas en el menor tiempo posible, para ello deberas tener una agilidad mental preparada para ello. ¿Estás preparado/a?"));
+     textIns.className = "textIns";
+
+    //Div para centrar los objetos
+    var divCentrar = document.createElement('div');
+    divCentrar.className = "texto2";
+    divCentrar.id = "centrar"
+
+    //Juntar todo a el div para centrarlo todo
+    divCentrar.appendChild(tituloIns);
+    divCentrar.appendChild(textIns);
+
+     document.getElementById('memory-game').appendChild(divCentrar);
+
+ 
+}
+
 
 //Carta
 function card() {
@@ -185,6 +226,7 @@ function cartasDificil() {
 
     document.getElementById('memory-game').appendChild(div_card);
 }
+
 // Pantalla final del juego
 function pantallaFinal() {
     puntuacion = seconds * parseInt(document.getElementById("resultado").dataset.resultado);
