@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +14,11 @@ body {
 .texto {
   color: white;
   margin: auto;
+  text-align: center;
+}
+
+.texto2 {
+  color: white;
   text-align: center;
 }
 
@@ -203,4 +209,16 @@ img {
 
 .titulo{
   margin-bottom: 20px;
+}
+
+.tituloIns{
+  color: white;
+  font-size: 50px;
+}
+
+.textIns{
+  margin-top: 30px;
+  color: white;
+  font-size: 20px;
+
 }

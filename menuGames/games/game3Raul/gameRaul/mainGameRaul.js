@@ -39,6 +39,8 @@ function juegoDificil() {
 }
 
 
+
+
 // 
 function gameOver() {
     //Recorro 12 veces la funcion de borrar cartas
