@@ -3,6 +3,77 @@
 /* Funciones de creacion de html del juego */
 /////////////////////////////////////////////
 
+// Menu
+function menu() {
+    //Array de los modulos existentes
+    var modulos = ["Daw", "Dam"];
+
+    //Crear y agregar la lista
+    var selectList = document.createElement("select");
+    selectList.id = "modulo";
+
+    //Crear y agregar las opciones a la lista
+    for (var i = 0; i < modulos.length; i++) {
+        var option = document.createElement("option");
+        option.id = modulos[i];
+        option.value = modulos[i];
+        option.text = modulos[i];
+        option.dataset.modulo = modulos[i];
+        selectList.appendChild(option);
+    }
+
+    //Label
+    var etiqueta = document.createElement('label');
+    etiqueta.setAttribute = ("for", "modulo");
+    etiqueta.appendChild(document.createTextNode("Escoge un modulo: "));
+    etiqueta.className = "etiquetaModulo";
+
+    //Formulario
+    var formulario = document.createElement('form');
+    formulario.id = "modulos";
+
+    //Boton
+    var btnFacil = document.createElement("input");
+    btnFacil.type = "button";
+    btnFacil.className = "boton";
+    btnFacil.name = "submit";
+    btnFacil.value = "Facil";
+    btnFacil.id = "submit";
+    btnFacil.setAttribute("onclick", "juegoFacil()");
+
+    //Boton
+    var btnDificil = document.createElement("input");
+    btnDificil.type = "button";
+    btnDificil.className = "boton";
+    btnDificil.name = "submit";
+    btnDificil.value = "Dificil";
+    btnDificil.id = "submit";
+    btnDificil.setAttribute("onclick", "juegoDificil()");
+
+    formulario.appendChild(etiqueta);
+    formulario.appendChild(selectList);
+    formulario.appendChild(btnFacil);
+    formulario.appendChild(btnDificil);
+
+    //Titulo
+    var titulo = document.createElement("h1");
+    titulo.appendChild(document.createTextNode("JUEGO EN PRUEBAS"));
+    titulo.className = "titulo";
+
+    //Div para centrar los objetos
+    var divCentrar = document.createElement('div');
+    divCentrar.className = "texto";
+    divCentrar.id = "centrar"
+
+    //Juntar todo a el div para centrarlo todo
+    divCentrar.appendChild(titulo);
+    divCentrar.appendChild(formulario);
+
+
+
+    //Juntar el div al html
+    document.getElementById('memory-game').appendChild(divCentrar);
+}
 
 //Carta
 function card() {
@@ -42,73 +113,82 @@ function card() {
     document.getElementById('memory-game').appendChild(div_card);
 }
 
-// Menu
 
-function menu() {
-    //Array de los modulos existentes
-    var modulos = ["Daw", "Dam"];
+function cartasDificil() {
+    var icono = document.createElement('i');
+    icono.id = "carta";
+    icono.className = "carta";
 
-    //Crear y agregar la lista
-    var selectList = document.createElement("select");
-    selectList.id = "modulo";
+    let div_content = document.createElement('div');
+    div_content.className = 'card-content';
 
-    //Crear y agregar las opciones a la lista
-    for (var i = 0; i < modulos.length; i++) {
-        var option = document.createElement("option");
-        option.id = modulos[i];
-        option.value = modulos[i];
-        option.text = modulos[i];
-        option.dataset.modulo = modulos[i];
-        selectList.appendChild(option);
-    }
+    div_content.appendChild(icono);
 
-    //Label
-    var etiqueta = document.createElement('label');
-    etiqueta.setAttribute = ("for", "modulo");
-    etiqueta.appendChild(document.createTextNode("Escoge un modulo: "));
-    etiqueta.className = "etiquetaModulo";
+    let div_cardback = document.createElement('div');
+    div_cardback.className = 'card-face card-face--back';
 
-    //Formulario
-    var formulario = document.createElement('form');
-    formulario.id = "modulos";
+    div_cardback.appendChild(div_content);
 
-    //Boton
-    var submitBtn = document.createElement("input");
-    submitBtn.type = "button";
-    submitBtn.className = "boton";
-    submitBtn.name = "submit";
-    submitBtn.value = "Continuar";
-    submitBtn.id = "submit";
-    submitBtn.setAttribute("onclick", "juego()");
+    let div_cardface = document.createElement('div');
+    div_cardface.className = 'card-face card-face--front';
 
-    formulario.appendChild(etiqueta);
-    formulario.appendChild(selectList);
-    formulario.appendChild(submitBtn);
+    let div_flip = document.createElement('div');
+    div_flip.className = "card-flip";
+    div_flip.id = "card-flip";
+    div_flip.dataset.name;
 
-    //Titulo
-    var titulo = document.createElement("h1");
-    titulo.appendChild(document.createTextNode("Bienvenido"));
-    titulo.className = "titulo";
+    div_flip.appendChild(div_cardface);
+    div_flip.appendChild(div_cardback);
 
-    //Div para centrar los objetos
-    var divCentrar = document.createElement('div');
-    divCentrar.className = "texto";
-    divCentrar.id = "centrar"
+    let div_card = document.createElement('div');
+    div_card.className = "card";
+    div_card.id = "card";
+    div_card.style.position = "relative";
+    div_card.dataset.speedX = 3;
+    div_card.dataset.speedY = 3;
+    div_card.dataset.directionX = -1;
+    div_card.dataset.directionY = -1;
+    div_card.dataset.left = 0;    //NO TOCAR
+    div_card.dataset.top = 0;       //NO TOCAR
+    div_card.dataset.id_interval = setInterval(() => {
+        div_card.dataset.left = Number.parseInt(div_card.dataset.left) + Number.parseInt(div_card.dataset.speedX) * Number.parseInt(div_card.dataset.directionX);
+        div_card.dataset.top = Number.parseInt(div_card.dataset.top) + Number.parseInt(div_card.dataset.speedY) * Number.parseInt(div_card.dataset.directionY);
 
-    //Juntar todo a el div para centrarlo todo
-    divCentrar.appendChild(titulo);
-    divCentrar.appendChild(formulario);
+        div_card.style.left = `${div_card.dataset.left}px`;
+        div_card.style.top = `${div_card.dataset.top}px`;
 
+        
+        let tablero_rect = tablero.getBoundingClientRect();
+        let card_rect = div_card.getBoundingClientRect();
 
+        console.log(tablero.rect);
+        console.log(card.rect);
 
-    //Juntar el div al html
-    document.getElementById('memory-game').appendChild(divCentrar);
+        if (Number.parseInt(card_rect.left) < tablero_rect.left) {
+            div_card.dataset.directionX *= -1;
+        }
+
+        if (Number.parseInt(card_rect.top) < tablero_rect.top) {
+            div_card.dataset.directionY *= -1;
+        }
+
+        if (Number.parseInt(card_rect.right) > tablero_rect.right) {
+            div_card.dataset.directionX *= -1;
+        }
+
+        if (Number.parseInt(card_rect.bottom) > tablero_rect.bottom) {
+            div_card.dataset.directionY *= -1;
+        }
+    }, 1000 / 60);
+
+    div_card.appendChild(div_flip);
+
+    document.getElementById('memory-game').appendChild(div_card);
 }
-
 // Pantalla final del juego
 function pantallaFinal() {
     puntuacion = seconds * parseInt(document.getElementById("resultado").dataset.resultado);
-    
+
     //Cojo la primera clase de resultado para el juego
     resultado = document.getElementById("resultado");
 
@@ -119,8 +199,8 @@ function pantallaFinal() {
 
     //Boton
     var exitBtn = document.createElement("a");
-    exitBtn.classList = "boton exitBtn";
-    exitBtn.href = '../../menus/gamesMenu.html';
+    exitBtn.classList = "exitBtn";
+    exitBtn.href = '../../../menus/gamesMenu.html';
     exitBtn.innerText = 'Exit';
 
     formulario.appendChild(exitBtn);
@@ -128,14 +208,14 @@ function pantallaFinal() {
     //Puntuacion
     var titulo = document.createElement("h1");
     titulo.appendChild(document.createTextNode("Has conseguido una puntuacion de " + puntuacion));
-    titulo.className = "titulo";
+    titulo.className = "txtFinal";
 
     resultado.remove();
 
     //Div para centrar los objetos
     var divCentrar = document.createElement('div');
-    divCentrar.className = "centrar";
-    divCentrar.id = "centrar"
+    divCentrar.className = "final";
+    divCentrar.id = "final"
 
     //Juntar todo a el div para centrarlo todo
     divCentrar.appendChild(titulo);

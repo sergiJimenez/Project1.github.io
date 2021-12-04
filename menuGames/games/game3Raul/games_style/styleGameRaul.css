@@ -27,7 +27,7 @@ body {
 
 .background {
   margin: auto;
-  background-image: url(../../../media/Games/imagesGameRaul/backgroundGameRaul.png);
+  background-image: url(../../../../media/Games/imagesGameRaul/backgroundGameRaul.png);
   background-size: cover;
   background-repeat: no-repeat;
   height: 700px;
@@ -58,7 +58,7 @@ img {
 }
 
 .card-face {
-  background-image: url(../../../media/Games/imagesGameRaul/cardShowGameRaul.png);
+  background-image: url(../../../../media/Games/imagesGameRaul/cardShowGameRaul.png);
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -72,7 +72,7 @@ img {
 }
 
 .card-face--front {
-  background-image: url(../../../media/Games/imagesGameRaul/cardHideGameRaul.png);
+  background-image: url(../../../../media/Games/imagesGameRaul/cardHideGameRaul.png);
   background-size: contain;
   display: flex;
   align-items: center;
@@ -108,16 +108,53 @@ img {
 }
 
 .centrar {
-  text-align: center;
+  position: absolute;
+  align-items: center;
   color: white;
   display: flex;
   flex-direction: column;
-  margin-top: 42%;
-  margin-left: 36%;
+}
+
+.final{
+  color:white;
+  align-items: center;
+  margin: 30%;
+  width: 350px;
+  height: 200px;
+  outline: dashed 1px;
+  text-align: center;
 }
 
 .boton {
   margin-top: 10px;
+  padding: 1.3em 3em;
+  font-size: 15px;
+  font-weight: 900;
+  border: 2px solid purple;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: purple;
+  border: 2px solid white;
+  box-shadow: 0px 15px 20px rgba(159, 46, 229, 0.4);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.boton:active {
+  transform: translateY(-1px);
+}
+
+.exitBtn{
+  margin-top: 100px;
   padding: 1.3em 3em;
   font-size: 15px;
   text-transform: uppercase;
@@ -134,17 +171,16 @@ img {
   text-decoration: none;
 }
 
-.boton:hover {
+.exitBtn:hover {
   background-color: purple;
   box-shadow: 0px 15px 20px rgba(159, 46, 229, 0.4);
   color: #fff;
   transform: translateY(-7px);
 }
 
-.boton:active {
+.exitBtn:active {
   transform: translateY(-1px);
 }
-
 
 #modulos {
   display: flex;
