@@ -14,7 +14,6 @@
   <script src="https://kit.fontawesome.com/1ac3ed1571.js" crossorigin="anonymous"></script>
   <!-- FunctionalJS -->
   <script src="/Project1.github.io/functionalJS/fullscreen.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
