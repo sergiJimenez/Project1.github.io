@@ -34,26 +34,29 @@
                                                 <label class="small mb-1" for="inputEmail">Email</label>
                                                 <input class="form-control" id="inputEmail" type="email" placeholder="Email" />
                                             </div><br>
-                                            <div class="dropdown show">
-                                                <label class="small mb-1" for="dropdownMenuButton">Formative Grade</label><br>
-                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose One</button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <div class="dropdown">
+                                                <label class="small mb-1">Formative Grade</label><br>
+                                                <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Choose One</a>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                     <!-- Comerç i Màrqueting -->
-                                                    <a class="dropdown-item">Grau mitjà activitats comercials</a>
-                                                    <a class="dropdown-item">Grau superior màrqueting</a>
-                                                    <a class="dropdown-item">Grau superior gestió de vendes i espais comercials</a>
-                                                    <a class="dropdown-item">Grau superior comerç internacional</a>
+                                                    <li><a class="dropdown-item" href="#">Grau mitjà activitats comercials</a></li>
+                                                    <li><a class="dropdown-item" href="#">Grau superior màrqueting</a></li>
+                                                    <li><a class="dropdown-item" href="#">Grau superior gestió de vendes i espais comercials</a></li>
+                                                    <li><a class="dropdown-item" href="#">Grau superior comerç internacional</a></li>
                                                     <!-- Hoteleria i Turisme -->
-                                                    <a class="dropdown-item">Grau superior agències de viatges i gestió d'esdeveniments</a>
+                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li><a class="dropdown-item" href="#">Grau superior agències de viatges i gestió d'esdeveniments</a></li>
                                                     <!-- Informàtica i comunicacions -->
-                                                    <a class="dropdown-item">Grau mitjà sistemes microinformàtics i xarxes</a>
-                                                    <a class="dropdown-item">Grau superior desenvolupaments aplicacions multiplataforma</a>
-                                                    <a class="dropdown-item">Grau superior desenvolupaments aplicacions web</a>
+                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li><a class="dropdown-item" href="#">Grau mitjà sistemes microinformàtics i xarxes</a></li>
+                                                    <li><a class="dropdown-item" href="#">Grau superior desenvolupaments aplicacions multiplataforma</a></li>
+                                                    <li><a class="dropdown-item" href="#">Grau superior desenvolupaments aplicacions web</a></li>
                                                     <!-- Administració i gestió -->
-                                                    <a class="dropdown-item">Grau mitjà gestió administrativa</a>
-                                                    <a class="dropdown-item">Grau superior assistència a la direcció</a>
-                                                    <a class="dropdown-item">Grau superior administració i finances</a>
-                                                </div>
+                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li><a class="dropdown-item" href="#">Grau mitjà gestió administrativa</a></li>
+                                                    <li><a class="dropdown-item" href="#">Grau superior assistència a la direcció</a></li>
+                                                    <li><a class="dropdown-item" href="#">Grau superior administració i finances</a></li>
+                                                </ul>
                                             </div><br>
                                             <div class="form-row">
                                                 <label class="small mb-1" for="inputPassword">Password</label>
