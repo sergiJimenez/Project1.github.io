@@ -1,6 +1,6 @@
 <?php
 /*if (isset($_SESSION["ROLE"]) && $_SESSION["ROLE"] != "1") {
-  header("location:.phpto");
+  header("location:.php");
   die();
 }*/
 ?>

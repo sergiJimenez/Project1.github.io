@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "sperezj2021@cepnet.net";
-$password = "abcd1234";
+$username = "root";
+$password = "";
 $dbName = "project1";
 
 //Creeate connection

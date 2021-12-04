@@ -1,5 +1,5 @@
 <?php
-/*require("database.php");
+require("database.php");
 $error = "";
 session_start();
 if (isset($_POST["submit"])) {
@@ -23,7 +23,7 @@ if (isset($_POST["submit"])) {
     } else {
         $error = "Unvalid credentials. Please, enter the correct login details.";
     }
-}*/
+}
 ?>
 
 <!DOCTYPE html>
@@ -71,8 +71,9 @@ if (isset($_POST["submit"])) {
                                                 Enter
                                             </a>
                                         </div>
-                                        <center><?php //echo $error 
-                                                ?></center>
+                                        <<?php
+                                        echo $error 
+                                        ?>
                                     </form>
                                 </div>
                             </div>
