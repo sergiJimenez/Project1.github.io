@@ -109,11 +109,12 @@ function instrucciones() {
     //Boton volver
     var btnVolver = document.createElement("input");
     btnVolver.type = "button";
-    btnVolver.className = "boton";
+    btnVolver.className = "btnVolver";
     btnVolver.name = "submit";
-    btnVolver.value = "Instrucciones";
+    btnVolver.value = "Volver";
     btnVolver.id = "submit";
     btnVolver.setAttribute("onclick", "menu()");
+    btnVolver.setAttribute("onclick", "delInstrucciones()");
 
     //Juntar todo a el div para centrarlo todo
     divCentrar.appendChild(tituloIns);
@@ -121,6 +122,14 @@ function instrucciones() {
     divCentrar.appendChild(btnVolver);
 
     document.getElementById('memory-game').appendChild(divCentrar);
+}
+
+
+function delInstrucciones() {
+    let removeCentrar = document.getElementById("centrarIns");
+    document.getElementById('memory-game').removeChild(removeCentrar);
+
+    menu();
 }
 
 
@@ -276,3 +285,38 @@ function pantallaFinal() {
 
 }
 
+
+/* 
+let removeCentrar = document.getElementById("centrar");
+document.getElementById('memory-game').removeChild(removeCentrar);
+
+//Titulo instucciones
+var tituloIns = document.createElement("h1");
+tituloIns.appendChild(document.createTextNode("Instrucciones de juego"));
+tituloIns.className = "tituloIns";
+
+var textIns = document.createElement("p");
+textIns.appendChild(document.createTextNode("En este juego deberas juntar 6 parejas de cartas en el menor tiempo posible, para ello deberas tener una agilidad mental preparada para ello. ¿Estás preparado/a?"));
+textIns.className = "textIns";
+
+//Div para centrar los objetos
+var divCentrar = document.createElement('div');
+divCentrar.className = "texto2";
+divCentrar.id = "centrarIns"
+
+//Boton volver
+var btnVolver = document.createElement("input");
+btnVolver.type = "button";
+btnVolver.className = "btnVolver";
+btnVolver.name = "submit";
+btnVolver.value = "Volver";
+btnVolver.id = "submit";
+btnVolver.setAttribute("onclick", "menu()");
+btnVolver.setAttribute("onclick", "delInstrucciones()");
+
+//Juntar todo a el div para centrarlo todo
+divCentrar.appendChild(tituloIns);
+divCentrar.appendChild(textIns);
+divCentrar.appendChild(btnVolver);
+
+document.getElementById('memory-game').appendChild(divCentrar); */
