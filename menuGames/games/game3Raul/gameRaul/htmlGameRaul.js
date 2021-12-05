@@ -92,27 +92,35 @@ function instrucciones() {
     let removeCentrar = document.getElementById("centrar");
     document.getElementById('memory-game').removeChild(removeCentrar);
 
-     //Titulo instucciones
-     var tituloIns = document.createElement("h1");
-     tituloIns.appendChild(document.createTextNode("Instrucciones de juego"));
-     tituloIns.className = "tituloIns";
+    //Titulo instucciones
+    var tituloIns = document.createElement("h1");
+    tituloIns.appendChild(document.createTextNode("Instrucciones de juego"));
+    tituloIns.className = "tituloIns";
 
-     var textIns = document.createElement("p");
-     textIns.appendChild(document.createTextNode("En este juego deberas juntar 6 parejas de cartas en el menor tiempo posible, para ello deberas tener una agilidad mental preparada para ello. ¿Estás preparado/a?"));
-     textIns.className = "textIns";
+    var textIns = document.createElement("p");
+    textIns.appendChild(document.createTextNode("En este juego deberas juntar 6 parejas de cartas en el menor tiempo posible, para ello deberas tener una agilidad mental preparada para ello. ¿Estás preparado/a?"));
+    textIns.className = "textIns";
 
     //Div para centrar los objetos
     var divCentrar = document.createElement('div');
     divCentrar.className = "texto2";
-    divCentrar.id = "centrar"
+    divCentrar.id = "centrarIns"
+
+    //Boton volver
+    var btnVolver = document.createElement("input");
+    btnVolver.type = "button";
+    btnVolver.className = "boton";
+    btnVolver.name = "submit";
+    btnVolver.value = "Instrucciones";
+    btnVolver.id = "submit";
+    btnVolver.setAttribute("onclick", "menu()");
 
     //Juntar todo a el div para centrarlo todo
     divCentrar.appendChild(tituloIns);
     divCentrar.appendChild(textIns);
+    divCentrar.appendChild(btnVolver);
 
-     document.getElementById('memory-game').appendChild(divCentrar);
-
- 
+    document.getElementById('memory-game').appendChild(divCentrar);
 }
 
 
@@ -198,7 +206,7 @@ function cartasDificil() {
         div_card.style.left = `${div_card.dataset.left}px`;
         div_card.style.top = `${div_card.dataset.top}px`;
 
-        
+
         let tablero_rect = tablero.getBoundingClientRect();
         let card_rect = div_card.getBoundingClientRect();
 
