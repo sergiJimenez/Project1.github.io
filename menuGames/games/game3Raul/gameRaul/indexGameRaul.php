@@ -1,3 +1,5 @@
+<?php include ('php_library/database.php')?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,6 +20,14 @@
     <div id="tablero" class="background">
       <div class="memory-game" id="memory-game">
         <div id="cards"></div>
+        <?php
+            $select = mysqli_query($db,"SELECT * FROM `ciclos`");
+            $result = $conn->query($select);
+
+            while($row = $select->fetch_assoc()) {
+              echo "<br> id: ". $row["id"]. " - Name: ". $row["Abr_Ciclos"]. " " . $row["Nombre_Ciclos"] . "<br>";
+          }
+        ?>
       </div>
       <!--Cartas-->
     </div>
