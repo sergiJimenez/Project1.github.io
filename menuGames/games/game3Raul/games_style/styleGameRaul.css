@@ -33,7 +33,8 @@ body {
 
 .background {
   margin: auto;
-  background-image: url(../../../../media/Games/imagesGameRaul/backgroundGameRaul.png);
+  /* background-image: url(../../../../media/Games/imagesGameRaul/backgroundGameRaul.png); */
+  background-color: yellow;
   background-size: cover;
   background-repeat: no-repeat;
   height: 700px;
