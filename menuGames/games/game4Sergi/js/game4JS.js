@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //AIR
   //AIR
   //Red Gem
-  class RedGem {
+  /*class RedGem {
     constructor(newRedGemBottom){
       this.left = Math.random() * 732; //To know which number is it we have to make this operation (gridWidth - platformWidth). Why? Because we want to create the number of platforms inside of our grid
       this.bottom = newRedGemBottom;
@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
           redGems.push(newRedGem);
         }
       });
-  }
+  }*/
   //Red Gem
   //AIR
   //AIR
