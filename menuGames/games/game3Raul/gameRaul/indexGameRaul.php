@@ -1,4 +1,6 @@
-<?php include_once 'php_library/database.php'?>
+<?php 
+include_once ('php_library/database.php')
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +22,7 @@
     <div id="tablero" class="background">
       <div class="memory-game" id="memory-game">
         <div id="cards">
-       
+      
         </div>
       </div>
       <!--Cartas-->

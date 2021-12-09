@@ -20,4 +20,21 @@ function openBd()
         return null;
     }
 
+     function select_ciclos()
+     {
+        $conexion = openBd();
+
+        $sentenciaText = "SELECT * FROM `ciclos`";
+
+        $sentencia = $conexion->prepare($sentenciaText);
+        
+
+        $sentencia->execute();
+
+        $resultado = $sentencia->fetchAll();
+
+        $conexion = closeBd();
+
+        return $resultado;
+     }
 ?>
