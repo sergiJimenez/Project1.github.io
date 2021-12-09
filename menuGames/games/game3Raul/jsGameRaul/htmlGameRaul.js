@@ -259,7 +259,7 @@ function pantallaFinal() {
     //Boton
     var exitBtn = document.createElement("a");
     exitBtn.classList = "exitBtn";
-    exitBtn.href = '../../../menus/gamesMenu.html';
+    exitBtn.href = '../../menus/gamesMenu.html';
     exitBtn.innerText = 'Exit';
 
     formulario.appendChild(exitBtn);

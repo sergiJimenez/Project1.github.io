@@ -41,7 +41,7 @@ let resultado = 0;
 let puntuacion = 0;
 
 let minute = 0;        //Declaracion de los minutos
-let seconds = 60;       //Declaracion de los segundos
+let seconds = 2;       //Declaracion de los segundos
 let secondsInicial = seconds;
 let time;
 let tiempoFinal;
