@@ -10,3 +10,4 @@ if($connectionBD -> connect_error){
     die("Connection Failed: " . $connectionBD -> connect_error);
 }
 echo "Connection Successfully!";
+?>

@@ -48,7 +48,7 @@
                                 <div class="card-footer text-center">
                                     <div class="small">
                                         <a href="registerUsers.php">
-                                            Haven't got an account? Go to be a member
+                                            Haven't got an account? Register now here
                                         </a>
                                     </div>
                                 </div>
