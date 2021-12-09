@@ -2,6 +2,8 @@
 include_once('Project1.github.io/php_library/database.php');
 
 $ciclos = select_ciclos();
+
+print_r($ciclos);
  -->
 
 <!DOCTYPE html>
@@ -23,21 +25,6 @@ $ciclos = select_ciclos();
     <div class="memory-game" id="memory-game">
       <div id="cards">
 
-        <!-- <div class="container">
-          <table>
-            <tr>
-              <th>Id ciclo</th>
-              <th>Nombre ciclo</th>
-            </tr>
-
-            <?php foreach ($ciclos as $ciclo) { ?>
-              <tr>
-                <td> <?php echo $ciclo['id']; ?></td>
-                <td> <?php echo $ciclo['Nombre_Ciclos']; ?></td>
-              </tr>
-            <?php } ?>
-          </table>
-        </div> -->
       </div>
     </div>
     <!--Cartas-->
