@@ -1,13 +1,23 @@
 <?php
-$dbServerName = "81.88.51.228";
-$dbUsername = "daw2b02";
-$dbPassword = "Informatica2021";
-$dbName = "daw2b02";
 
-$conn = mysqli_connect($dbServerName, $dbUsername, $dbPassword, $dbName, 44334);
+function openBd()
+{
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbName = "daw2b02";
+   
+        $conexion = new PDO("mysql:host=$servername;dbname=$dbName", $username, $password);
+        // set the PDO error mode to exception
+        $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $conexion->exec("set names utf8");
 
-if($connectionBD -> connect_error){
-    die("Connection Failed: " . $connectionBD -> connect_error);
-}
-echo "Connection Successfully!";
+        return $conexion;
+    }
+
+    function closeBd()
+    {
+        return null;
+    }
+
 ?>
