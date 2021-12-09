@@ -1,0 +1,313 @@
+/* -----------parte frontal --------------- */
+
+/* caja de opciones  */
+.menu_principal {
+	z-index: 1;
+	width: 1200px;
+	height: 1000px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: auto;
+	
+}
+.fondo_menu{
+	background-image: url(/media/fondo_Borja\ .png);
+	background-position: center;
+	background-repeat:no-repeat;
+	
+}
+
+/* creador de fuente  */
+
+@font-face {   
+    font-family: "Blocktopia";
+    src: url(/fuente/Blocktopia.ttf);
+}
+
+#play-btn {
+	width: auto;
+	height: auto;
+	background-position: center;
+	background-repeat: no-repeat;
+	box-sizing: content-box;
+	font-size: 3rem;
+	margin-top: 520px;
+	z-index: 2;
+	box-shadow: 3px 3px 5px grey;
+	width: 45vmin;
+	font-family: "Blocktopia";
+	cursor:pointer;
+
+}
+#difiultadMenu {
+	color: white;
+	margin-top: -250px;
+	background-color: hsla(0, 0%, 0%, 0.666);
+	font-size: 3.5rem;
+	text-align: center;
+	width: 35vmin;
+	box-shadow: 3px 3px 5px grey;
+	font-family: "Blocktopia";
+	cursor:pointer;
+	
+
+}
+#Facil{
+	color: rgb(0, 0, 0);
+	background-image: url(/media/boton_play.PNG);
+	background-color: hsla(127, 3%, 55%, 0.631);
+	font-size: 1.5rem;
+	text-align: center;
+	width: 40vmin;
+	font-family: "Blocktopia";
+	cursor:pointer;
+	
+}
+#Medio{
+	color: rgb(0, 0, 0);
+	background-color: hsl(120, 6%, 79%);
+	font-size: 1.5rem;
+	text-align: center;
+	border-radius: calc(1.5rem + 12px);
+	width: 40vmin;
+	font-family: "Blocktopia";
+	cursor:pointer;
+	
+}
+#Dificil{
+	color: rgb(0, 0, 0);
+	background-color: hsla(127, 3%, 55%, 0.631);
+	font-size: 1.5rem;
+	text-align: center;
+	width: 40vmin;
+	font-family: "Blocktopia";
+	cursor:pointer;
+	
+}
+html,body {
+	height: 100vh;
+	background-color: hsl(0, 0%, 0%);
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* creacion del tablero  */
+.grid-board {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	
+	grid-template-rows: repeat(20, 1fr);
+	grid-template-columns: repeat(20, 1fr);
+	
+	width: 95vmin;
+	height: 95vmin;
+	background-image: url(/media/cesped.jpg);
+	border-radius: 1vh;
+}
+.contador {
+	z-index: 2;
+	position: fixed;
+	left: 90px;
+	top: 50px;
+	font-size: 90px;
+	color: blanchedalmond;
+}
+#mostrarContador {
+	font-family: "Blocktopia";
+}
+
+.boton_actualizar {
+	z-index: 1;
+	left: 90px;
+	position: fixed;
+	top: 450px;
+}
+#actualizar {
+	font-family: "Blocktopia";
+	box-shadow: 3px 3px 5px grey;
+	width: 37vmin;
+	font-size: 2rem;
+	cursor:pointer;
+}
+
+.ranking{
+	z-index: 2;
+	position: fixed;
+	left: 0px;
+	top: 350px;
+	font-size: 30px;
+}
+
+#mostrarRanking{
+	font-family: "Blocktopia";
+	box-shadow: 3px 3px 5px grey;
+	width: 37vmin;
+	font-size: 2rem;
+	cursor:pointer;
+}
+
+
+.puntuacion {
+	z-index: 2;
+	position: fixed;
+	right: 70px;
+	top: 150px;
+	font-size: 30px;
+	color: blanchedalmond;
+}
+#mostrarPuntuacion {
+	font-family: "Blocktopia";
+}
+.movimientos {
+	z-index: 2;
+	position: fixed;
+	right: 70px;
+	top: 300px;
+	font-size: 30px;
+	color: blanchedalmond;
+}
+#mostrarMovimientos {
+	font-family: "Blocktopia";
+}
+.enimigosMuertos {
+	z-index: 2;
+
+	position: fixed;
+	right: 70px;
+	top: 450px;
+	font-size: 30px;
+	color: blanchedalmond;
+}
+#mostrarEnimigosMuertos {
+	font-family: "Blocktopia";
+}
+
+/* ------ segunda parte ------ */
+.player {
+	background-image: url(/media/CharacterRun.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	grid-row-start: 18;
+	grid-column-start: 10;
+	transform: scaleX(1);
+}
+.enemy {
+	background-image: url(/media/SpiderEnemy_GoingDown.gif);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.goal {
+	background-image: url(/media/cartel.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	grid-row-start: 1;
+	grid-column-start: 20;
+}
+.key {
+	background-image: url(/media/BigChest.png);
+	background-repeat: no-repeat;
+	grid-row-start: 10;
+	grid-column-start: 10;
+	z-index: 1;
+}
+.fuego {
+	background-image: url(/media/SmallProps_Torch.gif);
+	background-repeat: no-repeat;
+}
+.camino {
+	background-image: url(/media/cesped.jpg);
+	background-repeat: no-repeat;										      
+}
+.bloqueo {
+	background-image: url(/media/bloque_templo.png);
+	background-repeat: repeat;
+}
+.logoCep{
+
+	background-image: url(/media/cep.PNG);
+	background-repeat: no-repeat;
+
+}
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.8s;
+  animation-name: fadeIn;
+  animation-duration: 0.8s;
+  font-size: 20px;
+  font-family: "Blocktopia";
+
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  align-content: center;
+  bottom: 0;
+ background-color: #fefefe;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.8s;
+  animation-name: slideIn;
+  animation-duration: 0.8s
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 65px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #565756;
+  color: rgb(0, 0, 0);
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0} 
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}

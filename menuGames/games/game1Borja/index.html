@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="css.css">
+	<script type="text/javascript" src="script.js" defer></script>	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Temple Run </title>
+	<link rel="shortcut icon" href="/media/CharacterRun.gif" > 
+
+</head>
+
+
+<body >
+	
+<div class="fondo_menu">
+	<div class="menu_principal">
+		
+		<button id="play-btn">JUGAR</button>
+		<br>
+		
+		<select id="difiultadMenu">
+				
+				<option id="Facil" value="Facil">Fácil</option>
+				<option id="Medio" value="Medio">Medio</option>
+				<option id="Dificil" value="Dificil">Difícil</option>
+
+		</select>	
+		
+		
+	</div>
+</div>
+
+<div class="grid-board">
+
+	
+		<div class="contador">
+			<p id="mostrarContador" > </p>  
+		</div>
+
+		
+		<div class="puntuacion">
+			<p id="mostrarPuntuacion"></p>  
+		</div>
+		
+		<div class="movimientos">
+			<p id="mostrarMovimientos"></p>  
+		</div>
+
+		<div class="enimigosMuertos">
+			<p id="mostrarEnimigosMuertos"></p>  
+		</div>
+
+		
+		<div class="ranking">
+			<button  id="mostrarRanking"   onclick='mostrarRanking()'>Ranking</button>
+			
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+
+				<!-- Modal content -->
+				<div class="modal-content">
+
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2> Mejores puntuaciones</h2>
+				</div>
+				<div class="puntuacionesTotales">
+					<p>  Puntuacion: 114 </p>
+					<p>  Puntuacion: 86 </p>
+					<p>  Puntuacion: 138 </p>
+					<p>  Puntuacion: 97 </p>
+				
+
+
+				</div>
+			
+				</div>
+			
+			</div>
+		</div>
+		
+		<div class="boton_actualizar">
+			<input type="button" value="Volver a Jugar" id="actualizar" onclick="location.reload()"/> 
+		</div>
+
+
+		<div class="player" ></div>
+		<div class="key"></div>
+		<div class="goal"></div>
+
+
+</div>
+
+</body>
+</html>
