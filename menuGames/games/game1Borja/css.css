@@ -137,7 +137,7 @@ body {
 .ranking{
 	z-index: 2;
 	position: fixed;
-	left: 0px;
+	left: 90px;
 	top: 350px;
 	font-size: 30px;
 }
