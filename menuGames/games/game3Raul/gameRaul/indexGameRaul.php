@@ -1,6 +1,4 @@
-<?php 
-include_once ('php_library/database.php')
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,11 +16,32 @@ include_once ('php_library/database.php')
   </head>
 
   <body id="body">
+  <?php 
+include_once ('php_library/database.php');
+
+$ciclos = select_ciclos();
+
+?>
     <!--Tablero-->
     <div id="tablero" class="background">
       <div class="memory-game" id="memory-game">
         <div id="cards">
       
+    <div class="container">
+        <table>
+            <tr>
+                <th>Id ciclo</th>
+                <th>Nombre ciclo</th>
+            </tr>
+
+            <?php foreach ($ciclos as $ciclo) { ?>
+                <tr>
+                    <td> <?php echo $ciclo['id'];?></td>
+                    <td> <?php echo $ciclo['Nombre_Ciclos'];?></td>
+                </tr>
+            <?php } ?>
+        </table>
+    </div>
         </div>
       </div>
       <!--Cartas-->
