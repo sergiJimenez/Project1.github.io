@@ -25,7 +25,7 @@ function menu() {
     //Label
     var etiqueta = document.createElement('label');
     etiqueta.setAttribute = ("for", "modulo");
-    etiqueta.appendChild(document.createTextNode("Escoge un modulo: "));
+    etiqueta.appendChild(document.createTextNode("Escull un modul"));
     etiqueta.className = "etiquetaModulo";
 
     //Formulario
@@ -37,7 +37,7 @@ function menu() {
     btnFacil.type = "button";
     btnFacil.className = "boton";
     btnFacil.name = "submit";
-    btnFacil.value = "Facil";
+    btnFacil.value = "Fàcil";
     btnFacil.id = "submit";
     btnFacil.setAttribute("onclick", "juegoFacil()");
 
@@ -46,7 +46,7 @@ function menu() {
     btnDificil.type = "button";
     btnDificil.className = "boton";
     btnDificil.name = "submit";
-    btnDificil.value = "Dificil";
+    btnDificil.value = "Difícil";
     btnDificil.id = "submit";
     btnDificil.setAttribute("onclick", "juegoDificil()");
 
@@ -55,7 +55,7 @@ function menu() {
     btnInstrucciones.type = "button";
     btnInstrucciones.className = "boton";
     btnInstrucciones.name = "submit";
-    btnInstrucciones.value = "Instrucciones";
+    btnInstrucciones.value = "Instruccions";
     btnInstrucciones.id = "submit";
     btnInstrucciones.setAttribute("onclick", "instrucciones()");
 
@@ -68,7 +68,7 @@ function menu() {
 
     //Titulo
     var titulo = document.createElement("h1");
-    titulo.appendChild(document.createTextNode("JUEGO EN PRUEBAS"));
+    titulo.appendChild(document.createTextNode("Memory game"));
     titulo.className = "titulo";
 
     //Div para centrar los objetos
@@ -94,12 +94,17 @@ function instrucciones() {
 
     //Titulo instucciones
     var tituloIns = document.createElement("h1");
-    tituloIns.appendChild(document.createTextNode("Instrucciones de juego"));
+    tituloIns.appendChild(document.createTextNode("Instruccions del joc"));
     tituloIns.className = "tituloIns";
 
     var textIns = document.createElement("p");
-    textIns.appendChild(document.createTextNode("En este juego deberas juntar 6 parejas de cartas en el menor tiempo posible, para ello deberas tener una agilidad mental preparada para ello. ¿Estás preparado/a?"));
+    textIns.appendChild(document.createTextNode("En aquesta emtrepidant aventura hauras de trobar les sis parelles amagades a les cataconves de Gurman, per tal d'assolir-ne el joc hauras d'estar concentrat."));
     textIns.className = "textIns";
+
+
+    var textIns2 = document.createElement("p");
+    textIns2.appendChild(document.createTextNode("Per tu es molt senzill el nivell fàcil? Prova el nivell dificil!"));
+    textIns2.className = "textIns";
 
     //Div para centrar los objetos
     var divCentrar = document.createElement('div');
@@ -119,6 +124,7 @@ function instrucciones() {
     //Juntar todo a el div para centrarlo todo
     divCentrar.appendChild(tituloIns);
     divCentrar.appendChild(textIns);
+    divCentrar.appendChild(textIns2);
     divCentrar.appendChild(btnVolver);
 
     document.getElementById('memory-game').appendChild(divCentrar);
@@ -251,42 +257,94 @@ function pantallaFinal() {
     //Cojo la primera clase de resultado para el juego
     resultado = document.getElementById("resultado");
 
-
     //Formulario
-    var formulario = document.createElement('form');
-    formulario.id = "salir";
+    var formularioSalir = document.createElement('form');
+    formularioSalir.id = "salir";
+    formularioSalir.className = "salir";
 
-    //Boton
+    //Boton exit
     var exitBtn = document.createElement("a");
-    exitBtn.classList = "exitBtn";
+    exitBtn.classList = "btnVolver";
     exitBtn.href = '../../menus/gamesMenu.html';
     exitBtn.innerText = 'Exit';
 
-    formulario.appendChild(exitBtn);
+    //Boton ranking
+    var rankingBtn = document.createElement("a");
+    rankingBtn.classList = "boton";
+    rankingBtn.href = '../ranking/ranking.php';
+    rankingBtn.innerText = 'Ranking';
 
-    //Puntuacion
-    var titulo = document.createElement("h1");
-    titulo.appendChild(document.createTextNode("Has conseguido una puntuacion de " + puntuacion));
-    titulo.className = "txtFinal";
+    formularioSalir.appendChild(exitBtn);
+    formularioSalir.appendChild(rankingBtn);
+
+    //Titulo
+    var tituloFinal = document.createElement("h1");
+    tituloFinal.appendChild(document.createTextNode("Has conseguido una puntuacion de " + puntuacion));
+    tituloFinal.className = "titulo";
 
     resultado.remove();
 
     //Div para centrar los objetos
     var divCentrar = document.createElement('div');
-    divCentrar.className = "final";
-    divCentrar.id = "final"
+    divCentrar.className = "texto";
+    divCentrar.id = "centrar"
 
     //Juntar todo a el div para centrarlo todo
-    divCentrar.appendChild(titulo);
-    divCentrar.appendChild(formulario);
+    divCentrar.appendChild(tituloFinal);
+    divCentrar.appendChild(formularioSalir);
+
+
 
     //Juntar el div al html
     document.getElementById('memory-game').appendChild(divCentrar);
+}
+
+/*
+//Cojo la primera clase de resultado para el juego
+resultado = document.getElementById("resultado");
+
+//Formulario
+var formulario = document.createElement('form');
+formulario.id = "salir";
+
+//Boton exit
+var exitBtn = document.createElement("a");
+exitBtn.classList = "boton";
+exitBtn.href = '../../menus/gamesMenu.html';
+exitBtn.innerText = 'Exit';
+
+//Boton ranking
+var rankingBtn = document.createElement("a");
+rankingBtn.classList = "boton";
+rankingBtn.href = '../ranking/ranking.php';
+rankingBtn.innerText = 'Ranking';
+
+formulario.appendChild(exitBtn);
+formulario.appendChild(rankingBtn);
+
+//Puntuacion
+var titulo = document.createElement("h1");
+titulo.appendChild(document.createTextNode("Has conseguido una puntuacion de " + puntuacion));
+titulo.className = "txtFinal";
+
+resultado.remove();
+
+//Div para centrar los objetos
+var divCentrar = document.createElement('div');
+divCentrar.className = "final";
+divCentrar.id = "final"
+
+//Juntar todo a el div para centrarlo todo
+divCentrar.appendChild(titulo);
+divCentrar.appendChild(formulario);
+
+//Juntar el div al html
+document.getElementById('memory-game').appendChild(divCentrar);
 
 }
 
-
-/* 
+ */
+/*
 let removeCentrar = document.getElementById("centrar");
 document.getElementById('memory-game').removeChild(removeCentrar);
 //Titulo instucciones
