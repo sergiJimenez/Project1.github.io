@@ -12,7 +12,7 @@
 	
 }
 .fondo_menu{
-	background-image: url(/media/fondo_Borja\ .png);
+	background-image: url(/menuGames/games/game1Borja/media/fondo_Borja\ .png);
 	background-position: center;
 	background-repeat:no-repeat;
 	
@@ -22,7 +22,7 @@
 
 @font-face {   
     font-family: "Blocktopia";
-    src: url(/fuente/Blocktopia.ttf);
+    src: url(//menuGames/games/game1Borja/fuente/Blocktopia.ttf);
 }
 
 #play-btn {
@@ -46,7 +46,7 @@
 	background-color: hsla(0, 0%, 0%, 0.666);
 	font-size: 3.5rem;
 	text-align: center;
-	width: 35vmin;
+	width: 110vmin;
 	box-shadow: 3px 3px 5px grey;
 	font-family: "Blocktopia";
 	cursor:pointer;
@@ -55,7 +55,7 @@
 }
 #Facil{
 	color: rgb(0, 0, 0);
-	background-image: url(/media/boton_play.PNG);
+	background-image: url(/menuGames/games/game1Borja/media/boton_play.PNG);
 	background-color: hsla(127, 3%, 55%, 0.631);
 	font-size: 1.5rem;
 	text-align: center;
@@ -105,7 +105,7 @@ body {
 	
 	width: 95vmin;
 	height: 95vmin;
-	background-image: url(/media/cesped.jpg);
+	background-image: url(/menuGames/games/game1Borja/media/cesped.jpg);
 	border-radius: 1vh;
 }
 .contador {
@@ -188,7 +188,7 @@ body {
 
 /* ------ segunda parte ------ */
 .player {
-	background-image: url(/media/CharacterRun.gif);
+	background-image: url(/menuGames/games/game1Borja/media/CharacterRun.gif);
 	background-repeat: no-repeat;
 	background-position: center;
 	grid-row-start: 18;
@@ -196,39 +196,39 @@ body {
 	transform: scaleX(1);
 }
 .enemy {
-	background-image: url(/media/SpiderEnemy_GoingDown.gif);
+	background-image: url(/menuGames/games/game1Borja/media/SpiderEnemy_GoingDown.gif);
 	background-position: center;
 	background-repeat: no-repeat;
 }
 .goal {
-	background-image: url(/media/cartel.png);
+	background-image: url(/menuGames/games/game1Borja/media/cartel.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	grid-row-start: 1;
 	grid-column-start: 20;
 }
 .key {
-	background-image: url(/media/BigChest.png);
+	background-image: url(/menuGames/games/game1Borja/media/BigChest.png);
 	background-repeat: no-repeat;
 	grid-row-start: 10;
 	grid-column-start: 10;
 	z-index: 1;
 }
 .fuego {
-	background-image: url(/media/SmallProps_Torch.gif);
+	background-image: url(/menuGames/games/game1Borja/media/SmallProps_Torch.gif);
 	background-repeat: no-repeat;
 }
 .camino {
-	background-image: url(/media/cesped.jpg);
+	background-image: url(/menuGames/games/game1Borja/media/cesped.jpg);
 	background-repeat: no-repeat;										      
 }
 .bloqueo {
-	background-image: url(/media/bloque_templo.png);
+	background-image: url(/menuGames/games/game1Borja/media/bloque_templo.png);
 	background-repeat: repeat;
 }
 .logoCep{
 
-	background-image: url(/media/cep.PNG);
+	background-image: url(/menuGames/games/game1Borja/media/cep.PNG);
 	background-repeat: no-repeat;
 
 }
@@ -242,7 +242,7 @@ body {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  
+  left: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
@@ -262,7 +262,7 @@ body {
   position: fixed;
   align-content: center;
   bottom: 0;
- background-color: #fefefe;
+  background-color: #fefefe;
   width: 100%;
   -webkit-animation-name: slideIn;
   -webkit-animation-duration: 0.8s;
