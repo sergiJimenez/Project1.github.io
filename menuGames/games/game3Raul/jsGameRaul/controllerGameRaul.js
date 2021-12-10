@@ -55,7 +55,6 @@ function flipCards() {
 function flip() {
     this.classList.add('is-flipped');
 
-    //INTENTO DE QUITAR LA FUNCIONALIDAD DE GIRAR A LAS CARTAS RESULETAS
     for (let carta of cartasResueltas) {
         console.log(cartasResueltas);
         carta.removeEventListener("click", flip);

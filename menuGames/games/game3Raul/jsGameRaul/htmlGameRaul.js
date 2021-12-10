@@ -216,6 +216,7 @@ function cartasDificil() {
             Number.parseInt(div_card.dataset.left) +
             Number.parseInt(div_card.dataset.speedX) *
             Number.parseInt(div_card.dataset.directionX);
+            
         div_card.dataset.top =
             Number.parseInt(div_card.dataset.top) +
             Number.parseInt(div_card.dataset.speedY) *

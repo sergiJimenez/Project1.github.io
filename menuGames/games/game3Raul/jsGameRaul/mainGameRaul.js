@@ -29,6 +29,7 @@ function juegoDificil() {
     for (let i = 0; i < 12; i++) {
         cartasDificil();
     }
+    
     mostrarEventos();
     mezclar(iconosDaw);     //Cuando tenga dos sets habra un if
     timedCount();
