@@ -1,0 +1,253 @@
+@font-face {   
+  font-family: "Blocktopia";
+  src: url(fuentes/Blocktopia.ttf);
+}
+
+.mapa {
+  height: 1080px;
+  width: 1920px;
+  position: fixed;
+  background-repeat: no-repeat;
+  background-image: url(media/TEST.png);
+}
+.player {
+  background-image: url(media/CharacterRunNoSword.gif);
+  width: 35px;
+  height: 35px;
+  position: relative;
+}
+
+.colision1 {
+  width: 80px;
+  height: 95px;
+  margin: 0 auto;
+  position: absolute;
+  top: 920px;
+  left: 415px;  
+}
+
+.colision2 {
+  width: 750px;
+  height: 60px;
+  margin: 0 auto;
+  position: absolute;
+  top: 955px;
+  left: 500px;
+}
+
+
+.colision3 {
+  width: 10px;
+  height: 30px;
+  margin: 0 auto;
+  position: absolute;
+  top: 905px;
+  left: 1240px;
+}
+
+.colision4 {
+  width: 260px;
+  height: 75px;
+  margin: 0 auto;
+  position: absolute;
+  top: 800px;
+  left: 1240px;
+}
+
+.colision5 {
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  position: absolute;
+  top: 790px;
+  left: 1055px;
+}
+
+.colision6 {
+  width: 105px;
+  height: 25px;
+  margin: 0 auto;
+  position: absolute;
+  top: 740px;
+  left: 1050px;
+}
+
+.colision7 {
+  width: 35px;
+  height: 320px;
+  margin: 0 auto;
+  position: absolute;
+  top: 610px;
+  left: 890px;
+}
+
+.colision8 {
+  width: 600px;
+  height: 40px;
+  margin: 0 auto;
+  position: absolute;
+  top: 585px;
+  left: 680px;
+}
+
+.colision9 {
+  width: 210px;
+  height: 30px;
+  margin: 0 auto;
+  position: absolute;
+  top: 660px;
+  left: 1270px;
+}
+
+.colision10 {
+  width: 800px;
+  height: 40px;
+  margin: 0 auto;
+  position: absolute;
+  top: 445px;
+  left: 680px;
+}
+
+.colision11 {
+  width: 800px;
+  height: 40px;
+  margin: 0 auto;
+  position: absolute;
+  top: 120px;
+  left: 680px;
+}
+
+.colision12 {
+  width: 40px;
+  height: 180px;
+  margin: 0 auto;
+  position: absolute;
+  top: 450px;
+  left: 680px;
+}
+
+.colision13 {
+  width: 15px;
+  height: 200px;
+  margin: 0 auto;
+  position: absolute;
+  top: 225px;
+  left: 705px;
+}
+
+.colision14 {
+  width: 160px;
+  height: 130px;
+  margin: 0 auto;
+  position: absolute;
+  top: 85px;
+  left: 580px;
+}
+
+.colision15 {
+  width: 170px;
+  height: 130px;
+  margin: 0 auto;
+  position: absolute;
+  top: 75px;
+  left: 1315px;
+}
+
+.colision15 {
+  width: 90px;
+  height: 190px;
+  margin: 0 auto;
+  position: absolute;
+  top: 375px;
+  left: 1400px;
+}
+
+.llave1 {
+  background-image: url(media/ItemGifs_Key.gif);
+  width: 15px;
+  height: 15px;
+  margin: 0 auto;
+  position: absolute;
+  top: 730px;
+  left: 1050px;
+}
+
+.llave2 {
+  background-image: url(media/ItemGifs_Key.gif);
+  width: 15px;
+  height: 15px;
+  margin: 0 auto;
+  position: absolute;
+  top: 670px;
+  left: 1470px;
+}
+
+.llave3 {
+  background-image: url(media/ItemGifs_Key.gif);
+  width: 15px;
+  height: 15px;
+  margin: 0 auto;
+  position: absolute;
+  top: 550px;
+  left: 1470px;
+}
+
+.llave4 {
+  background-image: url(media/ItemGifs_Key.gif);
+  width: 15px;
+  height: 15px;
+  margin: 0 auto;
+  position: absolute;
+  top: 80px;
+  left: 580px;
+}
+
+.llave5 {
+  background-image: url(media/ItemGifs_Key.gif);
+  width: 15px;
+  height: 15px;
+  margin: 0 auto;
+  position: absolute;
+  top: 180px;
+  left: 1475px;
+}
+
+
+.temporizador {
+  align-items: center;
+  justify-content: center;
+  font-family: "Blocktopia" ;
+}
+
+#cuentAtras {
+  font-size: 3em;
+  margin-left: 40px;
+  margin-top: 40px;
+  color: #fff;
+}
+
+#marcador {
+  font-size: 3em;
+  margin-left: 40px;
+  margin-top: 80px;
+  color: #fff;
+}
+
+.modal {
+  background-color: rgba (0,0,0,0.8);
+  font-family: "Blocktopia";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido-modal {
+  font-family: "Blocktopia";
+  background-color:black;
+  color: #fff;
+  padding: 2rem 4rem;
+  border-radius: 15px;
+}

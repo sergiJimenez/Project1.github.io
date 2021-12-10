@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //Variables
   const grid = document.querySelector(".grid");
   const gurmann = document.createElement("div");
-  const scoreVisual = document.createElement("scoreVisual");
+  const scoreVisual = document.querySelector(".scoreVisual");
   let isGameOver = false; //GameOver variable
   let finalMessage = "FINISH"; //Test message to try the ENDGAME option
   let platformCount = 4; //How many platforms we have when we start a new game
@@ -375,7 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
     while (grid.firstChild) {
       grid.removeChild(grid.firstChild);
     }
-    scoreVisual.innerHTML = score; //Score when you are jumping on a platform + Score coin
+    //scoreVisual.innerHTML = score; //Score when you are jumping on a platform + Score coin
     clearInterval(upTimerId);
     clearInterval(downTimerId);
     clearInterval(leftTimerId);

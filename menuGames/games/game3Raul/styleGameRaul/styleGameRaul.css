@@ -144,6 +144,7 @@ img {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease 0s;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .boton:hover {
@@ -155,35 +156,6 @@ img {
 }
 
 .boton:active {
-  transform: translateY(-1px);
-}
-
-.exitBtn{
-  margin-top: 100px;
-  padding: 1.3em 3em;
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 500;
-  color: #000;
-  background-color: #fff;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s ease 0s;
-  cursor: pointer;
-  outline: none;
-  text-decoration: none;
-}
-
-.exitBtn:hover {
-  background-color: purple;
-  box-shadow: 0px 15px 20px rgba(159, 46, 229, 0.4);
-  color: #fff;
-  transform: translateY(-7px);
-}
-
-.exitBtn:active {
   transform: translateY(-1px);
 }
 
@@ -201,6 +173,7 @@ img {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease 0s;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btnVolver:hover {
@@ -212,6 +185,35 @@ img {
 }
 
 .btnVolver:active {
+  transform: translateY(-1px);
+}
+
+.btnExit {
+  margin-top: 10px;
+  padding: 1.3em 3em;
+  font-size: 15px;
+  font-weight: 900;
+  border: 2px solid red;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btnExit:hover {
+  background-color: red;
+  border: 2px solid white;
+  box-shadow: 0px 15px 20px rgba(255, 0, 0, 0.4);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.btnExit:active {
   transform: translateY(-1px);
 }
 
@@ -248,4 +250,9 @@ img {
   color: white;
   font-size: 20px;
 
+}
+
+.salir{
+  display: flex;
+  flex-direction: column;
 }
