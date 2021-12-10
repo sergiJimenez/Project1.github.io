@@ -406,8 +406,6 @@ function pudeMover(jugador) {// valida si puede moverse o no
 }
 function clearOldPlayer() { // se elimina el jugador de la posicion antigua cada vez que se mueve un espacio
 	document.getElementsByClassName("player")[0].remove();
-
-
 }
 function crearJugador() {  // el jugador se crea cada vez que se mueve 
 	
