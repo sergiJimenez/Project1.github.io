@@ -2,9 +2,9 @@
 
 function openBd()
 {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $servername = "hostingmysql335.nominalia.com";
+    $username = "daw2b02";
+    $password = "Informatica2021";
     $dbName = "daw2b02";
    
         $conexion = new PDO("mysql:host=$servername;dbname=$dbName", $username, $password);
