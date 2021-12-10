@@ -10,9 +10,9 @@
     let llave5 = document.getElementById("llave5");
     let araña1 = document.getElementById("araña1");
     let araña2 = document.getElementById("araña2");
-    let araña3 = document.getElementById("araña3");
+    /*let araña3 = document.getElementById("araña3");
     let araña4 = document.getElementById("araña4");
-    let araña5 = document.getElementById("araña5");
+    let araña5 = document.getElementById("araña5");*/
     let array_collisiones = document.querySelectorAll("div[class^='colision']");
 
     let velocidad = 7;
