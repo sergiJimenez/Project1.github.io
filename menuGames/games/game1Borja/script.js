@@ -280,20 +280,15 @@ function iniciarPuntuacion() {
 
 	const enemiesKilled = contadorEnemigos - enemigos.length;
 
-	
 if (  sec > 40 ){
 		puntuacion = (movCount *2 ) + 50;
 }
-
-
-
 
 	document.getElementById('mostrarPuntuacion').innerHTML = puntuacion + ' Puntuacion';
 
 	document.getElementById('mostrarMovimientos').innerHTML = movCount + ' Movimientos';
 
 	document.getElementById('mostrarEnimigosMuertos').innerHTML = enemiesKilled + ' Kills ';
-
 
 }
 function mostrarRanking() {
