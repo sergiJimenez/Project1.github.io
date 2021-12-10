@@ -216,7 +216,7 @@ function cartasDificil() {
             Number.parseInt(div_card.dataset.left) +
             Number.parseInt(div_card.dataset.speedX) *
             Number.parseInt(div_card.dataset.directionX);
-            
+
         div_card.dataset.top =
             Number.parseInt(div_card.dataset.top) +
             Number.parseInt(div_card.dataset.speedY) *
@@ -227,9 +227,6 @@ function cartasDificil() {
 
         let tablero_rect = tablero.getBoundingClientRect();
         let card_rect = div_card.getBoundingClientRect();
-
-        console.log(tablero.rect);
-        console.log(card.rect);
 
         if (Number.parseInt(card_rect.left) < tablero_rect.left) {
             div_card.dataset.directionX *= -1;
