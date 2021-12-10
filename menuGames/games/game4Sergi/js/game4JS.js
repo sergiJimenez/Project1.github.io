@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //Variables
   const grid = document.querySelector(".grid");
   const gurmann = document.createElement("div");
-  const scoreVisual = document.createElement("scoreVisual");
+  const scoreVisual = document.querySelector(".scoreVisual");
   let isGameOver = false; //GameOver variable
   let finalMessage = "FINISH"; //Test message to try the ENDGAME option
   let platformCount = 4; //How many platforms we have when we start a new game
