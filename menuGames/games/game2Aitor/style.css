@@ -1,6 +1,6 @@
 @font-face {   
   font-family: "Blocktopia";
-  src: url(/menuGames/games/game2Aitor/fuentes/Blocktopia.ttf);
+  src: url(fuentes/Blocktopia.ttf);
 }
 
 .mapa {
@@ -8,10 +8,10 @@
   width: 1920px;
   position: fixed;
   background-repeat: no-repeat;
-  background-image: url(/menuGames/games/game2Aitor/media/TEST.png);
+  background-image: url(media/TEST.png);
 }
 .player {
-  background-image: url(/menuGames/games/game2Aitor/media/CharacterRunNoSword.gif);
+  background-image: url(media/CharacterRunNoSword.gif);
   width: 35px;
   height: 35px;
   position: relative;
@@ -163,7 +163,7 @@
 }
 
 .llave1 {
-  background-image: url(/menuGames/games/game2Aitor/media/ItemGifs_Key.gif);
+  background-image: url(media/ItemGifs_Key.gif);
   width: 15px;
   height: 15px;
   margin: 0 auto;
@@ -173,7 +173,7 @@
 }
 
 .llave2 {
-  background-image: url(/menuGames/games/game2Aitor/media/ItemGifs_Key.gif);
+  background-image: url(media/ItemGifs_Key.gif);
   width: 15px;
   height: 15px;
   margin: 0 auto;
@@ -183,7 +183,7 @@
 }
 
 .llave3 {
-  background-image: url(/menuGames/games/game2Aitor/media/ItemGifs_Key.gif);
+  background-image: url(media/ItemGifs_Key.gif);
   width: 15px;
   height: 15px;
   margin: 0 auto;
@@ -193,7 +193,7 @@
 }
 
 .llave4 {
-  background-image: url(/menuGames/games/game2Aitor/media/ItemGifs_Key.gif);
+  background-image: url(media/ItemGifs_Key.gif);
   width: 15px;
   height: 15px;
   margin: 0 auto;
@@ -203,7 +203,7 @@
 }
 
 .llave5 {
-  background-image: url(/menuGames/games/game2Aitor/media/ItemGifs_Key.gif);
+  background-image: url(media/ItemGifs_Key.gif);
   width: 15px;
   height: 15px;
   margin: 0 auto;
@@ -233,7 +233,7 @@
   color: #fff;
 }
 
-/*.modal {
+.modal {
   background-color: rgba (0,0,0,0.8);
   font-family: "Blocktopia";
   position: absolute;
@@ -250,4 +250,4 @@
   color: #fff;
   padding: 2rem 4rem;
   border-radius: 15px;
-}*/
+}
