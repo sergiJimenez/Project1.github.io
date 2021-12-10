@@ -392,7 +392,6 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
     clearInterval(rightTimerId);
-    console.log("UNTIL HERE");
   }
 
   function start() {
