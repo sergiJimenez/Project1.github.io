@@ -290,7 +290,7 @@ function pantallaFinal() {
   //Titulo
   var tituloFinal = document.createElement("h1");
   tituloFinal.appendChild(
-    document.createTextNode("Has conseguido una puntuacion de " + puntuacion)
+    document.createTextNode("Has aconseguit una puntuacio de " + puntuacion)
   );
   tituloFinal.className = "titulo";
 
