@@ -56,7 +56,6 @@ let mejorPuntuacion = [];
 // ------------- iniciamos set up -----------------
 
 setUp();
-
 function setUp() { // click en la primera pantalla para empezar + llamada a teclado (4 arrows)
 	playButton.addEventListener("click", () => { empezarJuego() });
 	window.addEventListener("keydown", (e) => { if (playable) newTurno(e) });
@@ -71,7 +70,6 @@ function empezarJuego() { // llamada a la creacion del tablero y funciones basic
 		ejectuarCronometro;
 	}
 }
-
 function editorMapas() {// creo un mapa por cada nivel, definiendo en 3 letras 3 valores diferentes   
 	// asignando a cada valor unas restricciones personalizadas queluego al printarse juntas dibujan el mapa 
 
