@@ -212,6 +212,56 @@
   left: 1475px;
 }
 
+.araña1 {
+  background-image: url(media/SpiderEnemy_GoingUp.gif);
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  position: absolute;
+  top: 950px;
+  left: 1240px;
+}
+
+.araña2 {
+  background-image: url(media/SpiderEnemy_GoingUp.gif);
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  position: absolute;
+  top: 800px;
+  left: 1480px;
+}
+
+.araña3 {
+  background-image: url(media/SpiderEnemy_GoingUp.gif);
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  position: absolute;
+  top: 800px;
+  left: 1480px;
+}
+
+.araña4 {
+  background-image: url(media/SpiderEnemy_GoingUp.gif);
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  position: absolute;
+  top: 800px;
+  left: 1480px;
+}
+
+.araña5 {
+  background-image: url(media/SpiderEnemy_GoingUp.gif);
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  position: absolute;
+  top: 800px;
+  left: 1480px;
+}
+
 
 .temporizador {
   align-items: center;
@@ -233,12 +283,13 @@
   color: #fff;
 }
 
-.modal {
+/*.modal {
   background-color: rgba (0,0,0,0.8);
   font-family: "Blocktopia";
-  position: absolute;
-  height: 100%;
-  width: 100%;
+  position: fixed;
+  margin: auto;
+  height: 50%;
+  width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -250,4 +301,4 @@
   color: #fff;
   padding: 2rem 4rem;
   border-radius: 15px;
-}
+}*/

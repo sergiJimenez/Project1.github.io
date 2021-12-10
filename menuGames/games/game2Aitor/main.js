@@ -8,6 +8,11 @@
     let llave3 = document.getElementById("llave3");
     let llave4 = document.getElementById("llave4");
     let llave5 = document.getElementById("llave5");
+    let araña1 = document.getElementById("araña1");
+    let araña2 = document.getElementById("araña2");
+    let araña3 = document.getElementById("araña3");
+    let araña4 = document.getElementById("araña4");
+    let araña5 = document.getElementById("araña5");
     let array_collisiones = document.querySelectorAll("div[class^='colision']");
 
     let velocidad = 7;
@@ -67,6 +72,7 @@
       colisionLlave3(llave3, player);
       colisionLlave4(llave4, player);
       colisionLlave5(llave5, player);
+      colisionAraña1(araña1, player);
     }
 
     function moverDerecha() {
@@ -81,6 +87,7 @@
       colisionLlave3(llave3, player);
       colisionLlave4(llave4, player);
       colisionLlave5(llave5, player);
+      colisionAraña1(araña1, player);
     }
 
     function moverArriba() {
@@ -96,6 +103,7 @@
       colisionLlave3(llave3, player);
       colisionLlave4(llave4, player);
       colisionLlave5(llave5, player);
+      colisionAraña1(araña1, player);
     }
 
     function moverAbajo() {
@@ -110,6 +118,7 @@
       colisionLlave3(llave3, player);
       colisionLlave4(llave4, player);
       colisionLlave5(llave5, player);
+      colisionAraña1(araña1, player);
     }
 
     //Funcion colisiones
@@ -272,5 +281,44 @@
 
       return encontrado;
     }
+
+    //Colision Arañas
+
+    function colisionAraña1(araña1, player) {
+      const araña = araña1.getBoundingClientRect();
+      const player1 = player.getBoundingClientRect();
+      let encontrado = false;
+
+      if (
+        araña.x < player1.x + player1.width &&
+        player1.x < araña.x + araña.width &&
+        araña.y < player1.y + player1.height &&
+        player1.y < araña.y + araña.height
+      ) {
+        console.log("COLISION CON ARAÑA1");
+        encontrado = true;
+        score = score - 10;
+        araña1.style.display = "none";
+        console.log(score);
+      }
+
+      return encontrado;
+    }
+
+    //Funcion Arañas
+    let araña1x=1240;
+    setInterval(() => {
+      let araña1style = araña1.getBoundingClientRect();
+      if (araña1x <= 400){
+        araña1x = 1240;
+      }
+      araña1x -= 10;
+      araña1.style.left = `${araña1x}px`;
+      /*console.log(araña1style.x);*/
+    }, 100);;
+    
+
+
+
   });
 })();
