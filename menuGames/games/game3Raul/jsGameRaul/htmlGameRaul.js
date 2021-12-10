@@ -289,7 +289,7 @@ function pantallaFinal() {
     formularioSalir.appendChild(exitBtn);
     formularioSalir.appendChild(rankingBtn);
 
-    if (parseInt(document.getElementById("resultado").dataset.resultado) == 1) {
+    if (parseInt(document.getElementById("resultado").dataset.resultado) == 6) {
         //Titulo good
         var tituloFinal = document.createElement("h1");
         tituloFinal.appendChild(
