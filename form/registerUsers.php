@@ -42,15 +42,21 @@
                                                     <li><a class="dropdown-item" href="#">Grau superior gestió de vendes i espais comercials</a></li>
                                                     <li><a class="dropdown-item" href="#">Grau superior comerç internacional</a></li>
                                                     <!-- Hoteleria i Turisme -->
-                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li>
+                                                        <hr class="dropdown-divider">
+                                                    </li>
                                                     <li><a class="dropdown-item" href="#">Grau superior agències de viatges i gestió d'esdeveniments</a></li>
                                                     <!-- Informàtica i comunicacions -->
-                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li>
+                                                        <hr class="dropdown-divider">
+                                                    </li>
                                                     <li><a class="dropdown-item" href="#">Grau mitjà sistemes microinformàtics i xarxes</a></li>
                                                     <li><a class="dropdown-item" href="#">Grau superior desenvolupaments aplicacions multiplataforma</a></li>
                                                     <li><a class="dropdown-item" href="#">Grau superior desenvolupaments aplicacions web</a></li>
                                                     <!-- Administració i gestió -->
-                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li>
+                                                        <hr class="dropdown-divider">
+                                                    </li>
                                                     <li><a class="dropdown-item" href="#">Grau mitjà gestió administrativa</a></li>
                                                     <li><a class="dropdown-item" href="#">Grau superior assistència a la direcció</a></li>
                                                     <li><a class="dropdown-item" href="#">Grau superior administració i finances</a></li>

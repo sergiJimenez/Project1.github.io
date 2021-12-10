@@ -138,13 +138,7 @@ function timedCount() {
     let formattedSeconds = ("0" + seconds).slice(-2);
     document.getElementById("timer").innerHTML =
         "TEMPS: " + formattedMinute + ":" + formattedSeconds;
-
-    if ((minute == 0 && seconds == 0) || resultado == 6) {
-        gameOver();
+    if ((minute == 0 && seconds == 0) ||  resultado == 6) {
+        gameOver();      
     }
 }
-
-/* function puntuacion(){
-    puntuacion = secondsInicial * parseInt(document.getElementById("resultado").dataset.resultado);
-
-} */
