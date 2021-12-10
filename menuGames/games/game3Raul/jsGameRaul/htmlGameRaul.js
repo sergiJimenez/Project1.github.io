@@ -5,7 +5,7 @@
 // Menu
 function menu() {
     //Array de los modulos existentes
-    var modulos = ["Daw", "Dam"];
+    var modulos = ["Daw", "Marketing"];
 
     //Crear y agregar la lista
     var selectList = document.createElement("select");
