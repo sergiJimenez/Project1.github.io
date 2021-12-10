@@ -232,14 +232,14 @@
   left: 1480px;
 }
 
-/*.araña3 {
+.araña3 {
   background-image: url(media/SpiderEnemy_GoingUp.gif);
   width: 30px;
   height: 30px;
   margin: 0 auto;
   position: absolute;
-  top: 800px;
-  left: 1480px;
+  top: 600px;
+  left: 1270px;
 }
 
 .araña4 {
@@ -248,7 +248,7 @@
   height: 30px;
   margin: 0 auto;
   position: absolute;
-  top: 800px;
+  top: 450px;
   left: 1480px;
 }
 
@@ -258,9 +258,9 @@
   height: 30px;
   margin: 0 auto;
   position: absolute;
-  top: 800px;
+  top: 125px;
   left: 1480px;
-}*/
+}
 
 
 .temporizador {
