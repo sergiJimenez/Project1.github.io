@@ -375,7 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
     while (grid.firstChild) {
       grid.removeChild(grid.firstChild);
     }
-    scoreVisual.innerHTML = score; //Score when you are jumping on a platform + Score coin
+    //scoreVisual.innerHTML = score; //Score when you are jumping on a platform + Score coin
     clearInterval(upTimerId);
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
