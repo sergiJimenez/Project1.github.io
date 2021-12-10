@@ -55,7 +55,6 @@ function flipCards() {
 function flip() {
     this.classList.add('is-flipped');
 
-    //INTENTO DE QUITAR LA FUNCIONALIDAD DE GIRAR A LAS CARTAS RESULETAS
     for (let carta of cartasResueltas) {
         console.log(cartasResueltas);
         carta.removeEventListener("click", flip);
@@ -138,13 +137,7 @@ function timedCount() {
     let formattedSeconds = ("0" + seconds).slice(-2);
     document.getElementById("timer").innerHTML =
         "TEMPS: " + formattedMinute + ":" + formattedSeconds;
-
-    if ((minute == 0 && seconds == 0) || resultado == 6) {
-        gameOver();
+    if ((minute == 0 && seconds == 0) ||  resultado == 6) {
+        gameOver();      
     }
 }
-
-/* function puntuacion(){
-    puntuacion = secondsInicial * parseInt(document.getElementById("resultado").dataset.resultado);
-
-} */

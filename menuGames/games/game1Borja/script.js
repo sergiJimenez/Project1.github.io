@@ -56,7 +56,6 @@ let mejorPuntuacion = [];
 // ------------- iniciamos set up -----------------
 
 setUp();
-
 function setUp() { // click en la primera pantalla para empezar + llamada a teclado (4 arrows)
 	playButton.addEventListener("click", () => { empezarJuego() });
 	window.addEventListener("keydown", (e) => { if (playable) newTurno(e) });
@@ -71,7 +70,6 @@ function empezarJuego() { // llamada a la creacion del tablero y funciones basic
 		ejectuarCronometro;
 	}
 }
-
 function editorMapas() {// creo un mapa por cada nivel, definiendo en 3 letras 3 valores diferentes   
 	// asignando a cada valor unas restricciones personalizadas queluego al printarse juntas dibujan el mapa 
 
@@ -282,20 +280,15 @@ function iniciarPuntuacion() {
 
 	const enemiesKilled = contadorEnemigos - enemigos.length;
 
-	
 if (  sec > 40 ){
 		puntuacion = (movCount *2 ) + 50;
 }
-
-
-
 
 	document.getElementById('mostrarPuntuacion').innerHTML = puntuacion + ' Puntuacion';
 
 	document.getElementById('mostrarMovimientos').innerHTML = movCount + ' Movimientos';
 
 	document.getElementById('mostrarEnimigosMuertos').innerHTML = enemiesKilled + ' Kills ';
-
 
 }
 function mostrarRanking() {
@@ -406,8 +399,6 @@ function pudeMover(jugador) {// valida si puede moverse o no
 }
 function clearOldPlayer() { // se elimina el jugador de la posicion antigua cada vez que se mueve un espacio
 	document.getElementsByClassName("player")[0].remove();
-
-
 }
 function crearJugador() {  // el jugador se crea cada vez que se mueve 
 	

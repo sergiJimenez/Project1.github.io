@@ -8,8 +8,6 @@
     <title>Register</title>
     <!-- BOOTSTRAP LINKS -->
     <link rel="stylesheet" href="/Project1.github.io/bootstrap-5.1.3-dist/css/bootstrap.min.css">
-    <script src="/Project1.github.io/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 </head>
 
 <body class="bg-dark">
@@ -44,15 +42,21 @@
                                                     <li><a class="dropdown-item" href="#">Grau superior gestió de vendes i espais comercials</a></li>
                                                     <li><a class="dropdown-item" href="#">Grau superior comerç internacional</a></li>
                                                     <!-- Hoteleria i Turisme -->
-                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li>
+                                                        <hr class="dropdown-divider">
+                                                    </li>
                                                     <li><a class="dropdown-item" href="#">Grau superior agències de viatges i gestió d'esdeveniments</a></li>
                                                     <!-- Informàtica i comunicacions -->
-                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li>
+                                                        <hr class="dropdown-divider">
+                                                    </li>
                                                     <li><a class="dropdown-item" href="#">Grau mitjà sistemes microinformàtics i xarxes</a></li>
                                                     <li><a class="dropdown-item" href="#">Grau superior desenvolupaments aplicacions multiplataforma</a></li>
                                                     <li><a class="dropdown-item" href="#">Grau superior desenvolupaments aplicacions web</a></li>
                                                     <!-- Administració i gestió -->
-                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li>
+                                                        <hr class="dropdown-divider">
+                                                    </li>
                                                     <li><a class="dropdown-item" href="#">Grau mitjà gestió administrativa</a></li>
                                                     <li><a class="dropdown-item" href="#">Grau superior assistència a la direcció</a></li>
                                                     <li><a class="dropdown-item" href="#">Grau superior administració i finances</a></li>
@@ -67,10 +71,10 @@
                                                 <input class="form-control" id="inputConfirmPassword" type="password" placeholder="Confirm Password" />
                                             </div><br>
                                         </div>
-                                        <div class="form-group mt-4 mb-0">
-                                            <a class="btn btn-dark btn-block" href="/Project1.github.io/menuGames/menus/gameIntro.html">
-                                                Create an Account
-                                            </a><!-- BOTON EN EL CENTRO -->
+                                        <div class="form-group text-center justify-content-between mt-4 mb-0">
+                                            <a class="btn btn-dark" type="submit" name="submit" value="Enter" href="/Project1.github.io/menuGames/menus/gameIntro.html">
+                                                Create an account
+                                            </a>
                                         </div>
                                     </form>
                                 </div>
@@ -88,6 +92,8 @@
             </main>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="/Project1.github.io/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

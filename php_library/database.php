@@ -14,7 +14,7 @@ function openBd()
 
         return $conexion;
     }
-
+    
     function closeBd()
     {
         return null;
