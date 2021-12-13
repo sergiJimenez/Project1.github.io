@@ -8,7 +8,7 @@
   width: 1920px;
   position: fixed;
   background-repeat: no-repeat;
-  background-image: url(media/TEST.png);
+  background-image: url(media/Game2Aitor_POSSIBLEDEFINITIVE.png);
 }
 .player {
   background-image: url(media/CharacterRunNoSword.gif);
@@ -213,7 +213,7 @@
 }
 
 .araña1 {
-  background-image: url(media/SpiderEnemy_GoingUp.gif);
+  background-image: url(media/WormEnemy_Idle.gif);
   width: 30px;
   height: 30px;
   margin: 0 auto;
@@ -223,7 +223,7 @@
 }
 
 .araña2 {
-  background-image: url(media/SpiderEnemy_GoingUp.gif);
+  background-image: url(media/WormEnemy_Idle.gif);
   width: 30px;
   height: 30px;
   margin: 0 auto;
@@ -233,7 +233,7 @@
 }
 
 .araña3 {
-  background-image: url(media/SpiderEnemy_GoingUp.gif);
+  background-image: url(media/WormEnemy_Idle.gif);
   width: 30px;
   height: 30px;
   margin: 0 auto;
@@ -243,7 +243,7 @@
 }
 
 .araña4 {
-  background-image: url(media/SpiderEnemy_GoingUp.gif);
+  background-image: url(media/WormEnemy_Idle.gif);
   width: 30px;
   height: 30px;
   margin: 0 auto;
@@ -253,7 +253,7 @@
 }
 
 .araña5 {
-  background-image: url(media/SpiderEnemy_GoingUp.gif);
+  background-image: url(media/WormEnemy_Idle.gif);
   width: 30px;
   height: 30px;
   margin: 0 auto;
