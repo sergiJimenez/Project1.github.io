@@ -43,6 +43,7 @@ let fuego = 'F';
 let bloqueo = 'B';
 let camino = 'C';
 let logoCep = 'L';
+let lava = 'A';
 // ---- variables para crear mapas 
 let nivelTablero;
 let tablero = [];
@@ -126,9 +127,6 @@ function editorMapas() {// creo un mapa por cada nivel, definiendo en 3 letras 3
 			];
 			break;
 		case "dificil":
-
-			// espacio reservado para oscar el contructor 
-
 			tablero = [
 
 				['C', 'C', 'C', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'B', 'B', 'C', ''],
@@ -156,31 +154,29 @@ function editorMapas() {// creo un mapa por cada nivel, definiendo en 3 letras 3
 			break;
 
 		case "extremo":
-
-			// espacio reservado para oscar el contructor 
-
 			tablero = [
 
-				['C', 'C', 'C', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'B', 'B', 'C', ''],
-				['C', 'B', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'C', 'C', 'F', 'C', 'B', 'B', 'B', 'B', 'B', 'C', 'L'],
-				['C', 'B', 'B', 'B', 'B', 'B', 'C', 'B', 'B', 'B', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'B', 'C', 'B'],
-				['C', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'B', 'B', 'B', 'C', 'B', 'B', 'C', 'F', 'C', 'C', 'C', 'B'],
-				['C', 'C', 'F', 'C', 'C', 'C', 'F', 'C', 'B', 'C', 'B', 'C', 'B', 'B', 'C', 'C', 'C', 'B', 'B', 'B'],
-				['C', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'B', 'C', 'B', 'C', 'B', 'B', 'B', 'C', 'B', 'C', 'C', 'C'],
-				['C', 'B', 'C', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'B', 'C', 'C', 'C', 'C', 'C', 'B', 'C', 'B', 'B'],
-				['C', 'C', 'C', 'B', 'B', 'C', 'C', 'B', 'C', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C'],
-				['C', 'B', 'C', 'B', 'B', 'B', 'C', 'B', 'C', 'B', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'C', 'F', 'C'],
-				['C', 'B', 'C', 'C', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'B', 'B', 'C', 'C', 'C'],
-				['C', 'B', 'B', 'C', 'C', 'C', 'F', 'C', 'B', 'C', 'C', 'C', 'C', 'B', 'B', 'B', 'B', 'B', 'B', 'C'],
-				['C', 'C', 'B', 'B', 'B', 'C', 'C', 'C', 'B', 'C', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'B', 'B', 'B'],
-				['F', 'C', 'C', 'C', 'B', 'B', 'C', 'B', 'B', 'C', 'C', 'C', 'C', 'B', 'C', 'B', 'C', 'C', 'C', 'C'],
-				['C', 'C', 'B', 'C', 'C', 'C', 'C', 'B', 'B', 'B', 'B', 'B', 'C', 'B', 'B', 'B', 'B', 'C', 'B', 'B'],
-				['C', 'B', 'B', 'B', 'B', 'C', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'B', 'B', 'C', 'C', 'C', 'B'],
-				['C', 'C', 'C', 'B', 'B', 'C', 'B', 'B', 'C', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'C', 'F', 'C', 'B'],
-				['C', 'B', 'B', 'B', 'C', 'C', 'C', 'B', 'C', 'B', 'B', 'C', 'C', 'C', 'B', 'B', 'C', 'C', 'C', 'B'],
-				['C', 'B', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'C', 'B', 'B', 'C', 'B', 'B', 'B', 'B', 'C', 'B', 'B'],
-				['C', 'B', 'C', 'B', 'C', 'C', 'C', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'B', 'C', 'C', 'B', 'B'],
-				['C', 'C', 'C', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'],
+				['B', 'C', 'C', 'F', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'B', 'F', 'C', 'C', 'L', 'L', 'L', ''],
+				['B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'F', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'F', 'F', 'B'],
+				['B', 'C', 'A', 'A', 'A', 'A', 'C', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B'],
+				['B', 'C', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'C', 'B'],
+				['B', 'F', 'F', 'F', 'C', 'C', 'C', 'F', 'F', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'F', 'F', 'C', 'B'],
+				['B', 'C', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'C', 'B'],
+				['B', 'C', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'C', 'B'],
+				['B', 'C', 'B', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'B', 'C', 'B'],
+				['B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'F', 'C', 'F', 'C', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B'],
+				['B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'F', 'C', 'F', 'C', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B'],
+				['B', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'B'],
+				['B', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'C', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B'],
+				['B', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'F', 'C', 'F', 'C', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'B'],
+				['B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B'],
+				['B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B'],
+				['B', 'C', 'B', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'B', 'C', 'B'],
+				['B', 'C', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'C', 'B'],
+				['B', 'C', 'C', 'C', 'C', 'B', 'B', 'B', 'C', 'C', 'C', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'B'],
+				['B', 'F', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'B', 'B', 'F', 'B'],
+				['B', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B'],
+				//        1    2    3    4    5    6    7    8    9    10   11   12   13   14  15    16   17   18   19  20
 			];
 
 			break;
@@ -238,37 +234,51 @@ function crearTablero() { // defino las condiciones del mapeado creando divs y r
 
 				gridBoard.appendChild(div_camino);
 			}
+			if (tablero[i][j] == lava) {// llamo a las 'C' de cada mapa
+
+				let div_lava = document.createElement("div");
+				div_lava.className = "lava";
+
+				div_lava.style.gridRowStart = i + 1;
+				div_lava.style.gridColumnStart = j + 1;
+
+				gridBoard.appendChild(div_lava);
+			}
+
+
+
 		}
 	}
 }
 function setDificultat() { // modifica algunas variables para poder personalizar las condiciones del juegos segun la dificultad escogida por el usuario
+
 	nivel = difiultadMenu.value;
 	nivelTablero = difiultadMenu.value;
 
 	switch (nivel) {					// 1. se edita la cuenta atras segun nivel 
-										// 2. se llama a cada mapa creado para cada nivel.
-										// 3. se crean el numero de enemigos que quieres en cada nivel
+		// 2. se llama a cada mapa creado para cada nivel.
+		// 3. se crean el numero de enemigos que quieres en cada nivel
 
 		case "extremo":
-			min = 1; sec = 40;
-			editorMapas(tablero);
-			contadorEnemigos = 2;
+			min = 3; sec = 00;
+			editorMapas();
+			contadorEnemigos = 1;
 			break;
 		case "dificil":
-			min = 1; sec = 30;
-			editorMapas(tablero);
+			min = 2; sec = 30;
+			editorMapas();
 			contadorEnemigos = 3;
 			break;
 
 		case "medio":
 			min = 2; sec = 00;
-			editorMapas(tablero);
+			editorMapas();
 			contadorEnemigos = 3;
 			break;
 
 		case "facil":
-			min = 1; sec = 00;
-			editorMapas(tablero);
+			min = 1; sec = 30;
+			editorMapas();
 			contadorEnemigos = 1;
 			break;
 
@@ -429,12 +439,12 @@ function crearJugador() {  // el jugador se crea cada vez que se mueve
 	const newPlayer = document.createElement("div");
 	newPlayer.classList.add("player");
 
-	if (llaveEncontrada)
+	if (llaveEncontrada = true) {
 		newPlayer.style.backgroundColor = "";
-	newPlayer.style.gridRowStart = `${jugador.x}`;
-	newPlayer.style.gridColumnStart = `${jugador.y}`;
-	gridBoard.appendChild(newPlayer);
-
+		newPlayer.style.gridRowStart = `${jugador.x}`;
+		newPlayer.style.gridColumnStart = `${jugador.y}`;
+		gridBoard.appendChild(newPlayer);
+	}
 
 	if ((arrowLeft == true && arrowUp == true) || (arrowLeft == true && arrowDown == true)) {
 
@@ -470,8 +480,6 @@ function eliminarOldEnemigo() { // borra al enemigo de la posicion para poder mo
 	}
 }
 function updatePosicionEnemiga() { // acerca el enemigo a la posicion del jugador haciendo el efecto de persecucuion 
-
-
 
 	var aleatorio = Math.round(Math.random() * 1);
 	var aleatorio2 = Math.round(Math.random() * -1);
@@ -522,20 +530,17 @@ function generarEnemigo() {       // selecciona el div y creamos al enemigo, dan
 }
 function newTurno(e) { // conjunto de funciones que engloba y lo verifica todo cada vez que pulsas la tecla.
 	// mostramos mensaje de victoria y derrota en caso de que verifique que hemso ganado o perdido						
-	takeInput(e);
 
+	iniciarPuntuacion();
+	takeInput(e);
 	if (!legalInput) {
 		legalInput = true;
 		return;
 	}
-
 	playerTurn();
 	turnoEnemigo();
-	iniciarPuntuacion();
-
 	checkDerrota();
 	checkVictoria();
-
 }
 function checkVictoria() {       // cuando el jugador tiene la llave y llega a la posicion final ha ganado.
 
@@ -545,13 +550,15 @@ function checkVictoria() {       // cuando el jugador tiene la llave y llega a l
 		alert(mensajeVictoria);
 	}
 }
-function checkDerrota() {      // si el jugador ocupa la misma posicion del enemigo, se acaba el juego 
+function checkDerrota() {      // si el jugador ocupa la misma posicion del enemigo,toca el fuego o la lava,  se acaba el juego 
 	for (let i = 0; i < enemigos.length; i++) {
 		console.log(enemigos[i]);
 
-		if ((jugador.x === enemigos[i].x && jugador.y === enemigos[i].y) || (tablero[jugador.x - 1][jugador.y - 1] == fuego)) {
+		if ((jugador.x === enemigos[i].x && jugador.y === enemigos[i].y) || (tablero[jugador.x - 1][jugador.y - 1] == fuego) || (tablero[jugador.x - 1][jugador.y - 1] == lava)) {
+
 			perder = true;
 			playable = false;
+			rotar[0].style.transform = "rotate(-90deg)";
 			alert(mensajeDerrota);
 			break;
 		}

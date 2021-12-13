@@ -199,7 +199,7 @@ body {
 
 /* ------ segunda parte ------ */
 .player {
-	background-image: url(/menuGames/games/game1Borja/media/CharacterRun.gif);
+	background-image: url(/menuGames/games/game1Borja/media/CharacterRunNoSword.gif);
 	background-repeat: no-repeat;
 	background-position: center;
 	grid-row-start: 18;
@@ -208,6 +208,12 @@ body {
 }
 .enemy {
 	background-image: url(/menuGames/games/game1Borja/media/SpiderEnemy_GoingDown.gif);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.enemyMuerto{
+	background-image: url(/menuGames/games/game1Borja/media/SpiderEnemy_HitAndDeath.gif);
 	background-position: center;
 	background-repeat: no-repeat;
 }
@@ -241,6 +247,11 @@ body {
 
 	background-image: url(/menuGames/games/game1Borja/media/cep.PNG);
 	background-repeat: no-repeat;
+
+}
+.lava{
+	background-image: url(/menuGames/games/game1Borja/media/LavaAnimation_Bottom.gif);
+	background-repeat: repeat;
 
 }
 
