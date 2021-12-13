@@ -1,11 +1,3 @@
-<!-- 
-include_once('Project1.github.io/php_library/database.php');
-
-$ciclos = select_ciclos();
-
-print_r($ciclos);
- -->
-
 <!DOCTYPE html>
 <html lang="en">
 

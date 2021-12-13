@@ -277,7 +277,7 @@ function pantallaFinal() {
     //Boton ranking
     var rankingBtn = document.createElement("a");
     rankingBtn.classList = "boton";
-    rankingBtn.href = "../ranking/ranking.php";
+    rankingBtn.href = "./rankingGameRaul/ranking.php";
     rankingBtn.innerText = "Ranking";
 
     formularioSalir.appendChild(returnBtn);

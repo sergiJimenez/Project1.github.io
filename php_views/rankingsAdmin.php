@@ -52,41 +52,41 @@
                                 <tbody>
                                     <tr>
                                         <td>Sergi</td>
-                                        <th>57176</th>
-                                        <th>75044</th>
-                                        <th>79279</th>
-                                        <th>68877</th>
-                                        <th>280.376</th>
+                                        <td>57176</td>
+                                        <td>75044</td>
+                                        <td>79279</td>
+                                        <td>68877</td>
+                                        <td>280.376</td>
                                     </tr>
                                 </tbody>
                                 <tbody>
                                     <tr>
                                         <td>Aitor</td>
-                                        <th>57176</th>
-                                        <th>75044</th>
-                                        <th>79279</th>
-                                        <th>68877</th>
-                                        <th>280.376</th>
+                                        <td>57176</td>
+                                        <td>75044</td>
+                                        <td>79279</td>
+                                        <td>68877</td>
+                                        <td>280.376</td>
                                     </tr>
                                 </tbody>
                                 <tbody>
                                     <tr>
                                         <td>Raül</td>
-                                        <th>57176</th>
-                                        <th>75044</th>
-                                        <th>79279</th>
-                                        <th>68877</th>
-                                        <th>280.376</th>
+                                        <td>57176</td>
+                                        <td>75044</td>
+                                        <td>79279</td>
+                                        <td>68877</td>
+                                        <td>280.376</td>
                                     </tr>
                                 </tbody>
                                 <tbody>
                                     <tr>
                                         <td>Borja</td>
-                                        <th>57176</th>
-                                        <th>75044</th>
-                                        <th>79279</th>
-                                        <th>68877</th>
-                                        <th>280.376</th>
+                                        <td>57176</td>
+                                        <td>75044</td>
+                                        <td>79279</td>
+                                        <td>68877</td>
+                                        <td>280.376</td>
                                     </tr>
                                 </tbody>
                             </table>
