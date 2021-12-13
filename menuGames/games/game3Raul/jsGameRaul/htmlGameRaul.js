@@ -257,9 +257,6 @@ function pantallaFinal() {
     //Cojo la primera clase de resultado para el juego
     resultado = document.getElementById("resultado");
 
-
-
-
     //Formulario
     var formularioSalir = document.createElement("form");
     formularioSalir.id = "salir";
