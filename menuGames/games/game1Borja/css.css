@@ -57,7 +57,7 @@
 	color: rgb(0, 0, 0);
 	background-image: url(/menuGames/games/game1Borja/media/boton_play.PNG);
 	background-color: hsla(127, 3%, 55%, 0.631);
-	font-size: 1.5rem;
+	font-size: 2rem;
 	text-align: center;
 	width: 40vmin;
 	font-family: "Blocktopia";
@@ -67,7 +67,7 @@
 #medio{
 	color: rgb(0, 0, 0);
 	background-color: hsl(120, 6%, 79%);
-	font-size: 1.5rem;
+	font-size: 2rem;
 	text-align: center;
 	border-radius: calc(1.5rem + 12px);
 	width: 40vmin;
@@ -78,12 +78,23 @@
 #dificil{
 	color: rgb(0, 0, 0);
 	background-color: hsla(127, 3%, 55%, 0.631);
-	font-size: 1.5rem;
+	font-size: 2rem;
 	text-align: center;
 	width: 40vmin;
 	font-family: "Blocktopia";
 	cursor:pointer;
 	
+}
+
+#extremo{
+
+	color: rgb(0, 0, 0);
+	background-color: hsl(120, 6%, 79%);	font-size: 2rem;
+	text-align: center;
+	width: 40vmin;
+	font-family: "Blocktopia";
+	cursor:pointer;
+
 }
 html,body {
 	height: 100vh;

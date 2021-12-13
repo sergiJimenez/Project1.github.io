@@ -5,7 +5,7 @@ const gridBoard = document.getElementsByClassName('grid-board')[0];
 const playButton = document.getElementById("play-btn");
 const difiultadMenu = document.getElementById("difiultadMenu");
 const goal = document.getElementsByClassName("goal")[0];
-const boton_actualizar= document.getElementById("actualizar");
+const boton_actualizar = document.getElementById("actualizar");
 
 // ----- declaracion de variables 
 
@@ -51,7 +51,7 @@ let parpadeoContador;
 let min = 1;
 let sec = 10;
 let ejectuarCronometro = setInterval(iniciarCrono, 1000);
-let mejorPuntuacion=[]
+let mejorPuntuacion = []
 // ------------- iniciamos set up -----------------
 
 setUp();
@@ -68,7 +68,7 @@ function empezarJuego() { // llamada a la creacion del tablero y funciones basic
 	if (playable = true) {
 		ejectuarCronometro;
 	}
-	
+
 }
 function editorMapas() {// creo un mapa por cada nivel, definiendo en 3 letras 3 valores diferentes   
 	// asignando a cada valor unas restricciones personalizadas queluego al printarse juntas dibujan el mapa 
@@ -154,6 +154,36 @@ function editorMapas() {// creo un mapa por cada nivel, definiendo en 3 letras 3
 			];
 
 			break;
+
+		case "extremo":
+
+			// espacio reservado para oscar el contructor 
+
+			tablero = [
+
+				['C', 'C', 'C', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'B', 'B', 'C', ''],
+				['C', 'B', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'C', 'C', 'F', 'C', 'B', 'B', 'B', 'B', 'B', 'C', 'L'],
+				['C', 'B', 'B', 'B', 'B', 'B', 'C', 'B', 'B', 'B', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'B', 'C', 'B'],
+				['C', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'B', 'B', 'B', 'C', 'B', 'B', 'C', 'F', 'C', 'C', 'C', 'B'],
+				['C', 'C', 'F', 'C', 'C', 'C', 'F', 'C', 'B', 'C', 'B', 'C', 'B', 'B', 'C', 'C', 'C', 'B', 'B', 'B'],
+				['C', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'B', 'C', 'B', 'C', 'B', 'B', 'B', 'C', 'B', 'C', 'C', 'C'],
+				['C', 'B', 'C', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'B', 'C', 'C', 'C', 'C', 'C', 'B', 'C', 'B', 'B'],
+				['C', 'C', 'C', 'B', 'B', 'C', 'C', 'B', 'C', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C'],
+				['C', 'B', 'C', 'B', 'B', 'B', 'C', 'B', 'C', 'B', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'C', 'F', 'C'],
+				['C', 'B', 'C', 'C', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'B', 'B', 'C', 'C', 'C'],
+				['C', 'B', 'B', 'C', 'C', 'C', 'F', 'C', 'B', 'C', 'C', 'C', 'C', 'B', 'B', 'B', 'B', 'B', 'B', 'C'],
+				['C', 'C', 'B', 'B', 'B', 'C', 'C', 'C', 'B', 'C', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'B', 'B', 'B'],
+				['F', 'C', 'C', 'C', 'B', 'B', 'C', 'B', 'B', 'C', 'C', 'C', 'C', 'B', 'C', 'B', 'C', 'C', 'C', 'C'],
+				['C', 'C', 'B', 'C', 'C', 'C', 'C', 'B', 'B', 'B', 'B', 'B', 'C', 'B', 'B', 'B', 'B', 'C', 'B', 'B'],
+				['C', 'B', 'B', 'B', 'B', 'C', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'B', 'B', 'C', 'C', 'C', 'B'],
+				['C', 'C', 'C', 'B', 'B', 'C', 'B', 'B', 'C', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'C', 'F', 'C', 'B'],
+				['C', 'B', 'B', 'B', 'C', 'C', 'C', 'B', 'C', 'B', 'B', 'C', 'C', 'C', 'B', 'B', 'C', 'C', 'C', 'B'],
+				['C', 'B', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'C', 'B', 'B', 'C', 'B', 'B', 'B', 'B', 'C', 'B', 'B'],
+				['C', 'B', 'C', 'B', 'C', 'C', 'C', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'B', 'C', 'C', 'B', 'B'],
+				['C', 'C', 'C', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'],
+			];
+
+			break;
 		default:
 			break;
 	}
@@ -216,8 +246,15 @@ function setDificultat() { // modifica algunas variables para poder personalizar
 	nivelTablero = difiultadMenu.value;
 
 	switch (nivel) {					// 1. se edita la cuenta atras segun nivel 
-		case "dificil":					// 2. se llama a cada mapa creado para cada nivel.
-			// 3. se crean el numero de enemigos que quieres en cada nivel
+										// 2. se llama a cada mapa creado para cada nivel.
+										// 3. se crean el numero de enemigos que quieres en cada nivel
+
+		case "extremo":
+			min = 1; sec = 40;
+			editorMapas(tablero);
+			contadorEnemigos = 2;
+			break;
+		case "dificil":
 			min = 1; sec = 30;
 			editorMapas(tablero);
 			contadorEnemigos = 3;
@@ -234,11 +271,13 @@ function setDificultat() { // modifica algunas variables para poder personalizar
 			editorMapas(tablero);
 			contadorEnemigos = 1;
 			break;
+
+
 	}
 }
 function iniciarCrono() {// creo una cuenta atras, cuando llega a 0 el jugador pierde 
 
-	
+
 
 	if (min != 0 || sec != 0) {
 		sec = sec - 1;
@@ -269,10 +308,10 @@ function iniciarCrono() {// creo una cuenta atras, cuando llega a 0 el jugador p
 		}
 		perder = true;
 	}
-	if ( playable == false){
+	if (playable == false) {
 
-		sec=0;
-		min=0;
+		sec = 0;
+		min = 0;
 	}
 
 }
@@ -280,9 +319,9 @@ function iniciarPuntuacion() { // muestra las puntuaciones en tiempo real, numPu
 
 	const enemiesKilled = contadorEnemigos - enemigos.length;
 
-if (  sec > 40 ){
-		puntuacion = (movCount *2 ) + 50;
-}
+	if (sec > 40) {
+		puntuacion = (movCount * 2) + 50;
+	}
 
 	document.getElementById('mostrarPuntuacion').innerHTML = puntuacion + ' Puntuacion';
 
@@ -293,23 +332,23 @@ if (  sec > 40 ){
 }
 function mostrarRanking() { // muestra las mejores puntuaciones dentro del juego
 
-		mejorPuntuacion.push(puntuacion);
-		
-		var modal = document.getElementById("myModal");
-		var btn = document.getElementById("mostrarRanking");
-		var span = document.getElementsByClassName("close")[0];	
-		btn.onclick = function() {
-			modal.style.display = "block";
-		}
-		span.onclick = function() {
+	mejorPuntuacion.push(puntuacion);
+
+	var modal = document.getElementById("myModal");
+	var btn = document.getElementById("mostrarRanking");
+	var span = document.getElementsByClassName("close")[0];
+	btn.onclick = function () {
+		modal.style.display = "block";
+	}
+	span.onclick = function () {
+		modal.style.display = "none";
+	}
+	// se cierra con click fuera del modal 
+	window.onclick = function (event) {
+		if (event.target == modal) {
 			modal.style.display = "none";
 		}
-		// se cierra con click fuera del modal 
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
+	}
 }
 function generarEnemigosRandom(num) {// genera enemigos en posiciones diferentes cada vez que inicia
 	for (let i = 0; i < num; i++) {
@@ -378,7 +417,7 @@ function pudeMover(jugador) {// valida si puede moverse o no
 		if (tablero[jugador.x - 1][jugador.y - 1] == bloqueo) { // si toca el bloqueo, se anula el movimiento 
 			return false;
 		}
-		
+
 		return true;
 	}
 }
@@ -386,15 +425,15 @@ function clearOldPlayer() { // se elimina el jugador de la posicion antigua cada
 	document.getElementsByClassName("player")[0].remove();
 }
 function crearJugador() {  // el jugador se crea cada vez que se mueve 
-	
+
 	const newPlayer = document.createElement("div");
 	newPlayer.classList.add("player");
 
 	if (llaveEncontrada)
 		newPlayer.style.backgroundColor = "";
-		newPlayer.style.gridRowStart = `${jugador.x}`;
-		newPlayer.style.gridColumnStart = `${jugador.y}`;
-		gridBoard.appendChild(newPlayer);
+	newPlayer.style.gridRowStart = `${jugador.x}`;
+	newPlayer.style.gridColumnStart = `${jugador.y}`;
+	gridBoard.appendChild(newPlayer);
 
 
 	if ((arrowLeft == true && arrowUp == true) || (arrowLeft == true && arrowDown == true)) {
@@ -493,16 +532,16 @@ function newTurno(e) { // conjunto de funciones que engloba y lo verifica todo c
 	playerTurn();
 	turnoEnemigo();
 	iniciarPuntuacion();
-	
+
 	checkDerrota();
 	checkVictoria();
-	
+
 }
 function checkVictoria() {       // cuando el jugador tiene la llave y llega a la posicion final ha ganado.
 
-	if (jugador.x === 1 && jugador.y === tamano && llaveEncontrada){ //posicion arriba a la derecha 
+	if (jugador.x === 1 && jugador.y === tamano && llaveEncontrada) { //posicion arriba a la derecha 
 		ganar = true;
-		playable=false;
+		playable = false;
 		alert(mensajeVictoria);
 	}
 }
@@ -510,19 +549,19 @@ function checkDerrota() {      // si el jugador ocupa la misma posicion del enem
 	for (let i = 0; i < enemigos.length; i++) {
 		console.log(enemigos[i]);
 
-		if ((jugador.x === enemigos[i].x && jugador.y === enemigos[i].y)  ||  (tablero[jugador.x - 1][jugador.y - 1] == fuego )  ) {
+		if ((jugador.x === enemigos[i].x && jugador.y === enemigos[i].y) || (tablero[jugador.x - 1][jugador.y - 1] == fuego)) {
 			perder = true;
-			playable=false;
+			playable = false;
 			alert(mensajeDerrota);
 			break;
 		}
-		
+
 	}
 }
 
 
 
-	
+
 
 
 
