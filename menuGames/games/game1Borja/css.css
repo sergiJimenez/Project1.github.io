@@ -53,21 +53,21 @@
 	
 
 }
-#Facil{
+#facil{
 	color: rgb(0, 0, 0);
 	background-image: url(/menuGames/games/game1Borja/media/boton_play.PNG);
 	background-color: hsla(127, 3%, 55%, 0.631);
-	font-size: 1.5rem;
+	font-size: 2rem;
 	text-align: center;
 	width: 40vmin;
 	font-family: "Blocktopia";
 	cursor:pointer;
 	
 }
-#Medio{
+#medio{
 	color: rgb(0, 0, 0);
 	background-color: hsl(120, 6%, 79%);
-	font-size: 1.5rem;
+	font-size: 2rem;
 	text-align: center;
 	border-radius: calc(1.5rem + 12px);
 	width: 40vmin;
@@ -75,15 +75,26 @@
 	cursor:pointer;
 	
 }
-#Dificil{
+#dificil{
 	color: rgb(0, 0, 0);
 	background-color: hsla(127, 3%, 55%, 0.631);
-	font-size: 1.5rem;
+	font-size: 2rem;
 	text-align: center;
 	width: 40vmin;
 	font-family: "Blocktopia";
 	cursor:pointer;
 	
+}
+
+#extremo{
+
+	color: rgb(0, 0, 0);
+	background-color: hsl(120, 6%, 79%);	font-size: 2rem;
+	text-align: center;
+	width: 40vmin;
+	font-family: "Blocktopia";
+	cursor:pointer;
+
 }
 html,body {
 	height: 100vh;
@@ -188,7 +199,7 @@ body {
 
 /* ------ segunda parte ------ */
 .player {
-	background-image: url(/menuGames/games/game1Borja/media/CharacterRun.gif);
+	background-image: url(/menuGames/games/game1Borja/media/CharacterRunNoSword.gif);
 	background-repeat: no-repeat;
 	background-position: center;
 	grid-row-start: 18;
@@ -197,6 +208,12 @@ body {
 }
 .enemy {
 	background-image: url(/menuGames/games/game1Borja/media/SpiderEnemy_GoingDown.gif);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.enemyMuerto{
+	background-image: url(/menuGames/games/game1Borja/media/SpiderEnemy_HitAndDeath.gif);
 	background-position: center;
 	background-repeat: no-repeat;
 }
@@ -230,6 +247,11 @@ body {
 
 	background-image: url(/menuGames/games/game1Borja/media/cep.PNG);
 	background-repeat: no-repeat;
+
+}
+.lava{
+	background-image: url(/menuGames/games/game1Borja/media/LavaAnimation_Bottom.gif);
+	background-repeat: repeat;
 
 }
 

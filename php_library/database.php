@@ -22,7 +22,9 @@ function openBd()
 
      function select_ciclos()
      {
-        $conexion = openBd();
+         $conexion = openBd();
+
+        print_r($conexion);
 
         $sentenciaText = "SELECT * FROM `ciclos`";
 
@@ -34,7 +36,8 @@ function openBd()
         $resultado = $sentencia->fetchAll();
 
         $conexion = closeBd();
+    
 
-        return $resultado;
+        return $resultado; 
      }
 ?>

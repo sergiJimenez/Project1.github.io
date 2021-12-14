@@ -10,6 +10,59 @@
   background-repeat: no-repeat;
   background-image: url(media/Game2Aitor_POSSIBLEDEFINITIVE.png);
 }
+
+.infoFull {
+  height: 1080px;
+  width: 1920px;
+  position: fixed;
+  display: none;
+  top: 0em;
+  z-index: 300;
+  background-repeat: no-repeat;
+  background-image: url(media/fullGame.png);
+}
+
+.infoHalf {
+  height: 1080px;
+  width: 1920px;
+  position: fixed;
+  top: 0em;
+  z-index: 300;
+  display: none;
+  background-repeat: no-repeat;
+  background-image: url(media/halfGame.png);
+}
+
+/*.gamesbtn {
+  position: absolute;
+  height: 3em;
+  width: 10em;
+  background-color: red;
+  z-index: 500;
+  left: 470px;
+  top: 940px;
+}
+
+.menubtn {
+  position: absolute;
+  height: 2em;
+  width: 16em;
+  background-color: red;
+  z-index: 500;
+  left: 845px;
+  top: 945px;
+}
+
+.nextbtn {
+  position: absolute;
+  height: 3em;
+  width: 10em;
+  background-color: red;
+  z-index: 500;
+  left: 470px;
+  top: 940px;
+}*/
+
 .player {
   background-image: url(media/CharacterRunNoSword.gif);
   width: 35px;
@@ -266,39 +319,12 @@
 .temporizador {
   align-items: center;
   justify-content: center;
-  font-family: "Blocktopia" ;
+  font-family: "Blocktopia";
 }
 
 #cuentAtras {
-  font-size: 3em;
+  font-size:5em;
   margin-left: 40px;
   margin-top: 40px;
   color: #fff;
 }
-
-#marcador {
-  font-size: 3em;
-  margin-left: 40px;
-  margin-top: 80px;
-  color: #fff;
-}
-
-/*.modal {
-  background-color: rgba (0,0,0,0.8);
-  font-family: "Blocktopia";
-  position: fixed;
-  margin: auto;
-  height: 50%;
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.contenido-modal {
-  font-family: "Blocktopia";
-  background-color:black;
-  color: #fff;
-  padding: 2rem 4rem;
-  border-radius: 15px;
-}*/
