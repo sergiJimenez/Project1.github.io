@@ -1,6 +1,5 @@
 <?php
 
-use PDO;
 function openBd()
     {
     $servername = "hostingmysql335.nominalia.com";

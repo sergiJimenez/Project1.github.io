@@ -17,7 +17,7 @@ if (isset($_SESSION["correcto"])) {
 
 require_once('./../php_library/database.php');
 $ciclos = selectCiclos();
-var_dump($ciclos);
+
 ?>
 
 <!DOCTYPE html>
@@ -60,10 +60,9 @@ var_dump($ciclos);
                                                 <br>
                                                 <div class="col-sm-10">
                                                     <select class="form-control" name="ciclo" id="cicloUsuario" required>
-                                                        <option value="">Formative Grade</option>
-
+                                                        <option class="mb-1">Formative Grade</option>
                                                         <?php foreach ($ciclos as $ciclo) { ?>
-                                                            <option <?php if(isset($usuario)){if ($usuario['id_Ciclo'] == $ciclo['id']) {echo "selected";}} ?> value= <?php $ciclo['id'] ?> > <?php $ciclo['Nombre_Ciclos'] ?> </option>
+                                                            <option <?php if(isset($usuario)){if ($usuario['id_Ciclo'] == $ciclo['id']) {echo "selected";}} ?> value= <?php $ciclo['id'] ?> > <?php echo $ciclo['Nombre_Ciclos'] ?> </option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
