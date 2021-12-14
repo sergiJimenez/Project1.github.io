@@ -26,7 +26,17 @@ $users = selectUsers();
                 <th>Contraseña user</th>
             </tr>
 
-           
+            <?php foreach ($users as $user) { ?>
+                <tbody>
+                    <tr>
+                        <td> <?php echo $user['id'] ?> </td>
+                        <td> <?php echo $user['Mail_Usuario'] ?> </td>
+                        <td> <?php echo $user['Nombre_Usuario'] ?> </td>
+                        <td> <?php echo $user['Contrasenya_Usuario'] ?> </td>
+                    </tr>
+                </tbody>
+
+            <?php } ?>
 
         </table>
     </div>

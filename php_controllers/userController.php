@@ -15,4 +15,8 @@ if (isset($_POST['insert'])) {
         exit();
     }
 }
+else{
+    header("Location: google.es");
+    exit();
+}
 ?>

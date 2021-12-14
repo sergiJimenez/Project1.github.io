@@ -4,7 +4,9 @@
 }
 
 body {
-  background-color: black;
+  background-image: url(../../../../media/Games/imagesGameRaul/FINAL_BCKGRND.png);
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
   min-height: 100vh;
   display: flex;
