@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let finalMessage = "FINISH"; //Test message to try the ENDGAME option
   let platformCount = 4; //How many platforms we have when we start a new game
   let platforms = []; //Platform Array
-  let coinsCount = 3; //Defines a random number of coins, between 0 and 4, that'll appear
+  let coinsCount = Math.random() * 4; //Defines a random number of coins, between 0 and 4, that'll appear
   let coins = []; //Coins Array
   //let redGemCount = 1;
   //let redGems = [];
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let visual = platform.visual;
         visual.style.bottom = platform.bottom + "px";
 
-        if (platform.bottom < -30) { //To dissapear when it collide to 0
+        if (platform.bottom < -30) { //To dissapear when it collide to -30
           let firstPlatform = platforms[0].visual;
           firstPlatform.classList.remove("platform");
           platforms.shift();
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let visual = coin.visual;
         visual.style.bottom = coin.bottom + "px";
 
-        if(coin.bottom < 0){
+        if(coin.bottom < -30){ //To dissapear when it collide to -30
           let firstCoin = coins[0].visual;
           firstCoin.classList.remove("coin");
           coins.shift();
