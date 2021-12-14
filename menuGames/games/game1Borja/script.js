@@ -5,7 +5,7 @@ const gridBoard = document.getElementsByClassName('grid-board')[0];
 const playButton = document.getElementById("play-btn");
 const difiultadMenu = document.getElementById("difiultadMenu");
 const goal = document.getElementsByClassName("goal")[0];
-const boton_actualizar= document.getElementById("actualizar");
+const boton_actualizar = document.getElementById("actualizar");
 
 // ----- declaracion de variables 
 
@@ -15,7 +15,7 @@ const boton_actualizar= document.getElementById("actualizar");
 
 let oldPlayer = { x: 18, y: 10 };    // posicion inicial del jugador que se va a borrar 
 let jugador = { x: 18, y: 10 };     // posicion inicial jugador
-const tamaño = 20;				   // numero de celdas totales, para definir limites del mapa 
+const tamano = 20;				   // numero de celdas totales, para definir limites del mapa 
 
 let contadorEnemigos;       // nivel dificultat 
 let randomx, randomy;      // para generear posicion enimiga aleatoria 
@@ -43,6 +43,7 @@ let fuego = 'F';
 let bloqueo = 'B';
 let camino = 'C';
 let logoCep = 'L';
+let lava = 'A';
 // ---- variables para crear mapas 
 let nivelTablero;
 let tablero = [];
@@ -51,8 +52,7 @@ let parpadeoContador;
 let min = 1;
 let sec = 10;
 let ejectuarCronometro = setInterval(iniciarCrono, 1000);
-//------ ranking
-let mejorPuntuacion = [];
+let mejorPuntuacion = []
 // ------------- iniciamos set up -----------------
 
 setUp();
@@ -69,12 +69,13 @@ function empezarJuego() { // llamada a la creacion del tablero y funciones basic
 	if (playable = true) {
 		ejectuarCronometro;
 	}
+
 }
 function editorMapas() {// creo un mapa por cada nivel, definiendo en 3 letras 3 valores diferentes   
 	// asignando a cada valor unas restricciones personalizadas queluego al printarse juntas dibujan el mapa 
 
 	switch (nivelTablero) {
-		case "Facil":
+		case "facil":
 
 			tablero = [
 				['B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', ''],
@@ -100,7 +101,7 @@ function editorMapas() {// creo un mapa por cada nivel, definiendo en 3 letras 3
 			];
 			break;
 
-		case "Medio":
+		case "medio":
 			tablero = [
 
 				['B', 'C', 'C', 'C', 'C', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', ''],
@@ -125,10 +126,7 @@ function editorMapas() {// creo un mapa por cada nivel, definiendo en 3 letras 3
 				['B', 'C', 'C', 'C', 'C', 'B', 'B', 'B', 'B', 'F', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'],
 			];
 			break;
-		case "Dificil":
-
-			// espacio reservado para oscar el contructor 
-
+		case "dificil":
 			tablero = [
 
 				['C', 'C', 'C', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'B', 'B', 'C', ''],
@@ -151,6 +149,34 @@ function editorMapas() {// creo un mapa por cada nivel, definiendo en 3 letras 3
 				['C', 'B', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'C', 'B', 'B', 'C', 'B', 'B', 'B', 'B', 'C', 'B', 'B'],
 				['C', 'B', 'C', 'B', 'C', 'C', 'C', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'B', 'C', 'C', 'B', 'B'],
 				['C', 'C', 'C', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'],
+			];
+
+			break;
+
+		case "extremo":
+			tablero = [
+
+				['B', 'C', 'C', 'F', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'B', 'F', 'C', 'C', 'L', 'L', 'L', ''],
+				['B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'F', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'F', 'F', 'B'],
+				['B', 'C', 'A', 'A', 'A', 'A', 'C', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B'],
+				['B', 'C', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'C', 'B'],
+				['B', 'F', 'F', 'F', 'C', 'C', 'C', 'F', 'F', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'F', 'F', 'C', 'B'],
+				['B', 'C', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'C', 'B'],
+				['B', 'C', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'C', 'B'],
+				['B', 'C', 'B', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'B', 'C', 'B'],
+				['B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'F', 'C', 'F', 'C', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B'],
+				['B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'F', 'C', 'F', 'C', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B'],
+				['B', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'B'],
+				['B', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'C', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B'],
+				['B', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'F', 'C', 'F', 'C', 'C', 'C', 'C', 'B', 'C', 'C', 'C', 'B'],
+				['B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B'],
+				['B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'C', 'B', 'C', 'B', 'C', 'B', 'C', 'B'],
+				['B', 'C', 'B', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'C', 'C', 'C', 'F', 'C', 'C', 'C', 'B', 'C', 'B'],
+				['B', 'C', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'C', 'B'],
+				['B', 'C', 'C', 'C', 'C', 'B', 'B', 'B', 'C', 'C', 'C', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'B'],
+				['B', 'F', 'B', 'B', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'B', 'B', 'F', 'B'],
+				['B', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'B'],
+				//        1    2    3    4    5    6    7    8    9    10   11   12   13   14  15    16   17   18   19  20
 			];
 
 			break;
@@ -208,37 +234,60 @@ function crearTablero() { // defino las condiciones del mapeado creando divs y r
 
 				gridBoard.appendChild(div_camino);
 			}
+			if (tablero[i][j] == lava) {// llamo a las 'C' de cada mapa
+
+				let div_lava = document.createElement("div");
+				div_lava.className = "lava";
+
+				div_lava.style.gridRowStart = i + 1;
+				div_lava.style.gridColumnStart = j + 1;
+
+				gridBoard.appendChild(div_lava);
+			}
+
+
+
 		}
 	}
 }
 function setDificultat() { // modifica algunas variables para poder personalizar las condiciones del juegos segun la dificultad escogida por el usuario
+
 	nivel = difiultadMenu.value;
 	nivelTablero = difiultadMenu.value;
 
 	switch (nivel) {					// 1. se edita la cuenta atras segun nivel 
-		case "Dificil":					// 2. se llama a cada mapa creado para cada nivel.
-			// 3. se crean el numero de enemigos que quieres en cada nivel
-			min = 1; sec = 30;
-			editorMapas(tablero);
+		// 2. se llama a cada mapa creado para cada nivel.
+		// 3. se crean el numero de enemigos que quieres en cada nivel
+
+		case "extremo":
+			min = 3; sec = 00;
+			editorMapas();
+			contadorEnemigos = 1;
+			break;
+		case "dificil":
+			min = 2; sec = 30;
+			editorMapas();
 			contadorEnemigos = 3;
 			break;
 
-		case "Medio":
+		case "medio":
 			min = 2; sec = 00;
-			editorMapas(tablero);
+			editorMapas();
 			contadorEnemigos = 3;
 			break;
 
-		case "Facil":
-			min = 1; sec = 00;
-			editorMapas(tablero);
-			contadorEnemigos = 5;
+		case "facil":
+			min = 1; sec = 30;
+			editorMapas();
+			contadorEnemigos = 1;
 			break;
+
+
 	}
 }
 function iniciarCrono() {// creo una cuenta atras, cuando llega a 0 el jugador pierde 
 
-	
+
 
 	if (min != 0 || sec != 0) {
 		sec = sec - 1;
@@ -269,20 +318,20 @@ function iniciarCrono() {// creo una cuenta atras, cuando llega a 0 el jugador p
 		}
 		perder = true;
 	}
-	if ( playable == false){
+	if (playable == false) {
 
-		sec=0;
-		min=0;
+		sec = 0;
+		min = 0;
 	}
 
 }
-function iniciarPuntuacion() {
+function iniciarPuntuacion() { // muestra las puntuaciones en tiempo real, numPuntos, numMovimientos, numEnemigosMuertos
 
 	const enemiesKilled = contadorEnemigos - enemigos.length;
 
-if (  sec > 40 ){
-		puntuacion = (movCount *2 ) + 50;
-}
+	if (sec > 40) {
+		puntuacion = (movCount * 2) + 50;
+	}
 
 	document.getElementById('mostrarPuntuacion').innerHTML = puntuacion + ' Puntuacion';
 
@@ -291,43 +340,31 @@ if (  sec > 40 ){
 	document.getElementById('mostrarEnimigosMuertos').innerHTML = enemiesKilled + ' Kills ';
 
 }
-function mostrarRanking() {
+function mostrarRanking() { // muestra las mejores puntuaciones dentro del juego
 
-		mejorPuntuacion.push(puntuacion);
-		
-		
-		//get yhe modal
-		var modal = document.getElementById("myModal");
-		// Get the button that opens the modal
-		
-		var btn = document.getElementById("mostrarRanking");
+	mejorPuntuacion.push(puntuacion);
 
-		// Get the <span> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
-		
-		// When the user clicks the button, open the modal 
-		btn.onclick = function() {
-			modal.style.display = "block";
-		}
-		
-		// When the user clicks on <span> (x), close the modal
-		span.onclick = function() {
+	var modal = document.getElementById("myModal");
+	var btn = document.getElementById("mostrarRanking");
+	var span = document.getElementsByClassName("close")[0];
+	btn.onclick = function () {
+		modal.style.display = "block";
+	}
+	span.onclick = function () {
+		modal.style.display = "none";
+	}
+	// se cierra con click fuera del modal 
+	window.onclick = function (event) {
+		if (event.target == modal) {
 			modal.style.display = "none";
 		}
-		
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
-
+	}
 }
 function generarEnemigosRandom(num) {// genera enemigos en posiciones diferentes cada vez que inicia
 	for (let i = 0; i < num; i++) {
 		do {
-			randomx = Math.floor(Math.random() * tamaño) + 1;
-			randomy = Math.floor(Math.random() * tamaño) + 1;
+			randomx = Math.floor(Math.random() * tamano) + 1;
+			randomy = Math.floor(Math.random() * tamano) + 1;
 		}
 		while (posiionIlegalEnemigo());
 		enemigos.push({ x: randomx, y: randomy });
@@ -335,10 +372,10 @@ function generarEnemigosRandom(num) {// genera enemigos en posiciones diferentes
 	generarEnemigo();
 }
 function posiionIlegalEnemigo() {// valida la posicion de la araña 
-	if (randomx === tamaño && randomy === 1) return true; // posicion araña
-	if (randomx === tamaño - 1 && randomy === 2) return true;
-	if (randomx === 1 && randomy === tamaño) return true; //objetivo de la posicion
-	if (randomx === tamaño / 2 && randomy === tamaño / 2) return true; // posicion llave 
+	if (randomx === tamano && randomy === 1) return true; // posicion araña
+	if (randomx === tamano - 1 && randomy === 2) return true;
+	if (randomx === 1 && randomy === tamano) return true; //objetivo de la posicion
+	if (randomx === tamano / 2 && randomy === tamano / 2) return true; // posicion llave 
 	if (enemigos.some((enemigo) => randomx === enemigo.x && randomy === enemigo.y)) return true;
 	return false;
 }
@@ -385,15 +422,12 @@ function playerTurn() {  // conjunto de funciones que ejecuta alrededor del juga
 }
 function pudeMover(jugador) {// valida si puede moverse o no 
 
-	if (jugador.x <= tamaño && jugador.x > 0 && jugador.y <= tamaño && jugador.y > 0) {
+	if (jugador.x <= tamano && jugador.x > 0 && jugador.y <= tamano && jugador.y > 0) {
 
 		if (tablero[jugador.x - 1][jugador.y - 1] == bloqueo) { // si toca el bloqueo, se anula el movimiento 
 			return false;
 		}
-		if (tablero[jugador.x - 1][jugador.y - 1] == fuego) {// si toca el fuego ejecuta el gameOver 
 
-			perder = true;
-		}
 		return true;
 	}
 }
@@ -401,16 +435,16 @@ function clearOldPlayer() { // se elimina el jugador de la posicion antigua cada
 	document.getElementsByClassName("player")[0].remove();
 }
 function crearJugador() {  // el jugador se crea cada vez que se mueve 
-	
+
 	const newPlayer = document.createElement("div");
 	newPlayer.classList.add("player");
 
-	if (llaveEncontrada)
+	if (llaveEncontrada = true) {
 		newPlayer.style.backgroundColor = "";
 		newPlayer.style.gridRowStart = `${jugador.x}`;
 		newPlayer.style.gridColumnStart = `${jugador.y}`;
 		gridBoard.appendChild(newPlayer);
-
+	}
 
 	if ((arrowLeft == true && arrowUp == true) || (arrowLeft == true && arrowDown == true)) {
 
@@ -430,7 +464,7 @@ function crearJugador() {  // el jugador se crea cada vez que se mueve
 
 }
 function comprobarLlave() {// personaje tiene o no la llave, una vez ocupan la misma posicion eliminamos la llave
-	if (jugador.x === tamaño / 2 && jugador.y === tamaño / 2) {
+	if (jugador.x === tamano / 2 && jugador.y === tamano / 2) {
 		llaveEncontrada = true;
 		document.getElementsByClassName("key")[0].remove();
 	}
@@ -446,8 +480,6 @@ function eliminarOldEnemigo() { // borra al enemigo de la posicion para poder mo
 	}
 }
 function updatePosicionEnemiga() { // acerca el enemigo a la posicion del jugador haciendo el efecto de persecucuion 
-
-
 
 	var aleatorio = Math.round(Math.random() * 1);
 	var aleatorio2 = Math.round(Math.random() * -1);
@@ -499,54 +531,44 @@ function generarEnemigo() {       // selecciona el div y creamos al enemigo, dan
 function newTurno(e) { // conjunto de funciones que engloba y lo verifica todo cada vez que pulsas la tecla.
 	// mostramos mensaje de victoria y derrota en caso de que verifique que hemso ganado o perdido						
 
-	iniciarPuntuacion()
-
+	iniciarPuntuacion();
 	takeInput(e);
 	if (!legalInput) {
 		legalInput = true;
 		return;
 	}
 	playerTurn();
-
+	turnoEnemigo();
 	checkDerrota();
 	checkVictoria();
-
-
-	if (perder) {
-		gameOver(mensajeDerrota);
-
-	} else if (ganar) {
-		gameOver(mensajeVictoria);
-	} else {
-		setTimeout(() => {
-			turnoEnemigo();
-			checkDerrota();
-			if (perder)
-				gameOver(mensajeDerrota);
-		}, 100);
-	}
 }
 function checkVictoria() {       // cuando el jugador tiene la llave y llega a la posicion final ha ganado.
-	if (jugador.x === 1 && jugador.y === tamaño && llaveEncontrada)
+
+	if (jugador.x === 1 && jugador.y === tamano && llaveEncontrada) { //posicion arriba a la derecha 
 		ganar = true;
-}
-function checkDerrota() {      // si el jugador ocupa la misma posicion del enemigo, se acaba el juego 
-	for (let i = 0; i < enemigos.length; i++) {
-		console.log(enemigos[i]);
-		if (jugador.x === enemigos[i].x && jugador.y === enemigos[i].y) {
-			perder = true;
-			break;
-		}
+		playable = false;
+		alert(mensajeVictoria);
 	}
 }
-function gameOver(msg) {      // muestra las estadisticas cuando pierdes. entra la jugabilidad en falso y llama la funcion mostrar estadisticas.
+function checkDerrota() {      // si el jugador ocupa la misma posicion del enemigo,toca el fuego o la lava,  se acaba el juego 
+	for (let i = 0; i < enemigos.length; i++) {
+		console.log(enemigos[i]);
 
-	playable = false;
-	alert(msg);
+		if ((jugador.x === enemigos[i].x && jugador.y === enemigos[i].y) || (tablero[jugador.x - 1][jugador.y - 1] == fuego) || (tablero[jugador.x - 1][jugador.y - 1] == lava)) {
+
+			perder = true;
+			playable = false;
+			rotar[0].style.transform = "rotate(-90deg)";
+			alert(mensajeDerrota);
+			break;
+		}
+
+	}
 }
 
 
-	
+
+
 
 
 
