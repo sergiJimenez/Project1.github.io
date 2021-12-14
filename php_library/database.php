@@ -1,4 +1,6 @@
 <?php
+
+use PDO;
 function openBd()
     {
     $servername = "hostingmysql335.nominalia.com";
@@ -40,18 +42,36 @@ function selectUsers()
 
 function insertUser($id_usuario, $ciclo, $nombre, $contraseña)
     {
-        $conexion = openBd();
+        try{
+            $conexion = openBd();
 
-        $sentenciaText = "INSERT INTO usuarios (Mail_Usuario, Nombre_Ciudad, Contrasenya_Usuario) VALUES (:id_usuario, :ciclo, :nombre, :contraseña)";
+            $conexion->beginTransaction();
+    
+            $sentenciaText = "INSERT INTO usuarios (Mail_Usuario, Nombre_Ciudad, Contrasenya_Usuario) VALUES (:ciclo, :nombre, :contraseña)";
+    
+            $sentencia = $conexion->prepare($sentenciaText);
+    
+            $sentencia->bindParam(":ciclo", $ciclo);
+            $sentencia->bindParam(":nombre", $nombre);
+            $sentencia->bindParam(":contraseña", $contraseña);
+    
+            $sentencia->execute();
+    
+            $id_usuario = $conexion->lastInsertId();
+    
+            $sentenciaText = "INSERT INTO usuarios_ciclo (id_Ciclo, id_Usuario) VALUES (:id_Ciclo, :id_Usuario)";
+    
+            $sentencia = $conexion->prepare($sentenciaText);
+    
+            $sentencia->bindParam(":id_Ciclo", $ciclo);
+            $sentencia->bindParam(":id_Usuario", $id_Usuario);
 
-        $sentencia = $conexion->prepare($sentenciaText);
+            $conexion->commit();
 
-        $sentencia->bindParam(":id_usuario", $id_usuario);
-        $sentencia->bindParam(":ciclo", $ciclo);
-        $sentencia->bindParam(":nombre", $nombre);
-        $sentencia->bindParam(":contraseña", $contraseña);
+            $conexion = closeBd();
 
-        $sentencia->execute();
-
-        $conexion = closeBd();
+        }catch(PDOException $e){
+            $_SESSION['error'] = "Ha habido un error con " + $e->getMessage();
+        }
+      
     }

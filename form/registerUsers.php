@@ -63,7 +63,27 @@
                                                     <li><a class="dropdown-item">Grau superior assistència a la direcció</a></li>
                                                     <li><a class="dropdown-item">Grau superior administració i finances</a></li>
                                                 </ul>
-                                            </div><br>
+                                            </div>
+                                            
+                                            <div class="form-group row" style="margin-top:5px">
+                                                <label class="col-sm-2 col-form-label" for="regionPokemon">Region del pokemon</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control" name="regionPokemon" id="regionPokemon" required>
+                                                        <option value="">Formative Grade</option>
+                                                        <!-- Comerç i Màrqueting -->
+                                                        <option <?php if(isset($pokemon)){if ($pokemon['ciclo'] == "Kanto") {echo "selected";}} ?> value="Kanto">Grau mitjà activitats comercials</option>
+                                                        <option <?php if(isset($pokemon)){if ($pokemon['region'] == "Jotho") {echo "selected";}} ?> value="Jotho">Grau superior màrqueting</option>
+                                                        <option <?php if(isset($pokemon)){if ($pokemon['region'] == "Hoenn") {echo "selected";}} ?> value="Hoenn">Grau superior gestió de vendes i espais comercials</option>
+                                                        <option <?php if(isset($pokemon)){if ($pokemon['region'] == "Sinnoh") {echo "selected";}} ?> value="Sinnoh">Grau superior comerç internacional</option>
+                                                        <!-- Hoteleria i Turisme -->
+
+                                                        
+                                                        <option <?php if(isset($pokemon)){if ($pokemon['region'] == "Teselia") {echo "selected";}} ?> value="Teselia">Teselia</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                                                
+                                            <br>
                                             <div class="form-row">
                                                 <label class="small mb-1" for="inputPassword">Password</label>
                                                 <input class="form-control" id="inputPassword" type="password" placeholder="Password" />
@@ -74,9 +94,9 @@
                                             </div><br>
                                         </div>
                                         <div class="form-group text-center justify-content-between mt-4 mb-0">
-                                            <a class="btn btn-dark" type="submit" name="insert" value="Enter">
+                                            <button class="btn btn-dark" type="submit" name="insert" value="Enter">
                                                 Create an account
-                                            </a>
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
