@@ -370,6 +370,18 @@ document.addEventListener("DOMContentLoaded", () => {
   //AIR
   //AIR
   //Game Functions
+  /*function TimeOUT (){
+    document.getElementById("countDown").innerHTML = secondStart;
+      if (segundoInicio <= 0) {
+        let speed = 0;
+      } else {
+        secondStart -= 1;
+        setTimeout(actualizar, 1e3);
+      }
+    }
+    actualizar();
+  }*/
+
   function GameOver() {
     isGameOver = true;
     while (grid.firstChild) {
