@@ -60,7 +60,7 @@ function selectCiclos()
     }
 }
 
-function insertUser($id_usuario, $ciclo, $nombre, $contraseña)
+function insertUser($nombre, $email, $ciclo, $contraseña)
 {
     try {
         $conexion = openBd();
