@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let visual = platform.visual;
         visual.style.bottom = platform.bottom + "px";
 
-        if (platform.bottom < 0) {
+        if (platform.bottom < -30) { //To dissapear when it collide to 0
           let firstPlatform = platforms[0].visual;
           firstPlatform.classList.remove("platform");
           platforms.shift();
@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
       gurmann.style.backgroundImage = "url('./media/flipyFlipilyFlop/Character/Gif/Fall.gif')";
       gurmann.style.width = "133px";
       gurmann.style.height = "150px";
-      if (gurmannBottomSpace <= 0) { //When Gurmann arrives to 0pxBottom there'll die
+      if (gurmannBottomSpace <= -125) { //When Gurmann arrives to -125pxBottom there'll die
         GameOver();
       }
       platforms.forEach(platform => {
