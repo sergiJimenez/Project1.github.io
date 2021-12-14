@@ -40,6 +40,25 @@ function selectUsers()
         return $resultado; 
     }
 
+function selectCiclos()
+    {
+         $conexion = openBd();
+
+        $sentenciaText = "SELECT * FROM `ciclos`";
+
+        $sentencia = $conexion->prepare($sentenciaText);
+        
+
+        $sentencia->execute();
+
+        $resultado = $sentencia->fetchAll();
+
+        $conexion = closeBd();
+    
+
+        return $resultado; 
+    }
+
 function insertUser($id_usuario, $ciclo, $nombre, $contraseña)
     {
         try{

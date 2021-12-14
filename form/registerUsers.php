@@ -1,4 +1,24 @@
-<?php session_start() ?>
+<?php
+session_start();
+
+
+if (isset($_SESSION["usuario"])) {
+    $usuario = $_SESSION["usuario"];
+    unset($_SESSION["usuario"]);
+}
+
+if (isset($_SESSION["error"])) {   
+    unset($_SESSION["error"]);
+}
+
+if (isset($_SESSION["correcto"])) {
+    unset($_SESSION["correcto"]);
+}
+
+require_once('./../php_library/database.php');
+$ciclos = selectCiclos();
+echo $ciclos;
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -34,51 +54,30 @@
                                                 <label class="small mb-1" for="inputEmail">Email</label>
                                                 <input class="form-control" id="inputEmail" type="email" placeholder="Email" />
                                             </div><br>
-                                            <div class="dropdown">
-                                                <label class="small mb-1">Formative Grade</label><br>
-                                                <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Choose One</a>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <!-- Comerç i Màrqueting -->
-                                                    <li><a class="dropdown-item">Grau mitjà activitats comercials</a></li>
-                                                    <li><a class="dropdown-item">Grau superior màrqueting</a></li>
-                                                    <li><a class="dropdown-item">Grau superior gestió de vendes i espais comercials</a></li>
-                                                    <li><a class="dropdown-item">Grau superior comerç internacional</a></li>
-                                                    <!-- Hoteleria i Turisme -->
-                                                    <li>
-                                                        <hr class="dropdown-divider">
-                                                    </li>
-                                                    <li><a class="dropdown-item">Grau superior agències de viatges i gestió d'esdeveniments</a></li>
-                                                    <!-- Informàtica i comunicacions -->
-                                                    <li>
-                                                        <hr class="dropdown-divider">
-                                                    </li>
-                                                    <li><a class="dropdown-item">Grau mitjà sistemes microinformàtics i xarxes</a></li>
-                                                    <li><a class="dropdown-item">Grau superior desenvolupaments aplicacions multiplataforma</a></li>
-                                                    <li><a class="dropdown-item">Grau superior desenvolupaments aplicacions web</a></li>
-                                                    <!-- Administració i gestió -->
-                                                    <li>
-                                                        <hr class="dropdown-divider">
-                                                    </li>
-                                                    <li><a class="dropdown-item">Grau mitjà gestió administrativa</a></li>
-                                                    <li><a class="dropdown-item">Grau superior assistència a la direcció</a></li>
-                                                    <li><a class="dropdown-item">Grau superior administració i finances</a></li>
-                                                </ul>
-                                            </div>
                                             
                                             <div class="form-group row" style="margin-top:5px">
-                                                <label class="col-sm-2 col-form-label" for="regionPokemon">Region del pokemon</label>
+                                            <label class="small mb-1">Formative Grade</label>
+                                                <br>
                                                 <div class="col-sm-10">
-                                                    <select class="form-control" name="regionPokemon" id="regionPokemon" required>
+                                                    <select class="form-control" name="ciclo" id="cicloUsuario" required>
                                                         <option value="">Formative Grade</option>
                                                         <!-- Comerç i Màrqueting -->
-                                                        <option <?php if(isset($pokemon)){if ($pokemon['ciclo'] == "Kanto") {echo "selected";}} ?> value="Kanto">Grau mitjà activitats comercials</option>
-                                                        <option <?php if(isset($pokemon)){if ($pokemon['region'] == "Jotho") {echo "selected";}} ?> value="Jotho">Grau superior màrqueting</option>
-                                                        <option <?php if(isset($pokemon)){if ($pokemon['region'] == "Hoenn") {echo "selected";}} ?> value="Hoenn">Grau superior gestió de vendes i espais comercials</option>
-                                                        <option <?php if(isset($pokemon)){if ($pokemon['region'] == "Sinnoh") {echo "selected";}} ?> value="Sinnoh">Grau superior comerç internacional</option>
+                                                        <option <?php if(isset($usuario)){if ($usuario['id_Ciclo'] == "1") {echo "selected";}} ?> value="1">Grau mitjà activitats comercials</option>
+                                                        <option <?php if(isset($usuario)){if ($usuario['id_Ciclo'] == "2") {echo "selected";}} ?> value="2">Grau superior màrqueting</option>
+                                                        <option <?php if(isset($usuario)){if ($usuario['id_Ciclo'] == "3") {echo "selected";}} ?> value="3">Grau superior gestió de vendes i espais comercials</option>
+                                                        <option <?php if(isset($usuario)){if ($usuario['id_Ciclo'] == "4") {echo "selected";}} ?> value="4">Grau superior comerç internacional</option>
                                                         <!-- Hoteleria i Turisme -->
+                                                        <option <?php if(isset($usuario)){if ($usuario['id_Ciclo'] == "5") {echo "selected";}} ?> value="5">Grau superior agències de viatges i gestió d'esdeveniments</option>
+                                                        <!-- Informàtica i comunicacions -->
+                                                        <option <?php if(isset($usuario)){if ($usuario['id_Ciclo'] == "6") {echo "selected";}} ?> value="6">Grau mitjà sistemes microinformàtics i xarxes</option>
+                                                        <option <?php if(isset($usuario)){if ($usuario['id_Ciclo'] == "7") {echo "selected";}} ?> value="7">Grau superior desenvolupaments aplicacions multiplataforma</option>
+                                                        <option <?php if(isset($usuario)){if ($usuario['id_Ciclo'] == "8") {echo "selected";}} ?> value="8">Grau superior desenvolupaments aplicacions web</option>
+                                                        <!-- Administració i gestió -->
+                                                        <option <?php if(isset($usuario)){if ($usuario['id_Ciclo'] == "9") {echo "selected";}} ?> value="9">Grau mitjà gestió administrativa</option>
+                                                        <option <?php if(isset($usuario)){if ($usuario['id_Ciclo'] == "10") {echo "selected";}} ?> value="10">Grau superior assistència a la direcció</option>
 
-                                                        
-                                                        <option <?php if(isset($pokemon)){if ($pokemon['region'] == "Teselia") {echo "selected";}} ?> value="Teselia">Teselia</option>
+                                                        <!--FOREACH-->
+                                                        <option <?php if(isset($usuario)){if ($usuario['id_Ciclo'] == "11") {echo "selected";}} ?> value="11">Grau superior administració i finances</option>
                                                     </select>
                                                 </div>
                                             </div>
