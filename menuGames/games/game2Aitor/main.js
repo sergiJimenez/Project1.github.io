@@ -20,19 +20,21 @@
     let mLeft = 400;
     player.style.left = "400px";
     player.style.bottom = "-875px";
-    let segundoInicio = 100;
+    let segundoInicio = 30;
     let score = 0;
     let numLlaves = 0;
+    let infoFull = document.querySelector(".infoFull");
+    let infoHalf = document.querySelector(".infoHalf");
 
     //Cuenta Atrás
 
     function actualizar() {
       document.getElementById("cuentAtras").innerHTML = segundoInicio;
 
-      if (segundoInicio == 0 || numLlaves == 5) {
-        alert(
+      if (segundoInicio <= 0) {
+        /*alert(
           "Juego Finalizado" + "\nTu puntuación es de: " + score + " puntos" + "\nHas conseguido: " + numLlaves + " llaves."
-        );
+        );*/
         velocidad = 0;
       } else {
         segundoInicio -= 1; /* o segundoInicio = segundoInicio -1; */
@@ -42,6 +44,17 @@
     }
 
     actualizar();
+
+    function mostrarInfo (){
+      if (segundoInicio > 0 && numLlaves == 5 && score >=70){
+        infoFull.style.display = "block";
+      } else if ((segundoInicio == 0 && numLlaves < 5) || ( segundoInicio == 0 && score < 70)) {
+        infoHalf.style.display = "block";
+      }
+    }
+    setInterval(() => {
+      mostrarInfo();
+    }, 100);
 
     //Damos valor por teclado para mover personaje
     document.addEventListener("keydown", function (e) {
