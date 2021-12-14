@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,7 +24,7 @@
                                     <h3 class="text-center font-weight-light my-4">Be A Member</h3>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form action="../php_controllers/userController.php" method="POST">
                                         <div class="form-row">
                                             <div class="form-row">
                                                 <label class="small mb-1" for="inputFirstName">First Name</label>
@@ -37,29 +39,29 @@
                                                 <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Choose One</a>
                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                     <!-- Comerç i Màrqueting -->
-                                                    <li><a class="dropdown-item" href="#">Grau mitjà activitats comercials</a></li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior màrqueting</a></li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior gestió de vendes i espais comercials</a></li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior comerç internacional</a></li>
+                                                    <li><a class="dropdown-item">Grau mitjà activitats comercials</a></li>
+                                                    <li><a class="dropdown-item">Grau superior màrqueting</a></li>
+                                                    <li><a class="dropdown-item">Grau superior gestió de vendes i espais comercials</a></li>
+                                                    <li><a class="dropdown-item">Grau superior comerç internacional</a></li>
                                                     <!-- Hoteleria i Turisme -->
                                                     <li>
                                                         <hr class="dropdown-divider">
                                                     </li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior agències de viatges i gestió d'esdeveniments</a></li>
+                                                    <li><a class="dropdown-item">Grau superior agències de viatges i gestió d'esdeveniments</a></li>
                                                     <!-- Informàtica i comunicacions -->
                                                     <li>
                                                         <hr class="dropdown-divider">
                                                     </li>
-                                                    <li><a class="dropdown-item" href="#">Grau mitjà sistemes microinformàtics i xarxes</a></li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior desenvolupaments aplicacions multiplataforma</a></li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior desenvolupaments aplicacions web</a></li>
+                                                    <li><a class="dropdown-item">Grau mitjà sistemes microinformàtics i xarxes</a></li>
+                                                    <li><a class="dropdown-item">Grau superior desenvolupaments aplicacions multiplataforma</a></li>
+                                                    <li><a class="dropdown-item">Grau superior desenvolupaments aplicacions web</a></li>
                                                     <!-- Administració i gestió -->
                                                     <li>
                                                         <hr class="dropdown-divider">
                                                     </li>
-                                                    <li><a class="dropdown-item" href="#">Grau mitjà gestió administrativa</a></li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior assistència a la direcció</a></li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior administració i finances</a></li>
+                                                    <li><a class="dropdown-item">Grau mitjà gestió administrativa</a></li>
+                                                    <li><a class="dropdown-item">Grau superior assistència a la direcció</a></li>
+                                                    <li><a class="dropdown-item">Grau superior administració i finances</a></li>
                                                 </ul>
                                             </div><br>
                                             <div class="form-row">
@@ -72,7 +74,7 @@
                                             </div><br>
                                         </div>
                                         <div class="form-group text-center justify-content-between mt-4 mb-0">
-                                            <a class="btn btn-dark" type="submit" name="submit" value="Enter" href="/Project1.github.io/menuGames/menus/gameIntro.html">
+                                            <a class="btn btn-dark" type="submit" name="insert" value="Enter">
                                                 Create an account
                                             </a>
                                         </div>

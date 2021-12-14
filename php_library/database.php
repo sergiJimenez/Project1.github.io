@@ -1,7 +1,6 @@
 <?php
-
 function openBd()
-{
+    {
     $servername = "hostingmysql335.nominalia.com";
     $username = "daw2b02";
     $password = "Informatica2021";
@@ -15,18 +14,16 @@ function openBd()
         return $conexion;
     }
     
-    function closeBd()
+function closeBd()
     {
         return null;
     }
 
-     function select_ciclos()
-     {
+function selectUsers()
+    {
          $conexion = openBd();
 
-        print_r($conexion);
-
-        $sentenciaText = "SELECT * FROM `ciclos`";
+        $sentenciaText = "SELECT * FROM `usuarios`";
 
         $sentencia = $conexion->prepare($sentenciaText);
         
@@ -39,5 +36,22 @@ function openBd()
     
 
         return $resultado; 
-     }
-?>
+    }
+
+function insertUser($id_usuario, $ciclo, $nombre, $contraseña)
+    {
+        $conexion = openBd();
+
+        $sentenciaText = "INSERT INTO usuarios (Mail_Usuario, Nombre_Ciudad, Contrasenya_Usuario) VALUES (:id_usuario, :ciclo, :nombre, :contraseña)";
+
+        $sentencia = $conexion->prepare($sentenciaText);
+
+        $sentencia->bindParam(":id_usuario", $id_usuario);
+        $sentencia->bindParam(":ciclo", $ciclo);
+        $sentencia->bindParam(":nombre", $nombre);
+        $sentencia->bindParam(":contraseña", $contraseña);
+
+        $sentencia->execute();
+
+        $conexion = closeBd();
+    }

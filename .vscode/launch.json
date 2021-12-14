@@ -8,38 +8,8 @@
             "name": "Launch Chrome",
             "request": "launch",
             "type": "pwa-chrome",
-            "url": "http://localhost:8080/Project1.github.io/index.php",
-            "webRoot": "${workspaceFolder}"
-<<<<<<< HEAD
-        }
-=======
-        } 
->>>>>>> 951f7c046d5ef05dcccfb5c7fb9abc680233840e
-        /*{
-            "name": "Launch Chrome",
-            "request": "launch",
-            "type": "pwa-chrome",
             "url": "http://localhost:8080/Project1.github.io/form/registerUsers.php",
             "webRoot": "${workspaceFolder}"
-        }*/
-         /*{
-            "name": "Launch Chrome",
-            "request": "launch",
-            "type": "pwa-chrome",
-            "url": "http://localhost:8080/Project1.github.io/menuGames/games/game4Sergi/game4Sergi.html",
-            "webRoot": "${workspaceFolder}"
-<<<<<<< HEAD
-        }*/ 
-        /*{
-=======
-        } */
-       /*  {
->>>>>>> 951f7c046d5ef05dcccfb5c7fb9abc680233840e
-            "name": "Launch Chrome",
-            "request": "launch",
-            "type": "pwa-chrome",
-            "url": "http://localhost:8080/Project1.github.io/menuGames/games/game3Raul/gameRaul/indexGameRaul.php",
-            "webRoot": "${workspaceFolder}"
-        }*/
+        }
     ]
     }
