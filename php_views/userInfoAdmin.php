@@ -23,6 +23,8 @@ $users = selectUsers();
 
 <body>
     <?php include "../php_partials/navbarAdmin.php"; ?>
+    <?php include "../php_partials/mensajes.php"; ?>
+
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid">
@@ -63,16 +65,8 @@ $users = selectUsers();
                                             <td> <?php echo $user['Mail_Usuario'] ?> </td>
                                             <td> <?php echo $user['Nombre_Usuario'] ?> </td>
                                             <td> <?php echo $user['Contrasenya_Usuario'] ?> </td>
-                                            <td>  
-                                                <?php echo '
-                                                    <form action="/Project1.github.io/php_controllers/userController.php" method="post">
-                                                            <input type="hidden" name="valorUsuario" value=' . $users['id'] . '>
-                                                        <button type="submit" class="btn btn-outline-danger" name="borrar">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                    </form>
-                                                ' ?>
-                                            </td>
+                                            <td> <a href="delete.php?id=<?php echo $user['id'];?>"> <i class="fas fa-trash-alt"></i> </a></td>
+
                                             <td> 
                                             <?php echo '
                                                     <form action="/Project1.github.io/php_controllers/userController.php" method="post">
@@ -83,10 +77,6 @@ $users = selectUsers();
                                                     </form>
                                                 ' ?>
                                             </td>
-
-                                           
-
-
 
                                         </tr>
                                     </tbody>

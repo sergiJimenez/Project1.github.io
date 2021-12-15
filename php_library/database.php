@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 function openBd()
 {
     $servername = "hostingmysql335.nominalia.com";
@@ -39,30 +41,6 @@ function selectUsers()
     return $resultado;
 }
 
-
-function borrarUsers(){
-    $conexion = openBd();
-
-    $valor = $_POST['valorUsuario'];
-
-    $sentenciaText = "DELETE FROM `daw2b02`.`usuarios` WHERE `usuarios`.`id` = $valor";
-
-    $sentencia = $conexion->prepare($sentenciaText);
-
-
-    $sentencia->execute();
-
-    $resultado = $sentencia->fetchAll();
-
-    $conexion = closeBd();
-
-
-    return $resultado;
-
-    //No añade la tabla usuarios_ciclos
-    //Como borro una tabla? --> asi?
-
-}
 
 function selectCiclos()
 {
@@ -117,6 +95,6 @@ function insertUser($nombre, $email, $ciclo, $contrasenya)
 
         $conexion = closeBd();
     } catch (PDOException $e) {
-        $_SESSION['error'] = "Ha habido un error con " + $e->getMessage();
+        $_SESSION['error'] = $e->getCode() . ' - ' . $e->getMessage();
     }
 }
