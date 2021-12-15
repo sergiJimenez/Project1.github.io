@@ -32,5 +32,13 @@
             "url": "http://localhost:8080/Project1.github.io/menuGames/games/game3Raul/gameRaul/indexGameRaul.php",
             "webRoot": "${workspaceFolder}"
         }*/
+
+        {
+            "name": "Launch Chrome",
+            "request": "launch",
+            "type": "pwa-chrome",
+            "url": "http://localhost:8080/Project1.github.io/menuGames/games/game1Borja/index.html",
+            "webRoot": "${workspaceFolder}"
+        }
     ]
     }
