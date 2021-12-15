@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ((gurmannBottomSpace + 133) <= (redGem.bottom + 64))
         ){
           scoreRedGems++;
-          console.log("Score RED GEMS");
+          console.log("Score RED GEMS" + scoreRedGems);
           let redGemToRemove = redGems[0].visual;
           redGemToRemove.classList.remove("redGem");
           redGems.shift();
