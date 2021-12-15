@@ -31,6 +31,13 @@
   position: absolute;
 }
 
+.redGem{
+  width: 64px;
+  height: 64px;
+  background-image: url(../media/Animated_Items/Red_Gem.gif);
+  position: absolute;
+}
+
 /* .temporizador {
   align-items: center;
   justify-content: center;
@@ -53,13 +60,6 @@
   background-color: white;
   position: fixed;
 }  */
-
-/* .redGem{
-  width: 64px;
-  height: 64px;
-  background-image: url(../media/Animated_Items/Red_Gem.gif);
-  position: absolute;
-} */
 
 /*
 .blueGem{

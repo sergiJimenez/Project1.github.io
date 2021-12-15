@@ -2,18 +2,18 @@ document.addEventListener("DOMContentLoaded", () => {
   //Variables
   const grid = document.querySelector(".grid");
   const gurmann = document.createElement("div");
-  const scoreVisual = document.querySelector(".scoreVisual");
+  //const scoreVisual = document.querySelector(".scoreVisual");
   let isGameOver = false; //GameOver variable
   let finalMessage = "FINISH"; //Test message to try the ENDGAME option
   let platformCount = 4; //How many platforms we have when we start a new game
   let platforms = []; //Platform Array
-  let coinsCount = Math.random() * 4; //Defines a random number of coins, between 0 and 4, that'll appear
+  let coinsCount = Math.random() * 3; //Defines a random number of coins, between 0 and 4, that'll appear
   let coins = []; //Coins Array
-  //let redGemCount = 1;
-  //let redGems = [];
-  let score = 0; //Initial score
-  //const scoreCoin = 10;
-  //let increase = 0;
+  let scoreCoins = 10;
+  let redGemCount = Math.random() * 3;
+  let redGems = [];
+  let scoreRedGems = 50;
+  let score = scoreCoins + scoreRedGems; //Initial score
   let gurmannLeftSpace = 50;
   let startPoint = 150;
   let gurmannBottomSpace = startPoint;
@@ -143,7 +143,8 @@ document.addEventListener("DOMContentLoaded", () => {
           ((gurmannBottomSpace + 150) >= coin.bottom) &&
           ((gurmannBottomSpace + 133) <= (coin.bottom + 64))
         ){
-          //scoreCoin++;
+          scoreCoins++;
+          console.log("Score COINS");
           let coinToRemove = coins[0].visual;
           coinToRemove.classList.remove("coin");
           coins.shift();
@@ -159,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //AIR
   //AIR
   //Red Gem
-  /*class RedGem {
+  class RedGem {
     constructor(newRedGemBottom){
       this.left = Math.random() * 732; //To know which number is it we have to make this operation (gridWidth - platformWidth). Why? Because we want to create the number of platforms inside of our grid
       this.bottom = newRedGemBottom;
@@ -224,7 +225,8 @@ document.addEventListener("DOMContentLoaded", () => {
           ((gurmannBottomSpace + 150) >= redGem.bottom) &&
           ((gurmannBottomSpace + 133) <= (redGem.bottom + 64))
         ){
-          //scoreCoin++;
+          scoreRedGems++;
+          console.log("Score RED GEMS");
           let redGemToRemove = redGems[0].visual;
           redGemToRemove.classList.remove("redGem");
           redGems.shift();
@@ -232,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
           redGems.push(newRedGem);
         }
       });
-  }*/
+  }
   //Red Gem
   //AIR
   //AIR
@@ -410,12 +412,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!isGameOver) {
       createPlatforms();
       createCoin();
+      createRedGem();
       setInterval(movePlatforms, 30);
       setInterval(moveCoin, 25);
+      setInterval(moveRedGem, 25);
       setInterval(coinTakeIt, 10);
-      //createRedGem();
-      //setInterval(moveRedGem, 25);
-      //setInterval(redGemTakeIt, 10);
+      setInterval(redGemTakeIt, 10);
       createGurmann();
       jump(startPoint);
       document.addEventListener("keydown", control);
