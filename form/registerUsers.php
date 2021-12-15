@@ -1,3 +1,24 @@
+<?php
+
+if (isset($_SESSION["usuario"])) {
+    $usuario = $_SESSION["usuario"];
+    unset($_SESSION["usuario"]);
+}
+
+if (isset($_SESSION["error"])) {
+    $error = $_SESSION["error"];
+    unset($_SESSION["error"]);
+}
+
+if (isset($_SESSION["correcto"])) {
+    unset($_SESSION["correcto"]);
+}
+
+require_once('./../php_library/database.php');
+$ciclos = selectCiclos();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -19,69 +40,84 @@
                         <div class="col-lg-7">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
-                                    <h3 class="text-center font-weight-light my-4">Be A Member</h3>
+                                    <h3 class="text-center font-weight-light my-4">Únete</h3>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form action="../php_controllers/userController.php" method="POST">
                                         <div class="form-row">
+
+                                            <!--Nombre del usuario-->
+                                            <div class="form-group row" style="margin-top:5px">
+                                                <label for="nombreUsuario" class="small mb-1">Nombre</label> <br>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control" value="<?php if (isset($usuario)) { echo $usuario['Nombre_Usuario'];} ?>" name="nombreUsuario" placeholder="Nombre" id="nombreUsuario">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <!--Nombre del usuario-->
+
+                                            <!--Mail del usuario-->
+                                            <div class="form-group row" style="margin-top:5px">
+                                                <label for="mailUsuario" class="small mb-1">Email</label> <br>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control" value="<?php if (isset($usuario)) { echo $usuario['Mail_Usuario'];} ?>" name="mailUsuario" placeholder="Email" id="mailUsuario">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <!--Mail del usuario-->
+
+                                            <!--Eleccion de ciclos-->
+                                            <div class="form-group row" style="margin-top:5px">
+                                                <label class="small mb-1">Formative Grade</label>
+                                                <br>
+                                                <div class="col-sm-12">
+                                                    <select class="form-control" name="ciclo" id="cicloUsuario" required>
+                                                        <option class="mb-1" disabled>Formative Grade</option>
+                                                        <?php foreach ($ciclos as $ciclo) { ?>
+                                                            <option <?php if (isset($usuario)) {
+                                                                        if ($usuario['id_Ciclo'] == $ciclo['id']) {
+                                                                            echo "selected";
+                                                                        }
+                                                                    } ?> value=<?php $ciclo['id'] ?>> <?php echo $ciclo['Nombre_Ciclos'] ?> </option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <!--Eleccion de ciclos-->
+                                          
+                                            <!--Password-->
                                             <div class="form-row">
-                                                <label class="small mb-1" for="inputFirstName">First Name</label>
-                                                <input class="form-control" id="inputFirstName" type="text" placeholder="First Name" />
-                                            </div><br>
+                                                <label class="small mb-1" for="passwordUsuario">Contraseña</label>
+                                                <input class="form-control" id="passwordUsuario" type="password" name="passwordUsuario" placeholder="Contraseña" />
+                                            </div>
+                                            <br>
+                                            <!--Password-->
+
+                                            <!--Repetir password-->
                                             <div class="form-row">
-                                                <label class="small mb-1" for="inputEmail">Email</label>
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="Email" />
-                                            </div><br>
-                                            <div class="dropdown">
-                                                <label class="small mb-1">Formative Grade</label><br>
-                                                <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Choose One</a>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <!-- Comerç i Màrqueting -->
-                                                    <li><a class="dropdown-item" href="#">Grau mitjà activitats comercials</a></li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior màrqueting</a></li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior gestió de vendes i espais comercials</a></li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior comerç internacional</a></li>
-                                                    <!-- Hoteleria i Turisme -->
-                                                    <li>
-                                                        <hr class="dropdown-divider">
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior agències de viatges i gestió d'esdeveniments</a></li>
-                                                    <!-- Informàtica i comunicacions -->
-                                                    <li>
-                                                        <hr class="dropdown-divider">
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="#">Grau mitjà sistemes microinformàtics i xarxes</a></li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior desenvolupaments aplicacions multiplataforma</a></li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior desenvolupaments aplicacions web</a></li>
-                                                    <!-- Administració i gestió -->
-                                                    <li>
-                                                        <hr class="dropdown-divider">
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="#">Grau mitjà gestió administrativa</a></li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior assistència a la direcció</a></li>
-                                                    <li><a class="dropdown-item" href="#">Grau superior administració i finances</a></li>
-                                                </ul>
-                                            </div><br>
-                                            <div class="form-row">
-                                                <label class="small mb-1" for="inputPassword">Password</label>
-                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" />
-                                            </div><br>
-                                            <div class="form-row">
-                                                <label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
-                                                <input class="form-control" id="inputConfirmPassword" type="password" placeholder="Confirm Password" />
-                                            </div><br>
+                                                <label class="small mb-1" for="confirmarPasswordUsuario">Confirmar contraseña</label>
+                                                <input class="form-control" id="confirmarPasswordUsuario" type="password" name="confirmarPasswordUsuario" placeholder="Confirmar contraseña" />
+                                            </div>
+                                            <br>
+                                            <!--Repetir password-->
+                                            <?php if ($error != null) {
+                                                echo '<div class="alert alert-danger" role="alert">';
+                                                    echo $error;
+                                                echo '</div>';
+                                            }?>
                                         </div>
                                         <div class="form-group text-center justify-content-between mt-4 mb-0">
-                                            <a class="btn btn-dark" type="submit" name="submit" value="Enter" href="/Project1.github.io/menuGames/menus/gameIntro.html">
-                                                Create an account
-                                            </a>
+                                            <button class="btn btn-dark" type="submit" name="insert" value="Enter">
+                                                Crear una cuenta
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="card-footer text-center">
                                     <div class="small">
                                         <a href="loginUsers.php">
-                                            Have an account? Go to login
+                                            Tengo una cuenta
                                         </a>
                                     </div>
                                 </div>

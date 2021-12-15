@@ -1,3 +1,10 @@
+<?php
+require_once('./../php_library/database.php');
+
+$users = selectUsers();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,6 +23,8 @@
 
 <body>
     <?php include "../php_partials/navbarAdmin.php"; ?>
+    <?php include "../php_partials/mensajes.php"; ?>
+
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid">
@@ -41,44 +50,39 @@
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Password</th>
-                                        <th>Interested Carreer</th>
+                                        <th>Id user</th>
+                                        <th>Mail user</th>
+                                        <th>Nombre user</th>
+                                        <th>Contraseña user</th>
+                                        <th>Borrar</th>
+                                        <th>Editar</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Sergi</td>
-                                        <td>sperezj2021@cepnet.net</td>
-                                        <td>abcd1234</td>
-                                        <td>Comercio Y Marqueting</td>
-                                    </tr>
-                                </tbody>
-                                <tbody>
-                                    <tr>
-                                        <td>Aitor</td>
-                                        <td>acarro2021@cepnet.net</td>
-                                        <td>holaHola123</td>
-                                        <td>Hosteleria y Turismo</td>
-                                    </tr>
-                                </tbody>
-                                <tbody>
-                                    <tr>
-                                        <td>Raül</td>
-                                        <td>rlendines2021@cepnet.net</td>
-                                        <td>uuuulebaguette</td>
-                                        <td>Informatica Y Telecomunicaciones</td>
-                                    </tr>
-                                </tbody>
-                                <tbody>
-                                    <tr>
-                                        <td>Borja</td>
-                                        <td>borjita2021@cepnet.net</td>
-                                        <td>peroSiLePonenLaCansion</td>
-                                        <td>Informatica Y Telecomunicaciones</td>
-                                    </tr>
-                                </tbody>
+                                <?php foreach ($users as $user) { ?>
+                                    <tbody>
+                                        <tr>
+                                            <td> <?php echo $user['id'] ?> </td>
+                                            <td> <?php echo $user['Mail_Usuario'] ?> </td>
+                                            <td> <?php echo $user['Nombre_Usuario'] ?> </td>
+                                            <td> <?php echo $user['Contrasenya_Usuario'] ?> </td>
+                                            <td> <a href="delete.php?id=<?php echo $user['id'];?>"> <i class="fas fa-trash-alt"></i> </a></td>
+
+                                            <td> 
+                                            <?php echo '
+                                                    <form action="/Project1.github.io/php_controllers/userController.php" method="post">
+                                                            <input type="hidden" name="valorUsuario" value=' . $users['id'] . '>
+                                                        <button type="submit" class="btn btn-outline-primary" name="editar">
+                                                            <i class="fas fa-edit"></i>
+                                                        </button>
+                                                    </form>
+                                                ' ?>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+
+                                <?php } 
+                                ?>
                             </table>
                         </div>
                     </div>
