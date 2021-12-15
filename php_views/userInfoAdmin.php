@@ -52,6 +52,8 @@ $users = selectUsers();
                                         <th>Mail user</th>
                                         <th>Nombre user</th>
                                         <th>Contraseña user</th>
+                                        <th>Borrar</th>
+                                        <th>Editar</th>
                                     </tr>
                                 </thead>
                                 <?php foreach ($users as $user) { ?>
@@ -61,10 +63,36 @@ $users = selectUsers();
                                             <td> <?php echo $user['Mail_Usuario'] ?> </td>
                                             <td> <?php echo $user['Nombre_Usuario'] ?> </td>
                                             <td> <?php echo $user['Contrasenya_Usuario'] ?> </td>
+                                            <td>  
+                                                <?php echo '
+                                                    <form action="/Project1.github.io/php_controllers/userController.php" method="post">
+                                                            <input type="hidden" name="valorUsuario" value=' . $users['id'] . '>
+                                                        <button type="submit" class="btn btn-outline-danger" name="borrar">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </button>
+                                                    </form>
+                                                ' ?>
+                                            </td>
+                                            <td> 
+                                            <?php echo '
+                                                    <form action="/Project1.github.io/php_controllers/userController.php" method="post">
+                                                            <input type="hidden" name="valorUsuario" value=' . $users['id'] . '>
+                                                        <button type="submit" class="btn btn-outline-primary" name="editar">
+                                                            <i class="fas fa-edit"></i>
+                                                        </button>
+                                                    </form>
+                                                ' ?>
+                                            </td>
+
+                                           
+
+
+
                                         </tr>
                                     </tbody>
 
-                                <?php } ?>
+                                <?php } 
+                                ?>
                             </table>
                         </div>
                     </div>
