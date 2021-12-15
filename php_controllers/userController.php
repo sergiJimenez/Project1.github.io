@@ -27,7 +27,7 @@ if (isset($_POST['insert'])) {
 }
 
 if (isset($_POST["borrar"])) {
-    borrarUsers();
+    //borrarUsers();
 }
 
 if ($passUser == $passConfUser) {
