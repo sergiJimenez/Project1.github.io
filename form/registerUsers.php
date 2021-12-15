@@ -8,6 +8,7 @@ if (isset($_SESSION["usuario"])) {
 }
 
 if (isset($_SESSION["error"])) {
+    $error = $_SESSION["error"];
     unset($_SESSION["error"]);
 }
 
@@ -46,7 +47,7 @@ $ciclos = selectCiclos();
                                 <div class="card-body">
                                     <form action="../php_controllers/userController.php" method="POST">
                                         <div class="form-row">
-                                            
+
                                             <!--Nombre del usuario-->
                                             <div class="form-group row" style="margin-top:5px">
                                                 <label for="nombreUsuario" class="small mb-1">Nombre</label> <br>
@@ -73,7 +74,7 @@ $ciclos = selectCiclos();
                                                 <br>
                                                 <div class="col-sm-12">
                                                     <select class="form-control" name="ciclo" id="cicloUsuario" required>
-                                                        <option class="mb-1">Formative Grade</option>
+                                                        <option class="mb-1" disabled>Formative Grade</option>
                                                         <?php foreach ($ciclos as $ciclo) { ?>
                                                             <option <?php if (isset($usuario)) {
                                                                         if ($usuario['id_Ciclo'] == $ciclo['id']) {
@@ -90,7 +91,7 @@ $ciclos = selectCiclos();
                                             <!--Password-->
                                             <div class="form-row">
                                                 <label class="small mb-1" for="passwordUsuario">Contraseña</label>
-                                                <input class="form-control" id="passwordUsuario" type="password" placeholder="Contraseña" />
+                                                <input class="form-control" id="passwordUsuario" type="password" name="passwordUsuario" placeholder="Contraseña" />
                                             </div>
                                             <br>
                                             <!--Password-->
@@ -98,11 +99,15 @@ $ciclos = selectCiclos();
                                             <!--Repetir password-->
                                             <div class="form-row">
                                                 <label class="small mb-1" for="confirmarPasswordUsuario">Confirmar contraseña</label>
-                                                <input class="form-control" id="confirmarPasswordUsuario" type="password" placeholder="Confirmar contraseña" />
+                                                <input class="form-control" id="confirmarPasswordUsuario" type="password" name="confirmarPasswordUsuario" placeholder="Confirmar contraseña" />
                                             </div>
                                             <br>
                                             <!--Repetir password-->
-
+                                            <?php if ($error != null) {
+                                                echo '<div class="alert alert-danger" role="alert">';
+                                                    echo $error;
+                                                echo '</div>';
+                                            }?>
                                         </div>
                                         <div class="form-group text-center justify-content-between mt-4 mb-0">
                                             <button class="btn btn-dark" type="submit" name="insert" value="Enter">

@@ -39,6 +39,31 @@ function selectUsers()
     return $resultado;
 }
 
+
+function borrarUsers(){
+    $conexion = openBd();
+
+    $valor = $_POST['valorUsuario'];
+
+    $sentenciaText = "DELETE FROM `daw2b02`.`usuarios` WHERE `usuarios`.`id` = $valor";
+
+    $sentencia = $conexion->prepare($sentenciaText);
+
+
+    $sentencia->execute();
+
+    $resultado = $sentencia->fetchAll();
+
+    $conexion = closeBd();
+
+
+    return $resultado;
+
+    //No añade la tabla usuarios_ciclos
+    //Como borro una tabla? --> asi?
+
+}
+
 function selectCiclos()
 {
     try {
@@ -60,31 +85,33 @@ function selectCiclos()
     }
 }
 
-function insertUser($nombre, $email, $ciclo, $contraseña)
+function insertUser($nombre, $email, $ciclo, $contrasenya)
 {
     try {
         $conexion = openBd();
 
         $conexion->beginTransaction();
 
-        $sentenciaText = "INSERT INTO usuarios (Mail_Usuario, Nombre_Ciudad, Contrasenya_Usuario) VALUES (:ciclo, :nombre, :contraseña)";
+        $sentenciaText = "INSERT INTO usuarios (Mail_Usuario, Nombre_Usuario, Contrasenya_Usuario) VALUES (:email, :nombre, :contrasenya)";
 
         $sentencia = $conexion->prepare($sentenciaText);
 
-        $sentencia->bindParam(":ciclo", $ciclo);
+        $sentencia->bindParam(":email", $email);
         $sentencia->bindParam(":nombre", $nombre);
-        $sentencia->bindParam(":contraseña", $contraseña);
+        $sentencia->bindParam(":contrasenya", $contrasenya);
 
         $sentencia->execute();
 
         $id_usuario = $conexion->lastInsertId();
 
-        $sentenciaText = "INSERT INTO usuarios_ciclo (id_Ciclo, id_Usuario) VALUES (:id_Ciclo, :id_Usuario)";
+        $sentenciaText = "INSERT INTO usuarios_ciclos (id_Ciclo, id_Usuario) VALUES (:id_Ciclo, :id_Usuario)";
 
         $sentencia = $conexion->prepare($sentenciaText);
 
         $sentencia->bindParam(":id_Ciclo", $ciclo);
-        $sentencia->bindParam(":id_Usuario", $id_Usuario);
+        $sentencia->bindParam(":id_Usuario", $id_usuario);
+
+        $sentencia->execute();
 
         $conexion->commit();
 
