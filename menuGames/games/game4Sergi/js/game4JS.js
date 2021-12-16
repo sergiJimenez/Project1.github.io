@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   //Variables
   const grid = document.querySelector(".grid");
+  const finalFrame = document.querySelector("finalFrame");
   const gurmann = document.createElement("div");
   //const scoreVisual = document.querySelector(".scoreVisual");
   let isGameOver = false; //GameOver variable
@@ -13,7 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let redGemCount = Math.random() * 3;
   let redGems = [];
   let scoreRedGems = 50;
-  let score = scoreCoins + scoreRedGems; //Initial score
+  let scoreJumping = 1;
+  let score;
+  //let score = scoreCoins + scoreRedGems + scoreJumping; //Initial score
   let gurmannLeftSpace = 50;
   let startPoint = 150;
   let gurmannBottomSpace = startPoint;
@@ -143,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ((gurmannBottomSpace + 150) >= coin.bottom) &&
           ((gurmannBottomSpace + 133) <= (coin.bottom + 64))
         ){
-          scoreCoins++;
+          //scoreCoins++;
           console.log("Score COINS");
           let coinToRemove = coins[0].visual;
           coinToRemove.classList.remove("coin");
@@ -225,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ((gurmannBottomSpace + 150) >= redGem.bottom) &&
           ((gurmannBottomSpace + 133) <= (redGem.bottom + 64))
         ){
-          scoreRedGems++;
+          //scoreRedGems++;
           console.log("Score RED GEMS" + scoreRedGems);
           let redGemToRemove = redGems[0].visual;
           redGemToRemove.classList.remove("redGem");
@@ -285,9 +288,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function jump() {
     clearInterval(downTimerId);
     isJumping = true;
-    score++; //When Gurmann jumps it will increase the score by one
+    scoreJumping++; //When Gurmann jumps it will increase the score by one
     console.log("MAKING A JUMP POINT WHEN GURMANN'S JUMP");
-    if (score == 50){
+    if (score == 5){
       EndGame();
     }
     upTimerId = setInterval(function () {
@@ -372,17 +375,11 @@ document.addEventListener("DOMContentLoaded", () => {
   //AIR
   //AIR
   //Game Functions
-  /*function TimeOUT (){
-    document.getElementById("countDown").innerHTML = secondStart;
-      if (segundoInicio <= 0) {
-        let speed = 0;
-      } else {
-        secondStart -= 1;
-        setTimeout(actualizar, 1e3);
-      }
+  function FinalFrame() {
+    if (EndGame()){
+      finalFrame.style.display = "block";
     }
-    actualizar();
-  }*/
+  }
 
   function GameOver() {
     isGameOver = true;
@@ -406,6 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
     clearInterval(rightTimerId);
+    setInterval(FinalFrame, 10);
   }
 
   function start() {

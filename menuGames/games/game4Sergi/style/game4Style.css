@@ -38,6 +38,17 @@
   position: absolute;
 }
 
+.finalFrame{
+  width: 1920px;
+  height: 1080px;
+  position: fixed;
+  display: none;
+  top: 0em;
+  z-index: 300;
+  background-repeat: no-repeat;
+  background-image: url(../media/FINAL_FRAME.png);
+}
+
 /* .temporizador {
   align-items: center;
   justify-content: center;
