@@ -27,7 +27,14 @@ if (isset($_POST['insert'])) {
 }
 
 if (isset($_POST["borrar"])) {
-    //borrarUsers();
+    $id = isset($_POST["valorUsuario"]) ? $_POST['valorUsuario'] : "";
+    borrarUsuario(
+        $id
+    );
+}else{
+    $_SESSION["error"] = "Error al borrar el usuario";
+    header("Location: ../form/registerUsers.php");
+    exit();
 }
 
 if ($passUser == $passConfUser) {

@@ -29,31 +29,26 @@ $users = selectUsers();
         <main>
             <div class="container-fluid">
                 <h1 class="mt-4">
-                    User's Information
+                    Informacion de los usuarios
                 </h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item"><a href="../homeAdmin.php">Home</a></li>
-                    <li class="breadcrumb-item active">User's Information</li>
+                    <li class="breadcrumb-item"><a href="../homeAdmin.php">Inicio</a></li>
+                    <li class="breadcrumb-item active">Informacion de los usuarios</li>
                 </ol>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        We can find all the users information:
-                    </div>
-                </div>
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table mr-1"></i>
-                        User's Details
+                        Informacion
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>Id user</th>
-                                        <th>Mail user</th>
-                                        <th>Nombre user</th>
-                                        <th>Contraseña user</th>
+                                        <th>ID del usuario</th>
+                                        <th>Mail del usuario</th>
+                                        <th>Nombre del usuario</th>
+                                        <th>Contraseña del usuario</th>
                                         <th>Borrar</th>
                                         <th>Editar</th>
                                     </tr>
@@ -65,17 +60,28 @@ $users = selectUsers();
                                             <td> <?php echo $user['Mail_Usuario'] ?> </td>
                                             <td> <?php echo $user['Nombre_Usuario'] ?> </td>
                                             <td> <?php echo $user['Contrasenya_Usuario'] ?> </td>
-                                            <td> <a href="delete.php?id=<?php echo $user['id'];?>"> <i class="fas fa-trash-alt"></i> </a></td>
+                                            <td>  
+                                                <?php echo '
+                                                    <form action="/Project1.github.io/php_controllers/userController.php" method="post">
+                                                            <input type="hidden" name="valorUsuario" value=' . $user['id'] . '>
+                                                        <button type="submit" class="btn btn-outline-danger" name="borrar">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
+                                                    </form>
+                                                ' ?></td>
 
                                             <td> 
                                             <?php echo '
                                                     <form action="/Project1.github.io/php_controllers/userController.php" method="post">
-                                                            <input type="hidden" name="valorUsuario" value=' . $users['id'] . '>
+                                                            <input type="hidden" name="valorUsuario" value=' . $user['id'] . '>
                                                         <button type="submit" class="btn btn-outline-primary" name="editar">
                                                             <i class="fas fa-edit"></i>
                                                         </button>
                                                     </form>
-                                                ' ?>
+                                                ' 
+                                                ?>
+
+                                                <?php var_dump($user['id']); ?>
                                             </td>
 
                                         </tr>
