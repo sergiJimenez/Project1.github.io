@@ -28,7 +28,7 @@ if (isset($_POST['insert'])) {
     $usuarios = selectUsers();
 
     if ($passUser == $passConfUser && strlen($passUser) > 0) {
-
+        /* var_dump($usuarios['Mail_Usuario']) */
         foreach ($usuario as $usuarios) {
             if ($mailUser = $usuario['Mail_Usuario']) {
                 $_SESSION["error"] = "Porfavor indique un usuario distinto, ese ya esta en nuestra base de datos";
