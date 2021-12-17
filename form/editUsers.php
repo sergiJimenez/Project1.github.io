@@ -32,7 +32,7 @@ $ciclos = selectCiclos();
 </head>
 
 <body class="bg-dark">
-<?php include "../php_partials/mensajes.php"; ?>
+    <?php include "../php_partials/mensajes.php"; ?>
     <div id="layoutAuthentification">
         <div id="layoutAuthentification_content">
             <main>
@@ -51,7 +51,9 @@ $ciclos = selectCiclos();
                                             <div class="form-group row" style="margin-top:5px">
                                                 <label for="nombreUsuario" class="small mb-1">Nombre</label> <br>
                                                 <div class="col-sm-12">
-                                                    <input type="text" class="form-control" value="<?php if (isset($usuario)) { echo $usuario['Nombre_Usuario'];} ?>" name="nombreUsuario" placeholder="Nombre" id="nombreUsuario">
+                                                    <input type="text" class="form-control" value="<?php if (isset($usuario)) {
+                                                                                                        echo $usuario['Nombre_Usuario'];
+                                                                                                    } ?>" name="nombreUsuario" placeholder="Nombre" id="nombreUsuario">
                                                 </div>
                                             </div>
                                             <br>
@@ -61,7 +63,9 @@ $ciclos = selectCiclos();
                                             <div class="form-group row" style="margin-top:5px">
                                                 <label for="mailUsuario" class="small mb-1">Email</label> <br>
                                                 <div class="col-sm-12">
-                                                    <input type="text" class="form-control" value="<?php if (isset($usuario)) { echo $usuario['Mail_Usuario'];} ?>" name="mailUsuario" placeholder="Email" id="mailUsuario">
+                                                    <input type="text" class="form-control" value="<?php if (isset($usuario)) {
+                                                                                                        echo $usuario['Mail_Usuario'];
+                                                                                                    } ?>" name="mailUsuario" placeholder="Email" id="mailUsuario">
                                                 </div>
                                             </div>
                                             <br>
@@ -86,7 +90,29 @@ $ciclos = selectCiclos();
                                             </div>
                                             <br>
                                             <!--Eleccion de ciclos-->
-                                          
+
+                                            <!--Admin-->
+
+                                            <div class="form-group row" style="margin-top:5px">
+                                                <label class="col-sm-2 col-form-label" for="regionPokemon">Region del pokemon</label>
+                                                <div class="col-sm-10" required>
+                                                    <input type="checkbox" <?php if (isset($pokemon)) {
+                                                                                if (in_array("planta", $pokemon['tipo'])) {
+                                                                                    echo "checked";
+                                                                                }
+                                                                            } ?> name="tipoPokemon[]" value="planta" id="planta">
+                                                    <label for="electrico">Planta</label>
+
+                                                    <input type="checkbox" <?php if (isset($pokemon)) {
+                                                                                if (in_array("veneno", $pokemon['tipo'])) {
+                                                                                    echo "checked";
+                                                                                }
+                                                                            } ?> name="tipoPokemon[]" value="veneno" id="veneno">
+                                                    <label for="veneno">Veneno</label>
+                                                </div>
+                                            </div>
+
+                                            <!--Admin-->
                                             <!--Password-->
                                             <div class="form-row">
                                                 <label class="small mb-1" for="passwordUsuario">Contraseña</label>
@@ -104,9 +130,9 @@ $ciclos = selectCiclos();
                                             <!--Repetir password-->
                                             <?php if ($error != null) {
                                                 echo '<div class="alert alert-danger" role="alert">';
-                                                    echo $error;
+                                                echo $error;
                                                 echo '</div>';
-                                            }?>
+                                            } ?>
                                         </div>
                                         <div class="form-group text-center justify-content-between mt-4 mb-0">
                                             <button class="btn btn-dark" type="submit" name="insert" value="Enter">

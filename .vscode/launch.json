@@ -8,7 +8,7 @@
             "name": "Launch Chrome",
             "request": "launch",
             "type": "pwa-chrome",
-            "url": "http://localhost:8080/Project1.github.io/php_views/userInfoAdmin.php",
+            "url": "http://localhost:8080/Project1.github.io/form/registerUsers.php",
             "webRoot": "${workspaceFolder}"
         } 
     ]

@@ -63,28 +63,6 @@ function selectCiclos()
     }
 }
 
-function borrarUsuario($id)
-{
-    try {
-        $conexion = openBd();
-
-        $sentenciaText = "DELETE FROM `daw2b02`.`usuarios` WHERE `usuarios`.`id` = $id";
-
-        $sentencia = $conexion->prepare($sentenciaText);
-
-        $sentencia->execute();
-
-        $resultado = $sentencia->fetchAll();
-
-        $conexion = closeBd();
-
-
-        return $resultado;
-    } catch (PDOException $e) {
-        $_SESSION['error'] = $e->getCode() . ' - ' . $e->getMessage();
-    }
-}
-
 function insertUser($nombre, $email, $ciclo, $contrasenya)
 {
     try {
@@ -119,4 +97,26 @@ function insertUser($nombre, $email, $ciclo, $contrasenya)
     } catch (PDOException $e) {
         $_SESSION['error'] = $e->getCode() . ' - ' . $e->getMessage();
     }
+
+    function borrarUsuario($id)
+{
+    try {
+        $conexion = openBd();
+
+        $sentenciaText = "DELETE FROM `daw2b02`.`usuarios` WHERE `usuarios`.`id` = $id";
+
+        $sentencia = $conexion->prepare($sentenciaText);
+
+        $sentencia->execute();
+
+        $resultado = $sentencia->fetchAll();
+
+        $conexion = closeBd();
+
+
+        return $resultado;
+    } catch (PDOException $e) {
+        $_SESSION['error'] = $e->getCode() . ' - ' . $e->getMessage();
+    }
+}
 }

@@ -85,12 +85,10 @@ $users = selectUsers();
 
                                                 <?php var_dump($user['id']); ?>
                                             </td>
-
                                         </tr>
                                     </tbody>
 
-                                <?php } 
-                                ?>
+                                <?php } ?>
                             </table>
                         </div>
                     </div>
