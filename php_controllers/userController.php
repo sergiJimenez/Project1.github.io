@@ -64,3 +64,17 @@ if (isset($_POST["borrar"])) {
     header("Location: ../php_views/userInfoAdmin.php");
     exit();
 }
+
+
+if (isset($_POST["editar"])) {
+    $id = isset($_POST["valorUsuario"]) ? $_POST['valorUsuario'] : "";
+    editarUsuario(
+        $id
+    );
+    header("Location: ../form/editUsers.php");
+    exit();
+} else {
+    $_SESSION["error"] = "Error al editar el usuario";
+    header("Location: ../php_views/userInfoAdmin.php");
+    exit();
+}

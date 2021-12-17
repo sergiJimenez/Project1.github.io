@@ -92,31 +92,30 @@ $ciclos = selectCiclos();
                                             <!--Eleccion de ciclos-->
 
                                             <!--Admin-->
-
                                             <div class="form-group row" style="margin-top:5px">
-                                                <label class="col-sm-2 col-form-label" for="regionPokemon">Region del pokemon</label>
-                                                <div class="col-sm-10" required>
-                                                    <input type="checkbox" <?php if (isset($pokemon)) {
-                                                                                if (in_array("planta", $pokemon['tipo'])) {
-                                                                                    echo "checked";
-                                                                                }
-                                                                            } ?> name="tipoPokemon[]" value="planta" id="planta">
-                                                    <label for="electrico">Planta</label>
-
-                                                    <input type="checkbox" <?php if (isset($pokemon)) {
-                                                                                if (in_array("veneno", $pokemon['tipo'])) {
-                                                                                    echo "checked";
-                                                                                }
-                                                                            } ?> name="tipoPokemon[]" value="veneno" id="veneno">
-                                                    <label for="veneno">Veneno</label>
+                                                <label class="small mb-1">Formative Grade</label>
+                                                <br>
+                                                <div class="col-sm-12">
+                                                    <select class="form-control" name="ciclo" id="cicloUsuario" required>
+                                                        <option class="mb-1" disabled>Formative Grade</option>
+                                                        <?php foreach ($ciclos as $ciclo) { ?>
+                                                            <option <?php if (isset($usuario)) {
+                                                                        if ($usuario['id_Ciclo'] == $ciclo['id']) {
+                                                                            echo "selected";
+                                                                        }
+                                                                    } ?> value=<?php echo $ciclo['id'] ?>> <?php echo $ciclo['Nombre_Ciclos'] ?> </option>
+                                                        <?php } ?>
+                                                    </select>
                                                 </div>
                                             </div>
-
+                                            <br>
                                             <!--Admin-->
                                             <!--Password-->
                                             <div class="form-row">
                                                 <label class="small mb-1" for="passwordUsuario">Contraseña</label>
-                                                <input class="form-control" id="passwordUsuario" type="password" name="passwordUsuario" placeholder="Contraseña" />
+                                                <input class="form-control" id="passwordUsuario" type="password" value="<?php if (isset($usuario)) {
+                                                                                                                            echo $usuario['Contrasenya_Usuario'];
+                                                                                                                        } ?>" name="passwordUsuario" placeholder="Contraseña" />
                                             </div>
                                             <br>
                                             <!--Password-->
@@ -124,7 +123,9 @@ $ciclos = selectCiclos();
                                             <!--Repetir password-->
                                             <div class="form-row">
                                                 <label class="small mb-1" for="confirmarPasswordUsuario">Confirmar contraseña</label>
-                                                <input class="form-control" id="confirmarPasswordUsuario" type="password" name="confirmarPasswordUsuario" placeholder="Confirmar contraseña" />
+                                                <input class="form-control" id="confirmarPasswordUsuario" type="password" value="" <?php if (isset($usuario)) {
+                                                                                                                                        echo $usuario['Contrasenya_Usuario'];
+                                                                                                                                    } ?>" name="confirmarPasswordUsuario" placeholder="Confirmar contraseña" />
                                             </div>
                                             <br>
                                             <!--Repetir password-->
