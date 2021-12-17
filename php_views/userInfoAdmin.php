@@ -31,10 +31,17 @@ $users = selectUsers();
                 <h1 class="mt-4">
                     Informacion de los usuarios
                 </h1>
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item"><a href="../homeAdmin.php">Inicio</a></li>
-                    <li class="breadcrumb-item active">Informacion de los usuarios</li>
-                </ol>
+                <div class="row">
+                    <div class="col-11">
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="../homeAdmin.php">Inicio</a></li>
+                            <li class="breadcrumb-item active">Informacion de los usuarios</li>
+                        </ol>
+                    </div>
+                    <div class="col-1">
+                        <button onClick="window.location.reload();"> <i class="fas fa-sync"></i> </button>
+                    </div>
+                </div>
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table mr-1"></i>
@@ -62,7 +69,7 @@ $users = selectUsers();
                                             <td> <?php echo $user['Nombre_Usuario'] ?> </td>
                                             <td> <?php echo $user['Contrasenya_Usuario'] ?> </td>
                                             <td> <?php echo $user['Rol_Administrador'] ?> </td>
-                                            <td>  
+                                            <td>
                                                 <?php echo '
                                                     <form action="/Project1.github.io/php_controllers/userController.php" method="post">
                                                             <input type="hidden" name="valorUsuario" value=' . $user['id'] . '>
@@ -72,15 +79,15 @@ $users = selectUsers();
                                                     </form>
                                                 ' ?></td>
 
-                                            <td> 
-                                            <?php echo '
+                                            <td>
+                                                <?php echo '
                                                     <form action="/Project1.github.io/php_controllers/userController.php" method="post">
                                                             <input type="hidden" name="valorUsuario" value=' . $user['id'] . '>
                                                         <button type="submit" class="btn btn-outline-primary" name="editar">
                                                             <i class="fas fa-edit"></i>
                                                         </button>
                                                     </form>
-                                                ' 
+                                                '
                                                 ?>
 
                                             </td>

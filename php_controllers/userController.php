@@ -54,17 +54,20 @@ if (isset($_POST['insert'])) {
 
 if (isset($_POST["borrar"])) {
     $id = isset($_POST["valorUsuario"]) ? $_POST['valorUsuario'] : "";
-    borrarUsuario(
-        $id
-    );
-    header("Location: ../php_views/userInfoAdmin.php");
-    exit();
-} else {
-    $_SESSION["error"] = "Error al borrar el usuario";
-    header("Location: ../php_views/userInfoAdmin.php");
-    exit();
-}
+    if ($id > -1) {
+        borrarUsuario(
+            $id
+        );
+        header("Location: ../php_views/userInfoAdmin.php");
+        exit();
+    }else {
+        $_SESSION["error"] = "Error al borrar el usuario";
+        header("Location: ../php_views/userInfoAdmin.php");
+        exit();
+    }
+} 
 
+//EL ISSET DE BORRAR DEBE TENER DENTRO EL IF Y EL ELSE DE ENVIAR A ALGUN SITIO
 
 if (isset($_POST["editar"])) {
     $id = isset($_POST["valorUsuario"]) ? $_POST['valorUsuario'] : "";
