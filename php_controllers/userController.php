@@ -25,30 +25,30 @@ if (isset($_POST['insert'])) {
     //Contraseña usuario 
     $passConfUser = isset($_POST['confirmarPasswordUsuario']) ? $_POST['confirmarPasswordUsuario'] : "";
 
-//ENTRA AQUI CUANDO LE DIGO QUE BORRE EL USUARIO
-if ($passUser == $passConfUser && strlen($passUser) > 0) {
-    $usuario = insertUser(
-        $userName,
-        $mailUser,
-        $cicloUser,
-        $passUser
-    );
+    //ENTRA AQUI CUANDO LE DIGO QUE BORRE EL USUARIO
+    if ($passUser == $passConfUser && strlen($passUser) > 0) {
+        $usuario = insertUser(
+            $userName,
+            $mailUser,
+            $cicloUser,
+            $passUser
+        );
 
-    $_SESSION["usuario"] = $usuario;
-    $_SESSION["correcto"] = "Usuario añadido correctamente";
-    header("Location: ../php_views/userInfoAdmin.php");
+        $_SESSION["usuario"] = $usuario;
+        $_SESSION["correcto"] = "Usuario añadido correctamente";
+        header("Location: ../php_views/userInfoAdmin.php");
 
-    exit();
-}else{
-    if (strlen($passUser) == 0 || $passUser != $passConfUser) {
-        $mensajeError = "Indique alguna contraseña o bien ponga la misma en los dos campos";
-    }else {
-        $mensajeError =  "Rellene los datos";
+        exit();
+    } else {
+        if (strlen($passUser) == 0 || $passUser != $passConfUser) {
+            $mensajeError = "Indique alguna contraseña o bien ponga la misma en los dos campos";
+        } else {
+            $mensajeError =  "Rellene los datos";
+        }
+        $_SESSION["error"] = $mensajeError;
+        header("Location: ../form/registerUsers.php");
+        exit();
     }
-    $_SESSION["error"] = $mensajeError;
-    header("Location: ../form/registerUsers.php");
-    exit();
-}
 }
 
 
@@ -57,9 +57,10 @@ if (isset($_POST["borrar"])) {
     borrarUsuario(
         $id
     );
-}else{
+    header("Location: ../php_views/userInfoAdmin.php");
+    exit();
+} else {
     $_SESSION["error"] = "Error al borrar el usuario";
     header("Location: ../php_views/userInfoAdmin.php");
     exit();
 }
-
