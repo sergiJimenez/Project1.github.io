@@ -49,6 +49,7 @@ $users = selectUsers();
                                         <th>Mail del usuario</th>
                                         <th>Nombre del usuario</th>
                                         <th>Contraseña del usuario</th>
+                                        <th>Administrador</th>
                                         <th>Borrar</th>
                                         <th>Editar</th>
                                     </tr>
@@ -60,6 +61,7 @@ $users = selectUsers();
                                             <td> <?php echo $user['Mail_Usuario'] ?> </td>
                                             <td> <?php echo $user['Nombre_Usuario'] ?> </td>
                                             <td> <?php echo $user['Contrasenya_Usuario'] ?> </td>
+                                            <td> <?php echo $user['Rol_Administrador'] ?> </td>
                                             <td>  
                                                 <?php echo '
                                                     <form action="/Project1.github.io/php_controllers/userController.php" method="post">
