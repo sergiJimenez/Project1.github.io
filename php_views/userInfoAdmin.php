@@ -16,7 +16,7 @@ $users = selectUsers();
     <!-- BOOTSTRAP LINKS -->
     <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/bootstrap.min.css">
     <script src="../bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
-    <!-- BOOTSTRAP LINKS -->
+    <!-- FONTAWESOME LINKS -->
     <link href="style/styles.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
@@ -44,7 +44,7 @@ $users = selectUsers();
                 </div>
                 <div class="card mb-4">
                     <div class="card-header">
-                        <i class="fas fa-table mr-1"></i>
+                        <i class="fas fa-table table-striped mr-1"></i>
                         Informacion
                     </div>
                     <div class="card-body">
@@ -63,7 +63,8 @@ $users = selectUsers();
                                 </thead>
                                 <?php foreach ($users as $user) { ?>
                                     <tbody>
-                                        <tr>
+                                    <div class="loader"></div>
+                                    <tr>
                                             <td> <?php echo $user['id'] ?> </td>
                                             <td> <?php echo $user['Mail_Usuario'] ?> </td>
                                             <td> <?php echo $user['Nombre_Usuario'] ?> </td>

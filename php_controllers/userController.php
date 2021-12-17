@@ -25,20 +25,30 @@ if (isset($_POST['insert'])) {
     //Contraseña usuario 
     $passConfUser = isset($_POST['confirmarPasswordUsuario']) ? $_POST['confirmarPasswordUsuario'] : "";
 
-    //ENTRA AQUI CUANDO LE DIGO QUE BORRE EL USUARIO
+    $usuarios = selectUsers();
+
     if ($passUser == $passConfUser && strlen($passUser) > 0) {
-        $usuario = insertUser(
-            $userName,
-            $mailUser,
-            $cicloUser,
-            $passUser
-        );
 
-        $_SESSION["usuario"] = $usuario;
-        $_SESSION["correcto"] = "Usuario añadido correctamente";
-        header("Location: ../php_views/userInfoAdmin.php");
+        foreach ($usuario as $usuarios) {
+            if ($mailUser = $usuario['Mail_Usuario']) {
+                $_SESSION["error"] = "Porfavor indique un usuario distinto, ese ya esta en nuestra base de datos";
+                header("Location: ../form/registerUsers.php");
+                exit();
+            } else {
+                $usuario = insertUser(
+                    $userName,
+                    $mailUser,
+                    $cicloUser,
+                    $passUser
+                );
 
-        exit();
+                $_SESSION["usuario"] = $usuario;
+                $_SESSION["correcto"] = "Usuario añadido correctamente";
+                header("Location: ../php_views/userInfoAdmin.php");
+
+                exit();
+            }
+        }
     } else {
         if (strlen($passUser) == 0 || $passUser != $passConfUser) {
             $mensajeError = "Indique alguna contraseña o bien ponga la misma en los dos campos";
@@ -60,24 +70,26 @@ if (isset($_POST["borrar"])) {
         );
         header("Location: ../php_views/userInfoAdmin.php");
         exit();
-    }else {
+    } else {
         $_SESSION["error"] = "Error al borrar el usuario";
         header("Location: ../php_views/userInfoAdmin.php");
         exit();
     }
-} 
+}
 
 //EL ISSET DE BORRAR DEBE TENER DENTRO EL IF Y EL ELSE DE ENVIAR A ALGUN SITIO
 
 if (isset($_POST["editar"])) {
     $id = isset($_POST["valorUsuario"]) ? $_POST['valorUsuario'] : "";
-    editarUsuario(
-        $id
-    );
-    header("Location: ../form/editUsers.php");
-    exit();
-} else {
-    $_SESSION["error"] = "Error al editar el usuario";
-    header("Location: ../php_views/userInfoAdmin.php");
-    exit();
+    if ($id > -1) {
+        editarUsuario(
+            $id
+        );
+        header("Location: ../form/editUsers.php");
+        exit();
+    } else {
+        $_SESSION["error"] = "Error al editar el usuario";
+        header("Location: ../php_views/userInfoAdmin.php");
+        exit();
+    }
 }
