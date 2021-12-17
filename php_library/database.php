@@ -97,11 +97,22 @@ function insertUser($nombre, $email, $ciclo, $contrasenya)
     } catch (PDOException $e) {
         $_SESSION['error'] = $e->getCode() . ' - ' . $e->getMessage();
     }
+}
 
-    function borrarUsuario($id)
+function borrarUsuario($id)
 {
     try {
         $conexion = openBd();
+
+        $conexion->beginTransaction();
+
+        $sentenciaText = "DELETE FROM `daw2b02`.`usuarios_ciclos` WHERE `usuarios_ciclos`.`id_Usuario` = $id";
+
+        $sentencia = $conexion->prepare($sentenciaText);
+
+        $sentencia->execute();
+
+        $id_usuario = $conexion->lastInsertId();
 
         $sentenciaText = "DELETE FROM `daw2b02`.`usuarios` WHERE `usuarios`.`id` = $id";
 
@@ -109,14 +120,14 @@ function insertUser($nombre, $email, $ciclo, $contrasenya)
 
         $sentencia->execute();
 
-        $resultado = $sentencia->fetchAll();
+        $conexion->commit();
 
         $conexion = closeBd();
-
-
-        return $resultado;
     } catch (PDOException $e) {
         $_SESSION['error'] = $e->getCode() . ' - ' . $e->getMessage();
     }
 }
+
+function editarUsuario($id){
+    
 }

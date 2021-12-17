@@ -9,6 +9,9 @@ if (isset($_SESSION["error"])) {
     $error = $_SESSION["error"];
     unset($_SESSION["error"]);
 }
+else{
+    $error = "";
+}
 
 if (isset($_SESSION["correcto"])) {
     unset($_SESSION["correcto"]);
@@ -102,7 +105,7 @@ $ciclos = selectCiclos();
                                             </div>
                                             <br>
                                             <!--Repetir password-->
-                                            <?php if ($error != null) {
+                                            <?php if ($error != "") {
                                                 echo '<div class="alert alert-danger" role="alert">';
                                                     echo $error;
                                                 echo '</div>';
