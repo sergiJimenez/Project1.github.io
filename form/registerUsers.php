@@ -78,7 +78,7 @@ $ciclos = selectCiclos();
                                                                         if ($usuario['id_Ciclo'] == $ciclo['id']) {
                                                                             echo "selected";
                                                                         }
-                                                                    } ?> value=<?php $ciclo['id'] ?>> <?php echo $ciclo['Nombre_Ciclos'] ?> </option>
+                                                                    } ?> value=<?php echo $ciclo['id'] ?>> <?php echo $ciclo['Nombre_Ciclos'] ?> </option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
