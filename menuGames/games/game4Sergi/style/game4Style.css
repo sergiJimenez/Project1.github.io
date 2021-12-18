@@ -34,6 +34,51 @@
   height: 1080px;
 }
 
+.Games {
+  display: block;
+  width: 144px;
+  height: 34px;
+  top: 942px;
+  left: 490px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  position: absolute;
+}
+
+.MainMenu {
+  display: block;
+  width: 254px;
+  height: 34px;
+  top: 942px;
+  left: 856px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  position: absolute;
+}
+
+.Next {
+  display: block;
+  width: 104px;
+  height: 34px;
+  top: 942px;
+  left: 1324px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  position: absolute;
+}
+
 /*JS:*/
 .gurmann {
   position: absolute;

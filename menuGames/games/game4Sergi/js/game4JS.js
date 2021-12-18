@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
           coins.shift();
           let newCoin = new Coin(1080);
           coins.push(newCoin);
-          if (score >= 1000){ //SCORE LIMIT
+          if (score >= 1){ //SCORE LIMIT
             EndGame();
           }
         }
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
           redGems.shift();
           let newRedGem = new RedGem(1080);
           redGems.push(newRedGem);
-          if (score >= 1000){ //SCORE LIMIT
+          if (score >= 1){ //SCORE LIMIT
             EndGame();
           }
         }
@@ -695,7 +695,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isJumping = true;
     score+=10; //When Gurmann jumps it will increase the score by one
     console.log(score);
-    if (score >= 1000){ //SCORE LIMIT
+    if (score >= 1){ //SCORE LIMIT
       EndGame();
     }
     upTimerId = setInterval(function () {
