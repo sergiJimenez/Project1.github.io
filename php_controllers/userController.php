@@ -25,16 +25,18 @@ if (isset($_POST['insert'])) {
     //Contraseña usuario 
     $passConfUser = isset($_POST['confirmarPasswordUsuario']) ? $_POST['confirmarPasswordUsuario'] : "";
 
-    $usuarios = selectUsers();
-
     if ($passUser == $passConfUser && strlen($passUser) > 0) {
-        /* var_dump($usuarios['Mail_Usuario']) */
-        foreach ($usuario as $usuarios) {
-            if ($mailUser = $usuario['Mail_Usuario']) {
-                $_SESSION["error"] = "Porfavor indique un usuario distinto, ese ya esta en nuestra base de datos";
+        $mailUsuario = selectMail($mailUser);
+        $userName = selectUsername($userName);
+            if ($mailUsuario != null) {
+                $_SESSION["error"] = "Porfavor indique un mail distinto, ese ya esta en nuestra base de datos";
                 header("Location: ../form/registerUsers.php");
                 exit();
-            } else {
+            /* } else if($userName != null){
+                $_SESSION["error"] = "Porfavor indique un nombre de usuario distinto, ese ya esta en nuestra base de datos";
+                header("Location: ../form/registerUsers.php");
+                exit();
+             */}else {
                 $usuario = insertUser(
                     $userName,
                     $mailUser,
@@ -48,7 +50,7 @@ if (isset($_POST['insert'])) {
 
                 exit();
             }
-        }
+        
     } else {
         if (strlen($passUser) == 0 || $passUser != $passConfUser) {
             $mensajeError = "Indique alguna contraseña o bien ponga la misma en los dos campos";

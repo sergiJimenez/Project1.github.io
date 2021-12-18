@@ -41,6 +41,25 @@ function selectUsers()
     return $resultado;
 }
 
+function selectMail($mail){
+    try {
+    $conexion = openBd();
+
+    $sentenciaText = "SELECT * FROM `usuarios` WHERE `usuarios`.`Mail_Usuario` = $mail";
+
+    $sentencia = $conexion->prepare($sentenciaText);
+
+    $sentencia->execute();
+
+    $resultado = $sentencia->fetchAll();
+
+    $conexion = closeBd();
+
+    return $resultado;
+} catch (PDOException $e) {
+    $_SESSION['error'] = "Ha habido un error con " + $e->getMessage();
+}
+}
 
 function selectCiclos()
 {
