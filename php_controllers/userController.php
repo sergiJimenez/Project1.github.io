@@ -24,34 +24,74 @@ if (isset($_POST['insert'])) {
 
     //Contraseña usuario 
     $passConfUser = isset($_POST['confirmarPasswordUsuario']) ? $_POST['confirmarPasswordUsuario'] : "";
+
+    if ($passUser == $passConfUser && strlen($passUser) > 0) {
+        $mailUsuario = selectMail($mailUser);
+        $userName = selectUsername($userName);
+            if ($mailUsuario != null) {
+                $_SESSION["error"] = "Porfavor indique un mail distinto, ese ya esta en nuestra base de datos";
+                header("Location: ../form/registerUsers.php");
+                exit();
+            /* } else if($userName != null){
+                $_SESSION["error"] = "Porfavor indique un nombre de usuario distinto, ese ya esta en nuestra base de datos";
+                header("Location: ../form/registerUsers.php");
+                exit();
+             */}else {
+                $usuario = insertUser(
+                    $userName,
+                    $mailUser,
+                    $cicloUser,
+                    $passUser
+                );
+
+                $_SESSION["usuario"] = $usuario;
+                $_SESSION["correcto"] = "Usuario añadido correctamente";
+                header("Location: ../php_views/userInfoAdmin.php");
+
+                exit();
+            }
+        
+    } else {
+        if (strlen($passUser) == 0 || $passUser != $passConfUser) {
+            $mensajeError = "Indique alguna contraseña o bien ponga la misma en los dos campos";
+        } else {
+            $mensajeError =  "Rellene los datos";
+        }
+        $_SESSION["error"] = $mensajeError;
+        header("Location: ../form/registerUsers.php");
+        exit();
+    }
 }
+
 
 if (isset($_POST["borrar"])) {
-    //borrarUsers();
+    $id = isset($_POST["valorUsuario"]) ? $_POST['valorUsuario'] : "";
+    if ($id > -1) {
+        borrarUsuario(
+            $id
+        );
+        header("Location: ../php_views/userInfoAdmin.php");
+        exit();
+    } else {
+        $_SESSION["error"] = "Error al borrar el usuario";
+        header("Location: ../php_views/userInfoAdmin.php");
+        exit();
+    }
 }
 
-if ($passUser == $passConfUser) {
-    $usuario = insertUser(
-        $userName,
-        $mailUser,
-        $cicloUser,
-        $passUser
-    );
-}else{
-    $_SESSION["error"] = "Ponga correctamente su contraseña";
-    header("Location: ../form/registerUsers.php");
-    exit();
-}
+//EL ISSET DE BORRAR DEBE TENER DENTRO EL IF Y EL ELSE DE ENVIAR A ALGUN SITIO
 
-if (isset($_SESSION["correcto"])) {
-    $_SESSION["usuario"] = $usuario;
-    $_SESSION["correcto"] = "Usuario añadido correctamente";
-    header("Location: ../php_views/userInfoAdmin.php");
-
-    exit();
-} else {
-    $_SESSION["usuario"] = $usuario;
-    $_SESSION["error"] = "Usuario no se ha podido añadir";
-    header("Location: ../php_views/userInfoAdmin.php");
-    exit();
+if (isset($_POST["editar"])) {
+    $id = isset($_POST["valorUsuario"]) ? $_POST['valorUsuario'] : "";
+    if ($id > -1) {
+        editarUsuario(
+            $id
+        );
+        header("Location: ../form/editUsers.php");
+        exit();
+    } else {
+        $_SESSION["error"] = "Error al editar el usuario";
+        header("Location: ../php_views/userInfoAdmin.php");
+        exit();
+    }
 }

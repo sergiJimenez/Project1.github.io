@@ -1,8 +1,8 @@
-
-/////////////////////////
-/* Contolador del juego*/
-/////////////////////////
-
+////////////////////////////////
+//                            //
+//    Contolador del juego    //
+//                            //
+////////////////////////////////
 
 // Mostrar resultado y el tiempo
 function mostrarEventos() {
@@ -18,7 +18,6 @@ function mostrarEventos() {
     document.getElementById('body').appendChild(timer);
     document.getElementById('body').appendChild(resultado);
 }
-
 
 // Mezclado de cartas 
 function mezclar(iconos) {
@@ -49,7 +48,6 @@ function flipCards() {
         carta.addEventListener("click", flip);
     }
 }
-
 
 //Funcion voltear
 function flip() {

@@ -6,34 +6,17 @@
     "configurations": [
         
         {
+            "name": "Listen for Xdebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9003
+        },
+        {
             "name": "Launch Chrome",
             "request": "launch",
             "type": "pwa-chrome",
-            "url": "http://localhost:8080/Project1.github.io/index.php",
+            "url": "http://localhost:8080/Project1.github.io/php_views/userInfoAdmin.php",
             "webRoot": "${workspaceFolder}"
         } 
-        /*{
-            "name": "Launch Chrome",
-            "request": "launch",
-            "type": "pwa-chrome",
-            "url": "http://localhost:8080/Project1.github.io/form/registerUsers.php",
-            "webRoot": "${workspaceFolder}"
-        }*/
-         /*{
-            "name": "Launch Chrome",
-            "request": "launch",
-            "type": "pwa-chrome",
-            "url": "http://localhost:8080/Project1.github.io/menuGames/games/game4Sergi/game4Sergi.html",
-            "webRoot": "${workspaceFolder}"
-        }*/ 
-        /*{
-            "name": "Launch Chrome",
-            "request": "launch",
-            "type": "pwa-chrome",
-            "url": "http://localhost:8080/Project1.github.io/menuGames/games/game3Raul/gameRaul/indexGameRaul.php",
-            "webRoot": "${workspaceFolder}"
-        }*/
-
-      
     ]
-    }
+}
