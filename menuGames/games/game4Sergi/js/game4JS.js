@@ -12,6 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
   let redGems = [];
   let letterFs = [];
   let letterFCount = 1;
+  let letterRs = [];
+  let letterRCount = 1;
+  let letterAs = [];
+  let letterACount = 1;
+  let letterSs = [];
+  let letterSCount = 1;
+  let letterEs = [];
+  let letterECount = 1;
   let score = 0; //Initial score
   let gurmannLeftSpace = 50;
   let startPoint = 150;
@@ -248,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //AIR
   //AIR
   //AIR
-  //F
+  //Class
   class LetterF {
     constructor(newLetterFBottom) {
       this.left = Math.random() * 732; //To know which number is it we have to make this operation (gridWidth - platformWidth). Why? Because we want to create the number of platforms inside of our grid
@@ -263,6 +271,68 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  class LetterR {
+    constructor(newLetterRBottom) {
+      this.left = Math.random() * 732; //To know which number is it we have to make this operation (gridWidth - platformWidth). Why? Because we want to create the number of platforms inside of our grid
+      this.bottom = newLetterRBottom;
+      this.visual = document.createElement("div");
+
+      const visual = this.visual;
+      visual.classList.add("letterR");
+      visual.style.left = this.left + "px";
+      visual.style.bottom = this.bottom + "px";
+      grid.appendChild(visual);
+    }
+  }
+
+  class LetterA {
+    constructor(newLetterABottom) {
+      this.left = Math.random() * 732; //To know which number is it we have to make this operation (gridWidth - platformWidth). Why? Because we want to create the number of platforms inside of our grid
+      this.bottom = newLetterABottom;
+      this.visual = document.createElement("div");
+
+      const visual = this.visual;
+      visual.classList.add("letterA");
+      visual.style.left = this.left + "px";
+      visual.style.bottom = this.bottom + "px";
+      grid.appendChild(visual);
+    }
+  }
+
+  class LetterS {
+    constructor(newLetterSBottom) {
+      this.left = Math.random() * 732; //To know which number is it we have to make this operation (gridWidth - platformWidth). Why? Because we want to create the number of platforms inside of our grid
+      this.bottom = newLetterSBottom;
+      this.visual = document.createElement("div");
+
+      const visual = this.visual;
+      visual.classList.add("letterS");
+      visual.style.left = this.left + "px";
+      visual.style.bottom = this.bottom + "px";
+      grid.appendChild(visual);
+    }
+  }
+
+  class LetterE {
+    constructor(newLetterEBottom) {
+      this.left = Math.random() * 732; //To know which number is it we have to make this operation (gridWidth - platformWidth). Why? Because we want to create the number of platforms inside of our grid
+      this.bottom = newLetterEBottom;
+      this.visual = document.createElement("div");
+
+      const visual = this.visual;
+      visual.classList.add("letterE");
+      visual.style.left = this.left + "px";
+      visual.style.bottom = this.bottom + "px";
+      grid.appendChild(visual);
+    }
+  }
+  //Class
+  //AIR
+  //AIR
+  //AIR
+  //AIR
+  //AIR
+  //Create
   function createLetterF() {
     for (let i = 0; i < letterFCount; i++) {
       let letterFGap = 1000 / letterFCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
@@ -272,6 +342,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function createLetterR() {
+    for (let i = 0; i < letterRCount; i++) {
+      let letterRGap = 1000 / letterRCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
+      let newLetterRBottom = 250 + i * letterRGap; //It'll increase where the new platform bottom distance will be create
+      let newLetterR = new LetterR(newLetterRBottom);
+      letterRs.push(newLetterR);
+    }
+  }
+
+  function createLetterA() {
+    for (let i = 0; i < letterACount; i++) {
+      let letterAGap = 1000 / letterACount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
+      let newLetterABottom = 250 + i * letterAGap; //It'll increase where the new platform bottom distance will be create
+      let newLetterA = new LetterA(newLetterABottom);
+      letterAs.push(newLetterA);
+    }
+  }
+
+  function createLetterS() {
+    for (let i = 0; i < letterSCount; i++) {
+      let letterSGap = 1000 / letterSCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
+      let newLetterSBottom = 250 + i * letterSGap; //It'll increase where the new platform bottom distance will be create
+      let newLetterS = new LetterS(newLetterSBottom);
+      letterSs.push(newLetterS);
+    }
+  }
+
+  function createLetterE() {
+    for (let i = 0; i < letterECount; i++) {
+      let letterEGap = 1000 / letterECount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
+      let newLetterEBottom = 250 + i * letterEGap; //It'll increase where the new platform bottom distance will be create
+      let newLetterE = new LetterE(newLetterEBottom);
+      letterEs.push(newLetterE);
+    }
+  }
+  //Create
+  //AIR
+  //AIR
+  //AIR
+  //AIR
+  //AIR
+  //Move
   function moveLetterF() {
     if (gurmannBottomSpace > 200) {
       letterFs.forEach(letterF => {
@@ -290,6 +402,84 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function moveLetterR() {
+    if (gurmannBottomSpace > 200) {
+      letterRs.forEach(letterR => {
+          letterR.bottom -= 5; //Speed of the platforms are falling
+          let visual = letterR.visual;
+          visual.style.bottom = letterR.bottom + "px";
+
+          if (letterR.bottom < -30) { //To dissapear when it collide to -30
+            let firstLetterR = letterRs[0].visual;
+            firstLetterR.classList.remove("ere");
+            letterRs.shift();
+            let newLetterR = new LetterR(1080); //Where the new platform will be appear. We know that because our height is 1080px
+            letterRs.push(newLetterR);
+        }
+      });
+    }
+  }
+
+  function moveLetterA() {
+    if (gurmannBottomSpace > 200) {
+      letterAs.forEach(letterA => {
+          letterA.bottom -= 5; //Speed of the platforms are falling
+          let visual = letterA.visual;
+          visual.style.bottom = letterA.bottom + "px";
+
+          if (letterA.bottom < -30) { //To dissapear when it collide to -30
+            let firstLetterA = letterAs[0].visual;
+            firstLetterA.classList.remove("a");
+            letterAs.shift();
+            let newLetterA = new LetterA(1080); //Where the new platform will be appear. We know that because our height is 1080px
+            letterAs.push(newLetterA);
+        }
+      });
+    }
+  }
+
+  function moveLetterS() {
+    if (gurmannBottomSpace > 200) {
+      letterSs.forEach(letterS => {
+          letterS.bottom -= 5; //Speed of the platforms are falling
+          let visual = letterS.visual;
+          visual.style.bottom = letterS.bottom + "px";
+
+          if (letterS.bottom < -30) { //To dissapear when it collide to -30
+            let firstLetterS = letterSs[0].visual;
+            firstLetterS.classList.remove("ese");
+            letterSs.shift();
+            let newLetterS = new LetterS(1080); //Where the new platform will be appear. We know that because our height is 1080px
+            letterSs.push(newLetterS);
+        }
+      });
+    }
+  }
+
+  function moveLetterE() {
+    if (gurmannBottomSpace > 200) {
+      letterEs.forEach(letterE => {
+          letterE.bottom -= 5; //Speed of the platforms are falling
+          let visual = letterE.visual;
+          visual.style.bottom = letterE.bottom + "px";
+
+          if (letterE.bottom < -30) { //To dissapear when it collide to -30
+            let firstLetterE = letterEs[0].visual;
+            firstLetterE.classList.remove("e");
+            letterEs.shift();
+            let newLetterE = new LetterE(1080); //Where the new platform will be appear. We know that because our height is 1080px
+            letterEs.push(newLetterE);
+        }
+      });
+    }
+  }
+  //Move
+  //AIR
+  //AIR
+  //AIR
+  //AIR
+  //AIR
+  //TakeIt
   function letterFTakeIt(){
     letterFs.forEach(letterF => {
       if (
@@ -314,19 +504,147 @@ document.addEventListener("DOMContentLoaded", () => {
         ((gurmannBottomSpace + 150) >= letterF.bottom) &&
         ((gurmannBottomSpace + 133) <= (letterF.bottom + 64))
       ){
-        score+=20;
-        console.log(score);
         let letterFToRemove = letterFs[0].visual;
         letterFToRemove.classList.remove("letterF");
         letterFs.shift();
         let newLetterF = new LetterF(1080);
         letterFs.push(newLetterF);
-        if (score >= 1000){ //SCORE LIMIT
-          EndGame();
-        }
       }
     });
-}
+  }
+
+  function letterRTakeIt(){
+    letterRs.forEach(letterR => {
+      if (
+        //Conditional_Left_Down_Gurmann
+        (gurmannLeftSpace >= letterR.left) &&
+        (gurmannLeftSpace <= (letterR.left + 64)) &&
+        (gurmannBottomSpace >= letterR.bottom) &&
+        (gurmannBottomSpace <= (letterR.bottom + 64)) ||
+        //Conditional_Right_Down_Gurmann
+        (gurmannLeftSpace >= letterR.left) &&
+        ((gurmannLeftSpace + 133) <= (letterR.left + 64)) &&
+        (gurmannBottomSpace >= letterR.bottom) &&
+        (gurmannBottomSpace + 133 <= (letterR.bottom + 64)) ||
+        //Conditional_Left_Up_Gurmann
+        ((gurmannLeftSpace + 150) >= letterR.left) &&
+        (gurmannLeftSpace <= (letterR.left + 64)) &&
+        ((gurmannBottomSpace + 150) >= letterR.bottom) &&
+        (gurmannBottomSpace <= (letterR.bottom + 64)) ||
+        //Conditional_Right_Up_Gurmann
+        ((gurmannLeftSpace + 150) >= letterR.left) &&
+        ((gurmannLeftSpace + 133) <= (letterR.left + 64)) &&
+        ((gurmannBottomSpace + 150) >= letterR.bottom) &&
+        ((gurmannBottomSpace + 133) <= (letterR.bottom + 64))
+      ){
+        let letterRToRemove = letterRs[0].visual;
+        letterRToRemove.classList.remove("letterR");
+        letterRs.shift();
+        let newLetterR = new LetterR(1080);
+        letterRs.push(newLetterR);
+      }
+    });
+  }
+
+  function letterATakeIt(){
+    letterAs.forEach(letterA => {
+      if (
+        //Conditional_Left_Down_Gurmann
+        (gurmannLeftSpace >= letterA.left) &&
+        (gurmannLeftSpace <= (letterA.left + 64)) &&
+        (gurmannBottomSpace >= letterA.bottom) &&
+        (gurmannBottomSpace <= (letterA.bottom + 64)) ||
+        //Conditional_Right_Down_Gurmann
+        (gurmannLeftSpace >= letterA.left) &&
+        ((gurmannLeftSpace + 133) <= (letterA.left + 64)) &&
+        (gurmannBottomSpace >= letterA.bottom) &&
+        (gurmannBottomSpace + 133 <= (letterA.bottom + 64)) ||
+        //Conditional_Left_Up_Gurmann
+        ((gurmannLeftSpace + 150) >= letterA.left) &&
+        (gurmannLeftSpace <= (letterA.left + 64)) &&
+        ((gurmannBottomSpace + 150) >= letterA.bottom) &&
+        (gurmannBottomSpace <= (letterA.bottom + 64)) ||
+        //Conditional_Right_Up_Gurmann
+        ((gurmannLeftSpace + 150) >= letterA.left) &&
+        ((gurmannLeftSpace + 133) <= (letterA.left + 64)) &&
+        ((gurmannBottomSpace + 150) >= letterA.bottom) &&
+        ((gurmannBottomSpace + 133) <= (letterA.bottom + 64))
+      ){
+        let letterAToRemove = letterAs[0].visual;
+        letterAToRemove.classList.remove("letterA");
+        letterAs.shift();
+        let newLetterA = new LetterA(1080);
+        letterAs.push(newLetterA);
+      }
+    });
+  }
+
+  function letterSTakeIt(){
+    letterSs.forEach(letterS => {
+      if (
+        //Conditional_Left_Down_Gurmann
+        (gurmannLeftSpace >= letterS.left) &&
+        (gurmannLeftSpace <= (letterS.left + 64)) &&
+        (gurmannBottomSpace >= letterS.bottom) &&
+        (gurmannBottomSpace <= (letterS.bottom + 64)) ||
+        //Conditional_Right_Down_Gurmann
+        (gurmannLeftSpace >= letterS.left) &&
+        ((gurmannLeftSpace + 133) <= (letterS.left + 64)) &&
+        (gurmannBottomSpace >= letterS.bottom) &&
+        (gurmannBottomSpace + 133 <= (letterS.bottom + 64)) ||
+        //Conditional_Left_Up_Gurmann
+        ((gurmannLeftSpace + 150) >= letterS.left) &&
+        (gurmannLeftSpace <= (letterS.left + 64)) &&
+        ((gurmannBottomSpace + 150) >= letterS.bottom) &&
+        (gurmannBottomSpace <= (letterS.bottom + 64)) ||
+        //Conditional_Right_Up_Gurmann
+        ((gurmannLeftSpace + 150) >= letterS.left) &&
+        ((gurmannLeftSpace + 133) <= (letterS.left + 64)) &&
+        ((gurmannBottomSpace + 150) >= letterS.bottom) &&
+        ((gurmannBottomSpace + 133) <= (letterS.bottom + 64))
+      ){
+        let letterSToRemove = letterSs[0].visual;
+        letterSToRemove.classList.remove("letterS");
+        letterSs.shift();
+        let newLetterS = new LetterS(1080);
+        letterSs.push(newLetterS);
+      }
+    });
+  }
+
+  function letterETakeIt(){
+    letterEs.forEach(letterE => {
+      if (
+        //Conditional_Left_Down_Gurmann
+        (gurmannLeftSpace >= letterE.left) &&
+        (gurmannLeftSpace <= (letterE.left + 64)) &&
+        (gurmannBottomSpace >= letterE.bottom) &&
+        (gurmannBottomSpace <= (letterE.bottom + 64)) ||
+        //Conditional_Right_Down_Gurmann
+        (gurmannLeftSpace >= letterE.left) &&
+        ((gurmannLeftSpace + 133) <= (letterE.left + 64)) &&
+        (gurmannBottomSpace >= letterE.bottom) &&
+        (gurmannBottomSpace + 133 <= (letterE.bottom + 64)) ||
+        //Conditional_Left_Up_Gurmann
+        ((gurmannLeftSpace + 150) >= letterE.left) &&
+        (gurmannLeftSpace <= (letterE.left + 64)) &&
+        ((gurmannBottomSpace + 150) >= letterE.bottom) &&
+        (gurmannBottomSpace <= (letterE.bottom + 64)) ||
+        //Conditional_Right_Up_Gurmann
+        ((gurmannLeftSpace + 150) >= letterE.left) &&
+        ((gurmannLeftSpace + 133) <= (letterE.left + 64)) &&
+        ((gurmannBottomSpace + 150) >= letterE.bottom) &&
+        ((gurmannBottomSpace + 133) <= (letterE.bottom + 64))
+      ){
+        let letterEToRemove = letterEs[0].visual;
+        letterEToRemove.classList.remove("letterE");
+        letterEs.shift();
+        let newLetterE = new LetterE(1080);
+        letterEs.push(newLetterE);
+      }
+    });
+  }
+  //TakeIt
   //AIR
   //AIR
   //AIR
@@ -470,10 +788,8 @@ document.addEventListener("DOMContentLoaded", () => {
       minute -= 1;
       seconds = 59;
     }
-
     let formattedMinute = ("0" + minute).slice(-2);
     let formattedSeconds = ("0" + seconds).slice(-2);
-
     document.getElementById("timer").innerHTML = "TEMPS: " + formattedMinute + ": " + formattedSeconds;
     if ((minute == 0 && seconds == 0) || score == 6){
       GameOver();
@@ -511,13 +827,25 @@ document.addEventListener("DOMContentLoaded", () => {
       createCoin();
       createRedGem();
       createLetterF();
+      createLetterR();
+      createLetterA();
+      createLetterS();
+      createLetterE();
       setInterval(movePlatforms, 30);
       setInterval(moveCoin, 25);
       setInterval(moveRedGem, 25);
       setInterval(coinTakeIt, 10);
       setInterval(redGemTakeIt, 10);
       setInterval(moveLetterF, 10);
+      setInterval(moveLetterR, 10);
+      setInterval(moveLetterA, 10);
+      setInterval(moveLetterS, 10);
+      setInterval(moveLetterE, 10);
       setInterval(letterFTakeIt, 10);
+      setInterval(letterRTakeIt, 10);
+      setInterval(letterATakeIt, 10);
+      setInterval(letterSTakeIt, 10);
+      setInterval(letterETakeIt, 10);
       createGurmann();
       jump(startPoint);
       document.addEventListener("keydown", control);

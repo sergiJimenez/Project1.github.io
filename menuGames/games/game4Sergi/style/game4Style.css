@@ -68,6 +68,38 @@
   background-repeat: no-repeat;
 }
 
+.letterR{
+  width: 64px;
+  height: 64px;
+  background-image: url(../media/FRASE/R_item.png);
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+.letterA{
+  width: 64px;
+  height: 64px;
+  background-image: url(../media/FRASE/A_item.png);
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+.letterS{
+  width: 64px;
+  height: 64px;
+  background-image: url(../media/FRASE/S_item.png);
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+.letterE{
+  width: 64px;
+  height: 64px;
+  background-image: url(../media/FRASE/E_item.png);
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
 /* .scoreVisual{
   width: 500px;
   height: 500px;
