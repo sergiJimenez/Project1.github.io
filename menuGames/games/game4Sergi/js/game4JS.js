@@ -1,22 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   //Variables
   const grid = document.querySelector(".grid");
-  const finalFrame = document.querySelector("finalFrame");
   const gurmann = document.createElement("div");
-  //const scoreVisual = document.querySelector(".scoreVisual");
+  const modal = document.getElementById("myModal");
   let isGameOver = false; //GameOver variable
-  let finalMessage = "FINISH"; //Test message to try the ENDGAME option
   let platformCount = 4; //How many platforms we have when we start a new game
   let platforms = []; //Platform Array
   let coinsCount = Math.random() * 3; //Defines a random number of coins, between 0 and 4, that'll appear
   let coins = []; //Coins Array
-  let scoreCoins = 10;
   let redGemCount = Math.random() * 3;
   let redGems = [];
-  let scoreRedGems = 50;
-  let scoreJumping = 1;
-  let score;
-  //let score = scoreCoins + scoreRedGems + scoreJumping; //Initial score
+  let letterFs = [];
+  let letterFCount = 1;
+  let score = 0; //Initial score
   let gurmannLeftSpace = 50;
   let startPoint = 150;
   let gurmannBottomSpace = startPoint;
@@ -27,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let isGoingRight = false;
   let leftTimerId;
   let rightTimerId;
+  //let seconds = 60;
+  //let minute = 1;
   //Variables
   //AIR
   //AIR
@@ -146,13 +144,16 @@ document.addEventListener("DOMContentLoaded", () => {
           ((gurmannBottomSpace + 150) >= coin.bottom) &&
           ((gurmannBottomSpace + 133) <= (coin.bottom + 64))
         ){
-          //scoreCoins++;
-          console.log("Score COINS");
+          score+=20;
+          console.log(score);
           let coinToRemove = coins[0].visual;
           coinToRemove.classList.remove("coin");
           coins.shift();
           let newCoin = new Coin(1080);
           coins.push(newCoin);
+          if (score >= 1000){ //SCORE LIMIT
+            EndGame();
+          }
         }
       });
   }
@@ -181,8 +182,8 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < redGemCount; i++) {
       let redGemGap = 1000 / redGemCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
       let newRedGemBottom = 250 + i * redGemGap; //It'll increase where the new platform bottom distance will be create
-      let newItem = new Coin(newRedGemBottom);
-      redGems.push(newItem);
+      let newRedGem = new RedGem(newRedGemBottom);
+      redGems.push(newRedGem);
     }
   }
 
@@ -228,13 +229,16 @@ document.addEventListener("DOMContentLoaded", () => {
           ((gurmannBottomSpace + 150) >= redGem.bottom) &&
           ((gurmannBottomSpace + 133) <= (redGem.bottom + 64))
         ){
-          //scoreRedGems++;
-          console.log("Score RED GEMS" + scoreRedGems);
+          score+=50;
+          console.log(score);
           let redGemToRemove = redGems[0].visual;
           redGemToRemove.classList.remove("redGem");
           redGems.shift();
           let newRedGem = new RedGem(1080);
           redGems.push(newRedGem);
+          if (score >= 1000){ //SCORE LIMIT
+            EndGame();
+          }
         }
       });
   }
@@ -244,7 +248,90 @@ document.addEventListener("DOMContentLoaded", () => {
   //AIR
   //AIR
   //AIR
+  //F
+  class LetterF {
+    constructor(newLetterFBottom) {
+      this.left = Math.random() * 732; //To know which number is it we have to make this operation (gridWidth - platformWidth). Why? Because we want to create the number of platforms inside of our grid
+      this.bottom = newLetterFBottom;
+      this.visual = document.createElement("div");
 
+      const visual = this.visual;
+      visual.classList.add("letterF");
+      visual.style.left = this.left + "px";
+      visual.style.bottom = this.bottom + "px";
+      grid.appendChild(visual);
+    }
+  }
+
+  function createLetterF() {
+    for (let i = 0; i < letterFCount; i++) {
+      let letterFGap = 1000 / letterFCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
+      let newLetterFBottom = 250 + i * letterFGap; //It'll increase where the new platform bottom distance will be create
+      let newLetterF = new LetterF(newLetterFBottom);
+      letterFs.push(newLetterF);
+    }
+  }
+
+  function moveLetterF() {
+    if (gurmannBottomSpace > 200) {
+      letterFs.forEach(letterF => {
+          letterF.bottom -= 5; //Speed of the platforms are falling
+          let visual = letterF.visual;
+          visual.style.bottom = letterF.bottom + "px";
+
+          if (letterF.bottom < -30) { //To dissapear when it collide to -30
+            let firstLetterF = letterFs[0].visual;
+            firstLetterF.classList.remove("efe");
+            letterFs.shift();
+            let newLetterF = new LetterF(1080); //Where the new platform will be appear. We know that because our height is 1080px
+            letterFs.push(newLetterF);
+        }
+      });
+    }
+  }
+
+  function letterFTakeIt(){
+    letterFs.forEach(letterF => {
+      if (
+        //Conditional_Left_Down_Gurmann
+        (gurmannLeftSpace >= letterF.left) &&
+        (gurmannLeftSpace <= (letterF.left + 64)) &&
+        (gurmannBottomSpace >= letterF.bottom) &&
+        (gurmannBottomSpace <= (letterF.bottom + 64)) ||
+        //Conditional_Right_Down_Gurmann
+        (gurmannLeftSpace >= letterF.left) &&
+        ((gurmannLeftSpace + 133) <= (letterF.left + 64)) &&
+        (gurmannBottomSpace >= letterF.bottom) &&
+        (gurmannBottomSpace + 133 <= (letterF.bottom + 64)) ||
+        //Conditional_Left_Up_Gurmann
+        ((gurmannLeftSpace + 150) >= letterF.left) &&
+        (gurmannLeftSpace <= (letterF.left + 64)) &&
+        ((gurmannBottomSpace + 150) >= letterF.bottom) &&
+        (gurmannBottomSpace <= (letterF.bottom + 64)) ||
+        //Conditional_Right_Up_Gurmann
+        ((gurmannLeftSpace + 150) >= letterF.left) &&
+        ((gurmannLeftSpace + 133) <= (letterF.left + 64)) &&
+        ((gurmannBottomSpace + 150) >= letterF.bottom) &&
+        ((gurmannBottomSpace + 133) <= (letterF.bottom + 64))
+      ){
+        score+=20;
+        console.log(score);
+        let letterFToRemove = letterFs[0].visual;
+        letterFToRemove.classList.remove("letterF");
+        letterFs.shift();
+        let newLetterF = new LetterF(1080);
+        letterFs.push(newLetterF);
+        if (score >= 1000){ //SCORE LIMIT
+          EndGame();
+        }
+      }
+    });
+}
+  //AIR
+  //AIR
+  //AIR
+  //AIR
+  //AIR
   //Gurmann, the character and his functions
   function createGurmann() {
     grid.appendChild(gurmann);
@@ -288,9 +375,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function jump() {
     clearInterval(downTimerId);
     isJumping = true;
-    scoreJumping++; //When Gurmann jumps it will increase the score by one
-    console.log("MAKING A JUMP POINT WHEN GURMANN'S JUMP");
-    if (score == 5){
+    score+=10; //When Gurmann jumps it will increase the score by one
+    console.log(score);
+    if (score >= 1000){ //SCORE LIMIT
       EndGame();
     }
     upTimerId = setInterval(function () {
@@ -375,18 +462,29 @@ document.addEventListener("DOMContentLoaded", () => {
   //AIR
   //AIR
   //Game Functions
-  function FinalFrame() {
-    if (EndGame()){
-      finalFrame.style.display = "block";
+  /*function timedCount() {
+    time = setTimeout(timedCount, 1000);
+    if (seconds > 0 && score  != 6){
+      seconds -= 1;
+    } else if ((seconds == 0 && minute > 0)){
+      minute -= 1;
+      seconds = 59;
     }
-  }
+
+    let formattedMinute = ("0" + minute).slice(-2);
+    let formattedSeconds = ("0" + seconds).slice(-2);
+
+    document.getElementById("timer").innerHTML = "TEMPS: " + formattedMinute + ": " + formattedSeconds;
+    if ((minute == 0 && seconds == 0) || score == 6){
+      GameOver();
+    }
+  }*/
 
   function GameOver() {
     isGameOver = true;
     while (grid.firstChild) {
       grid.removeChild(grid.firstChild);
     }
-    //scoreVisual.innerHTML = score; //Score when you are jumping on a platform + Score coin
     clearInterval(upTimerId);
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
@@ -398,24 +496,28 @@ document.addEventListener("DOMContentLoaded", () => {
     while (grid.firstChild) {
       grid.removeChild(grid.firstChild);
     }
-    scoreVisual.innerHTML = finalMessage + "<br>" + score; //CAMBIAR POR UNA PAGINA DONDE SE MUESTRE EL RESULTADO
+    score.innerHTML = score; //CAMBIAR POR UNA PAGINA DONDE SE MUESTRE EL RESULTADO
+    modal.style.display = "block";
     clearInterval(upTimerId);
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
     clearInterval(rightTimerId);
-    setInterval(FinalFrame, 10);
   }
 
   function start() {
     if (!isGameOver) {
+      //timedCount();
       createPlatforms();
       createCoin();
       createRedGem();
+      createLetterF();
       setInterval(movePlatforms, 30);
       setInterval(moveCoin, 25);
       setInterval(moveRedGem, 25);
       setInterval(coinTakeIt, 10);
       setInterval(redGemTakeIt, 10);
+      setInterval(moveLetterF, 10);
+      setInterval(letterFTakeIt, 10);
       createGurmann();
       jump(startPoint);
       document.addEventListener("keydown", control);

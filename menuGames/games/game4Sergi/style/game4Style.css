@@ -1,3 +1,4 @@
+/*HTML:*/
 .background{
   width: 1920px;
   height: 1080px;
@@ -13,6 +14,27 @@
   position: fixed;
 }
 
+.modal{
+  display: none;
+  width: 1920px;
+  height: 1080px;
+  position: fixed;
+  display: none;
+  top: 0em;
+  z-index: 1;
+  overflow: none;
+  background-repeat: no-repeat;
+  background-image: url(../media/FINAL_FRAME.png);
+}
+
+.modal-content{
+  background-repeat: no-repeat;
+  background-image: url(../media/FINAL_FRAME.png);
+  width: 1920px;
+  height: 1080px;
+}
+
+/*JS:*/
 .gurmann {
   position: absolute;
 }
@@ -38,29 +60,13 @@
   position: absolute;
 }
 
-.finalFrame{
-  width: 1920px;
-  height: 1080px;
-  position: fixed;
-  display: none;
-  top: 0em;
-  z-index: 300;
+.letterF{
+  width: 64px;
+  height: 64px;
+  background-image: url(../media/FRASE/F_item.png);
+  position: absolute;
   background-repeat: no-repeat;
-  background-image: url(../media/FINAL_FRAME.png);
 }
-
-/* .temporizador {
-  align-items: center;
-  justify-content: center;
-  font-family: "Blocktopia";
-}
-
-#cuentAtras {
-  font-size:5em;
-  margin-left: 40px;
-  margin-top: 40px;
-  color: #fff;
-} */
 
 /* .scoreVisual{
   width: 500px;
@@ -71,25 +77,3 @@
   background-color: white;
   position: fixed;
 }  */
-
-/*
-.blueGem{
-  width: 64px;
-  height: 64px;
-  background-image: "../media/Animated Items/Blue Gem.gif";
-}
-*/
-/*
-.GreenGem{
-  width: 64px;
-  height: 64px;
-  background-image: "../media/Animated Items/Green Gem.gif";
-}
-*/
-/*
-.sonicRing{
-  width: 64px;
-  height: 64px;
-  background-image: "../media/Animated Items/Sonic Ring.gif";
-}
-*/
