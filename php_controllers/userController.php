@@ -80,10 +80,46 @@ if (isset($_POST["borrar"])) {
 if (isset($_POST["edit"])) {
     $id = isset($_POST["valorUsuario"]) ? $_POST['valorUsuario'] : "";
     if ($id > -1) {
+        $_SESSION["id"] = $id;
+        header("Location: ../form/editUsers.php");
+        exit();
+    } else {
+        $_SESSION["error"] = "Error al editar el usuario";
+        header("Location: ../php_views/userInfoAdmin.php");
+        exit();
+    }
+}
+
+// EDITAR USUARIO
+if (isset($_POST["editar"])) {
+    $id = isset($_POST["valorUsuario"]) ? $_POST['valorUsuario'] : "";
+    if ($id > -1) {
         editarUsuario(
             $id
         );
         header("Location: ../form/editUsers.php");
+        exit();
+    } else {
+        $_SESSION["error"] = "Error al editar el usuario";
+        header("Location: ../php_views/userInfoAdmin.php");
+        exit();
+    }
+}
+
+// LOGIN ADMIN
+if (isset($_POST["logAdmin"])) {
+
+    //Mail usuario
+    $mailUser = isset($_POST['mailUsuario']) ? $_POST['mailUsuario'] : "";
+
+    //Contraseña usuario 
+    $passUser = isset($_POST['passwordUsuario']) ? $_POST['passwordUsuario'] : "";
+    
+    if ($id > -1) {
+        editarUsuario(
+            $id
+        );
+        header("Location: ../homeAdmin.php");
         exit();
     } else {
         $_SESSION["error"] = "Error al editar el usuario";
