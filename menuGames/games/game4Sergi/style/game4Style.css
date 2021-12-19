@@ -1,4 +1,9 @@
 /*HTML:*/
+@font-face {   
+  font-family: "Blocktopia";
+  src: url(../media/Blocktopia.ttf);
+}
+
 .background{
   width: 1920px;
   height: 1080px;
@@ -12,11 +17,6 @@
   margin-left: 488px;
   background-image: none;
   position: fixed;
-}
-
-@font-face {   
-  font-family: "Blocktopia";
-  src: url(../media/Blocktopia.ttf);
 }
 
 #timer {
@@ -35,10 +35,10 @@
   display: none;
   width: 1920px;
   height: 1080px;
+  left: 0px; /*IMPORTANT, 'cause it fixed in the middle*/
   position: fixed;
   display: none;
   top: 0em;
-  z-index: 1;
   overflow: none;
   background-repeat: no-repeat;
   background-image: url(../media/FinalFrame.png);
@@ -53,10 +53,10 @@
 
 .Games {
   display: block;
-  width: 144px;
+  width: 143px;
   height: 34px;
   top: 942px;
-  left: 490px;
+  left: 496px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -68,10 +68,10 @@
 
 .MainMenu {
   display: block;
-  width: 254px;
-  height: 34px;
-  top: 942px;
-  left: 856px;
+  width: 240px;
+  height: 36px;
+  top: 940px;
+  left: 849px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -83,10 +83,10 @@
 
 .Next {
   display: block;
-  width: 104px;
+  width: 103px;
   height: 34px;
   top: 942px;
-  left: 1324px;
+  left: 1321px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -118,7 +118,7 @@
   position: absolute;
 }
 
-.MainMenu {
+.TryAgainMainMenu {
   display: block;
   width: 240px;
   height: 36px;
@@ -132,7 +132,11 @@
   outline: none;
   position: absolute;
 }
-
+/*AIR*/
+/*AIR*/
+/*AIR*/
+/*AIR*/
+/*AIR*/
 /*JS:*/
 .gurmann {
   position: absolute;

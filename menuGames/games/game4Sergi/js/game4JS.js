@@ -795,7 +795,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let formattedMinute = ("0" + minute).slice(-2);
     let formattedSeconds = ("0" + seconds).slice(-2);
     document.getElementById("timer").innerHTML = formattedMinute + ": " + formattedSeconds;
-    if (minute == 0 && seconds == 59){
+    if (minute == 1 && seconds == 55){
       EndGame();
     }
   }
