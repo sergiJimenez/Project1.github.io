@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
   const gurmann = document.createElement("div");
   const modal = document.getElementById("myModal");
+  const F = document.getElementById("F");
+  const R = document.getElementById("R");
+  const A = document.getElementById("A");
+  const S = document.getElementById("S");
+  const E = document.getElementById("E");
   let isGameOver = false; //GameOver variable
   let platformCount = 4; //How many platforms we have when we start a new game
   let platforms = []; //Platform Array
@@ -31,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let isGoingRight = false;
   let leftTimerId;
   let rightTimerId;
-  //let seconds = 60;
-  //let minute = 1;
+  let seconds = 60;
+  let minute = 1;
   //Variables
   //AIR
   //AIR
@@ -159,9 +164,9 @@ document.addEventListener("DOMContentLoaded", () => {
           coins.shift();
           let newCoin = new Coin(1080);
           coins.push(newCoin);
-          if (score >= 1){ //SCORE LIMIT
+          /*if (score >= 100000){ //SCORE LIMIT
             EndGame();
-          }
+          }*/
         }
       });
   }
@@ -244,9 +249,9 @@ document.addEventListener("DOMContentLoaded", () => {
           redGems.shift();
           let newRedGem = new RedGem(1080);
           redGems.push(newRedGem);
-          if (score >= 1){ //SCORE LIMIT
+          /*if (score >= 100000){ //SCORE LIMIT
             EndGame();
-          }
+          }*/
         }
       });
   }
@@ -506,9 +511,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ){
         let letterFToRemove = letterFs[0].visual;
         letterFToRemove.classList.remove("letterF");
-        letterFs.shift();
-        let newLetterF = new LetterF(1080);
-        letterFs.push(newLetterF);
+        letterFs.shift(); //To avoid repeting the letters
+        F.style.display = "block";
       }
     });
   }
@@ -539,9 +543,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ){
         let letterRToRemove = letterRs[0].visual;
         letterRToRemove.classList.remove("letterR");
-        letterRs.shift();
-        let newLetterR = new LetterR(1080);
-        letterRs.push(newLetterR);
+        letterRs.shift(); //To avoid repeting the letters
+        R.style.display = "block";
       }
     });
   }
@@ -572,9 +575,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ){
         let letterAToRemove = letterAs[0].visual;
         letterAToRemove.classList.remove("letterA");
-        letterAs.shift();
-        let newLetterA = new LetterA(1080);
-        letterAs.push(newLetterA);
+        letterAs.shift(); //To avoid repeting the letters
+        A.style.display = "block";
       }
     });
   }
@@ -605,9 +607,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ){
         let letterSToRemove = letterSs[0].visual;
         letterSToRemove.classList.remove("letterS");
-        letterSs.shift();
-        let newLetterS = new LetterS(1080);
-        letterSs.push(newLetterS);
+        letterSs.shift(); //To avoid repeting the letters
+        S.style.display = "block";
       }
     });
   }
@@ -638,9 +639,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ){
         let letterEToRemove = letterEs[0].visual;
         letterEToRemove.classList.remove("letterE");
-        letterEs.shift();
-        let newLetterE = new LetterE(1080);
-        letterEs.push(newLetterE);
+        letterEs.shift(); //To avoid repeting the letters
+        E.style.display = "block";
       }
     });
   }
@@ -695,9 +695,12 @@ document.addEventListener("DOMContentLoaded", () => {
     isJumping = true;
     score+=10; //When Gurmann jumps it will increase the score by one
     console.log(score);
-    if (score >= 1){ //SCORE LIMIT
+    /*if (minute == 0 && seconds == 40){
       EndGame();
-    }
+    }*/
+    /*if (score >= 100000){ //SCORE LIMIT
+      EndGame();
+    }*/
     upTimerId = setInterval(function () {
       gurmannBottomSpace += 20; //The speed of our character when it's falling
       gurmann.style.bottom = gurmannBottomSpace + "px";
@@ -780,7 +783,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //AIR
   //AIR
   //Game Functions
-  /*function timedCount() {
+  function timedCount() {
     time = setTimeout(timedCount, 1000);
     if (seconds > 0 && score  != 6){
       seconds -= 1;
@@ -790,17 +793,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     let formattedMinute = ("0" + minute).slice(-2);
     let formattedSeconds = ("0" + seconds).slice(-2);
-    document.getElementById("timer").innerHTML = "TEMPS: " + formattedMinute + ": " + formattedSeconds;
-    if ((minute == 0 && seconds == 0) || score == 6){
-      GameOver();
+    document.getElementById("timer").innerHTML = formattedMinute + ": " + formattedSeconds;
+    if (minute == 0 && seconds == 59){
+      EndGame();
     }
-  }*/
+  }
 
   function GameOver() {
     isGameOver = true;
     while (grid.firstChild) {
       grid.removeChild(grid.firstChild);
     }
+    //modal.style.display = "block"; //Image to Game Over
     clearInterval(upTimerId);
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
@@ -813,7 +817,7 @@ document.addEventListener("DOMContentLoaded", () => {
       grid.removeChild(grid.firstChild);
     }
     score.innerHTML = score; //CAMBIAR POR UNA PAGINA DONDE SE MUESTRE EL RESULTADO
-    modal.style.display = "block";
+    modal.style.display = "block"; //Image to End Over
     clearInterval(upTimerId);
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
@@ -822,15 +826,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function start() {
     if (!isGameOver) {
-      //timedCount();
+      timedCount();
       createPlatforms();
       createCoin();
       createRedGem();
-      createLetterF();
-      createLetterR();
-      createLetterA();
-      createLetterS();
-      createLetterE();
+      setInterval(createLetterF, 10000)
+      setInterval(createLetterR, 26000)
+      setInterval(createLetterA, 30000)
+      setInterval(createLetterS, 35000)
+      setInterval(createLetterE, 45000);
       setInterval(movePlatforms, 30);
       setInterval(moveCoin, 25);
       setInterval(moveRedGem, 25);
