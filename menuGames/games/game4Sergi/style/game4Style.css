@@ -4,7 +4,7 @@
   src: url(../media/Blocktopia.ttf);
 }
 
-.background{
+.background {
   width: 1920px;
   height: 1080px;
   background-image: url(../media/FinalBCKGRND.png);
@@ -14,9 +14,21 @@
 .grid {
   width: 928px;
   height: 1080px;
-  margin-left: 488px;
+  margin-left: 491px;
   background-image: none;
   position: fixed;
+}
+
+#scoreShow {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  outline: none;
+  top: 45px;
+  left: 1705px;
+  color: white;
+  font-size: 51px;
+  font-family: "Blocktopia";
 }
 
 #timer {
@@ -156,14 +168,14 @@
   position: absolute;
 }
 
-.redGem{
+.redGem {
   width: 64px;
   height: 64px;
   background-image: url(../media/Animated_Items/Red_Gem.gif);
   position: absolute;
 }
 
-#letterF{
+#LetterF {
   width: 64px;
   height: 64px;
   background-image: url(../media/FRASE/F_item.png);
@@ -171,7 +183,7 @@
   background-repeat: no-repeat;
 }
 
-#letterR{
+#LetterR {
   width: 64px;
   height: 64px;
   background-image: url(../media/FRASE/R_item.png);
@@ -179,7 +191,7 @@
   background-repeat: no-repeat;
 }
 
-#letterA{
+#letterA {
   width: 64px;
   height: 64px;
   background-image: url(../media/FRASE/A_item.png);
@@ -187,7 +199,7 @@
   background-repeat: no-repeat;
 }
 
-#letterS{
+#letterS {
   width: 64px;
   height: 64px;
   background-image: url(../media/FRASE/S_item.png);
@@ -195,20 +207,10 @@
   background-repeat: no-repeat;
 }
 
-#letterE{
+#letterE {
   width: 64px;
   height: 64px;
   background-image: url(../media/FRASE/E_item.png);
   position: absolute;
   background-repeat: no-repeat;
 }
-
-/* .scoreVisual{
-  width: 500px;
-  height: 500px;
-  margin-left: 488px;
-  font-size: 100px;
-  text-align: center;
-  background-color: white;
-  position: fixed;
-}  */

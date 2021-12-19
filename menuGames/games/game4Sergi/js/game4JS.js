@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let isGoingRight = false;
   let leftTimerId;
   let rightTimerId;
-  let seconds = 60;
   let minute = 1;
+  let seconds = 60;
   //Variables
   //AIR
   //AIR
@@ -72,11 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function movePlatforms() {
     if (gurmannBottomSpace > 200) {
       platforms.forEach(platform => {
-        platform.bottom -= 5; //Speed of the platforms are falling
+        platform.bottom -=5; //Speed of the platforms are falling
         let visual = platform.visual;
         visual.style.bottom = platform.bottom + "px";
 
-        if (platform.bottom < -30) { //To dissapear when it collide to -30
+        if (platform.bottom < -60) { //To dissapear when it collide to -30
           let firstPlatform = platforms[0].visual;
           firstPlatform.classList.remove("platform");
           platforms.shift();
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let visual = coin.visual;
         visual.style.bottom = coin.bottom + "px";
 
-        if(coin.bottom < -30){ //To dissapear when it collide to -30
+        if(coin.bottom < -60){ //To dissapear when it collide to -30
           let firstCoin = coins[0].visual;
           firstCoin.classList.remove("coin");
           coins.shift();
@@ -165,9 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
           coins.shift();
           let newCoin = new Coin(1080);
           coins.push(newCoin);
-          /*if (score >= 100000){ //SCORE LIMIT
-            EndGame();
-          }*/
         }
       });
   }
@@ -208,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let visual = redGem.visual;
         visual.style.bottom = redGem.bottom + "px";
 
-        if(redGem.bottom < 0){
+        if(redGem.bottom < -60){
           let firstRedGem = redGems[0].visual;
           firstRedGem.classList.remove("redGem");
           redGems.shift();
@@ -250,9 +247,6 @@ document.addEventListener("DOMContentLoaded", () => {
           redGems.shift();
           let newRedGem = new RedGem(1080);
           redGems.push(newRedGem);
-          /*if (score >= 100000){ //SCORE LIMIT
-            EndGame();
-          }*/
         }
       });
   }
@@ -397,7 +391,7 @@ document.addEventListener("DOMContentLoaded", () => {
           let visual = letterF.visual;
           visual.style.bottom = letterF.bottom + "px";
 
-          if (letterF.bottom < -30) { //To dissapear when it collide to -30
+          if (letterF.bottom < -60) { //To dissapear when it collide to -30
             let firstLetterF = letterFs[0].visual;
             firstLetterF.classList.remove("efe");
             letterFs.shift();
@@ -415,7 +409,7 @@ document.addEventListener("DOMContentLoaded", () => {
           let visual = letterR.visual;
           visual.style.bottom = letterR.bottom + "px";
 
-          if (letterR.bottom < -30) { //To dissapear when it collide to -30
+          if (letterR.bottom < -60) { //To dissapear when it collide to -30
             let firstLetterR = letterRs[0].visual;
             firstLetterR.classList.remove("ere");
             letterRs.shift();
@@ -433,7 +427,7 @@ document.addEventListener("DOMContentLoaded", () => {
           let visual = letterA.visual;
           visual.style.bottom = letterA.bottom + "px";
 
-          if (letterA.bottom < -30) { //To dissapear when it collide to -30
+          if (letterA.bottom < -60) { //To dissapear when it collide to -30
             let firstLetterA = letterAs[0].visual;
             firstLetterA.classList.remove("a");
             letterAs.shift();
@@ -451,7 +445,7 @@ document.addEventListener("DOMContentLoaded", () => {
           let visual = letterS.visual;
           visual.style.bottom = letterS.bottom + "px";
 
-          if (letterS.bottom < -30) { //To dissapear when it collide to -30
+          if (letterS.bottom < -60) { //To dissapear when it collide to -30
             let firstLetterS = letterSs[0].visual;
             firstLetterS.classList.remove("ese");
             letterSs.shift();
@@ -469,7 +463,7 @@ document.addEventListener("DOMContentLoaded", () => {
           let visual = letterE.visual;
           visual.style.bottom = letterE.bottom + "px";
 
-          if (letterE.bottom < -30) { //To dissapear when it collide to -30
+          if (letterE.bottom < -60) { //To dissapear when it collide to -30
             let firstLetterE = letterEs[0].visual;
             firstLetterE.classList.remove("e");
             letterEs.shift();
@@ -669,7 +663,7 @@ document.addEventListener("DOMContentLoaded", () => {
       gurmann.style.backgroundImage = "url('./media/flipyFlipilyFlop/Character/Gif/Fall.gif')";
       gurmann.style.width = "133px";
       gurmann.style.height = "150px";
-      if (gurmannBottomSpace <= -125) { //When Gurmann arrives to -125pxBottom there'll die
+      if (gurmannBottomSpace <= -150) { //When Gurmann arrives to -150pxBottom there'll die
         GameOver();
       }
       platforms.forEach(platform => {
@@ -696,12 +690,6 @@ document.addEventListener("DOMContentLoaded", () => {
     isJumping = true;
     score+=10; //When Gurmann jumps it will increase the score by one
     console.log(score);
-    /*if (minute == 0 && seconds == 40){
-      EndGame();
-    }*/
-    /*if (score >= 100000){ //SCORE LIMIT
-      EndGame();
-    }*/
     upTimerId = setInterval(function () {
       gurmannBottomSpace += 20; //The speed of our character when it's falling
       gurmann.style.bottom = gurmannBottomSpace + "px";
@@ -795,9 +783,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let formattedMinute = ("0" + minute).slice(-2);
     let formattedSeconds = ("0" + seconds).slice(-2);
     document.getElementById("timer").innerHTML = formattedMinute + ": " + formattedSeconds;
-    if (minute == 1 && seconds == 55){
+    if (minute == 0 && seconds == 00){
       EndGame();
     }
+  }
+
+  function showScore() {
+    document.getElementById("scoreShow").innerHTML = score;
   }
 
   function GameOver() {
@@ -817,7 +809,6 @@ document.addEventListener("DOMContentLoaded", () => {
     while (grid.firstChild) {
       grid.removeChild(grid.firstChild);
     }
-    score.innerHTML = score; //CAMBIAR POR UNA PAGINA DONDE SE MUESTRE EL RESULTADO
     clearInterval(upTimerId);
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
@@ -828,14 +819,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function start() {
     if (!isGameOver) {
       timedCount();
+      showScore();
       createPlatforms();
       createCoin();
       createRedGem();
-      setInterval(createLetterF, 10000)
-      setInterval(createLetterR, 26000)
-      setInterval(createLetterA, 30000)
-      setInterval(createLetterS, 35000)
-      setInterval(createLetterE, 45000);
+      setInterval(createLetterF, 10); //10000
+      setInterval(createLetterR, 10); //26000
+      setInterval(createLetterA, 10); //30000
+      setInterval(createLetterS, 10); //35000
+      setInterval(createLetterE, 10); //45000
       setInterval(movePlatforms, 30);
       setInterval(moveCoin, 25);
       setInterval(moveRedGem, 25);
