@@ -42,7 +42,7 @@ function selectUsers()
 }
 
 function selectMail($mail){
-    try {
+
     $conexion = openBd();
 
     $sentenciaText = "SELECT * FROM `usuarios` WHERE `usuarios`.`Mail_Usuario` = $mail";
@@ -56,9 +56,6 @@ function selectMail($mail){
     $conexion = closeBd();
 
     return $resultado;
-} catch (PDOException $e) {
-    $_SESSION['error'] = "Ha habido un error con " + $e->getMessage();
-}
 }
 
 function selectCiclos()
