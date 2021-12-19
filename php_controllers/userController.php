@@ -27,16 +27,11 @@ if (isset($_POST['insert'])) {
 
     if ($passUser == $passConfUser && strlen($passUser) > 0) {
         $mailUsuario = selectMail($mailUser);
-        $userName = selectUsername($userName);
             if ($mailUsuario != null) {
                 $_SESSION["error"] = "Porfavor indique un mail distinto, ese ya esta en nuestra base de datos";
                 header("Location: ../form/registerUsers.php");
                 exit();
-            /* } else if($userName != null){
-                $_SESSION["error"] = "Porfavor indique un nombre de usuario distinto, ese ya esta en nuestra base de datos";
-                header("Location: ../form/registerUsers.php");
-                exit();
-             */}else {
+            }else {
                 $usuario = insertUser(
                     $userName,
                     $mailUser,
