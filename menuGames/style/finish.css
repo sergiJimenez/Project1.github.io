@@ -1,0 +1,22 @@
+body {
+    height: 1080px;
+    width: 1920px;
+    background-image: url("../media/Finish.png");
+    position: fixed;
+    background-repeat: no-repeat;
+}
+
+.MainMenu {
+    display: block;
+    width: 240px;
+    height: 36px;
+    top: 944px;
+    left: 832px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+}
