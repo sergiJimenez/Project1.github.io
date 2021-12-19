@@ -29,7 +29,6 @@ let arrowDown;
 let arrowLeft;
 let arrowRight;
 // ------ comprobaciones -------
-let puntuacion;
 let playable = false;
 let legalInput = true;
 let llaveEncontrada = false;
@@ -53,6 +52,7 @@ let min = 1;
 let sec = 10;
 let ejectuarCronometro = setInterval(iniciarCrono, 1000);
 let mejorPuntuacion = []
+let puntuacion;
 // ------------- iniciamos set up -----------------
 
 setUp();
@@ -68,6 +68,7 @@ function empezarJuego() { // llamada a la creacion del tablero y funciones basic
 	generarEnemigosRandom(contadorEnemigos);
 	if (playable = true) {
 		ejectuarCronometro;
+		
 	}
 
 }
@@ -183,12 +184,12 @@ function editorMapas() {// creo un mapa por cada nivel, definiendo en 3 letras 3
 		default:
 			break;
 	}
-	crearTablero(tablero); // se llama a las normas para definir los limites y choques de cada mapa 
+	crearTablero(); // se llama a las normas para definir los limites y choques de cada mapa 
 }
 function crearTablero() { // defino las condiciones del mapeado creando divs y recorriendo el array bidimensional, 
 	// usando el mapa establecido en la funcion anterior 
-	for (var i = 0; i < tablero.length; i++) {
-		for (var j = 0; j < tablero[i].length; j++) {
+	for (let i = 0; i < tablero.length; i++) {
+		for (let j = 0; j < tablero[i].length; j++) {
 
 			// ----- zona fuego
 			if (tablero[i][j] == fuego) { // llamo a las 'F' de cada mapa 
@@ -260,7 +261,7 @@ function setDificultat() { // modifica algunas variables para poder personalizar
 		// 3. se crean el numero de enemigos que quieres en cada nivel
 
 		case "extremo":
-			min = 3; sec = 00;
+			min = 3; sec = 30;
 			editorMapas();
 			contadorEnemigos = 1;
 			break;
@@ -271,7 +272,7 @@ function setDificultat() { // modifica algunas variables para poder personalizar
 			break;
 
 		case "medio":
-			min = 2; sec = 00;
+			min = 1; sec = 59;
 			editorMapas();
 			contadorEnemigos = 3;
 			break;
@@ -279,15 +280,13 @@ function setDificultat() { // modifica algunas variables para poder personalizar
 		case "facil":
 			min = 1; sec = 30;
 			editorMapas();
-			contadorEnemigos = 1;
+			contadorEnemigos = 4;
 			break;
 
 
 	}
 }
 function iniciarCrono() {// creo una cuenta atras, cuando llega a 0 el jugador pierde 
-
-
 
 	if (min != 0 || sec != 0) {
 		sec = sec - 1;
@@ -327,12 +326,18 @@ function iniciarCrono() {// creo una cuenta atras, cuando llega a 0 el jugador p
 }
 function iniciarPuntuacion() { // muestra las puntuaciones en tiempo real, numPuntos, numMovimientos, numEnemigosMuertos
 
+	
+	
 	const enemiesKilled = contadorEnemigos - enemigos.length;
+	
+	
+	puntuacion = (movCount * 3) ;
+	if ( enemiesKilled > 1 ){
 
-	if (sec > 40) {
-		puntuacion = (movCount * 2) + 50;
+		puntuacion = puntuacion + 50; 
 	}
-
+		
+		
 	document.getElementById('mostrarPuntuacion').innerHTML = puntuacion + ' Puntuacion';
 
 	document.getElementById('mostrarMovimientos').innerHTML = movCount + ' Movimientos';
@@ -342,7 +347,7 @@ function iniciarPuntuacion() { // muestra las puntuaciones en tiempo real, numPu
 }
 function mostrarRanking() { // muestra las mejores puntuaciones dentro del juego
 
-	mejorPuntuacion.push(puntuacion);
+	mejorPuntuacion.push();
 
 	var modal = document.getElementById("myModal");
 	var btn = document.getElementById("mostrarRanking");
@@ -416,6 +421,7 @@ function playerTurn() {  // conjunto de funciones que ejecuta alrededor del juga
 		crearJugador();
 		movCount++;
 		comprobarLlave();
+		
 	}
 	else  // revert to old position if new move is impossible 
 		jugador = Object.assign(jugador, oldPlayer);
@@ -467,6 +473,7 @@ function comprobarLlave() {// personaje tiene o no la llave, una vez ocupan la m
 	if (jugador.x === tamano / 2 && jugador.y === tamano / 2) {
 		llaveEncontrada = true;
 		document.getElementsByClassName("key")[0].remove();
+		
 	}
 }
 function turnoEnemigo() {// conjunto de funciones donde se genera, se mueve y elimina el enemigo
@@ -531,7 +538,8 @@ function generarEnemigo() {       // selecciona el div y creamos al enemigo, dan
 function newTurno(e) { // conjunto de funciones que engloba y lo verifica todo cada vez que pulsas la tecla.
 	// mostramos mensaje de victoria y derrota en caso de que verifique que hemso ganado o perdido						
 
-	iniciarPuntuacion();
+iniciarPuntuacion();
+
 	takeInput(e);
 	if (!legalInput) {
 		legalInput = true;
@@ -548,6 +556,7 @@ function checkVictoria() {       // cuando el jugador tiene la llave y llega a l
 		ganar = true;
 		playable = false;
 		alert(mensajeVictoria);
+
 	}
 }
 function checkDerrota() {      // si el jugador ocupa la misma posicion del enemigo,toca el fuego o la lava,  se acaba el juego 
