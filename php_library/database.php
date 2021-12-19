@@ -42,7 +42,7 @@ function selectUsers()
 }
 
 function selectMail($mail){
-
+    try {
     $conexion = openBd();
 
     $sentenciaText = "SELECT * FROM `usuarios` WHERE `usuarios`.`Mail_Usuario` = $mail";
@@ -56,6 +56,9 @@ function selectMail($mail){
     $conexion = closeBd();
 
     return $resultado;
+} catch (PDOException $e) {
+    $_SESSION['error'] = "Ha habido un error con " + $e->getMessage();
+}
 }
 
 function selectCiclos()
@@ -145,5 +148,36 @@ function borrarUsuario($id)
 }
 
 function editarUsuario($id){
-    
+    try {
+        $conexion = openBd();
+
+        $conexion->beginTransaction();
+
+        $sentenciaText = "UPDATE `daw2b02`.`usuarios` (Mail_Usuario, Nombre_Usuario, Contrasenya_Usuario) SET (:email, :nombre, :contrasenya) WHERE `usuarios`.`id` = $id";
+
+        $sentencia = $conexion->prepare($sentenciaText);
+
+        $sentencia->bindParam(":email", $email);
+        $sentencia->bindParam(":nombre", $nombre);
+        $sentencia->bindParam(":contrasenya", $contrasenya);
+
+        $sentencia->execute();
+
+        $id_usuario = $conexion->lastInsertId();
+
+        $sentenciaText = "UPDATE `daw2b02`.`usuarios_ciclos` (id_Ciclo, id_Usuario) SET (:id_Ciclo, :id_Usuario)";
+
+        $sentencia = $conexion->prepare($sentenciaText);
+
+        $sentencia->bindParam(":id_Ciclo", $ciclo);
+        $sentencia->bindParam(":id_Usuario", $id_usuario);
+
+        $sentencia->execute();
+
+        $conexion->commit();
+
+        $conexion = closeBd();
+    } catch (PDOException $e) {
+        $_SESSION['error'] = $e->getCode() . ' - ' . $e->getMessage();
+    }
 }

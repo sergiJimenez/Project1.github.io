@@ -8,6 +8,8 @@ if (isset($_SESSION['usuario'])) {
     $usuario = $_SESSION['usuario'];
 }
 
+
+// INSERTAR USUARIO
 if (isset($_POST['insert'])) {
 
     //Nombre usuario
@@ -27,7 +29,7 @@ if (isset($_POST['insert'])) {
 
     if ($passUser == $passConfUser && strlen($passUser) > 0) {
         $mailUsuario = selectMail($mailUser);
-            if ($mailUsuario != null) {
+            if (count($mailUsuario) != 0) {
                 $_SESSION["error"] = "Porfavor indique un mail distinto, ese ya esta en nuestra base de datos";
                 header("Location: ../form/registerUsers.php");
                 exit();
@@ -58,7 +60,7 @@ if (isset($_POST['insert'])) {
     }
 }
 
-
+// BORRAR USUARIO
 if (isset($_POST["borrar"])) {
     $id = isset($_POST["valorUsuario"]) ? $_POST['valorUsuario'] : "";
     if ($id > -1) {
@@ -74,9 +76,8 @@ if (isset($_POST["borrar"])) {
     }
 }
 
-//EL ISSET DE BORRAR DEBE TENER DENTRO EL IF Y EL ELSE DE ENVIAR A ALGUN SITIO
-
-if (isset($_POST["editar"])) {
+// EDITAR USUARIO
+if (isset($_POST["edit"])) {
     $id = isset($_POST["valorUsuario"]) ? $_POST['valorUsuario'] : "";
     if ($id > -1) {
         editarUsuario(
