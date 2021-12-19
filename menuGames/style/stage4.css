@@ -1,7 +1,7 @@
 body {
     height: 1080px;
     width: 1920px;
-    background-image: url("/Project1.github.io/menuGames/media/DifferentGamesPHP/4Game.png");
+    background-image: url("../media/DifferentGamesPHP/4Game.png");
     position: fixed;
     background-repeat: no-repeat;
 }
