@@ -1,0 +1,63 @@
+body {
+    height: 1080px;
+    width: 1920px;
+    background-image: url("/Project1.github.io/menuGames/media/DifferentGamesPHP/3Game.png");
+    position: fixed;
+    background-repeat: no-repeat;
+}
+.Games1 {
+    display: block;
+    width: 286px;
+    height: 276px;
+    top: 259px;
+    left: 610px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+}
+.Games2 {
+    display: block;
+    width: 286px;
+    height: 276px;
+    top: 259px;
+    left: 1021px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+}
+.Games3 {
+    display: block;
+    width: 286px;
+    height: 276px;
+    top: 551px;
+    left: 610px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+}
+.Back {
+    display: block;
+    width: 103px;
+    height: 33px;
+    top: 891px;
+    left: 900px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+}
