@@ -68,6 +68,7 @@ function empezarJuego() { // llamada a la creacion del tablero y funciones basic
 	generarEnemigosRandom(contadorEnemigos);
 	if (playable = true) {
 		ejectuarCronometro;
+		iniciarPuntuacion();
 	}
 
 }
@@ -183,12 +184,12 @@ function editorMapas() {// creo un mapa por cada nivel, definiendo en 3 letras 3
 		default:
 			break;
 	}
-	crearTablero(tablero); // se llama a las normas para definir los limites y choques de cada mapa 
+	crearTablero(); // se llama a las normas para definir los limites y choques de cada mapa 
 }
 function crearTablero() { // defino las condiciones del mapeado creando divs y recorriendo el array bidimensional, 
 	// usando el mapa establecido en la funcion anterior 
-	for (var i = 0; i < tablero.length; i++) {
-		for (var j = 0; j < tablero[i].length; j++) {
+	for (let i = 0; i < tablero.length; i++) {
+		for (let j = 0; j < tablero[i].length; j++) {
 
 			// ----- zona fuego
 			if (tablero[i][j] == fuego) { // llamo a las 'F' de cada mapa 
@@ -531,12 +532,13 @@ function generarEnemigo() {       // selecciona el div y creamos al enemigo, dan
 function newTurno(e) { // conjunto de funciones que engloba y lo verifica todo cada vez que pulsas la tecla.
 	// mostramos mensaje de victoria y derrota en caso de que verifique que hemso ganado o perdido						
 
-	iniciarPuntuacion();
+
 	takeInput(e);
 	if (!legalInput) {
 		legalInput = true;
 		return;
 	}
+	
 	playerTurn();
 	turnoEnemigo();
 	checkDerrota();
