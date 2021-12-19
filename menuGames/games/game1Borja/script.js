@@ -365,6 +365,27 @@ function mostrarRanking() { // muestra las mejores puntuaciones dentro del juego
 		}
 	}
 }
+function mostrarInfo(){
+
+	var modal = document.getElementById("myModalInfo");
+	var btn = document.getElementById("mostrarInfo");
+	var span = document.getElementsByClassName("closeInfo")[0];
+	
+	btn.onclick = function () {
+		modal.style.display = "block";
+	}
+	span.onclick = function () {
+		modal.style.display = "none";
+	}
+	// se cierra con click fuera del modal 
+	window.onclick = function (event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+}
+
+
 function generarEnemigosRandom(num) {// genera enemigos en posiciones diferentes cada vez que inicia
 	for (let i = 0; i < num; i++) {
 		do {
@@ -471,7 +492,9 @@ function crearJugador() {  // el jugador se crea cada vez que se mueve
 }
 function comprobarLlave() {// personaje tiene o no la llave, una vez ocupan la misma posicion eliminamos la llave
 	if (jugador.x === tamano / 2 && jugador.y === tamano / 2) {
+		
 		llaveEncontrada = true;
+		
 		document.getElementsByClassName("key")[0].remove();
 		
 	}
@@ -556,6 +579,8 @@ function checkVictoria() {       // cuando el jugador tiene la llave y llega a l
 		ganar = true;
 		playable = false;
 		alert(mensajeVictoria);
+		
+		
 
 	}
 }
@@ -574,6 +599,8 @@ function checkDerrota() {      // si el jugador ocupa la misma posicion del enem
 
 	}
 }
+
+
 
 
 

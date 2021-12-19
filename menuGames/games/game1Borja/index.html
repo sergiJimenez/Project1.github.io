@@ -2,90 +2,155 @@
 <html>
 
 <head>
-	
+
 	<link rel="stylesheet" type="text/css" href="css.css">
-	<script type="text/javascript" src="script.js" defer></script>	
+	<script type="text/javascript" src="script.js" defer></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Temple Run </title>
-	<link rel="shortcut icon" href="/menuGames/games/game1Borja/media/CharacterRun.gif" > 
+	<link rel="shortcut icon" href="/menuGames/games/game1Borja/media/CharacterRun.gif">
 
 </head>
 
 
-<body >
-	
-<div class="fondo_menu">
-	<div class="menu_principal">
-		
-		<button id="play-btn">JUGAR</button>
-		<br>
-		
-		<select id="difiultadMenu">
-				
+<body>
+
+	<div class="fondo_menu">
+		<div class="menu_principal">
+
+			<button id="play-btn">JUGAR</button>
+			<br>
+
+			<select id="difiultadMenu">
+
 				<option id="facil" value="facil">Camino del Programador</option>
 				<option id="medio" value="medio">Avenida del Comercio</option>
 				<option id="dificil" value="dificil">Senda a la Administracion </option>
 				<option id="extremo" value="extremo"> Ruta Turística </option>
-				
-		</select>	
-		
-		
+
+			</select>
+
+
+		</div>
 	</div>
-</div>
 
-<div class="grid-board">
+	<div class="grid-board">
 
-	
+
 		<div class="contador">
-			<p id="mostrarContador" > </p>  
+			<p id="mostrarContador"> </p>
 		</div>
 
-		
+
 		<div class="puntuacion">
-			<p id="mostrarPuntuacion"></p>  
+			<p id="mostrarPuntuacion"></p>
 		</div>
-		
+
 		<div class="movimientos">
-			<p id="mostrarMovimientos"></p>  
+			<p id="mostrarMovimientos"></p>
 		</div>
 
 		<div class="enimigosMuertos">
-			<p id="mostrarEnimigosMuertos"></p>  
+			<p id="mostrarEnimigosMuertos"></p>
 		</div>
 
-		
+
 		<div class="ranking">
-		
-			<button  id="mostrarRanking"   onclick='mostrarRanking()'>Ranking</button>
-		
-			<div id="myModal" class="modal">	
+
+			<button id="mostrarRanking" onclick='mostrarRanking()'>Ranking</button>
+
+			<div id="myModal" class="modal">
 				<div class="modal-content">
 					<div class="modal-header">
 						<span class="close">&times;</span>
 						<h2> Mejores puntuaciones</h2>
 					</div>
 
-					<div class="puntuacionesTotales">
-						<p>  Puntuacion: 252 </p>
-						<p>  Puntuacion: 223 </p>
-						<p>  Puntuacion: 135 </p>
-						<p>  Puntuacion: 109 </p>
+					<div class>
+						<p> Puntuacion: 252 </p>
+						<p> Puntuacion: 223 </p>
+						<p> Puntuacion: 135 </p>
+						<p> Puntuacion: 109 </p>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<div class="info">
+
+			<button id="mostrarInfo" onclick='mostrarInfo()'>Informacion Estudis Politecnics</button>
+
+			<div id="myModalInfo" class="modalInfo">
+
+
+				<div class="modal-contentInfo">
+					<div class="modal-headerInfo">
+						<span class="closeInfo">&times;</span>
+						<h2> Salidas profesionales</h2>
+					</div>
+
+					<div>
+						<table>
+							<tr>
+								<td>
+									<p> Comercio y marqueting </p>
+										<li> Grado superior comercio internacional </li>
+											<ul>Coordinador de transporte</ul>
+											<ul>Assistente de banca</ul>
+											<ul>Comercial IMP/EXP</ul>
 		
-		<div class="boton_actualizar">
-			<input type="button" value="Volver a Jugar" id="actualizar" onclick="location.reload()"/> 
+										<li>Grau superior gestió de vendes i espais comercials </li>
+											<ul>Merchandiser</ul>
+											<ul>Commercial</ul>
+											<ul>Retail Manager</ul>
+		
+										<li> Grau superior màrqueting i publicitat </li>
+											<ul>Analista</ul>
+											<ul>Copywriter</ul>
+		
+								</td>					
+								<td>
+
+									<p> Hoteleria y turismo </p>
+										<ul>Promotor turístic</ul>
+										<ul>Organitzador d’esdeveniments</ul>
+										<ul>Agent de viatges</ul>
+								</td>
+								<td>
+									<p> Informatica y comunicaciones </p>
+										<ul>Programador en Backend</ul>
+										<ul>Programador en FrontEnd</ul>
+										<ul>Tècnica manteniment hardware</ul>
+								</td>
+								<td>
+									<p> Administracion y gestion </p>
+										<ul>Comptable financer</ul>
+										<ul>Gestor de personal</ul>
+										<ul>Gestor logístic</ul>
+								</td>
+							</tr>
+						</table>
+						
+
+							
+
+					</div>
+				</div>
+			</div>
 		</div>
 
 
-		<div class="player" ></div>
+		<div class="boton_actualizar">
+			<input type="button" value="Volver a Jugar" id="actualizar" onclick="location.reload()" />
+		</div>
+
+
+		<div class="player"></div>
 		<div class="key"></div>
 		<div class="goal"></div>
 
 
-</div>
+	</div>
 
 </body>
+
 </html>
