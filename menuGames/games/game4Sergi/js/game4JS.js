@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const A = document.getElementById("A");
   const S = document.getElementById("S");
   const E = document.getElementById("E");
+  const tryAgain = document.getElementById("tryAgain");
   let isGameOver = false; //GameOver variable
   let platformCount = 4; //How many platforms we have when we start a new game
   let platforms = []; //Platform Array
@@ -804,11 +805,11 @@ document.addEventListener("DOMContentLoaded", () => {
     while (grid.firstChild) {
       grid.removeChild(grid.firstChild);
     }
-    //modal.style.display = "block"; //Image to Game Over
     clearInterval(upTimerId);
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
     clearInterval(rightTimerId);
+    tryAgain.style.display = "block";
   }
 
   function EndGame() {
@@ -817,11 +818,11 @@ document.addEventListener("DOMContentLoaded", () => {
       grid.removeChild(grid.firstChild);
     }
     score.innerHTML = score; //CAMBIAR POR UNA PAGINA DONDE SE MUESTRE EL RESULTADO
-    modal.style.display = "block"; //Image to End Over
     clearInterval(upTimerId);
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
     clearInterval(rightTimerId);
+    modal.style.display = "block"; //Image to End Over
   }
 
   function start() {

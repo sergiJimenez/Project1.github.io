@@ -2,7 +2,7 @@
 .background{
   width: 1920px;
   height: 1080px;
-  background-image: url(../media/FINAL_BCKGRND.png);
+  background-image: url(../media/FinalBCKGRND.png);
   position: fixed;
 }
 
@@ -31,7 +31,7 @@
   font-family: "Blocktopia";
 }
 
-.modal{
+.modal {
   display: none;
   width: 1920px;
   height: 1080px;
@@ -41,12 +41,12 @@
   z-index: 1;
   overflow: none;
   background-repeat: no-repeat;
-  background-image: url(../media/FINAL_FRAME.png);
+  background-image: url(../media/FinalFrame.png);
 }
 
-.modal-content{
+.modal-content {
   background-repeat: no-repeat;
-  background-image: url(../media/FINAL_FRAME.png);
+  background-image: url(../media/FinalFrame.png);
   width: 1920px;
   height: 1080px;
 }
@@ -87,6 +87,43 @@
   height: 34px;
   top: 942px;
   left: 1324px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  position: absolute;
+}
+
+#tryAgain {
+  background-repeat: no-repeat;
+  background-image: url(../media/TryAgain.png);
+  width: 1920px;
+  height: 1080px;
+}
+
+.TryAgainOption {
+  display: block;
+  width: 213px;
+  height: 49px;
+  top: 872px;
+  left: 854px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  position: absolute;
+}
+
+.MainMenu {
+  display: block;
+  width: 240px;
+  height: 36px;
+  top: 952px;
+  left: 840px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
