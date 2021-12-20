@@ -155,6 +155,7 @@ body {
 }
 
 #mostrarInfo{
+	
 	font-family: "Blocktopia";
 	box-shadow: 3px 3px 5px grey;
 	width: 37vmin;
@@ -163,7 +164,7 @@ body {
 }
 
 .info{
-	z-index: 1;
+	z-index: 0;
 	position: fixed;
 	left: 90px;
 	top: 550px;
