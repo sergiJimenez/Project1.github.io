@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let isGoingRight = false;
   let leftTimerId;
   let rightTimerId;
-  let minute = 1;
-  let seconds = 00;
+  let minute = 0;
+  let seconds = 15;
   //Variables
   //AIR
   //AIR
@@ -356,7 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let newLetterR = new LetterR(newLetterRBottom);
         letterRs.push(newLetterR);
     }
-    }, 26000); //Miliseconds
+    }, 20000); //Miliseconds
   }
 
   function createLetterA() {
@@ -520,7 +520,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ){
         let letterFToRemove = letterFs[0].visual;
         letterFToRemove.classList.remove("LetterF");
-        letterFs.shift(); //To avoid repeting the letters
+        letterFs.shift(); //Moving the array to avoid repeting the letters
         document.getElementById("F").style.visibility = "visible";
         clearInterval(letterFTimer);
       } else {
@@ -555,7 +555,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ){
         let letterRToRemove = letterRs[0].visual;
         letterRToRemove.classList.remove("LetterR");
-        letterRs.shift(); //To avoid repeting the letters
+        letterRs.shift(); //Moving the array to avoid repeting the letters
         document.getElementById("R").style.visibility = "visible";
         clearInterval(letterRTimer);
       } else {
@@ -590,7 +590,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ){
         let letterAToRemove = letterAs[0].visual;
         letterAToRemove.classList.remove("LetterA");
-        letterAs.shift(); //To avoid repeting the letters
+        letterAs.shift(); //Moving the array to avoid repeting the letters
         document.getElementById("A").style.visibility = "visible";
         clearInterval(letterATimer);
       } else {
@@ -625,7 +625,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ){
         let letterSToRemove = letterSs[0].visual;
         letterSToRemove.classList.remove("LetterS");
-        letterSs.shift(); //To avoid repeting the letters
+        letterSs.shift(); //Moving the array to avoid repeting the letters
         document.getElementById("S").style.visibility = "visible";
         clearInterval(letterSTimer);
       } else {
@@ -660,8 +660,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ){
         let letterEToRemove = letterEs[0].visual;
         letterEToRemove.classList.remove("LetterE");
-        letterEs.shift(); //To avoid repeting the letters
-        document.getElementById("e").style.visibility = "visible";
+        letterEs.shift(); //Moving the array to avoid repeting the letters
+        document.getElementById("E").style.visibility = "visible";
         clearInterval(letterETimer);
       } else {
         document.getElementById("E").style.visibility = "hidden";
@@ -853,7 +853,7 @@ document.addEventListener("DOMContentLoaded", () => {
       createCoin();
       createRedGem();
       createLetterF(); //10000
-      createLetterR(); //26000
+      createLetterR(); //20000
       createLetterA(); //30000
       createLetterS(); //45000
       createLetterE(); //50000
