@@ -84,7 +84,7 @@ $users = selectUsers();
                                                 <?php echo '
                                                     <form action="/Project1.github.io/php_controllers/userController.php" method="post">
                                                             <input type="hidden" name="valorUsuario" value=' . $user['id'] . '>
-                                                        <button type="submit" class="btn btn-outline-primary" name="editar">
+                                                        <button type="submit" class="btn btn-outline-primary" name="edit">
                                                             <i class="fas fa-edit"></i>
                                                         </button>
                                                     </form>

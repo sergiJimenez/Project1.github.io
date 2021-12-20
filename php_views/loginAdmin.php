@@ -1,30 +1,4 @@
-<?php
-/*require("database.php");
-$error = "";
-session_start();
-if (isset($_POST["submit"])) {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $sql = "SELECT * FROM usuarios WHERE Mail_Usuario='$username' AND Contrasenya_Usuario='$password'";
-    $res = mysqli_query($con, $sql);
-    $count = mysqli_num_rows($res);
-    if ($count > 0) {
-        $row = mysqli_fetch_assoc($res);
-        $_SESSION["ROLE"] = $row["ROLE"];
-        $_SESSION["IS_LOGIN"] = "yes";
-        if ($row["role"] == 1) {
-            header("location:../index.php");
-            die();
-        }
-        if ($row["role"] == 0) {
-            header("location:news.php");
-            die();
-        }
-    } else {
-        $error = "Unvalid credentials. Please, enter the correct login details.";
-    }
-}*/
-?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -49,31 +23,32 @@ if (isset($_POST["submit"])) {
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
                                     <h3 class="text-center font-weight-light my-4">
-                                        Admin Login
+                                        Log in de administrador
                                     </h3>
                                 </div>
                                 <div class="card-body">
-                                    <form action="" method="post">
-                                        <div class="form-group">
-                                            <label class="small mb-1" for="inputEmailAddress">
-                                                Username
-                                            </label>
-                                            <input name="username" class="form-control" id="inputEmailAddress" type="username" placeholder="Enter username" autofocus /><br>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="small mb-1" for="inputPassword">
-                                                Password
-                                            </label>
-                                            <input name="password" class="form-control" id="inputPassword" type="password" placeholder="Enter password" /><br>
-                                        </div>
+                                    <form action="/Project1.github.io/php_controllers/userController.php" method="post">
+                                        <!--Mail del usuario-->
+                                            <div class="form-group row" style="margin-top:5px">
+                                                <label for="mailUsuario" class="small mb-1">Email</label> <br>
+                                                    <div class="col-sm-12">
+                                                        <input type="text" class="form-control" value="<?php if (isset($usuario)) { echo $usuario['Mail_Usuario'];} ?>" name="mailUsuario" placeholder="Email" id="mailUsuario">
+                                                    </div>
+                                            </div>
+                                            <br>
+                                            <!--Mail del usuario-->
+                                            <!--Password-->
+                                            <div class="form-row">
+                                                <label class="small mb-1" for="passwordUsuario">Contraseña</label>
+                                                    <input class="form-control" id="passwordUsuario" type="password" name="passwordUsuario" placeholder="Contraseña" />
+                                            </div>
+                                            <br>
+                                            <!--Password-->
                                         <div class="form-group text-center justify-content-between mt-4 mb-0">
-                                            <a class="btn btn-dark" type="submit" name="submit" value="Enter" href="/Project1.github.io/homeAdmin.php">
-                                                Enter
-                                            </a>
+                                            <button class="btn btn-dark" type="submit" class="btn btn-outline-primary" name="edit">
+                                                Log in
+                                            </button>
                                         </div>
-                                        <?php
-                                        //echo $error 
-                                        ?>
                                     </form>
                                 </div>
                             </div>

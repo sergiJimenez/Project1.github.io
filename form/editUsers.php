@@ -5,6 +5,11 @@ if (isset($_SESSION["usuario"])) {
     unset($_SESSION["usuario"]);
 }
 
+if (isset($_SESSION["id"])) {
+    $id = $_SESSION["id"];
+   // unset($_SESSION["id"]);
+}
+
 if (isset($_SESSION["error"])) {
     $error = $_SESSION["error"];
     unset($_SESSION["error"]);
@@ -47,6 +52,7 @@ $ciclos = selectCiclos();
                                     <h3 class="text-center font-weight-light my-4">Únete</h3>
                                 </div>
                                 <div class="card-body">
+                                    <?php var_dump($id); ?>
                                     <form action="../php_controllers/userController.php" method="POST">
                                         <div class="form-row">
 
@@ -112,7 +118,7 @@ $ciclos = selectCiclos();
                                             }?>
                                         </div>
                                         <div class="form-group text-center justify-content-between mt-4 mb-0">
-                                            <button class="btn btn-dark" type="submit" name="insert" value="Enter">
+                                            <button class="btn btn-dark" type="submit" name="edit" value="Enter">
                                                 Crear una cuenta
                                             </button>
                                         </div>
