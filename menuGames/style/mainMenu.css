@@ -1,16 +1,16 @@
 body {
     height: 1080px;
     width: 1920px;
-    background-image: url("../media/Main_Menu.png");
+    background-image: url("../media/Finished/Main_Menu.png");
     position: fixed;
     background-repeat: no-repeat;
 }
 .Games {
     display: block;
-    width: 144px;
-    height: 34px;
-    top: 406px;
-    left: 880px;
+    width: 156px;
+    height: 46px;
+    top: 407px;
+    left: 874px;
     background-color: transparent;
     background-repeat: no-repeat;
     border: none;
@@ -19,26 +19,12 @@ body {
     outline: none;
     position: absolute;
 }
-.Rankings {
+.Control {
     display: block;
-    width: 171px;
-    height: 49px;
-    top: 485px;
-    left: 866px;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-    position: absolute;
-}
-.Options {
-    display: block;
-    width: 171px;
-    height: 50px;
-    top: 572px;
-    left: 866px;
+    width: 227px;
+    height: 33px;
+    top: 499px;
+    left: 838px;
     background-color: transparent;
     background-repeat: no-repeat;
     border: none;
@@ -49,10 +35,10 @@ body {
 }
 .Exit {
     display: block;
-    width: 90px;
+    width: 106px;
     height: 36px;
-    top: 888px;
-    left: 907px;
+    top: 887px;
+    left: 899px;
     background-color: transparent;
     background-repeat: no-repeat;
     border: none;

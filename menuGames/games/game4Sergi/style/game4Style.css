@@ -49,7 +49,6 @@
   height: 1080px;
   left: 0px; /*IMPORTANT, 'cause it fixed in the middle*/
   position: fixed;
-  display: none;
   top: 0em;
   overflow: none;
   background-repeat: no-repeat;

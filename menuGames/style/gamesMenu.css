@@ -1,7 +1,7 @@
 body {
     height: 1080px;
     width: 1920px;
-    background-image: url("../media/Games.png");
+    background-image: url("../media/Finished/Games.png");
     position: fixed;
     background-repeat: no-repeat;
 }
@@ -63,10 +63,10 @@ body {
 }
 .Back {
     display: block;
-    width: 103px;
-    height: 33px;
-    top: 891px;
-    left: 900px;
+    width: 130px;
+    height: 40px;
+    top: 884px;
+    left: 893px;
     background-color: transparent;
     background-repeat: no-repeat;
     border: none;

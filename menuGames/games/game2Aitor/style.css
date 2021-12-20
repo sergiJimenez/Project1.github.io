@@ -8,37 +8,39 @@
   width: 1920px;
   position: fixed;
   background-repeat: no-repeat;
-  background-image: url(media/Game2Aitor_POSSIBLEDEFINITIVE.png);
+  background-image: url(media/Game2Aitor.png);
 }
 
 .infoFull {
+  display: none;
   height: 1080px;
   width: 1920px;
   position: fixed;
-  display: none;
   top: 0em;
-  z-index: 300;
+  /* z-index: 300; */
+  overflow: none;
   background-repeat: no-repeat;
-  background-image: url(media/fullGame.png);
+  background-image: url(media/Full.png);
 }
 
 .infoHalf {
+  display: none;
   height: 1080px;
   width: 1920px;
   position: fixed;
   top: 0em;
-  z-index: 300;
-  display: none;
+  /* z-index: 300; */
+  overflow: none;
   background-repeat: no-repeat;
-  background-image: url(media/halfGame.png);
+  background-image: url(media/Half.png);
 }
 
-.games {
+.Games {
   display: block;
-  width: 143px;
-  height: 34px;
-  top: 942px;
-  left: 496px;
+  width: 156px;
+  height: 46px;
+  top: 955px;
+  left: 473px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -48,12 +50,12 @@
   position: absolute;
 }
 
-.mainMenu {
+.MainMenu {
   display: block;
-  width: 240px;
-  height: 36px;
-  top: 940px;
-  left: 849px;
+  width: 336px;
+  height: 53px;
+  top: 948px;
+  left: 792px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -63,12 +65,12 @@
   position: absolute;
 }
 
-.next {
+.Next {
   display: block;
-  width: 103px;
-  height: 34px;
-  top: 942px;
-  left: 1321px;
+  width: 210px;
+  height: 49px;
+  top: 952px;
+  left: 1206px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -338,8 +340,12 @@
 }
 
 #cuentAtras {
-  font-size:5em;
-  margin-left: 40px;
-  margin-top: 40px;
-  color: #fff;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  outline: none;
+  top: 969px;
+  left: 1692px;
+  color: white;
+  font-size: 56px;
 }
