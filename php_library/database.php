@@ -41,8 +41,24 @@ function selectUsers()
     return $resultado;
 }
 
-function selectUsersId(){
+function selectUsersId($mail){
+    try {
+        $conexion = openBd();
 
+        $sentenciaText = "SELECT `usuarios`.`Rol_Administrador` FROM `usuarios` WHERE `usuarios`.`Mail_Usuario` = '$mail'";
+
+        $sentencia = $conexion->prepare($sentenciaText);
+
+        $sentencia->execute();
+
+        $resultado = $sentencia->fetchAll();
+
+        $conexion = closeBd();
+
+    return $resultado;
+    } catch (PDOException $e) {
+        $_SESSION['error'] = "Ha habido un error con " . $e->getMessage();
+    }
 }
 
 function selectMail($mail){
@@ -149,6 +165,24 @@ function borrarUsuario($id)
     } catch (PDOException $e) {
         $_SESSION['error'] = $e->getCode() . ' - ' . $e->getMessage();
     }
+}
+
+function cargarDatos($id){
+    
+    $conexion = openBd();
+
+    $valor = $_POST['valorUsuario'];
+
+    $sentenciaText = "SELECT * FROM `daw2b02`.`usuarios` WHERE `usuarios`.`id` = $id";
+
+    $sentencia = $conexion->prepare($sentenciaText);
+
+
+    $sentencia->execute();
+
+    $resultado = $sentencia->fetchAll();
+    
+    return $resultado;
 }
 
 function editarUsuario($id){
