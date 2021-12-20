@@ -114,6 +114,21 @@
   height: 1080px;
 }
 
+.TryAgainGames {
+  display: block;
+  width: 213px;
+  height: 49px;
+  top: 800px;
+  left: 600px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  position: absolute;
+}
+
 .TryAgainOption {
   display: block;
   width: 213px;
