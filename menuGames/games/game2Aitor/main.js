@@ -15,12 +15,12 @@
     let araña5 = document.getElementById("araña5");
     let array_collisiones = document.querySelectorAll("div[class^='colision']");
 
-    let velocidad = 7;
+    let velocidad = 6;
     let mTop = 0;
     let mLeft = 400;
     player.style.left = "400px";
     player.style.bottom = "-875px";
-    let segundoInicio = 30;
+    let segundoInicio = 100;
     let score = 0;
     let numLlaves = 0;
     let infoFull = document.querySelector(".infoFull");
@@ -46,7 +46,7 @@
     actualizar();
 
     function mostrarInfo (){
-      if (segundoInicio > 0 && numLlaves == 5 && score >=70){
+      if ((segundoInicio > 0 && numLlaves == 5) || (numLlaves == 5 && score >=70)){
         infoFull.style.display = "block";
       } else if ((segundoInicio == 0 && numLlaves < 5) || ( segundoInicio == 0 && score < 70)) {
         infoHalf.style.display = "block";
