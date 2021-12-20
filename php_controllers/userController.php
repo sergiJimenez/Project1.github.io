@@ -83,7 +83,7 @@ if (isset($_POST["editar"])) {
         $usuario = cargarDatos(
             $id
         );
-
+        
         $_SESSION['usuario'] = $usuario[0];
         header("Location: ../form/editUsers.php");
         exit();
