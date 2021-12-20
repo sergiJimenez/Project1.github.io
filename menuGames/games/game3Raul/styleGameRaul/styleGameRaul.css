@@ -1,3 +1,8 @@
+@font-face {   
+  font-family: "Blocktopia";
+  src: url(../../../../media/Games/imagesGameRaul/Blocktopia.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +39,7 @@ body {
 
 .background {
   margin: auto;
-  background-image: url(../../../../media/Games/imagesGameRaul/backgroundGameRaul.png);
+  /*Te comento la linea por si no quieres eliminarla, aunque no tenga que estar aquí, es tú codigo y me parece demasiado invasivo eliminartela.*/ /*==========================>*//* background-image: url(../../../../media/Games/imagesGameRaul/backgroundGameRaul.png); */
   background-size: cover;
   background-repeat: no-repeat;
   height: 700px;
@@ -109,9 +114,14 @@ img {
 
 .timer {
   position: absolute;
+  display: block;
+  overflow: hidden;
+  outline: none;
+  top: 974px;
+  left: 1672px;
   color: white;
-  font-size: 50px;
-  z-index: 2;
+  font-size: 51px;
+  font-family: "Blocktopia";
 }
 
 .centrar {

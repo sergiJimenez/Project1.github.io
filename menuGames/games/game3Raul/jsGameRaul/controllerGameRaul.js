@@ -133,8 +133,7 @@ function timedCount() {
 
     let formattedMinute = ("0" + minute).slice(-2);
     let formattedSeconds = ("0" + seconds).slice(-2);
-    document.getElementById("timer").innerHTML =
-        "TEMPS: " + formattedMinute + ":" + formattedSeconds;
+    document.getElementById("timer").innerHTML = formattedMinute + ":" + formattedSeconds;
     if ((minute == 0 && seconds == 0) ||  resultado == 6) {
         gameOver();      
     }
