@@ -42,20 +42,23 @@ function selectUsers()
 }
 
 function selectMail($mail){
+    try {
+        $conexion = openBd();
 
-    $conexion = openBd();
+        $sentenciaText = "SELECT * FROM `usuarios` WHERE `usuarios`.`Mail_Usuario` = '$mail'";
 
-    $sentenciaText = "SELECT * FROM `usuarios` WHERE `usuarios`.`Mail_Usuario` = $mail";
+        $sentencia = $conexion->prepare($sentenciaText);
 
-    $sentencia = $conexion->prepare($sentenciaText);
+        $sentencia->execute();
 
-    $sentencia->execute();
+        $resultado = $sentencia->fetchAll();
 
-    $resultado = $sentencia->fetchAll();
-
-    $conexion = closeBd();
+        $conexion = closeBd();
 
     return $resultado;
+    } catch (PDOException $e) {
+        $_SESSION['error'] = "Ha habido un error con " . $e->getMessage();
+    }
 }
 
 function selectCiclos()
@@ -73,9 +76,9 @@ function selectCiclos()
 
         $conexion = closeBd();
 
-        return $resultado;
+    return $resultado;
     } catch (PDOException $e) {
-        $_SESSION['error'] = "Ha habido un error con " + $e->getMessage();
+        $_SESSION['error'] = "Ha habido un error con ". $e->getMessage();
     }
 }
 
@@ -145,5 +148,59 @@ function borrarUsuario($id)
 }
 
 function editarUsuario($id){
-    
+    try {
+        $conexion = openBd();
+
+        $conexion->beginTransaction();
+
+        $sentenciaText = "UPDATE `daw2b02`.`usuarios` (Mail_Usuario, Nombre_Usuario, Contrasenya_Usuario) SET (:email, :nombre, :contrasenya) WHERE `usuarios`.`id` = $id";
+
+        $sentencia = $conexion->prepare($sentenciaText);
+
+        $sentencia->bindParam(":email", $email);
+        $sentencia->bindParam(":nombre", $nombre);
+        $sentencia->bindParam(":contrasenya", $contrasenya);
+
+        $sentencia->execute();
+
+        $id_usuario = $conexion->lastInsertId();
+
+        $sentenciaText = "UPDATE `daw2b02`.`usuarios_ciclos` (id_Ciclo, id_Usuario) SET (:id_Ciclo, :id_Usuario)";
+
+        $sentencia = $conexion->prepare($sentenciaText);
+
+        $sentencia->bindParam(":id_Ciclo", $ciclo);
+        $sentencia->bindParam(":id_Usuario", $id_usuario);
+
+        $sentencia->execute();
+
+        $conexion->commit();
+
+        $conexion = closeBd();
+    } catch (PDOException $e) {
+        $_SESSION['error'] = $e->getCode() . ' - ' . $e->getMessage();
+    }
+}
+
+function loginUsuario($mail, $password){
+    try {
+        $conexion = openBd();
+
+        $sentenciaText = "SELECT * FROM `usuarios` WHERE `usuarios`.`Mail_Usuario` = (:email) AND `usuarios`.`Mail_Usuario` = (:contrasenya)";
+
+        $sentencia = $conexion->prepare($sentenciaText);
+
+        $sentencia->bindParam(":email", $mail);
+        $sentencia->bindParam(":contrasenya", $password);
+
+        $sentencia->execute();
+
+        $resultado = $sentencia->fetchAll();
+
+        $conexion = closeBd();
+
+    return $resultado;
+    } catch (PDOException $e) {
+        $_SESSION['error'] = "Ha habido un error con " . $e->getMessage();
+    }
 }

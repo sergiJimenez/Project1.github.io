@@ -25,7 +25,7 @@
                                     </h3>
                                 </div>
                                 <div class="card-body">
-                                    <form action="" method="post">
+                                    <form action="../php_controllers/userController.php" method="post">
                                         <div class="form-group">
                                             <label class="small mb-1" for="inputEmailAddress">
                                                 Username
@@ -39,9 +39,15 @@
                                             <input name="password" class="form-control" id="inputPassword" type="password" placeholder="Enter password" /><br>
                                         </div>
                                         <div class="form-group text-center justify-content-between mt-4 mb-0">
-                                            <a class="btn btn-dark" type="submit" name="submit" value="Enter" href="/Project1.github.io/menuGames/menus/gameIntro.html">
-                                                Enter
-                                            </a>
+<<<<<<< HEAD
+                                            <button class="btn btn-dark" type="submit" class="btn btn-outline-primary" name="logUser">
+                                                Log in
+                                            </button>
+=======
+                                            <a class="btn btn-dark" type="submit" name="submit" value="Enter" href="/Project1.github.io/menuGames/menus/gameIntro.html">Enter</a>
+                                            <button onclick="openFullscreen();">Open</button>
+                                            <button onclick="closeFullscreen();">Close</button>
+>>>>>>> d520ae1aa9601f605742705cd7b3005bb8cf2531
                                         </div>
                                     </form>
                                 </div>
@@ -59,5 +65,6 @@
             </main>
         </div>
     </div>
+    <script src="../functionalJS/fullscreen.js"></script>
 </body>
 </html>
