@@ -41,6 +41,10 @@ function selectUsers()
     return $resultado;
 }
 
+function selectUsersId(){
+
+}
+
 function selectMail($mail){
     try {
         $conexion = openBd();
@@ -186,7 +190,7 @@ function loginUsuario($mail, $password){
     try {
         $conexion = openBd();
 
-        $sentenciaText = "SELECT * FROM `usuarios` WHERE `usuarios`.`Mail_Usuario` = (:email) AND `usuarios`.`Mail_Usuario` = (:contrasenya)";
+        $sentenciaText = "SELECT * FROM `usuarios` WHERE `usuarios`.`Mail_Usuario` = :email AND `usuarios`.`Contrasenya_Usuario` = :contrasenya";
 
         $sentencia = $conexion->prepare($sentenciaText);
 
