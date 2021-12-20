@@ -43,22 +43,22 @@ function selectUsers()
 
 function selectMail($mail){
     try {
-    $conexion = openBd();
+        $conexion = openBd();
 
-    $sentenciaText = "SELECT * FROM `usuarios` WHERE `usuarios`.`Mail_Usuario` = $mail";
+        $sentenciaText = "SELECT * FROM `usuarios` WHERE `usuarios`.`Mail_Usuario` = '$mail'";
 
-    $sentencia = $conexion->prepare($sentenciaText);
+        $sentencia = $conexion->prepare($sentenciaText);
 
-    $sentencia->execute();
+        $sentencia->execute();
 
-    $resultado = $sentencia->fetchAll();
+        $resultado = $sentencia->fetchAll();
 
-    $conexion = closeBd();
+        $conexion = closeBd();
 
     return $resultado;
-} catch (PDOException $e) {
-    $_SESSION['error'] = "Ha habido un error con " + $e->getMessage();
-}
+    } catch (PDOException $e) {
+        $_SESSION['error'] = "Ha habido un error con " . $e->getMessage();
+    }
 }
 
 function selectCiclos()
@@ -76,9 +76,9 @@ function selectCiclos()
 
         $conexion = closeBd();
 
-        return $resultado;
+    return $resultado;
     } catch (PDOException $e) {
-        $_SESSION['error'] = "Ha habido un error con " + $e->getMessage();
+        $_SESSION['error'] = "Ha habido un error con ". $e->getMessage();
     }
 }
 
@@ -179,5 +179,28 @@ function editarUsuario($id){
         $conexion = closeBd();
     } catch (PDOException $e) {
         $_SESSION['error'] = $e->getCode() . ' - ' . $e->getMessage();
+    }
+}
+
+function loginUsuario($mail, $password){
+    try {
+        $conexion = openBd();
+
+        $sentenciaText = "SELECT * FROM `usuarios` WHERE `usuarios`.`Mail_Usuario` = (:email) AND `usuarios`.`Mail_Usuario` = (:contrasenya)";
+
+        $sentencia = $conexion->prepare($sentenciaText);
+
+        $sentencia->bindParam(":email", $mail);
+        $sentencia->bindParam(":contrasenya", $password);
+
+        $sentencia->execute();
+
+        $resultado = $sentencia->fetchAll();
+
+        $conexion = closeBd();
+
+    return $resultado;
+    } catch (PDOException $e) {
+        $_SESSION['error'] = "Ha habido un error con " . $e->getMessage();
     }
 }

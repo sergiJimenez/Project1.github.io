@@ -29,6 +29,7 @@ if (isset($_POST['insert'])) {
 
     if ($passUser == $passConfUser && strlen($passUser) > 0) {
         $mailUsuario = selectMail($mailUser);
+        var_dump($mailUsuario);
             if (count($mailUsuario) != 0) {
                 $_SESSION["error"] = "Porfavor indique un mail distinto, ese ya esta en nuestra base de datos";
                 header("Location: ../form/registerUsers.php");
@@ -124,6 +125,29 @@ if (isset($_POST["logAdmin"])) {
     } else {
         $_SESSION["error"] = "Error al editar el usuario";
         header("Location: ../php_views/userInfoAdmin.php");
+        exit();
+    }
+}
+
+// LOGIN USER
+if (isset($_POST["logUser"])) {
+
+    //Mail usuario
+    $mailUser = isset($_POST['mailUsuario']) ? $_POST['mailUsuario'] : "";
+
+    //Contraseña usuario 
+    $passUser = isset($_POST['passwordUsuario']) ? $_POST['passwordUsuario'] : "";
+    
+    if (isset($mailUser) && isset($passUser)) {
+        loginUsuario(
+            $mailUser,
+            $passUser
+        );
+        header("Location: ../homeAdmin.php");
+        exit();
+    } else {
+        $_SESSION["error"] = "Error al editar el usuario";
+        header("Location: ../form/loginUsers.php");
         exit();
     }
 }
