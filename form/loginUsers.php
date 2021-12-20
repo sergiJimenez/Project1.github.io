@@ -1,3 +1,27 @@
+<?php
+
+if (isset($_SESSION["usuario"])) {
+    $usuario = $_SESSION["usuario"];
+    unset($_SESSION["usuario"]);
+}
+
+if (isset($_SESSION["error"])) {
+    $error = $_SESSION["error"];
+    unset($_SESSION["error"]);
+}
+else{
+    $error = "";
+}
+
+if (isset($_SESSION["correcto"])) {
+    unset($_SESSION["correcto"]);
+}
+
+require_once('./../php_library/database.php');
+$ciclos = selectCiclos();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,6 +36,7 @@
 </head>
 
 <body class="bg-dark">
+    <?php include "../php_partials/mensajes.php"; ?>
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
@@ -27,16 +52,16 @@
                                 <div class="card-body">
                                     <form action="../php_controllers/userController.php" method="post">
                                         <div class="form-group">
-                                            <label class="small mb-1" for="inputEmailAddress">
-                                                Username
+                                            <label class="small mb-1" for="mailUsuario">
+                                                Email
                                             </label>
-                                            <input name="username" class="form-control" id="inputEmailAddress" type="username" placeholder="Enter username" autofocus /><br>
+                                            <input name="mailUsuario" class="form-control" id="mailUsuario" type="username" placeholder="Enter your email" autofocus /><br>
                                         </div>
                                         <div class="form-group">
-                                            <label class="small mb-1" for="inputPassword">
+                                            <label class="small mb-1" for="passwordUsuario">
                                                 Password
                                             </label>
-                                            <input name="password" class="form-control" id="inputPassword" type="password" placeholder="Enter password" /><br>
+                                            <input name="passwordUsuario" class="form-control" id="passwordUsuario" type="password" placeholder="Enter password" /><br>
                                         </div>
                                         <div class="form-group text-center justify-content-between mt-4 mb-0">
 <<<<<<< HEAD
