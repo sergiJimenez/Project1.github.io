@@ -97,7 +97,7 @@ if (isset($_POST["editar"])) {
 // LOGIN ADMIN
 if (isset($_POST["logAdmin"])) {
 
-    //Mail usuario
+    //Mail usuario 
     $mailUser = isset($_POST['mailUsuario']) ? $_POST['mailUsuario'] : "";
 
     //Contraseña usuario 
