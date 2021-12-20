@@ -185,25 +185,27 @@ function cargarDatos($id){
     return $resultado;
 }
 
-function editarUsuario($id){
+function editarUsuario($id, $nombre, $email, $ciclo, $contrasenya, $adminis){
     try {
         $conexion = openBd();
 
         $conexion->beginTransaction();
 
-        $sentenciaText = "UPDATE `daw2b02`.`usuarios` (Mail_Usuario, Nombre_Usuario, Contrasenya_Usuario) SET (:email, :nombre, :contrasenya) WHERE `usuarios`.`id` = $id";
+        $sentenciaText = "UPDATE `usuarios` SET Mail_Usuario = :email, Nombre_Usuario = :nombre, Contrasenya_Usuario = :contrasenya, Rol_Administrador = :adminis WHERE `usuarios`.`id` = :id";
 
         $sentencia = $conexion->prepare($sentenciaText);
 
+        $sentencia->bindParam(":id", $id);
         $sentencia->bindParam(":email", $email);
         $sentencia->bindParam(":nombre", $nombre);
         $sentencia->bindParam(":contrasenya", $contrasenya);
+        $sentencia->bindParam(":adminis", $adminis);
 
         $sentencia->execute();
 
         $id_usuario = $conexion->lastInsertId();
 
-        $sentenciaText = "UPDATE `daw2b02`.`usuarios_ciclos` (id_Ciclo, id_Usuario) SET (:id_Ciclo, :id_Usuario)";
+        $sentenciaText = "UPDATE `usuarios_ciclos` SET id_Ciclo = :id_Ciclo WHERE `usuarios_ciclos`.`id` = :id_Usuario";
 
         $sentencia = $conexion->prepare($sentenciaText);
 
