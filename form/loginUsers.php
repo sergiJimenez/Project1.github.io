@@ -39,9 +39,9 @@
                                             <input name="password" class="form-control" id="inputPassword" type="password" placeholder="Enter password" /><br>
                                         </div>
                                         <div class="form-group text-center justify-content-between mt-4 mb-0">
-                                            <a class="btn btn-dark" type="submit" name="submit" value="Enter" href="/Project1.github.io/menuGames/menus/gameIntro.html">
-                                                Enter
-                                            </a>
+                                            <a class="btn btn-dark" type="submit" name="submit" value="Enter" href="/Project1.github.io/menuGames/menus/gameIntro.html">Enter</a>
+                                            <button onclick="openFullscreen();">Open</button>
+                                            <button onclick="closeFullscreen();">Close</button>
                                         </div>
                                     </form>
                                 </div>
@@ -59,5 +59,6 @@
             </main>
         </div>
     </div>
+    <script src="../functionalJS/fullscreen.js"></script>
 </body>
 </html>
