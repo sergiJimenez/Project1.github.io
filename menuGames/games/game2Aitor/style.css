@@ -17,7 +17,7 @@
   width: 1920px;
   position: fixed;
   top: 0em;
-  /* z-index: 300; */
+  left: 0px; /*Align the picture in the middle. DON'T REMOVE*/
   overflow: none;
   background-repeat: no-repeat;
   background-image: url(media/Full.png);
@@ -29,7 +29,7 @@
   width: 1920px;
   position: fixed;
   top: 0em;
-  /* z-index: 300; */
+  left: 0px; /*Align the picture in the middle. DON'T REMOVE*/
   overflow: none;
   background-repeat: no-repeat;
   background-image: url(media/Half.png);

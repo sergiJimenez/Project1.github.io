@@ -20,7 +20,7 @@
     let mLeft = 400;
     player.style.left = "400px";
     player.style.bottom = "-875px";
-    let segundoInicio = 100;
+    let segundoInicio = 1;
     let score = 0;
     let numLlaves = 0;
     let infoFull = document.querySelector(".infoFull");
