@@ -64,15 +64,9 @@ $ciclos = selectCiclos();
                                             <input name="passwordUsuario" class="form-control" id="passwordUsuario" type="password" placeholder="Enter password" /><br>
                                         </div>
                                         <div class="form-group text-center justify-content-between mt-4 mb-0">
-<<<<<<< HEAD
                                             <button class="btn btn-dark" type="submit" class="btn btn-outline-primary" name="logUser">
                                                 Log in
                                             </button>
-=======
-                                            <a class="btn btn-dark" type="submit" name="submit" value="Enter" href="/Project1.github.io/menuGames/menus/gameIntro.html">Enter</a>
-                                            <button onclick="openFullscreen();">Open</button>
-                                            <button onclick="closeFullscreen();">Close</button>
->>>>>>> d520ae1aa9601f605742705cd7b3005bb8cf2531
                                         </div>
                                     </form>
                                 </div>

@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ((gurmannBottomSpace + 133) <= (coin.bottom + 64))
         ){
           score+=20;
-          console.log(score);
+          showScore();
           let coinToRemove = coins[0].visual;
           coinToRemove.classList.remove("coin");
           coins.shift();
@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ((gurmannBottomSpace + 133) <= (redGem.bottom + 64))
         ){
           score+=50;
-          console.log(score);
+          showScore();
           let redGemToRemove = redGems[0].visual;
           redGemToRemove.classList.remove("redGem");
           redGems.shift();
@@ -507,7 +507,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let letterFToRemove = letterFs[0].visual;
         letterFToRemove.classList.remove("letterF");
         letterFs.shift(); //To avoid repeting the letters
-        F.style.display = "block";
+        //LetterF.style.display = "block";
       }
     });
   }
@@ -539,7 +539,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let letterRToRemove = letterRs[0].visual;
         letterRToRemove.classList.remove("letterR");
         letterRs.shift(); //To avoid repeting the letters
-        R.style.display = "block";
+        //LetterR.style.display = "block";
       }
     });
   }
@@ -571,7 +571,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let letterAToRemove = letterAs[0].visual;
         letterAToRemove.classList.remove("letterA");
         letterAs.shift(); //To avoid repeting the letters
-        A.style.display = "block";
+        //LetterA.style.display = "block";
       }
     });
   }
@@ -603,7 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let letterSToRemove = letterSs[0].visual;
         letterSToRemove.classList.remove("letterS");
         letterSs.shift(); //To avoid repeting the letters
-        S.style.display = "block";
+        //LetterS.style.display = "block";
       }
     });
   }
@@ -635,7 +635,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let letterEToRemove = letterEs[0].visual;
         letterEToRemove.classList.remove("letterE");
         letterEs.shift(); //To avoid repeting the letters
-        E.style.display = "block";
+        //LetterE.style.display = "block";
       }
     });
   }
@@ -689,7 +689,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(downTimerId);
     isJumping = true;
     score+=10; //When Gurmann jumps it will increase the score by one
-    console.log(score);
+    showScore();
     upTimerId = setInterval(function () {
       gurmannBottomSpace += 20; //The speed of our character when it's falling
       gurmann.style.bottom = gurmannBottomSpace + "px";
@@ -790,6 +790,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showScore() {
     document.getElementById("scoreShow").innerHTML = score;
+    score.innerHTML = scoreShow;
   }
 
   function GameOver() {
@@ -819,7 +820,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function start() {
     if (!isGameOver) {
       timedCount();
-      showScore();
       createPlatforms();
       createCoin();
       createRedGem();

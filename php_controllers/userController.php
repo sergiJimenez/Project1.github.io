@@ -58,6 +58,7 @@ if (isset($_POST['insert'])) {
         header("Location: ../form/registerUsers.php");
         exit();
     }
+}
 
 // BORRAR USUARIO
 if (isset($_POST["borrar"])) {
