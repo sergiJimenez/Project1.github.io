@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //Variables
   const grid = document.querySelector(".grid");
   const gurmann = document.createElement("div");
-  const modal = document.getElementById("myModal");
+  const modal = document.getElementById("FinalDisplay");
   const tryAgain = document.getElementById("tryAgain");
   let isGameOver = false; //GameOver variable
   let platformCount = 4; //How many platforms we have when we start a new game
@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let isGoingRight = false;
   let leftTimerId;
   let rightTimerId;
-  let minute = 0;
-  let seconds = 15;
+  let minute = 1;
+  let seconds = 00;
   //Variables
   //AIR
   //AIR
@@ -523,8 +523,6 @@ document.addEventListener("DOMContentLoaded", () => {
         letterFs.shift(); //Moving the array to avoid repeting the letters
         document.getElementById("F").style.visibility = "visible";
         clearInterval(letterFTimer);
-      } else {
-        document.getElementById("F").style.visibility = "hidden";
       }
     });
   }
@@ -558,8 +556,6 @@ document.addEventListener("DOMContentLoaded", () => {
         letterRs.shift(); //Moving the array to avoid repeting the letters
         document.getElementById("R").style.visibility = "visible";
         clearInterval(letterRTimer);
-      } else {
-        document.getElementById("R").style.visibility = "hidden";
       }
     });
   }
@@ -593,8 +589,6 @@ document.addEventListener("DOMContentLoaded", () => {
         letterAs.shift(); //Moving the array to avoid repeting the letters
         document.getElementById("A").style.visibility = "visible";
         clearInterval(letterATimer);
-      } else {
-        document.getElementById("A").style.visibility = "hidden";
       }
     });
   }
@@ -628,8 +622,6 @@ document.addEventListener("DOMContentLoaded", () => {
         letterSs.shift(); //Moving the array to avoid repeting the letters
         document.getElementById("S").style.visibility = "visible";
         clearInterval(letterSTimer);
-      } else {
-        document.getElementById("S").style.visibility = "hidden";
       }
     });
   }
@@ -663,9 +655,9 @@ document.addEventListener("DOMContentLoaded", () => {
         letterEs.shift(); //Moving the array to avoid repeting the letters
         document.getElementById("E").style.visibility = "visible";
         clearInterval(letterETimer);
-      } else {
+      } /*else {
         document.getElementById("E").style.visibility = "hidden";
-      }
+      }*/
     });
   }
   //TakeIt
@@ -843,7 +835,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
     clearInterval(rightTimerId);
-    modal.style.display = "block"; //Image to End Over
+    modal.style.display = "inline"; //Image to End Over
   }
 
   function start() {
