@@ -13,19 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
   let redGems = [];
   let letterFs = [];
   let letterFCount = 1;
-  //let letterFTimer;
+  let letterFTimer;
   let letterRs = [];
   let letterRCount = 1;
-  //let letterRTimer;
+  let letterRTimer;
   let letterAs = [];
   let letterACount = 1;
-  //let letterATimer;
+  let letterATimer;
   let letterSs = [];
   let letterSCount = 1;
-  //let letterSTimer;
+  let letterSTimer;
   let letterEs = [];
   let letterECount = 1;
-  //let letterETimer;
+  let letterETimer;
   let score = 0; //Initial score
   let gurmannLeftSpace = 50;
   let startPoint = 150;
@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let isGoingRight = false;
   let leftTimerId;
   let rightTimerId;
-  let minute = 0;
-  let seconds = 01;
+  let minute = 1;
+  let seconds = 00;
   //Variables
   //AIR
   //AIR
@@ -338,48 +338,58 @@ document.addEventListener("DOMContentLoaded", () => {
   //AIR
   //Create
   function createLetterF() {
-    for (let i = 0; i < letterFCount; i++) {
-      let letterFGap = 1000 / letterFCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
-      let newLetterFBottom = 250 + i * letterFGap; //It'll increase where the new platform bottom distance will be create
-      let newLetterF = new LetterF(newLetterFBottom);
-      letterFs.push(newLetterF);
-    }
+    letterFTimer = setInterval(function () {
+      for (let i = 0; i < letterFCount; i++) {
+        let letterFGap = 1000 / letterFCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
+        let newLetterFBottom = 250 + i * letterFGap; //It'll increase where the new platform bottom distance will be create
+        let newLetterF = new LetterF(newLetterFBottom);
+        letterFs.push(newLetterF);
+      }
+    }, 10000); //Miliseconds
   }
 
   function createLetterR() {
-    for (let i = 0; i < letterRCount; i++) {
-      let letterRGap = 1000 / letterRCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
-      let newLetterRBottom = 250 + i * letterRGap; //It'll increase where the new platform bottom distance will be create
-      let newLetterR = new LetterR(newLetterRBottom);
-      letterRs.push(newLetterR);
+    letterRTimer = setInterval(function () {
+      for (let i = 0; i < letterRCount; i++) {
+        let letterRGap = 1000 / letterRCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
+        let newLetterRBottom = 250 + i * letterRGap; //It'll increase where the new platform bottom distance will be create
+        let newLetterR = new LetterR(newLetterRBottom);
+        letterRs.push(newLetterR);
     }
+    }, 26000); //Miliseconds
   }
 
   function createLetterA() {
+    letterATimer = setInterval(function () {
     for (let i = 0; i < letterACount; i++) {
       let letterAGap = 1000 / letterACount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
       let newLetterABottom = 250 + i * letterAGap; //It'll increase where the new platform bottom distance will be create
       let newLetterA = new LetterA(newLetterABottom);
       letterAs.push(newLetterA);
     }
+    }, 30000);
   }
 
   function createLetterS() {
+    letterSTimer = setInterval(function () {
     for (let i = 0; i < letterSCount; i++) {
       let letterSGap = 1000 / letterSCount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
       let newLetterSBottom = 250 + i * letterSGap; //It'll increase where the new platform bottom distance will be create
       let newLetterS = new LetterS(newLetterSBottom);
       letterSs.push(newLetterS);
     }
+  }, 45000);
   }
 
   function createLetterE() {
+    letterETimer = setInterval(function () {
     for (let i = 0; i < letterECount; i++) {
       let letterEGap = 1000 / letterECount; //Distance between each platform. We choose these number 'cause we want to overcome the grid with to make sure that the distance is enough
       let newLetterEBottom = 250 + i * letterEGap; //It'll increase where the new platform bottom distance will be create
       let newLetterE = new LetterE(newLetterEBottom);
       letterEs.push(newLetterE);
     }
+    }, 50000);
   }
   //Create
   //AIR
@@ -511,16 +521,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let letterFToRemove = letterFs[0].visual;
         letterFToRemove.classList.remove("LetterF");
         letterFs.shift(); //To avoid repeting the letters
-        showFImage();
-        letterFTimer = setInterval(function () {
-          let letterFToRemove = letterFs[0].visual;
-          letterFToRemove.classList.remove("LetterF");
-          letterFs.shift(); //To avoid repeting the letters
-          document.getElementById("F").style.visibility = "visible";
-          clearInterval(letterFTimer);
-        }, 10);
-      } else{
-        hiddenFImage();
+        document.getElementById("F").style.visibility = "visible";
+        clearInterval(letterFTimer);
+      } else {
+        document.getElementById("F").style.visibility = "hidden";
       }
     });
   }
@@ -552,9 +556,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let letterRToRemove = letterRs[0].visual;
         letterRToRemove.classList.remove("LetterR");
         letterRs.shift(); //To avoid repeting the letters
-        showRImage();
+        document.getElementById("R").style.visibility = "visible";
+        clearInterval(letterRTimer);
       } else {
-        hiddenRImage();
+        document.getElementById("R").style.visibility = "hidden";
       }
     });
   }
@@ -586,9 +591,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let letterAToRemove = letterAs[0].visual;
         letterAToRemove.classList.remove("LetterA");
         letterAs.shift(); //To avoid repeting the letters
-        showAImage();
+        document.getElementById("A").style.visibility = "visible";
+        clearInterval(letterATimer);
       } else {
-        hiddenAImage();
+        document.getElementById("A").style.visibility = "hidden";
       }
     });
   }
@@ -620,9 +626,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let letterSToRemove = letterSs[0].visual;
         letterSToRemove.classList.remove("LetterS");
         letterSs.shift(); //To avoid repeting the letters
-        showSImage();
+        document.getElementById("S").style.visibility = "visible";
+        clearInterval(letterSTimer);
       } else {
-        hiddenSImage();
+        document.getElementById("S").style.visibility = "hidden";
       }
     });
   }
@@ -654,70 +661,12 @@ document.addEventListener("DOMContentLoaded", () => {
         let letterEToRemove = letterEs[0].visual;
         letterEToRemove.classList.remove("LetterE");
         letterEs.shift(); //To avoid repeting the letters
-        showEImage();
+        document.getElementById("e").style.visibility = "visible";
+        clearInterval(letterETimer);
       } else {
-        hiddenEImage();
+        document.getElementById("E").style.visibility = "hidden";
       }
     });
-  }
-
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-
-  function showFImage(){
-    let img = document.getElementById("F");
-    img.style.visibility = 'visible';
-  }
-
-  function hiddenFImage(){
-    let img = document.getElementById("F");
-    img.style.visibility = 'hidden';
-  }
-  
-  function showRImage(){
-    let img = document.getElementById("R");
-    img.style.visibility = 'visible';
-  }
-
-  function hiddenRImage(){
-    let img = document.getElementById("R");
-    img.style.visibility = 'hidden';
-  }
-
-  function showAImage(){
-    let img = document.getElementById("A");
-    img.style.visibility = 'visible';
-  }
-
-  function hiddenAImage(){
-    let img = document.getElementById("A");
-    img.style.visibility = 'hidden';
-  }
-
-  function showSImage(){
-    let img = document.getElementById("S");
-    img.style.visibility = 'visible';
-  }
-
-  function hiddenSImage(){
-    let img = document.getElementById("S");
-    img.style.visibility = 'hidden';
-  }
-
-  function showEImage(){
-    let img = document.getElementById("E");
-    img.style.visibility = 'visible';
-  }
-
-  function hiddenEImage(){
-    let img = document.getElementById("E");
-    img.style.visibility = 'hidden';
   }
   //TakeIt
   //AIR
@@ -903,11 +852,11 @@ document.addEventListener("DOMContentLoaded", () => {
       createPlatforms();
       createCoin();
       createRedGem();
-      setInterval(createLetterF, 10000); //10000
-      setInterval(createLetterR, 26000); //26000
-      setInterval(createLetterA, 30000); //30000
-      setInterval(createLetterS, 35000); //35000
-      setInterval(createLetterE, 45000); //45000
+      createLetterF(); //10000
+      createLetterR(); //26000
+      createLetterA(); //30000
+      createLetterS(); //45000
+      createLetterE(); //50000
       setInterval(movePlatforms, 30);
       setInterval(moveCoin, 25);
       setInterval(moveRedGem, 25);

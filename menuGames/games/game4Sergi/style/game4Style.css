@@ -213,24 +213,3 @@
   position: absolute;
   background-repeat: no-repeat;
 }
-
-#F {
-  position: absolute;
-  background-image: url(../media/FRASE/F.png);
-}
-#R {
-  position: absolute;
-  background-image: url(../media/FRASE/R.png);
-}
-#A {
-  position: absolute;
-  background-image: url(../media/FRASE/A.png);
-}
-#S {
-  position: absolute;
-  background-image: url(../media/FRASE/S.png);
-}
-#E {
-  position: absolute;
-  background-image: url(../media/FRASE/E.png);
-}
