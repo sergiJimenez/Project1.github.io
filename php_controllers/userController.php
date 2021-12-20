@@ -138,15 +138,14 @@ if (isset($_POST["logUser"])) {
     //Contraseña usuario 
     $passUser = isset($_POST['passwordUsuario']) ? $_POST['passwordUsuario'] : "";
     
-    if (isset($mailUser) && isset($passUser)) {
-        loginUsuario(
-            $mailUser,
-            $passUser
-        );
+    $login = loginUsuario($mailUser, $passUser);
+
+    if (count($login) != 0) {
+        $_SESSION["idUsuario"] = selectUsers();
         header("Location: ../homeAdmin.php");
         exit();
     } else {
-        $_SESSION["error"] = "Error al editar el usuario";
+        $_SESSION["error"] = "Error al hacer un login";
         header("Location: ../form/loginUsers.php");
         exit();
     }

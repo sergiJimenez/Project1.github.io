@@ -39,7 +39,7 @@ $users = selectUsers();
                         </ol>
                     </div>
                     <div class="col-1">
-                        <button onClick="window.location.reload();"> <i class="fas fa-sync"></i> </button>
+                        <button onClick="window.location.reload();"> <i class="fas fa-sync"></i> Recargar</button>
                     </div>
                 </div>
                 <div class="card mb-4">
