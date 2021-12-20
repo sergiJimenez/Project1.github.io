@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let isGoingRight = false;
   let leftTimerId;
   let rightTimerId;
-  let minute = 1;
-  let seconds = 00;
+  let minute = 0;
+  let seconds = 01;
   //Variables
   //AIR
   //AIR
