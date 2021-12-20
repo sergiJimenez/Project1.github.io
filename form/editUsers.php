@@ -1,13 +1,10 @@
 <?php
 
-if (isset($_SESSION["usuario"])) {
+require_once('./../php_library/database.php');
+
+if (isset($_SESSION['usuario'])) {
     $usuario = $_SESSION["usuario"];
     unset($_SESSION["usuario"]);
-}
-
-if (isset($_SESSION["id"])) {
-    $id = $_SESSION["id"];
-   // unset($_SESSION["id"]);
 }
 
 if (isset($_SESSION["error"])) {
@@ -22,9 +19,7 @@ if (isset($_SESSION["correcto"])) {
     unset($_SESSION["correcto"]);
 }
 
-require_once('./../php_library/database.php');
 $ciclos = selectCiclos();
-
 ?>
 
 <!DOCTYPE html>
@@ -52,10 +47,9 @@ $ciclos = selectCiclos();
                                     <h3 class="text-center font-weight-light my-4">Únete</h3>
                                 </div>
                                 <div class="card-body">
-                                    <?php var_dump($id); ?>
                                     <form action="../php_controllers/userController.php" method="POST">
                                         <div class="form-row">
-
+                                        <input type="hidden" name="valorUsuario" value=' <?php $usuario['id'] ?> '>
                                             <!--Nombre del usuario-->
                                             <div class="form-group row" style="margin-top:5px">
                                                 <label for="nombreUsuario" class="small mb-1">Nombre</label> <br>
@@ -84,8 +78,9 @@ $ciclos = selectCiclos();
                                                     <select class="form-control" name="ciclo" id="cicloUsuario" required>
                                                         <option class="mb-1" disabled>Formative Grade</option>
                                                         <?php foreach ($ciclos as $ciclo) { ?>
-                                                            <option <?php if (isset($usuario)) {
-                                                                        if ($usuario['id_Ciclo'] == $ciclo['id']) {
+                                                            <option <?php
+                                                             if (isset($usuario)) {
+                                                                        if ($usuario['id'] == $ciclo['id_Ciclo']) {
                                                                             echo "selected";
                                                                         }
                                                                     } ?> value=<?php echo $ciclo['id'] ?>> <?php echo $ciclo['Nombre_Ciclos'] ?> </option>
@@ -95,11 +90,21 @@ $ciclos = selectCiclos();
                                             </div>
                                             <br>
                                             <!--Eleccion de ciclos-->
+
+                                             <!--Admin usuario-->
+                                             <div class="form-group row" style="margin-top:5px">
+                                                <label for="mailUsuario" class="small mb-1">Rol administrador</label> <br>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control" value="<?php if (isset($usuario)) { echo $usuario['Rol_Administrador'];} ?>" name="admin" placeholder="Ponga 1 o 0" id="mailUsuario">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <!--Admnin usuario-->
                                           
                                             <!--Password-->
                                             <div class="form-row">
                                                 <label class="small mb-1" for="passwordUsuario">Contraseña</label>
-                                                <input class="form-control" id="passwordUsuario" type="password" name="passwordUsuario" placeholder="Contraseña" />
+                                                <input class="form-control" id="passwordUsuario" value="<?php if (isset($usuario)) { echo $usuario['Contrasenya_Usuario'];} ?>" type="text" name="passwordUsuario" placeholder="Contraseña" />
                                             </div>
                                             <br>
                                             <!--Password-->
@@ -107,7 +112,7 @@ $ciclos = selectCiclos();
                                             <!--Repetir password-->
                                             <div class="form-row">
                                                 <label class="small mb-1" for="confirmarPasswordUsuario">Confirmar contraseña</label>
-                                                <input class="form-control" id="confirmarPasswordUsuario" type="password" name="confirmarPasswordUsuario" placeholder="Confirmar contraseña" />
+                                                <input class="form-control" id="confirmarPasswordUsuario" value="<?php if (isset($usuario)) { echo $usuario['Contrasenya_Usuario'];} ?>" type="text" name="confirmarPasswordUsuario" placeholder="Confirmar contraseña" />
                                             </div>
                                             <br>
                                             <!--Repetir password-->
@@ -118,18 +123,11 @@ $ciclos = selectCiclos();
                                             }?>
                                         </div>
                                         <div class="form-group text-center justify-content-between mt-4 mb-0">
-                                            <button class="btn btn-dark" type="submit" name="edit" value="Enter">
-                                                Crear una cuenta
+                                            <button class="btn btn-dark" type="submit" name="editar" value="Enter">
+                                                Editar 
                                             </button>
                                         </div>
                                     </form>
-                                </div>
-                                <div class="card-footer text-center">
-                                    <div class="small">
-                                        <a href="loginUsers.php">
-                                            Tengo una cuenta
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
                         </div>

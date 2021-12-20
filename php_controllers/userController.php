@@ -76,8 +76,8 @@ if (isset($_POST["borrar"])) {
     }
 }
 
-// EDITAR USUARIO
-if (isset($_POST["editar"])) {
+// MOSTRAR USUARIO EDITAR
+if (isset($_POST["edit"])) {
     $id = isset($_POST["valorUsuario"]) ? $_POST['valorUsuario'] : "";
     if ($id > -1) {
         $usuario = cargarDatos(
@@ -94,6 +94,48 @@ if (isset($_POST["editar"])) {
     }
 }
 
+
+// EDITAR USUARIO
+if (isset($_POST["editar"])) {
+
+    //ID usuario
+    $id = isset($_POST["valorUsuario"]) ? $_POST['valorUsuario'] : "";
+
+    //Nombre usuario
+    $nombre = isset($_POST['nombreUsuario']) ? $_POST['nombreUsuario'] : "";
+
+    //Mail usuario
+    $email = isset($_POST['mailUsuario']) ? $_POST['mailUsuario'] : "";
+
+    //Ciclo usuario
+    $ciclo = isset($_POST['ciclo']) ? $_POST['ciclo'] : "";
+
+    //Administrador usuario
+    $admin = isset($_POST['admin']) ? $_POST['admin'] : "";
+
+    //Contraseña usuario 
+    $contrasenya = isset($_POST['passwordUsuario']) ? $_POST['passwordUsuario'] : "";
+
+    if ($id > -1) {
+        $usuario = editarUsuario(
+            $id, 
+            $nombre, 
+            $email, 
+            $ciclo, 
+            $contrasenya,
+            $admin
+        );
+
+        $_SESSION['usuario'] = $usuario[0];
+        header("Location: ../php_views/userInfoAdmin.php");
+        exit();
+    } else {
+        $_SESSION["error"] = "Error al editar el usuario";
+        header("Location: ../form/editUsers.php");
+        exit();
+    }
+}
+
 // LOGIN ADMIN
 if (isset($_POST["logAdmin"])) {
 
@@ -104,8 +146,6 @@ if (isset($_POST["logAdmin"])) {
     $passUser = isset($_POST['passwordUsuario']) ? $_POST['passwordUsuario'] : "";
     
     $login = loginUsuario($mailUser, $passUser);
-
-    $loginAdmin = selectUsersId($mailUser);
 
     if (count($login) != 0 && $login['Rol_Administrador'] = 1) {
         $_SESSION["idUsuario"] = selectUsers();
