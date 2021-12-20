@@ -113,7 +113,7 @@ if (isset($_POST["logAdmin"])) {
         exit();
     } else {
         $_SESSION["error"] = "Error al hacer un login";
-        header("Location: ../form/loginUsers.php");
+        header("Location: ../form/loginAdmin.php");
         exit();
     }
 }

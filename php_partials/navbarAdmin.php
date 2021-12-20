@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="styleButtons.css">
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-dark" id="navbarAdmin">
   <div class="container-fluid">
     <a class="navbar-brand text-light align-self-center" href="/Project1.github.io/index.php">
@@ -8,25 +9,11 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-light align-self-center" href="/Project1.github.io/homeAdmin.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Admin Home
-          </a>
-          <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-            <li>
-              <a class="dropdown-item text-light align-self-center" href="/Project1.github.io/php_views/userInfoAdmin.php">
-                User's Information
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item text-light align-self-center" href="/Project1.github.io/php_views/rankingsAdmin.php">
-                Rankings
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <li class="navbar-nav me-auto mb-2 mb-lg-0">
+        <a class="dropdown-item text-light align-self-center" href="/Project1.github.io/php_views/userInfoAdmin.php">
+          User's Information
+        </a>
+      </li>
     </div>
     <div class="justify-content-end nav collapse navbar-collapse">
       <ul class="nav">
