@@ -44,7 +44,7 @@ if (isset($_POST['insert'])) {
 
                 $_SESSION["usuario"] = $usuario;
                 $_SESSION["correcto"] = "Usuario añadido correctamente";
-                header("Location: ../php_views/userInfoAdmin.php");
+                header("Location: ../menuGames/menus/gameIntro.html");
 
                 exit();
             }
@@ -137,15 +137,14 @@ if (isset($_POST["logUser"])) {
     //Contraseña usuario 
     $passUser = isset($_POST['passwordUsuario']) ? $_POST['passwordUsuario'] : "";
     
-    if (isset($mailUser) && isset($passUser)) {
-        loginUsuario(
-            $mailUser,
-            $passUser
-        );
-        header("Location: ../homeAdmin.php");
+    $login = loginUsuario($mailUser, $passUser);
+
+    if (count($login) != 0) {
+        $_SESSION["idUsuario"] = selectUsers();
+        header("Location: ../menuGames/menus/gameIntro.html");
         exit();
     } else {
-        $_SESSION["error"] = "Error al editar el usuario";
+        $_SESSION["error"] = "Error al hacer un login";
         header("Location: ../form/loginUsers.php");
         exit();
     }

@@ -823,11 +823,11 @@ document.addEventListener("DOMContentLoaded", () => {
       createPlatforms();
       createCoin();
       createRedGem();
-      setInterval(createLetterF, 10); //10000
+     /*  setInterval(createLetterF, 10); //10000
       setInterval(createLetterR, 10); //26000
       setInterval(createLetterA, 10); //30000
       setInterval(createLetterS, 10); //35000
-      setInterval(createLetterE, 10); //45000
+      setInterval(createLetterE, 10); //45000 */
       setInterval(movePlatforms, 30);
       setInterval(moveCoin, 25);
       setInterval(moveRedGem, 25);
