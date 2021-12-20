@@ -44,7 +44,7 @@ if (isset($_POST['insert'])) {
 
                 $_SESSION["usuario"] = $usuario;
                 $_SESSION["correcto"] = "Usuario añadido correctamente";
-                header("Location: ../php_views/userInfoAdmin.php");
+                header("Location: ../menuGames/menus/gameIntro.html");
 
                 exit();
             }
@@ -141,7 +141,7 @@ if (isset($_POST["logUser"])) {
 
     if (count($login) != 0) {
         $_SESSION["idUsuario"] = selectUsers();
-        header("Location: ../homeAdmin.php");
+        header("Location: ../menuGames/menus/gameIntro.html");
         exit();
     } else {
         $_SESSION["error"] = "Error al hacer un login";

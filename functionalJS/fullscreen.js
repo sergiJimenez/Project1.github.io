@@ -1,5 +1,6 @@
 let elem = document.documentElement;
-
+console.log(elem);
+console.log("hola");
 //Open
 function openFullscreen() {
   if (elem.requestFullscreen) {
