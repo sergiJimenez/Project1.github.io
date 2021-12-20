@@ -64,10 +64,10 @@
 
 .Games {
   display: block;
-  width: 143px;
-  height: 34px;
-  top: 942px;
-  left: 496px;
+  width: 157px;
+  height: 46px;
+  top: 943px;
+  left: 483px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -79,10 +79,10 @@
 
 .MainMenu {
   display: block;
-  width: 240px;
-  height: 36px;
-  top: 940px;
-  left: 849px;
+  width: 336px;
+  height: 53px;
+  top: 936px;
+  left: 792px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -94,10 +94,10 @@
 
 .Next {
   display: block;
-  width: 103px;
-  height: 34px;
-  top: 942px;
-  left: 1321px;
+  width: 210px;
+  height: 49px;
+  top: 940px;
+  left: 1230px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -114,27 +114,12 @@
   height: 1080px;
 }
 
-.TryAgainGames {
-  display: block;
-  width: 213px;
-  height: 49px;
-  top: 800px;
-  left: 600px;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  outline: none;
-  position: absolute;
-}
-
 .TryAgainOption {
   display: block;
-  width: 213px;
-  height: 49px;
-  top: 872px;
-  left: 854px;
+  width: 430px;
+  height: 33px;
+  top: 873px;
+  left: 745px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -146,10 +131,10 @@
 
 .TryAgainMainMenu {
   display: block;
-  width: 240px;
-  height: 36px;
-  top: 952px;
-  left: 840px;
+  width: 336px;
+  height: 53px;
+  top: 948px;
+  left: 792px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -227,4 +212,25 @@
   background-image: url(../media/FRASE/E_item.png);
   position: absolute;
   background-repeat: no-repeat;
+}
+
+#F {
+  position: absolute;
+  background-image: url(../media/FRASE/F.png);
+}
+#R {
+  position: absolute;
+  background-image: url(../media/FRASE/R.png);
+}
+#A {
+  position: absolute;
+  background-image: url(../media/FRASE/A.png);
+}
+#S {
+  position: absolute;
+  background-image: url(../media/FRASE/S.png);
+}
+#E {
+  position: absolute;
+  background-image: url(../media/FRASE/E.png);
 }
