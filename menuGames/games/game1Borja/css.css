@@ -147,7 +147,7 @@ body {
 }
 
 .ranking{
-	z-index: 1;
+	z-index: 3;
 	position: fixed;
 	left: 90px;
 	top: 350px;
@@ -160,6 +160,7 @@ body {
 	width: 37vmin;
 	font-size: 2rem;
 	cursor:pointer;
+	z-index: 1;
 }
 
 .info{
@@ -171,6 +172,7 @@ body {
 }
 
 #mostrarRanking{
+	z-index: 3;
 	font-family: "Blocktopia";
 	box-shadow: 3px 3px 5px grey;
 	width: 37vmin;
