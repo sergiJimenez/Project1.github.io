@@ -3,11 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
   const gurmann = document.createElement("div");
   const modal = document.getElementById("myModal");
-  const F = document.getElementById("F");
-  const R = document.getElementById("R");
-  const A = document.getElementById("A");
-  const S = document.getElementById("S");
-  const E = document.getElementById("E");
   const tryAgain = document.getElementById("tryAgain");
   let isGameOver = false; //GameOver variable
   let platformCount = 4; //How many platforms we have when we start a new game
@@ -18,6 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let redGems = [];
   let letterFs = [];
   let letterFCount = 1;
+  let letterFTimer;
+  //let letterRTimer;
+  //let letterATimer;
+  //let letterSTimer;
+  //let letterETimer;
   let letterRs = [];
   let letterRCount = 1;
   let letterAs = [];
@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let isGoingRight = false;
   let leftTimerId;
   let rightTimerId;
-  let minute = 1;
-  let seconds = 00;
+  let minute = 0;
+  let seconds = 30;
   //Variables
   //AIR
   //AIR
@@ -264,10 +264,11 @@ document.addEventListener("DOMContentLoaded", () => {
       this.visual = document.createElement("div");
 
       const visual = this.visual;
-      visual.classList.add("letterF");
+      visual.classList.add("LetterF");
       visual.style.left = this.left + "px";
       visual.style.bottom = this.bottom + "px";
       grid.appendChild(visual);
+      document.getElementById("F").style.visibility = "hidden";
     }
   }
 
@@ -278,10 +279,11 @@ document.addEventListener("DOMContentLoaded", () => {
       this.visual = document.createElement("div");
 
       const visual = this.visual;
-      visual.classList.add("letterR");
+      visual.classList.add("LetterR");
       visual.style.left = this.left + "px";
       visual.style.bottom = this.bottom + "px";
       grid.appendChild(visual);
+      document.getElementById("R").style.visibility = "hidden";
     }
   }
 
@@ -292,10 +294,11 @@ document.addEventListener("DOMContentLoaded", () => {
       this.visual = document.createElement("div");
 
       const visual = this.visual;
-      visual.classList.add("letterA");
+      visual.classList.add("LetterA");
       visual.style.left = this.left + "px";
       visual.style.bottom = this.bottom + "px";
       grid.appendChild(visual);
+      document.getElementById("A").style.visibility = "hidden";
     }
   }
 
@@ -306,10 +309,11 @@ document.addEventListener("DOMContentLoaded", () => {
       this.visual = document.createElement("div");
 
       const visual = this.visual;
-      visual.classList.add("letterS");
+      visual.classList.add("LetterS");
       visual.style.left = this.left + "px";
       visual.style.bottom = this.bottom + "px";
       grid.appendChild(visual);
+      document.getElementById("S").style.visibility = "hidden";
     }
   }
 
@@ -320,10 +324,11 @@ document.addEventListener("DOMContentLoaded", () => {
       this.visual = document.createElement("div");
 
       const visual = this.visual;
-      visual.classList.add("letterE");
+      visual.classList.add("LetterE");
       visual.style.left = this.left + "px";
       visual.style.bottom = this.bottom + "px";
       grid.appendChild(visual);
+      document.getElementById("E").style.visibility = "hidden";
     }
   }
   //Class
@@ -504,10 +509,13 @@ document.addEventListener("DOMContentLoaded", () => {
         ((gurmannBottomSpace + 150) >= letterF.bottom) &&
         ((gurmannBottomSpace + 133) <= (letterF.bottom + 64))
       ){
-        let letterFToRemove = letterFs[0].visual;
-        letterFToRemove.classList.remove("letterF");
-        letterFs.shift(); //To avoid repeting the letters
-        //LetterF.style.display = "block";
+        letterFTimer = setInterval(function () {
+          let letterFToRemove = letterFs[0].visual;
+          letterFToRemove.classList.remove("LetterF");
+          letterFs.shift(); //To avoid repeting the letters
+          document.getElementById("F").style.visibility = "visible";
+          clearInterval(letterFTimer);
+        }, 10);
       }
     });
   }
@@ -537,9 +545,9 @@ document.addEventListener("DOMContentLoaded", () => {
         ((gurmannBottomSpace + 133) <= (letterR.bottom + 64))
       ){
         let letterRToRemove = letterRs[0].visual;
-        letterRToRemove.classList.remove("letterR");
+        letterRToRemove.classList.remove("LetterR");
         letterRs.shift(); //To avoid repeting the letters
-        //LetterR.style.display = "block";
+        R.style.display = "block";
       }
     });
   }
@@ -569,9 +577,9 @@ document.addEventListener("DOMContentLoaded", () => {
         ((gurmannBottomSpace + 133) <= (letterA.bottom + 64))
       ){
         let letterAToRemove = letterAs[0].visual;
-        letterAToRemove.classList.remove("letterA");
+        letterAToRemove.classList.remove("LetterA");
         letterAs.shift(); //To avoid repeting the letters
-        //LetterA.style.display = "block";
+        A.style.display = "block";
       }
     });
   }
@@ -601,9 +609,9 @@ document.addEventListener("DOMContentLoaded", () => {
         ((gurmannBottomSpace + 133) <= (letterS.bottom + 64))
       ){
         let letterSToRemove = letterSs[0].visual;
-        letterSToRemove.classList.remove("letterS");
+        letterSToRemove.classList.remove("LetterS");
         letterSs.shift(); //To avoid repeting the letters
-        //LetterS.style.display = "block";
+        S.style.display = "block";
       }
     });
   }
@@ -633,9 +641,9 @@ document.addEventListener("DOMContentLoaded", () => {
         ((gurmannBottomSpace + 133) <= (letterE.bottom + 64))
       ){
         let letterEToRemove = letterEs[0].visual;
-        letterEToRemove.classList.remove("letterE");
+        letterEToRemove.classList.remove("LetterE");
         letterEs.shift(); //To avoid repeting the letters
-        //LetterE.style.display = "block";
+        E.style.display = "block";
       }
     });
   }
@@ -823,26 +831,26 @@ document.addEventListener("DOMContentLoaded", () => {
       createPlatforms();
       createCoin();
       createRedGem();
-     /*  setInterval(createLetterF, 10); //10000
-      setInterval(createLetterR, 10); //26000
-      setInterval(createLetterA, 10); //30000
-      setInterval(createLetterS, 10); //35000
-      setInterval(createLetterE, 10); //45000 */
+      setInterval(createLetterF, 10000); //10000
+      //setInterval(createLetterR, 26000); //26000
+      //setInterval(createLetterA, 30000); //30000
+      //setInterval(createLetterS, 35000); //35000
+      //setInterval(createLetterE, 45000); //45000
       setInterval(movePlatforms, 30);
       setInterval(moveCoin, 25);
       setInterval(moveRedGem, 25);
       setInterval(coinTakeIt, 10);
       setInterval(redGemTakeIt, 10);
       setInterval(moveLetterF, 10);
-      setInterval(moveLetterR, 10);
-      setInterval(moveLetterA, 10);
-      setInterval(moveLetterS, 10);
-      setInterval(moveLetterE, 10);
+      //setInterval(moveLetterR, 10);
+      //setInterval(moveLetterA, 10);
+      //setInterval(moveLetterS, 10);
+      //setInterval(moveLetterE, 10);
       setInterval(letterFTakeIt, 10);
-      setInterval(letterRTakeIt, 10);
-      setInterval(letterATakeIt, 10);
-      setInterval(letterSTakeIt, 10);
-      setInterval(letterETakeIt, 10);
+      //setInterval(letterRTakeIt, 10);
+      //setInterval(letterATakeIt, 10);
+      //setInterval(letterSTakeIt, 10);
+      //setInterval(letterETakeIt, 10);
       createGurmann();
       jump(startPoint);
       document.addEventListener("keydown", control);

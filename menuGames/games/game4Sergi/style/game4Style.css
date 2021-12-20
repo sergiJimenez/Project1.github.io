@@ -175,7 +175,7 @@
   position: absolute;
 }
 
-#LetterF {
+.LetterF {
   width: 64px;
   height: 64px;
   background-image: url(../media/FRASE/F_item.png);
@@ -183,7 +183,7 @@
   background-repeat: no-repeat;
 }
 
-#LetterR {
+.LetterR {
   width: 64px;
   height: 64px;
   background-image: url(../media/FRASE/R_item.png);
@@ -191,7 +191,7 @@
   background-repeat: no-repeat;
 }
 
-#letterA {
+.LetterA {
   width: 64px;
   height: 64px;
   background-image: url(../media/FRASE/A_item.png);
@@ -199,7 +199,7 @@
   background-repeat: no-repeat;
 }
 
-#letterS {
+.LetterS {
   width: 64px;
   height: 64px;
   background-image: url(../media/FRASE/S_item.png);
@@ -207,7 +207,7 @@
   background-repeat: no-repeat;
 }
 
-#letterE {
+.LetterE {
   width: 64px;
   height: 64px;
   background-image: url(../media/FRASE/E_item.png);
