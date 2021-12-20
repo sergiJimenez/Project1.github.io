@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function movePlatforms() {
     if (gurmannBottomSpace > 200) {
       platforms.forEach(platform => {
-        platform.bottom -=5; //Speed of the platforms are falling
+        platform.bottom -=4; //Speed of the platforms are falling
         let visual = platform.visual;
         visual.style.bottom = platform.bottom + "px";
 
