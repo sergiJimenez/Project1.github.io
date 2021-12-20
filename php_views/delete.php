@@ -28,8 +28,4 @@ require_once('./../php_library/database.php');
     {
         echo "Error deleting record"; // display error message if not delete
     }
-
-    //No añade la tabla usuarios_ciclos
-    //Como borro una tabla? --> asi?
-
 ?>
