@@ -378,7 +378,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let newLetterS = new LetterS(newLetterSBottom);
       letterSs.push(newLetterS);
     }
-  }, 45000);
+  }, 40000);
   }
 
   function createLetterE() {
@@ -389,7 +389,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let newLetterE = new LetterE(newLetterEBottom);
       letterEs.push(newLetterE);
     }
-    }, 50000);
+    }, 45000);
   }
   //Create
   //AIR
@@ -401,7 +401,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function moveLetterF() {
     if (gurmannBottomSpace > 200) {
       letterFs.forEach(letterF => {
-          letterF.bottom -= 5; //Speed of the platforms are falling
+          letterF.bottom -= 3; //Speed of the platforms are falling
           let visual = letterF.visual;
           visual.style.bottom = letterF.bottom + "px";
 
@@ -419,7 +419,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function moveLetterR() {
     if (gurmannBottomSpace > 200) {
       letterRs.forEach(letterR => {
-          letterR.bottom -= 5; //Speed of the platforms are falling
+          letterR.bottom -= 3; //Speed of the platforms are falling
           let visual = letterR.visual;
           visual.style.bottom = letterR.bottom + "px";
 
@@ -437,7 +437,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function moveLetterA() {
     if (gurmannBottomSpace > 200) {
       letterAs.forEach(letterA => {
-          letterA.bottom -= 5; //Speed of the platforms are falling
+          letterA.bottom -= 3; //Speed of the platforms are falling
           let visual = letterA.visual;
           visual.style.bottom = letterA.bottom + "px";
 
@@ -455,7 +455,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function moveLetterS() {
     if (gurmannBottomSpace > 200) {
       letterSs.forEach(letterS => {
-          letterS.bottom -= 5; //Speed of the platforms are falling
+          letterS.bottom -= 3; //Speed of the platforms are falling
           let visual = letterS.visual;
           visual.style.bottom = letterS.bottom + "px";
 
@@ -473,7 +473,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function moveLetterE() {
     if (gurmannBottomSpace > 200) {
       letterEs.forEach(letterE => {
-          letterE.bottom -= 5; //Speed of the platforms are falling
+          letterE.bottom -= 3; //Speed of the platforms are falling
           let visual = letterE.visual;
           visual.style.bottom = letterE.bottom + "px";
 
