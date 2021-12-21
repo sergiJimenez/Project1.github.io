@@ -80,7 +80,7 @@ $ciclos = selectCiclos();
                                                         <?php foreach ($ciclos as $ciclo) { ?>
                                                             <option <?php
                                                              if (isset($usuario)) {
-                                                                        if ($usuario['id'] == $ciclo['id_Ciclo']) {
+                                                                        if ($usuario['id'] == $ciclo['id']) {
                                                                             echo "selected";
                                                                         }
                                                                     } ?> value=<?php echo $ciclo['id'] ?>> <?php echo $ciclo['Nombre_Ciclos'] ?> </option>
