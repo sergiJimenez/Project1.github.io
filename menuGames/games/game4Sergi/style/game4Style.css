@@ -9,6 +9,7 @@
   height: 1080px;
   background-image: url(../media/FinalBCKGRND.png);
   position: fixed;
+  border: none;
 }
 
 .grid {
@@ -17,6 +18,7 @@
   margin-left: 491px;
   background-image: none;
   position: fixed;
+  border: none;
 }
 
 #scoreShow {
@@ -29,6 +31,7 @@
   color: white;
   font-size: 51px;
   font-family: "Blocktopia";
+  border: none;
 }
 
 #timer {
@@ -41,6 +44,7 @@
   color: white;
   font-size: 51px;
   font-family: "Blocktopia";
+  border: none;
 }
 
 .modal {
@@ -52,7 +56,7 @@
   top: 0em;
   overflow: none;
   background-repeat: no-repeat;
-  background-image: url(../media/FinalFrame.png);
+  background-image: url(../media/FinalModal.png);
   border: none;
 }
 
@@ -109,6 +113,7 @@
   background-image: url(../media/TryAgain.png);
   width: 1920px;
   height: 1080px;
+  border: none;
 }
 
 .TryAgainOption {
