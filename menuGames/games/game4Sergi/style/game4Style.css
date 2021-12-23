@@ -53,6 +53,7 @@
   overflow: none;
   background-repeat: no-repeat;
   background-image: url(../media/FinalFrame.png);
+  border: none;
 }
 
 .Games {
@@ -68,6 +69,7 @@
   overflow: hidden;
   outline: none;
   position: absolute;
+  z-index: 300;
 }
 
 .MainMenu {
@@ -83,6 +85,7 @@
   overflow: hidden;
   outline: none;
   position: absolute;
+  z-index: 300;
 }
 
 .Next {
@@ -98,6 +101,7 @@
   overflow: hidden;
   outline: none;
   position: absolute;
+  z-index: 300;
 }
 
 #tryAgain {
@@ -216,6 +220,7 @@
   background-repeat: no-repeat;
   z-index: 300;
   position: absolute;
+  border: none;
 }
 #R{
   width: 1920px;
@@ -226,6 +231,7 @@
   background-repeat: no-repeat;
   z-index: 300;
   position: absolute;
+  border: none;
 }
 #A{
   width: 1920px;
@@ -236,6 +242,7 @@
   background-repeat: no-repeat;
   z-index: 300;
   position: absolute;
+  border: none;
 }
 #S{
   width: 1920px;
@@ -246,6 +253,7 @@
   background-repeat: no-repeat;
   z-index: 300;
   position: absolute;
+  border: none;
 }
 #E{
   width: 1920px;
@@ -256,4 +264,5 @@
   background-repeat: no-repeat;
   z-index: 300;
   position: absolute;
+  border: none;
 }

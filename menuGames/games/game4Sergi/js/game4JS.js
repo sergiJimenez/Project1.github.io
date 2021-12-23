@@ -39,11 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let rightTimerId;
   let minute = 1;
   let seconds = 00;
-  let clearMovePlatform;
-  let clearMoveCoin;
-  let clearMoveRedGem;
-  let clearTakeCoin;
-  let clearTakeRedGem;
+  let clearF;
+  let clearR;
+  let clearA;
+  let clearS;
+  let clearE;
   /*let;
   let;
   let;
@@ -79,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function movePlatforms() {
-    clearMovePlatform = setInterval(function () {
     if (gurmannBottomSpace > 200) {
       platforms.forEach(platform => {
         platform.bottom -=4; //Speed of the platforms are falling
@@ -95,7 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
-    }, 30);
   }
   //Platforms
   //AIR
@@ -506,6 +504,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //AIR
   //TakeIt
   function letterFTakeIt(){
+    clearF = setInterval(function () {
     letterFs.forEach(letterF => {
       if (
         //Conditional_Left_Down_Gurmann
@@ -538,9 +537,11 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("F").style.visibility = "hidden";
       }
     });
+  }, 10)
   }
 
   function letterRTakeIt(){
+    clearR = setInterval(function () {
     letterRs.forEach(letterR => {
       if (
         //Conditional_Left_Down_Gurmann
@@ -573,9 +574,11 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("R").style.visibility = "hidden";
       }
     });
+  }, 10)
   }
 
   function letterATakeIt(){
+    clearA = setInterval(function () {
     letterAs.forEach(letterA => {
       if (
         //Conditional_Left_Down_Gurmann
@@ -608,9 +611,11 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("A").style.visibility = "hidden";
       }
     });
+  }, 10)
   }
 
   function letterSTakeIt(){
+    clearS = setInterval(function () {
     letterSs.forEach(letterS => {
       if (
         //Conditional_Left_Down_Gurmann
@@ -643,9 +648,11 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("S").style.visibility = "hidden";
       }
     });
+  }, 10)
   }
 
   function letterETakeIt(){
+    clearE = setInterval(function () {
     letterEs.forEach(letterE => {
       if (
         //Conditional_Left_Down_Gurmann
@@ -678,6 +685,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("E").style.visibility = "hidden";
       }
     });
+  }, 10)
   }
   //TakeIt
   //AIR
@@ -842,6 +850,11 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
     clearInterval(rightTimerId);
+    clearInterval(clearF);
+    clearInterval(clearR);
+    clearInterval(clearA);
+    clearInterval(clearS);
+    clearInterval(clearE);
     tryAgain.style.display = "block";
   }
 
@@ -854,13 +867,11 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
     clearInterval(rightTimerId);
-    clearInterval(clearMovePlatform);
-    /*clearInterval();
-    clearInterval();
-    clearInterval();
-    clearInterval();
-    clearInterval();
-    clearInterval();*/
+    clearInterval(clearF);
+    clearInterval(clearR);
+    clearInterval(clearA);
+    clearInterval(clearS);
+    clearInterval(clearE);
     modal.style.display = "inline"; //Image to End Over
   }
 
@@ -876,6 +887,12 @@ document.addEventListener("DOMContentLoaded", () => {
       createLetterA();
       createLetterS();
       createLetterE();
+      letterFTakeIt();
+      letterRTakeIt();
+      letterATakeIt();
+      letterSTakeIt();
+      letterETakeIt();
+      setInterval(movePlatforms, 30)
       setInterval(moveCoin, 25);
       setInterval(moveRedGem, 25);
       setInterval(coinTakeIt, 10);
@@ -885,11 +902,6 @@ document.addEventListener("DOMContentLoaded", () => {
       setInterval(moveLetterA, 10);
       setInterval(moveLetterS, 10);
       setInterval(moveLetterE, 10);
-      setInterval(letterFTakeIt, 10);
-      setInterval(letterRTakeIt, 10);
-      setInterval(letterATakeIt, 10);
-      setInterval(letterSTakeIt, 10);
-      setInterval(letterETakeIt, 10);
       createGurmann();
       jump(startPoint);
       document.addEventListener("keydown", control);
