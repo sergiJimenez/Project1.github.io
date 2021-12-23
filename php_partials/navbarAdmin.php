@@ -17,7 +17,7 @@
     </div>
     <div class="justify-content-end nav collapse navbar-collapse">
       <ul class="nav">
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light align-self-center" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Idiomes
           </a>
@@ -26,7 +26,7 @@
             <li><a class="dropdown-item text-light align-self-center" href="#">Castellà</a></li>
             <li><a class="dropdown-item text-light align-self-center" href="#">Anglés</a></li>
           </ul>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>
