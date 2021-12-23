@@ -52,7 +52,7 @@
   top: 0em;
   overflow: none;
   background-repeat: no-repeat;
-  background-image: url(../media/LastFrame.png);
+  background-image: url(../media/FinalFrame.png);
 }
 
 .Games {
@@ -205,4 +205,55 @@
   background-image: url(../media/FRASE/E_item.png);
   position: absolute;
   background-repeat: no-repeat;
+}
+
+#F{
+  width: 1920px;
+  height: 1080px;
+  display: block;
+  background-image: url(../media/FRASE/F.png);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  z-index: 300;
+  position: absolute;
+}
+#R{
+  width: 1920px;
+  height: 1080px;
+  display: block;
+  background-image: url(../media/FRASE/R.png);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  z-index: 300;
+  position: absolute;
+}
+#A{
+  width: 1920px;
+  height: 1080px;
+  display: block;
+  background-image: url(../media/FRASE/A.png);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  z-index: 300;
+  position: absolute;
+}
+#S{
+  width: 1920px;
+  height: 1080px;
+  display: block;
+  background-image: url(../media/FRASE/S.png);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  z-index: 300;
+  position: absolute;
+}
+#E{
+  width: 1920px;
+  height: 1080px;
+  display: block;
+  background-image: url(../media/FRASE/E.png);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  z-index: 300;
+  position: absolute;
 }

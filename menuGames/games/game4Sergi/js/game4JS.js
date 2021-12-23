@@ -39,6 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
   let rightTimerId;
   let minute = 1;
   let seconds = 00;
+  let clearMovePlatform;
+  let clearMoveCoin;
+  let clearMoveRedGem;
+  let clearTakeCoin;
+  let clearTakeRedGem;
+  /*let;
+  let;
+  let;
+  let;*/
   //Variables
   //AIR
   //AIR
@@ -70,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function movePlatforms() {
+    clearMovePlatform = setInterval(function () {
     if (gurmannBottomSpace > 200) {
       platforms.forEach(platform => {
         platform.bottom -=4; //Speed of the platforms are falling
@@ -85,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
+    }, 30);
   }
   //Platforms
   //AIR
@@ -523,6 +534,8 @@ document.addEventListener("DOMContentLoaded", () => {
         letterFs.shift(); //Moving the array to avoid repeting the letters
         document.getElementById("F").style.visibility = "visible";
         clearInterval(letterFTimer);
+      } else{
+        document.getElementById("F").style.visibility = "hidden";
       }
     });
   }
@@ -556,6 +569,8 @@ document.addEventListener("DOMContentLoaded", () => {
         letterRs.shift(); //Moving the array to avoid repeting the letters
         document.getElementById("R").style.visibility = "visible";
         clearInterval(letterRTimer);
+      } else{
+        document.getElementById("R").style.visibility = "hidden";
       }
     });
   }
@@ -589,6 +604,8 @@ document.addEventListener("DOMContentLoaded", () => {
         letterAs.shift(); //Moving the array to avoid repeting the letters
         document.getElementById("A").style.visibility = "visible";
         clearInterval(letterATimer);
+      } else{
+        document.getElementById("A").style.visibility = "hidden";
       }
     });
   }
@@ -622,6 +639,8 @@ document.addEventListener("DOMContentLoaded", () => {
         letterSs.shift(); //Moving the array to avoid repeting the letters
         document.getElementById("S").style.visibility = "visible";
         clearInterval(letterSTimer);
+      } else{
+        document.getElementById("S").style.visibility = "hidden";
       }
     });
   }
@@ -655,9 +674,9 @@ document.addEventListener("DOMContentLoaded", () => {
         letterEs.shift(); //Moving the array to avoid repeting the letters
         document.getElementById("E").style.visibility = "visible";
         clearInterval(letterETimer);
-      } /*else {
+      } else{
         document.getElementById("E").style.visibility = "hidden";
-      }*/
+      }
     });
   }
   //TakeIt
@@ -835,6 +854,13 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
     clearInterval(rightTimerId);
+    clearInterval(clearMovePlatform);
+    /*clearInterval();
+    clearInterval();
+    clearInterval();
+    clearInterval();
+    clearInterval();
+    clearInterval();*/
     modal.style.display = "inline"; //Image to End Over
   }
 
@@ -842,14 +868,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!isGameOver) {
       timedCount();
       createPlatforms();
+      movePlatforms();
       createCoin();
       createRedGem();
-      createLetterF(); //10000
-      createLetterR(); //20000
-      createLetterA(); //30000
-      createLetterS(); //45000
-      createLetterE(); //50000
-      setInterval(movePlatforms, 30);
+      createLetterF();
+      createLetterR();
+      createLetterA();
+      createLetterS();
+      createLetterE();
       setInterval(moveCoin, 25);
       setInterval(moveRedGem, 25);
       setInterval(coinTakeIt, 10);
